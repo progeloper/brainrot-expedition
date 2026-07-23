@@ -1,0 +1,13 @@
+{
+  "languageMode": "strict",
+  "lint": {
+    "*": true,
+    "LocalShadow": true,
+    "SameLineStatement": true
+  },
+  "aliases": {
+    "@shared": "src/shared",
+    "@server": "src/server",
+    "@client": "src/client"
+  }
+}

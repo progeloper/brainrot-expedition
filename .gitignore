@@ -1,0 +1,28 @@
+# Roblox place and model build outputs
+build/
+dist/
+*.rbxl
+*.rbxlx
+*.rbxm
+*.rbxmx
+
+# Generated Rojo files
+sourcemap.json
+*.rbxl.lock
+
+# Tool caches
+.lune/
+.cache/
+
+# macOS
+.DS_Store
+
+# Windows noise, in case collaborators use Windows
+Thumbs.db
+
+# Editor logs
+.vscode/*.log
+
+# Local-only environment overrides
+environment.local.lua
+*.local.json
