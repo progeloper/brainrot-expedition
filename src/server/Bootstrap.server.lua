@@ -8,19 +8,35 @@ local FeatureFlags = require(ReplicatedStorage.Shared.Config.FeatureFlags)
 
 local Logger = require(ReplicatedStorage.Shared.Utility.Logger)
 
+local Ids = require(ReplicatedStorage.Shared.Constants.Ids)
+
+local ConfigValidator = require(ReplicatedStorage.Shared.Validation.ConfigValidator)
+
 local log = Logger.new("ServerBootstrap")
+
+local AssetValidationService = require(script.Parent.Services.AssetValidationService)
 
 local function validateEnvironment()
 	assert(
 		Environment.Name == "Development"
 			or Environment.Name == "Sandbox"
 			or Environment.Name == "Production",
-		"Invalid environment name"
+		"Invalid environment name."
 	)
 
 	if Environment.IsProduction then
-		assert(not Environment.EnableDebugTools, "Debug tools must be disabled in Production")
+		assert(Environment.EnableDebugTools == false, "Debug tools must be disabled in production.")
 	end
+
+	ConfigValidator.AssertUniqueIds("Brainrots", Ids.Brainrots)
+
+	ConfigValidator.AssertUniqueIds("Carts", Ids.Carts)
+
+	ConfigValidator.AssertUniqueIds("Harpoons", Ids.Harpoons)
+
+	ConfigValidator.AssertUniqueIds("Gadgets", Ids.Gadgets)
+
+	ConfigValidator.AssertUniqueIds("Zones", Ids.Zones)
 end
 
 local function start()
@@ -33,6 +49,8 @@ local function start()
 		tostring(FeatureFlags.CartEnabled),
 		tostring(FeatureFlags.CaptureEnabled)
 	)
+
+	AssetValidationService:Start()
 
 	log:Info("Server bootstrap complete")
 end
