@@ -15,9 +15,7 @@ local log = Logger.new("AssetValidationService")
 local AssetValidationService = {}
 
 local function getCartAssetFolder(): Folder
-	local assets = ReplicatedStorage:WaitForChild("Assets")
-
-	local studioAssets = assets:WaitForChild("StudioAssets")
+	local studioAssets = ReplicatedStorage:WaitForChild("StudioAssets")
 
 	local carts = studioAssets:WaitForChild("Carts")
 

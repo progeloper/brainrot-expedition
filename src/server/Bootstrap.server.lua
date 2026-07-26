@@ -12,9 +12,17 @@ local Ids = require(ReplicatedStorage.Shared.Constants.Ids)
 
 local ConfigValidator = require(ReplicatedStorage.Shared.Validation.ConfigValidator)
 
-local log = Logger.new("ServerBootstrap")
-
 local AssetValidationService = require(script.Parent.Services.AssetValidationService)
+
+local CollisionService = require(script.Parent.Services.CollisionService)
+
+local CartSpawnRegistry = require(script.Parent.Services.CartSpawnRegistry)
+
+local CartService = require(script.Parent.Services.CartService)
+
+local DevelopmentCartSpawner = require(script.Parent.Systems.DevelopmentCartSpawner)
+
+local log = Logger.new("ServerBootstrap")
 
 local function validateEnvironment()
 	assert(
@@ -37,6 +45,8 @@ local function validateEnvironment()
 	ConfigValidator.AssertUniqueIds("Gadgets", Ids.Gadgets)
 
 	ConfigValidator.AssertUniqueIds("Zones", Ids.Zones)
+
+	ConfigValidator.AssertUniqueIds("CartSpawns", Ids.CartSpawns)
 end
 
 local function start()
@@ -52,6 +62,10 @@ local function start()
 
 	AssetValidationService:Start()
 
+	CollisionService:Start()
+	CartSpawnRegistry:Start()
+	CartService:Start()
+	DevelopmentCartSpawner:Start()
 	log:Info("Server bootstrap complete")
 end
 

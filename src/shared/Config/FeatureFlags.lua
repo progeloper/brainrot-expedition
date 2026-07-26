@@ -14,7 +14,7 @@ export type FeatureFlags = {
 }
 
 local FeatureFlags: FeatureFlags = {
-	CartEnabled = false,
+	CartEnabled = true,
 	CaptureEnabled = false,
 	BankingEnabled = false,
 	KeepersEnabled = false,

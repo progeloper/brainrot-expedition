@@ -33,6 +33,12 @@ local Ids = {
 		Glitchwood = "ZON_003",
 		TheRift = "ZON_004",
 	},
+
+	CartSpawns = {
+		Development = "CSP_001",
+		DevelopmentTwo = "CSP_002",
+		DevelopmentThree = "CSP_003",
+	},
 }
 
 return table.freeze(Ids)
