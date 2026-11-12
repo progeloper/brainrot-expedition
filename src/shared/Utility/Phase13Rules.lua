@@ -388,6 +388,33 @@ function Rules.ShouldInvalidate(before, data)
 	end
 	return false
 end
+-- Seconds of post-rebirth income (permanent multipliers incl. the new +10%; no temporary boosts)
+-- needed to earn back `lost` Cash. nil when nothing is lost or there is no income.
+function Rules.PaybackSeconds(data, lost, baseCps)
+	if type(lost) ~= "number" or lost <= 0 or type(baseCps) ~= "number" or baseCps <= 0 then
+		return nil
+	end
+	local b = GemRules.IncomeBreakdown(data)
+	local after = (1 + b.rebirthBonus + Economy.Income.RebirthBonusPerRebirth + b.vipBonus) * b.pass
+	return lost / (baseCps * after)
+end
+-- The next rebirth reward: the next expansion, or Prestige once every expansion is owned.
+function Rules.NextRebirthRewardId(data)
+	local p = data.Phase13
+	local row = Config.ExpansionRows[p.ExpansionLevel + 1]
+	return if row then row.id else "PRESTIGE"
+end
+-- READY when either route could rebirth into the next reward right now.
+function Rules.RebirthReady(data)
+	local id = Rules.NextRebirthRewardId(data)
+	for _, route in { "Cash", "Collection" } do
+		local ok, q = pcall(Rules.QuoteRebirth, data, id, route)
+		if ok and type(q) == "table" and q.ok == true then
+			return true, route
+		end
+	end
+	return false, nil
+end
 function Rules.QuoteRebirth(data, rewardId, route)
 	if route ~= "Cash" and route ~= "Collection" then
 		return reject("INVALID_ROUTE")
@@ -473,6 +500,10 @@ function Rules.QuoteRebirth(data, rewardId, route)
 		gemReward = if kind == "Prestige" then Economy.GemSources.Prestige else Economy.GemSources.Rebirth,
 		incomeBonusBefore = GemRules.RebirthCount(data) * Economy.Income.RebirthBonusPerRebirth,
 		incomeBonusAfter = (GemRules.RebirthCount(data) + 1) * Economy.Income.RebirthBonusPerRebirth,
+		-- Rebirth UI v2: what is lost, and how long the new (permanent) income takes to earn it back.
+		lostCash = if route == "Cash" then total else 0,
+		lostIndividuals = if route == "Collection" then ownedCount else 0,
+		paybackSeconds = Rules.PaybackSeconds(data, if route == "Cash" then total else 0, baseCps),
 		prestigeCount = GemRules.PrestigeCount(data),
 	}
 end

@@ -336,7 +336,15 @@ local function bindCharacter(character)
 		end))
 	end
 end
-local function displayConfirm(title, body, onConfirm)
+-- Rebirth UI v2 lines: red YOU LOSE, green YOU GET, payback; confirm enables once they are on screen.
+local function richLines(parent, lines)
+	for _, line in lines do
+		local label = text(parent, line[1], 18)
+		label.Font = Enum.Font.GothamBold
+		label.TextColor3 = line[2]
+	end
+end
+local function displayConfirm(title, body, onConfirm, lines)
 	closeModal()
 	modal = Instance.new("Frame")
 	modal.Size = UDim2.fromScale(1, 1)
@@ -356,16 +364,34 @@ local function displayConfirm(title, body, onConfirm)
 	layout.Padding = UDim.new(0, 15)
 	layout.Parent = box
 	text(box, title, 22)
+	if lines then
+		richLines(box, lines)
+	end
 	text(box, body, 17)
 	local cancel = button(box, Strings.Cancel, closeModal)
+	local armed = lines == nil
 	local confirm = button(box, Strings.ConfirmSacrifice, function()
-		if busy then
+		if busy or not armed then
 			return
 		end
 		closeModal()
 		onConfirm()
 	end)
 	confirm.BackgroundColor3 = Color3.fromRGB(155, 62, 76)
+	if not armed then
+		-- enabled only after YOU LOSE / YOU GET have been on screen
+		confirm.Active = false
+		confirm.AutoButtonColor = false
+		confirm.BackgroundTransparency = 0.5
+		task.delay(1, function()
+			armed = true
+			if confirm.Parent then
+				confirm.Active = true
+				confirm.AutoButtonColor = true
+				confirm.BackgroundTransparency = 0
+			end
+		end)
+	end
 	GuiService.SelectedObject = cancel
 end
 local function preview(category, id, finish)
@@ -559,13 +585,35 @@ local function rebirth(rewardId, route)
 		)
 	end
 	body ..= "\n" .. Strings.Preserve
+	local lines = nil
+	if require(RS.Shared.Config.CampReworkFlags).RebirthUi() then
+		local function duration(seconds)
+			if type(seconds) ~= "number" or seconds ~= seconds or seconds <= 0 then
+				return "no time"
+			end
+			if seconds < 3600 then
+				return string.format("%d min", math.max(1, math.floor(seconds / 60 + 0.5)))
+			end
+			return string.format("%.1f h", seconds / 3600)
+		end
+		local red, green = Color3.fromRGB(255, 92, 92), Color3.fromRGB(112, 230, 112)
+		lines = {
+			if route == "Cash"
+				then { Strings.Format("YouLoseCash", "$" .. cash(q.lostCash or q.totalCash)), red }
+				else { Strings.Format("YouLoseCollection", tostring(q.lostIndividuals or q.ownedCount)), red },
+			{ Strings.Format("YouGet", reward, tostring(q.gemReward or 0)), green },
+			if route == "Cash"
+				then { Strings.Format("PaybackCash", duration(q.paybackSeconds)), Color3.fromRGB(235, 233, 247) }
+				else { Strings.Format("PaybackCollection", tostring(q.lostIndividuals or q.ownedCount)), Color3.fromRGB(235, 233, 247) },
+		}
+	end
 	displayConfirm(Strings.ConfirmRebirth, body, function()
 		busy = true
 		q.action = "Rebirth"
 		q.operationId = Http:GenerateGUID(false)
 		q.sequence = q.nextSequence
 		track(call(q))
-	end)
+	end, lines)
 end
 local function card(title, detail)
 	local frame = Instance.new("Frame")

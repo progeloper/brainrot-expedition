@@ -40,6 +40,8 @@ local started = false
 local event = nil
 local request = nil
 local campEvent = nil
+local basePrompts = {}
+local rebirthReadyClock = 0
 local anchors = {}
 local rate = {}
 local reconcileQueue = {}
@@ -456,7 +458,9 @@ function Service:Start(_options)
 			attachment.WorldCFrame = baseEntrance(base)
 			local prompt = Instance.new("ProximityPrompt")
 			prompt.Name = "Phase13BaseUpgradePrompt"
-			prompt.ActionText = "Expand / design"
+			-- Rebirth UI v2: one name everywhere. "Rebirth — Ready!" is set per owner below.
+			prompt.ActionText = if CampFlags.RebirthUi() then "Rebirth" else "Expand / design"
+			basePrompts[base] = prompt
 			prompt.ObjectText = "Your base"
 			prompt.MaxActivationDistance = 12
 			prompt.RequiresLineOfSight = false
@@ -626,6 +630,24 @@ function Service:Start(_options)
 			end
 			for _, player in Players:GetPlayers() do
 				Analytics:SetWorldReady(player, WorldReady:IsReady(player))
+			end
+			rebirthReadyClock += 1
+			if CampFlags.RebirthUi() and rebirthReadyClock % 4 == 0 then
+				-- every ~2 s: mirror READY (either route) to the HUD glow and the owner's base prompt
+				for _, player in Players:GetPlayers() do
+					local data = Profiles:GetReadableData(player)
+					local ready = false
+					if data and data.Phase13 then
+						local ok, value = pcall(Rules.RebirthReady, data)
+						ready = ok and value == true
+					end
+					player:SetAttribute("RebirthReady", ready)
+					local base = Bases:GetBase(player)
+					local prompt = base and basePrompts[base]
+					if prompt then
+						prompt.ActionText = if ready then "Rebirth — Ready!" else "Rebirth"
+					end
+				end
 			end
 		end
 	end)
