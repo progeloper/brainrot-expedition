@@ -63,6 +63,8 @@ local function start()
 	require(script.Parent.Controllers.Phase13AppearanceController).Start()
 	-- Camp Rework weapon art feedback (spinners/drum on the shared <=10 Hz scheduler).
 	require(script.Parent.Controllers.WeaponArtController).Start()
+	-- Camp Rework stalls (racks, featured cart, windmill/turntable, sale burst, speedometer).
+	task.spawn(require(script.Parent.Controllers.CampStallController).Start)
 	require(script.Parent.Controllers.Phase14CosmeticController).Start()
 	task.spawn(require(script.Parent.Controllers.RegionVisibilityController).Start)
 	task.spawn(require(script.Parent.Controllers.Phase13ShopController).Start)

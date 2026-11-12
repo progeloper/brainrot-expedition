@@ -33,10 +33,13 @@ local Combat = require(script.Parent.PlayerCombatService)
 local Reset = require(script.Parent.Phase12WorldService)
 local CampFlags = require(RS.Shared.Config.CampReworkFlags)
 local SpecialRules = require(RS.Shared.Utility.SpecialWeaponRules)
+local SaleSystem = require(script.Parent.Parent.Systems.BrainrotSaleSystem)
+local Training = require(script.Parent.TrainingService)
 local Service = {}
 local started = false
 local event = nil
 local request = nil
+local campEvent = nil
 local anchors = {}
 local rate = {}
 local reconcileQueue = {}
@@ -69,6 +72,12 @@ local function near(player, position, range)
 end
 local function baseEntrance(base)
 	return base.Foundation.CFrame * CFrame.new(0, 3, -base.Foundation.Size.Z / 2 + 2)
+end
+local function salePoint()
+	local map = workspace:FindFirstChild("MapBlockout")
+	local patches = map and map:FindFirstChild("ServiceStallPatches")
+	local point = patches and patches:FindFirstChild("SellStall")
+	return if point and point:IsA("BasePart") then point else nil
 end
 function Service:ValidateContext(player, category, insideMutation)
 	if Profiles:GetStatus(player) ~= "Ready" or not WorldReady:IsReady(player) then
@@ -106,12 +115,14 @@ function Service:ValidateContext(player, category, insideMutation)
 		),
 			"SHOP_REQUIRED"
 	elseif category == "Weapon" then
-		return anchors.Weapon ~= nil and near(player, anchors.Weapon.Position, 12) or anchors.Kit ~= nil and near(
-			player,
-			anchors.Kit.Position,
-			12
-		),
+		-- The Kit kiosk was removed (Camp Rework); it opened this same Weapons menu.
+		return anchors.Weapon ~= nil and near(player, anchors.Weapon.Position, 12), "SHOP_REQUIRED"
+	elseif category == "Training" then
+		return CampFlags.Training() and anchors.Training ~= nil and near(player, anchors.Training.Position, 12),
 			"SHOP_REQUIRED"
+	elseif category == "Sell" then
+		local point = salePoint()
+		return CampFlags.CampRework() and point ~= nil and near(player, point.Position, 14), "SHOP_REQUIRED"
 	end
 	return false, "INVALID_CATEGORY"
 end
@@ -349,7 +360,22 @@ local function snapshot(player)
 		specials = if CampFlags.CampRework() then SpecialRules.Snapshot(data) else nil,
 	}
 end
+-- Camp Rework stalls carry a marker for their prompt (counter, or the Training speedometer post).
+local function campAnchorMarker(model)
+	local slots = model:FindFirstChild("CampSlots")
+	if not slots then
+		return nil
+	end
+	for _, child in slots:GetChildren() do
+		if child:IsA("BasePart") and child:GetAttribute("CampAnchor") ~= nil then
+			return child
+		end
+	end
+	return nil
+end
+local CAMP_OBJECT_TEXT = { Weapon = "WEAPONS", Cart = "CARTS", Training = "TRAINING" }
 local function makeAnchor(model, category)
+	local campStall = CampFlags.CampRework() and model:GetAttribute("CampReworkStall") ~= nil
 	local found = model:FindFirstChild("Phase13ShopAnchor")
 	if not found then
 		found = Instance.new("Part")
@@ -363,6 +389,10 @@ local function makeAnchor(model, category)
 		found.CanQuery = false
 		found.Parent = model
 	end
+	local marker = if campStall then campAnchorMarker(model) else nil
+	if marker then
+		found.CFrame = marker.CFrame
+	end
 	anchors[category] = found
 	local prompt = found:FindFirstChild("Phase13ShopPrompt")
 	if not prompt then
@@ -370,22 +400,26 @@ local function makeAnchor(model, category)
 		prompt.Name = "Phase13ShopPrompt"
 		prompt.Parent = found
 	end
-	prompt.ActionText = if category == "Weapon"
-		then "Browse weapons"
-		elseif category == "Cart" then "Browse carts"
-		else "Manage kit"
-	prompt.ObjectText = if category == "Weapon" then "WEAPONS" elseif category == "Cart" then "CARTS" else "KIT"
+	if campStall then
+		prompt.ActionText = "Open"
+		prompt.ObjectText = CAMP_OBJECT_TEXT[category] or string.upper(category)
+	else
+		prompt.ActionText = if category == "Weapon" then "Browse weapons" else "Browse carts"
+		prompt.ObjectText = if category == "Weapon" then "WEAPONS" else "CARTS"
+	end
 	prompt.MaxActivationDistance = 12
 	prompt.RequiresLineOfSight = false
 	prompt.KeyboardKeyCode = Enum.KeyCode.E
 	prompt.GamepadKeyCode = Enum.KeyCode.ButtonX
+	prompt:SetAttribute("CampCategory", category)
 	SlotPresentation.Capture(prompt)
 	CollectionService:AddTag(prompt, SHOP_PROMPT_TAG)
 	prompt.Triggered:Connect(function(player)
 		if near(player, found.Position, 12) then
-			event:FireClient(player, { kind = "Open", category = if category == "Kit" then "Weapon" else category })
+			event:FireClient(player, { kind = "Open", category = category })
 		end
 	end)
+	return prompt
 end
 function Service:Start(_options)
 	if started then
@@ -399,6 +433,16 @@ function Service:Start(_options)
 	request = folder:FindFirstChild("Phase13Request") or Instance.new("RemoteFunction")
 	request.Name = "Phase13Request"
 	request.Parent = folder
+	-- Camp Rework presentation broadcast (sale coin burst, training level-up). Server -> clients only.
+	campEvent = folder:FindFirstChild("CampReworkEvent") or Instance.new("RemoteEvent")
+	campEvent.Name = "CampReworkEvent"
+	campEvent.Parent = folder
+	Service.CampEvent = campEvent
+	if CampFlags.CampRework() then
+		SaleSystem.SubscribeCommitted(function(player)
+			campEvent:FireAllClients({ kind = "SaleBurst", userId = player.UserId })
+		end)
+	end
 	local patches = workspace:WaitForChild("MapBlockout"):WaitForChild("PlayerBasePatches")
 	for _, base in patches:GetChildren() do
 		if base:IsA("Model") and base:FindFirstChild("Foundation") then
@@ -429,12 +473,17 @@ function Service:Start(_options)
 	local services = workspace.MapBlockout:FindFirstChild("MapArt")
 		and workspace.MapBlockout.MapArt:FindFirstChild("Services")
 	if services then
-		for name, category in
-			{ Kiosk_WeaponHarpoonStall = "Weapon", Kiosk_BuyCartStall = "Cart", Kiosk_KitStall = "Kit" }
-		do
+		local stalls = { Kiosk_WeaponHarpoonStall = "Weapon", Kiosk_BuyCartStall = "Cart" }
+		if CampFlags.Training() then
+			stalls.Kiosk_TrainingStall = "Training"
+		end
+		for name, category in stalls do
 			local model = services:FindFirstChild(name)
 			if model then
-				makeAnchor(model, category)
+				local prompt = makeAnchor(model, category)
+				if category == "Training" then
+					Training:BindPrompt(prompt, model)
+				end
 			end
 		end
 	end
@@ -604,6 +653,42 @@ function Service:Start(_options)
 				return Transactions:Rebirth(player, payload)
 			elseif payload.action == "Purchase" then
 				return Transactions:Purchase(player, payload)
+			elseif payload.action == "SellBack" then
+				-- Camp Rework: Cash weapons/carts at 25% back, at the Sell counter only.
+				if not CampFlags.CampRework() then
+					return { ok = false, code = "UNAVAILABLE" }
+				end
+				for key in payload do
+					if key ~= "action" and key ~= "category" and key ~= "id" and key ~= "operationId" then
+						return { ok = false, code = "INVALID_REQUEST" }
+					end
+				end
+				if payload.category ~= "Weapon" and payload.category ~= "Cart" or type(payload.id) ~= "string" then
+					return { ok = false, code = "INVALID_REQUEST" }
+				end
+				local allowed, why = self:ValidateContext(player, "Sell", false)
+				if not allowed then
+					return { ok = false, code = why or "SHOP_REQUIRED" }
+				end
+				return Transactions:CommitCritical(player, payload.operationId, "SellBack", function(data)
+					return Rules.ApplySellBack(data, payload.category, payload.id)
+				end, {
+					validate = function()
+						return self:ValidateContext(player, "Sell", true)
+					end,
+					onConfirmed = function()
+						pcall(CurrencyMirror.SyncBalance, CurrencyMirror, player)
+						campEvent:FireAllClients({ kind = "SaleBurst", userId = player.UserId })
+						return self:Reconcile(player, nil)
+					end,
+				})
+			elseif payload.action == "SellCarried" then
+				-- Opens the existing carried-brainrot sale dialog from the Sell menu.
+				if not CampFlags.CampRework() then
+					return { ok = false, code = "UNAVAILABLE" }
+				end
+				local preview, reason = SaleSystem:CreatePreview(player)
+				return if preview then { ok = true } else { ok = false, code = reason or "NOT_CARRYING" }
 			elseif payload.action == "Select" then
 				return Transactions:Select(player, payload)
 			elseif payload.action == "Status" then

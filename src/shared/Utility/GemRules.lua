@@ -393,7 +393,16 @@ function Rules.Snapshot(data: any, at: number?): any
 	local now = at or os.time()
 	local breakdown = Rules.IncomeBreakdown(data, now)
 	local shop = {}
+	local campRework = CampFlags.CampRework()
 	for _, item in Economy.GemShop do
+		if item.kind == "Weapon" and not campRework then
+			continue
+		end
+		local owned = item.kind == "Weapon"
+			and type(data) == "table"
+			and type(data.Phase13) == "table"
+			and type(data.Phase13.OwnedWeaponIds) == "table"
+			and data.Phase13.OwnedWeaponIds[item.weaponId] == true
 		table.insert(shop, {
 			id = item.id,
 			kind = item.kind,
@@ -404,6 +413,8 @@ function Rules.Snapshot(data: any, at: number?): any
 			cash = if item.kind == "CashCrate" then Rules.CrateCash(data, item) else nil,
 			affordable = Rules.Balance(data) >= item.priceGems,
 			order = item.order,
+			weaponId = item.weaponId,
+			owned = owned or nil,
 		})
 	end
 	return {

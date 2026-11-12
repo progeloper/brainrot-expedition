@@ -469,6 +469,49 @@ function Rules.ApplyPurchase(data, category, id)
 	owned[id] = true
 	return true, { code = "APPLIED", id = id, category = category, price = price, selectionField = field }
 end
+-- Camp Rework sell-back (CampReworkV1Enabled): Cash-bought ladder weapons and carts return 25% of
+-- their Cash price. Never the starter, a special (Robux/Gem/Won), anything unowned, or the item in use
+-- (switch first, so the live tool/cart never loses its definition mid-session).
+Rules.SellBackRate = 0.25
+function Rules.SellBackValue(category, id)
+	local price
+	if category == "Weapon" then
+		if not Weapons.IsSellable(id) then
+			return nil
+		end
+		price = Weapons.Get(id).price
+	elseif category == "Cart" then
+		local row = Rules.Cart(id)
+		if not row or row.starter or type(row.price) ~= "number" or row.price <= 0 then
+			return nil
+		end
+		price = row.price
+	else
+		return nil
+	end
+	return math.floor(price * Rules.SellBackRate)
+end
+function Rules.ApplySellBack(data, category, id)
+	local p = data.Phase13
+	local value = Rules.SellBackValue(category, id)
+	if value == nil then
+		return false, reject("NOT_SELLABLE")
+	end
+	local owned = if category == "Weapon" then p.OwnedWeaponIds else p.OwnedCartIds
+	local selected = if category == "Weapon" then p.SelectedWeaponId else p.SelectedCartId
+	if owned[id] ~= true then
+		return false, reject("NOT_OWNED")
+	end
+	if selected == id then
+		return false, reject("EQUIPPED")
+	end
+	if not Money.Validate(data.Economy.Balance) or data.Economy.Balance > Money.MAX_AMOUNT - value then
+		return false, reject("BALANCE_LIMIT")
+	end
+	owned[id] = nil
+	data.Economy.Balance += value
+	return true, { code = "APPLIED", category = category, id = id, refund = value, kind = "SellBack" }
+end
 function Rules.Select(data, category, id)
 	local p = data.Phase13
 	local owned, field
