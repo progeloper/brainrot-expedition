@@ -1,0 +1,12 @@
+--- a/src/shared/Constants/RemoteNames.lua
++++ b/src/shared/Constants/RemoteNames.lua
+@@ -35,6 +35,9 @@
+ 	VillagerGuardEvent = "VillagerGuardEvent",
+ 	-- Game audio (server -> all clients): presentation-only cues, e.g. a Legendary+ chase starting.
+ 	AudioCue = "AudioCue",
++	-- Drive-and-Hunt: one switch request (client -> server) and one effects event (server -> client).
++	DriveAndHuntRequest = "DriveAndHuntRequest",
++	DriveAndHuntFx = "DriveAndHuntFx",
+ 
+ 	ClientEvent = "ClientEvent",
+ 	StateSync = "StateSync",

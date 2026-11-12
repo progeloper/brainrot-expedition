@@ -1,0 +1,69 @@
+--- a/src/server/Systems/DriveByHaulSystem.lua
++++ b/src/server/Systems/DriveByHaulSystem.lua
+@@ -8,6 +8,12 @@
+ local RunService = game:GetService("RunService")
+ 
+ local HuntFlow = require(ReplicatedStorage.Shared.Config.HuntFlow)
++-- Drive-and-Hunt Part D (12 Nov 2026), only while its flag is on: reach is measured from the
++-- cart's edge, and a full-cargo toast is mirrored to the client for the home arrow.
++local DriveAndHunt = require(ReplicatedStorage.Shared.Config.DriveAndHunt)
++local DriveAndHuntFlags = require(ReplicatedStorage.Shared.Config.DriveAndHuntFlags)
++local DriveAndHuntRules = require(ReplicatedStorage.Shared.Utility.DriveAndHuntRules)
++local CartGeometry = require(ReplicatedStorage.Shared.Utility.CartGeometry)
+ 
+ type Dependencies = {
+ 	World: any,
+@@ -43,8 +49,30 @@
+ 	end
+ 	sent[key] = now
+ 	pcall(deps.Feedback, player, text)
++	if key == "full" and DriveAndHuntFlags.Part("ScoopFx") then
++		player:SetAttribute("DriveAndHuntCargoFullAt", workspace:GetServerTimeNow())
++	end
+ end
+ 
++local scoopShapes: { [string]: DriveAndHuntRules.ScoopShape } = {}
++
++-- nil keeps the original pivot radius (flag off, or a cart without a geometry profile).
++local function scoopShape(cart: Model): DriveAndHuntRules.ScoopShape?
++	if not DriveAndHuntFlags.Part("ScoopFx") then
++		return nil
++	end
++	local profile = CartGeometry.Get(cart)
++	if not profile then
++		return nil
++	end
++	local shape = scoopShapes[profile.Id]
++	if not shape then
++		shape = DriveAndHuntRules.ScoopShape(profile.BodySize, DriveAndHunt.Scoop.Reach)
++		scoopShapes[profile.Id] = shape
++	end
++	return shape
++end
++
+ local function atBase(base: Model, position: Vector3): boolean
+ 	local bounds = baseBounds[base]
+ 	if not bounds then
+@@ -61,10 +89,12 @@
+ 	local deps = dependencies :: Dependencies
+ 	local origin = cart:GetPivot().Position
+ 	local radius = HuntFlow.ScoopRadius
++	local shape = scoopShape(cart)
++	local broad = if shape then shape.HalfLength + shape.Reach else radius
+ 	local full = not deps.Cargo:CanAcceptCargo(cart)
+ 	for _, model in deps.World.GetWorldModels() do
+ 		local offset = model:GetPivot().Position - origin
+-		if offset.X * offset.X + offset.Z * offset.Z > (radius + 6) * (radius + 6) then
++		if offset.X * offset.X + offset.Z * offset.Z > (broad + 6) * (broad + 6) then
+ 			continue
+ 		end
+ 		local _, state = deps.World.GetWorldRecord(model)
+@@ -75,7 +105,7 @@
+ 			tell(player, "full", "Cargo full - drive home to bank")
+ 			return
+ 		end
+-		local ok, reason = deps.Interaction.TryScoopIntoCargo(player, cart, model, radius)
++		local ok, reason = deps.Interaction.TryScoopIntoCargo(player, cart, model, radius, shape)
+ 		if ok then
+ 			stats.Scooped += 1
+ 			return -- one per tick keeps the cargo transaction strictly serial

@@ -1,0 +1,25 @@
+--- a/src/server/Bootstrap.server.lua
++++ b/src/server/Bootstrap.server.lua
+@@ -1135,6 +1135,22 @@
+ 			AccessReader = villagerAccessReader,
+ 		})
+ 	end
++	-- Drive-and-Hunt (12 Nov 2026): gate launch + HOP OUT / CART / LOAD & GO. Starts nothing
++	-- and creates no remotes unless DriveAndHuntV1Enabled (or the Studio preview) is on.
++	require(script.Parent.Services.DriveAndHuntService).Start({
++		CartService = CartService,
++		Occupants = CartOccupantService,
++		Cargo = CartCargoService,
++		Interaction = BrainrotInteractionSystem,
++		Combat = PlayerCombatService,
++		World = DevelopmentBrainrotSpawner,
++		Placement = require(script.Parent.Utility.CartLocalPlacement),
++		GetBase = function(player)
++			return PlayerBaseSystem:GetBase(player)
++		end,
++		AccessReader = villagerAccessReader,
++		Feedback = phase10Feedback,
++	})
+ 	PlayerSpawnSystem:Start({ Readiness = PlayerWorldLifecycle })
+ 	Trace.Emit(
+ 		"BOOT",

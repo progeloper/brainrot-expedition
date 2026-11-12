@@ -1,0 +1,35 @@
+--- a/src/server/Services/CartService.lua
++++ b/src/server/Services/CartService.lua
+@@ -1002,6 +1002,32 @@
+ 	cart:SetAttribute("CartResetActive", true)
+ 	local ok, result, detail =
+ 		pcall(CartResetExecutor.ReturnAssignedForWipe, cart, frame, { Validate = valid, Assignment = assignment })
++	if cart.Parent then
++		cart:SetAttribute("CartResetActive", false)
++	end
++	if not ok then
++		return false, tostring(result)
++	end
++	return result, detail
++end
++
++-- Drive-and-Hunt: move the owner's own parked, empty cart to a server-chosen frame.
++-- The frame comes from DriveAndHuntService (never a client); clearance, support and
++-- gate/region permission are re-proved inside the executor at commit.
++function CartService:RelocateParkedCart(player: Player, cart: Model, frame: CFrame): (boolean, string?)
++	local record = getCartRecord(player)
++	if not record or record.Model ~= cart or cart.Parent == nil then
++		return false, "active cart changed"
++	end
++	if cart:GetAttribute("CartResetActive") == true then
++		return false, "cart correction in progress"
++	end
++	local function valid()
++		local current = getCartRecord(player)
++		return player.Parent == Players and current ~= nil and current.Model == cart and cart.Parent ~= nil
++	end
++	cart:SetAttribute("CartResetActive", true)
++	local ok, result, detail = pcall(CartResetExecutor.RelocateParked, cart, frame, { Validate = valid })
+ 	if cart.Parent then
+ 		cart:SetAttribute("CartResetActive", false)
+ 	end

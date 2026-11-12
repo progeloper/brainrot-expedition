@@ -1,0 +1,23 @@
+--- a/src/server/Utility/CartResetExecutor.lua
++++ b/src/server/Utility/CartResetExecutor.lua
+@@ -435,6 +435,20 @@
+         return false,"Invalid timed return authority",true
+     end
+     return execute(cart,frame,CartOccupantService:GetDriver(cart),nil,true,nil,context)
++end
++
++-- Drive-and-Hunt (12 Nov 2026): the server moves an owner's parked, empty cart to an
++-- exact frame it has already chosen (gate launch lane or call-cart spot). Same
++-- suspension, assembly-mutation and clearance proof as the timed return; no player
++-- remote supplies the frame, and an occupied cart is refused.
++function CartResetExecutor.RelocateParked(cart: Model, frame: CFrame, context: any): (boolean, string?, boolean)
++	if type(context) ~= "table" or type(context.Validate) ~= "function" or not context.Validate() then
++		return false, "Invalid relocation authority", true
++	end
++	if CartOccupantService:GetDriver(cart) ~= nil or #CartOccupantService:GetOccupants(cart) > 0 then
++		return false, "Cart is occupied", true
++	end
++	return execute(cart, frame, nil, nil, true, nil, { Validate = context.Validate, Assignment = nil })
+ end
+ 
+ return CartResetExecutor

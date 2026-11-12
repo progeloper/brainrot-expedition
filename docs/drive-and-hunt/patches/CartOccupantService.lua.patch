@@ -1,0 +1,54 @@
+--- a/src/server/Services/CartOccupantService.lua
++++ b/src/server/Services/CartOccupantService.lua
+@@ -1013,6 +1013,51 @@
+ 	return authority:Unregister(cartModel, reason or "cart unregistered", skipNetworkOwnership)
+ end
+ 
++-- Drive-and-Hunt: the server seats the owner in their own DriverSeat after it has
++-- placed the cart beside them (gate launch, CART, LOAD & GO). Same eligibility as
++-- the ContextDrive prompt; reach and line of sight are replaced by the caller's
++-- server-side placement. Occupancy, authority and network ownership then follow
++-- the ordinary Occupant-changed path.
++function CartOccupantService:SeatOwner(player: Player, cartModel: Model): (boolean, string?)
++	local seat = cartModel:FindFirstChild("DriverSeat")
++	local character = player.Character
++	local humanoid = character and character:FindFirstChildOfClass("Humanoid")
++	if not seat or not seat:IsA("VehicleSeat") or connectionsByCart[cartModel] == nil then
++		return false, "cart is not registered"
++	end
++	if not authority:IsRegistered(cartModel) or self:GetOwnerUserId(cartModel) ~= player.UserId then
++		return false, "not the owner's cart"
++	end
++	local eligible, reason = self:CanEnterDriver(player)
++	if not eligible then
++		return false, reason
++	end
++	if not humanoid or humanoid.Health <= 0 or humanoid.SeatPart ~= nil then
++		return false, "character cannot sit"
++	end
++	if seat.Occupant ~= nil or seat:FindFirstChild("SeatWeld") ~= nil then
++		return false, "seat is occupied"
++	end
++	seat:Sit(humanoid)
++	return true, nil
++end
++
++-- Drive-and-Hunt HOP OUT: stand the owner up from their own DriverSeat. The
++-- existing Occupant-changed path revokes control and network ownership.
++function CartOccupantService:UnseatOwner(player: Player, cartModel: Model): (boolean, string?)
++	local seat = cartModel:FindFirstChild("DriverSeat")
++	local character = player.Character
++	local humanoid = character and character:FindFirstChildOfClass("Humanoid")
++	if not seat or not seat:IsA("VehicleSeat") or self:GetOwnerUserId(cartModel) ~= player.UserId then
++		return false, "not the owner's cart"
++	end
++	if not humanoid or seat.Occupant ~= humanoid then
++		return false, "not seated"
++	end
++	humanoid.Sit = false
++	return true, nil
++end
++
+ function CartOccupantService:GetDriver(cartModel: Model): Player?
+ 	return authority:GetDriver(cartModel)
+ end

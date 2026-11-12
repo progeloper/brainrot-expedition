@@ -1,0 +1,48 @@
+--- a/src/server/Systems/BrainrotInteractionSystem.lua
++++ b/src/server/Systems/BrainrotInteractionSystem.lua
+@@ -2295,7 +2295,8 @@
+ -- free platforms on arrival at the owner's base. Both are server-decided; the
+ -- client never names a target. No carry entry is created, so the driver keeps
+ -- control. Existing ownership, region and cargo rules are reused unchanged.
+-local function validateScoop(player: Player, cart: any, model: any, radius: number): (any?, string?)
++-- `shape` (Drive-and-Hunt Part D, optional) measures reach from the cart's edge; the vertical limit stays `radius`.
++local function validateScoop(player: Player, cart: any, model: any, radius: number, shape: any?): (any?, string?)
+ 	local deps = dependencies
+ 	if not deps then
+ 		return nil, "NOT_STARTED"
+@@ -2335,7 +2336,14 @@
+ 		return nil, "INVALID_TARGET"
+ 	end
+ 	local offset = body.Position - cart:GetPivot().Position
+-	if not finitePosition(body.Position) or Vector3.new(offset.X, 0, offset.Z).Magnitude > radius or math.abs(offset.Y) > radius then
++	local inReach
++	if shape then
++		local localPoint = cart:GetPivot():PointToObjectSpace(body.Position)
++		inReach = require(ReplicatedStorage.Shared.Utility.DriveAndHuntRules).InScoopReach(shape, localPoint.X, localPoint.Z)
++	else
++		inReach = Vector3.new(offset.X, 0, offset.Z).Magnitude <= radius
++	end
++	if not finitePosition(body.Position) or not inReach or math.abs(offset.Y) > radius then
+ 		return nil, "OUT_OF_REACH"
+ 	end
+ 	if regionAccessValidator then
+@@ -2347,8 +2355,8 @@
+ 	return record, nil
+ end
+ 
+-function BrainrotInteractionSystem.TryScoopIntoCargo(player: Player, cart: any, model: any, radius: number): (boolean, string?)
+-	local record, reason = validateScoop(player, cart, model, radius)
++function BrainrotInteractionSystem.TryScoopIntoCargo(player: Player, cart: any, model: any, radius: number, shape: any?): (boolean, string?)
++	local record, reason = validateScoop(player, cart, model, radius, shape)
+ 	if not record then
+ 		return false, reason
+ 	end
+@@ -2402,7 +2410,7 @@
+ 			return
+ 		end
+ 		local current
+-		current, reason = validateScoop(player, cart, model, radius)
++		current, reason = validateScoop(player, cart, model, radius, shape)
+ 		if current ~= record then
+ 			reason = reason or "SOURCE_CHANGED"
+ 			return

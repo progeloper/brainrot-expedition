@@ -159,6 +159,8 @@ local function start()
 	end
 
 	require(script.Parent.Controllers.ExactHudController).Start()
+	-- Drive-and-Hunt switch button and launch effects; a no-op unless its flag (or Studio preview) is on.
+	task.spawn(require(script.Parent.Controllers.DriveAndHuntController).Start)
 	if FeatureFlags.VillagerGuardsEnabled then
 		-- Villager guards + Escape Ring (presentation only; the server owns every state).
 		require(script.Parent.Controllers.VillagerPresentationController).Start()

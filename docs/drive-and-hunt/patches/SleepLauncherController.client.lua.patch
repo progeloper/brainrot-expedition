@@ -1,0 +1,162 @@
+--- a/src/client/Controllers/SleepLauncherController.client.lua
++++ b/src/client/Controllers/SleepLauncherController.client.lua
+@@ -22,6 +22,8 @@
+ local InputPolicy = require(script.Parent.Parent.Utility.Phase10InputPolicy)
+ local Feedback = require(script.Parent.Parent.Utility.Phase10Feedback)
+ local RemoteBinding = require(script.Parent.Parent.Utility.RemoteDependencyBinding)
++-- Drive-and-Hunt auto-lock (inert unless its flag is on): supplies the lock FIRE shoots at.
++local AutoLock = require(script.Parent.AutoLockController)
+ local SleepRequest: RemoteEvent? = nil
+ 
+ local triggerHeld = false
+@@ -152,6 +154,19 @@
+ end)
+ local fireCorner = Instance.new("UICorner")
+ fireCorner.CornerRadius, fireCorner.Parent = UDim.new(0, 16), fireButton
++AutoLock.Start()
++if AutoLock.IsEnabled() then
++	-- Auto-lock: FIRE is the one shooting control, so it is a full thumb target. It dims when
++	-- nothing is locked but stays tappable.
++	fireButton.Size, fireButton.TextSize, fireButton.Text = UDim2.fromOffset(88, 88), 24, "FIRE"
++	local function dimFire()
++		local locked = AutoLock.HasLock()
++		fireButton.BackgroundTransparency = if locked then 0.15 else 0.55
++		fireButton.TextTransparency = if locked then 0 else 0.45
++	end
++	AutoLock.Changed:Connect(dimFire)
++	dimFire()
++end
+ local impactDot = Instance.new("Frame")
+ impactDot.Name, impactDot.AnchorPoint = "MountedImpactDot", Vector2.new(0.5, 0.5)
+ impactDot.Size, impactDot.BorderSizePixel = UDim2.fromOffset(5, 5), 0
+@@ -422,7 +437,9 @@
+ 	then
+ 		return false
+ 	end
+-	return getMountedCart() ~= nil or (getOnFootHuntingCharacter() ~= nil and aimController:IsActive())
++	-- With auto-lock, on-foot firing no longer needs the third-person aim view to be active.
++	return getMountedCart() ~= nil
++		or (getOnFootHuntingCharacter() ~= nil and (aimController:IsActive() or AutoLock.IsEnabled()))
+ end
+ 
+ local function showWeaponCrosshair(): boolean
+@@ -440,7 +457,7 @@
+ 	local cart = getMountedCart()
+ 	local touchPrimary = UserInputService.PreferredInput == Enum.PreferredInput.Touch
+ 	fireButton.Visible = touchPrimary and canRequestFire()
+-	aimButton.Visible = fireButton.Visible and cart ~= nil
++	aimButton.Visible = fireButton.Visible and cart ~= nil and not AutoLock.IsEnabled()
+ 	if boundLauncher and launcherLabels[boundLauncher] then
+ 		-- The dedicated button owns touch firing; camera/joystick taps must not
+ 		-- also invoke the equipped Tool's native activation route.
+@@ -514,6 +531,12 @@
+ 	end
+ 	local cart = getMountedCart()
+ 	local snapshot = aimController:GetShotSnapshot(cart ~= nil)
++	-- Auto-lock: the shot goes through the locked brainrot from the real camera origin. The
++	-- server re-validates identity, range from the muzzle and line of sight (ASSIST_LOCK).
++	local lockSnapshot = AutoLock.GetShotSnapshot()
++	if not snapshot then
++		snapshot = lockSnapshot
++	end
+ 	if not snapshot or not canRequestFire() then
+ 		return
+ 	end
+@@ -524,6 +547,10 @@
+ 	if selectedTarget then
+ 		ray = snapshot.CrosshairRay
+ 		snapshot = { Mode = "CROSSHAIR_FREE", CrosshairRay = ray }
++	elseif lockSnapshot then
++		snapshot, ray = lockSnapshot, lockSnapshot.ShotRay
++		AutoLock.NoteShot()
++		require(script.Parent.DriveAndHuntHints).MarkDone("Lock")
+ 	end
+ 	cooldownUntil = now + selectedProfile().fireIntervalSeconds
+ 	requestSequence += 1
+@@ -572,12 +599,16 @@
+ 	})
+ end
+ 
++local FOOT_TRIGGER_DEDUPE_SECONDS = 0.15
++local lastFootTriggerAt = -math.huge
+ local function triggerStart()
+ 	triggerHeld = true
++	AutoLock.SetFireHeld(true)
+ 	requestFire()
+ end
+ local function triggerStop()
+ 	triggerHeld = false
++	AutoLock.SetFireHeld(false)
+ 	touchFireInput = nil
+ end
+ -- Protection opt-out consent: a Plate confirm dialog on the MenusV2 layer. Phase13ConsentDialogOpen
+@@ -735,6 +766,13 @@
+ 				and tool.Parent == player.Character
+ 				and getMountedCart() == nil
+ 			then
++				-- Drive-and-Hunt binds R2 on foot explicitly; never fire twice for one pull.
++				if AutoLock.IsEnabled() then
++					if os.clock() - lastFootTriggerAt < FOOT_TRIGGER_DEDUPE_SECONDS then
++						return
++					end
++					lastFootTriggerAt = os.clock()
++				end
+ 				triggerStart()
+ 			end
+ 		end)
+@@ -917,6 +955,39 @@
+ 	end
+ 	return Enum.ContextActionResult.Sink
+ end, false, Enum.ContextActionPriority.High.Value + 1, InputRegistry.Fire.Gamepad)
++-- Drive-and-Hunt (flag on only): Space also fires while driving. Jump is blocked in the cart
++-- there, so Space is free; G stays bound. On foot Space is still jump.
++local DRIVING_ALT_ACTION = "DriveAndHuntDrivingFire"
++-- R2 on foot was left to Roblox's default tool activation, which did not fire in Play.
++-- Bound explicitly below the mounted action, so R2 behaves the same on foot and in the cart.
++local FOOT_GAMEPAD_ACTION = "DriveAndHuntFootFire"
++if AutoLock.IsEnabled() then
++	ContextActionService:BindActionAtPriority(FOOT_GAMEPAD_ACTION, function(_: string, state: Enum.UserInputState)
++		if getMountedCart() ~= nil or getOnFootHuntingCharacter() == nil or not canRequestFire() then
++			return Enum.ContextActionResult.Pass
++		end
++		if state == Enum.UserInputState.Begin then
++			if os.clock() - lastFootTriggerAt >= FOOT_TRIGGER_DEDUPE_SECONDS then
++				lastFootTriggerAt = os.clock()
++				triggerStart()
++			end
++		elseif state == Enum.UserInputState.End or state == Enum.UserInputState.Cancel then
++			triggerStop()
++		end
++		return Enum.ContextActionResult.Sink
++	end, false, Enum.ContextActionPriority.High.Value, InputRegistry.Fire.Gamepad)
++	ContextActionService:BindActionAtPriority(DRIVING_ALT_ACTION, function(_: string, state: Enum.UserInputState)
++		if getMountedCart() == nil or not canRequestFire() then
++			return Enum.ContextActionResult.Pass
++		end
++		if state == Enum.UserInputState.Begin then
++			triggerStart()
++		elseif state == Enum.UserInputState.End or state == Enum.UserInputState.Cancel then
++			triggerStop()
++		end
++		return Enum.ContextActionResult.Sink
++	end, false, Enum.ContextActionPriority.High.Value + 60, InputRegistry.FireWhileDriving.Keyboard)
++end
+ local mountedMouseConnection = UserInputService.InputBegan:Connect(function(input, processed)
+ 	if processed or input.UserInputType ~= Enum.UserInputType.MouseButton1 or getMountedCart() == nil then
+ 		return
+@@ -964,7 +1035,7 @@
+ end
+ local touchAimConnection = aimButton.Activated:Connect(function()
+ 	local cart = getMountedCart()
+-	if not cart or MountedAimState.GetCart() ~= cart or not canRequestFire() then
++	if not cart or MountedAimState.GetCart() ~= cart or not canRequestFire() or AutoLock.IsEnabled() then
+ 		return
+ 	end
+ 	touchAimToggled = not touchAimToggled
+@@ -1158,4 +1229,6 @@
+ 	targetHighlight:Destroy()
+ 	ContextActionService:UnbindAction(ACTION_NAME)
+ 	ContextActionService:UnbindAction(MOUNTED_ACTION)
++	ContextActionService:UnbindAction(DRIVING_ALT_ACTION)
++	ContextActionService:UnbindAction(FOOT_GAMEPAD_ACTION)
+ end)

@@ -21,6 +21,7 @@ export type FeatureFlags = {
 	CampReworkV1Enabled: boolean,
 	TrainingV1Enabled: boolean,
 	RebirthUiV2Enabled: boolean,
+	DriveAndHuntV1Enabled: boolean,
 }
 
 local FeatureFlags: FeatureFlags = {
@@ -64,6 +65,10 @@ local FeatureFlags: FeatureFlags = {
 	TrainingV1Enabled = false,
 	-- "Rebirth" naming, YOU LOSE / YOU GET window, payback line and READY glow.
 	RebirthUiV2Enabled = false,
+	-- Drive-and-Hunt (12 Nov 2026): gate launch, HOP OUT / CART / LOAD & GO switch button, auto-lock
+	-- aiming, scoop feedback and first-time hints. Off until the owner approves; when false the game
+	-- behaves exactly as before. Parts are switched individually in Config/DriveAndHunt.
+	DriveAndHuntV1Enabled = true, -- CP-D, owner authorised 12 Nov 2026
 }
 
 return table.freeze(FeatureFlags)
