@@ -1,40 +1,3371 @@
 {
-    "name": "BrainrotExpedition",
-    "servePort": 34872,
-    "tree": {
-        "$className": "DataModel",
-        "ReplicatedStorage": {
-            "$className": "ReplicatedStorage",
-            "Shared": {
-                "$path": "src/shared"
-            },
-            "Remotes": {
-                "$path": "src/remotes"
-            },
-            "CodeAssets": {
-                "$path": "src/assets"
-            }
+  "name": "BrainrotExpedition",
+  "servePort": 34872,
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Shared": {
+        "$path": "src/shared",
+        "$ignoreUnknownInstances": true
+      },
+      "Remotes": {
+        "$path": "src/remotes",
+        "$ignoreUnknownInstances": true
+      },
+      "CodeAssets": {
+        "$path": "src/assets",
+        "$ignoreUnknownInstances": true,
+        "Weapons": {
+          "$path": "assets/native/camp_rework_20261112/Weapons.rbxm"
         },
-        "ServerScriptService": {
-            "$className": "ServerScriptService",
-            "Server": {
-                "$path": "src/server"
-            }
+        "WeaponDisplays": {
+          "$path": "assets/native/camp_rework_20261112/WeaponDisplays.rbxm"
         },
-        "StarterPlayer": {
-            "$className": "StarterPlayer",
-            "StarterPlayerScripts": {
-                "$className": "StarterPlayerScripts",
-                "Client": {
-                    "$path": "src/client"
-                }
-            }
-        },
-        "ServerStorage": {
-            "$className": "ServerStorage",
-            "ServerAssets": {
-                "$path": "src/serverAssets"
-            }
+        "BaseDesigns": {
+          "$path": "assets/native/phase14_20261023/BaseDesigns.rbxm"
         }
+      },
+      "$ignoreUnknownInstances": true,
+      "StudioAssets": {
+        "$path": "assets/native/phase14_20261023/StudioAssets.rbxm"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "Server": {
+        "$path": "src/server",
+        "$ignoreUnknownInstances": true
+      },
+      "$ignoreUnknownInstances": true
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "Client": {
+          "$path": "src/client",
+          "$ignoreUnknownInstances": true
+        },
+        "$ignoreUnknownInstances": true
+      }
+    },
+    "StarterPack": {
+      "$className": "StarterPack",
+      "$ignoreUnknownInstances": true,
+      "SleepLauncher": {
+        "$path": "assets/native/phase14_20261023/StarterPack.rbxm"
+      }
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "ServerAssets": {
+        "$path": "src/serverAssets",
+        "$ignoreUnknownInstances": true
+      },
+      "$ignoreUnknownInstances": true,
+      "Phase13CreatureAssets": {
+        "$path": "assets/native/phase14_20261023/CreatureAssets.rbxm"
+      },
+      "Authoring": {
+        "$className": "Folder",
+        "BrainrotReferenceAvatar": {
+          "$path": "assets/authoring/hud_front_r3/BrainrotReferenceAvatar.rbxmx"
+        }
+      }
+    },
+    "$ignoreUnknownInstances": true,
+    "Workspace": {
+      "$className": "Workspace",
+      "$ignoreUnknownInstances": true,
+      "$properties": {
+        "StreamingEnabled": true,
+        "StreamingMinRadius": 64,
+        "StreamingTargetRadius": 512,
+        "ModelStreamingBehavior": "Improved",
+        "StreamOutBehavior": "Opportunistic"
+      },
+      "MapBlockout": {
+        "$path": "assets/native/phase14_20261023/MapBlockout.rbxm",
+        "$ignoreUnknownInstances": true
+      },
+      "Phase12Burrows": {
+        "$path": "assets/native/phase14_20261023/Phase12Burrows.rbxm"
+      },
+      "Baseplate": {
+        "$path": "assets/native/phase14_20261023/Baseplate.rbxm"
+      },
+      "CartSpawns": {
+        "$className": "Folder"
+      },
+      "WorldRiftAnchors": {
+        "$path": "assets/authoring/hud_front_r3/WorldRiftAnchors.rbxmx"
+      }
+    },
+    "MaterialService": {
+      "$className": "MaterialService",
+      "$ignoreUnknownInstances": true,
+      "2022 Stud": {
+        "$path": "assets/native/phase14_20261023/Material_0.rbxm"
+      },
+      "Bingus_Saved_Studs_13719188279": {
+        "$path": "assets/native/phase14_20261023/Material_1.rbxm",
+        "$properties": {
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468"
+        }
+      },
+      "BR_GroundQuiet": {
+        "$path": "assets/native/phase14_20261023/Material_2.rbxm"
+      },
+      "Environment_Saved_Studs_13719188279": {
+        "$path": "assets/native/phase14_20261023/Material_3.rbxm",
+        "$properties": {
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468"
+        }
+      },
+      "P12_Astral_Accent_Awake": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 3,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Accent_Awake\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Accent_AwakeHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Accent_AwakeHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Accent_Revealed": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.699999988079071,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Accent_Revealed\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Accent_RevealedHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Accent_RevealedHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Accent_Warning1": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.699999988079071,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Accent_Warning1\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Accent_Warning1Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Accent_Warning1Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Accent_Warning2": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 1.2999999523162842,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Accent_Warning2\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Accent_Warning2Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Accent_Warning2Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Accent_Warning3": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 2.0999999046325684,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Accent_Warning3\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Accent_Warning3Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Accent_Warning3Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Accent_Warning4": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 3,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Accent_Warning4\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Accent_Warning4Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Accent_Warning4Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Primary_Awake": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 3,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Primary_Awake\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Primary_AwakeHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Primary_AwakeHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Primary_Revealed": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Primary_Revealed\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Primary_RevealedHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Primary_RevealedHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Primary_Warning1": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Primary_Warning1\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Primary_Warning1Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Primary_Warning1Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Primary_Warning2": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.4000000059604645,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Primary_Warning2\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Primary_Warning2Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Primary_Warning2Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Primary_Warning3": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 1.100000023841858,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Primary_Warning3\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Primary_Warning3Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Primary_Warning3Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Primary_Warning4": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 3,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Primary_Warning4\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Primary_Warning4Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Primary_Warning4Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Secondary_Awake": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 3,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Secondary_Awake\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Secondary_AwakeHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Secondary_AwakeHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Secondary_Revealed": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Secondary_Revealed\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Secondary_RevealedHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Secondary_RevealedHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Secondary_Warning1": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Secondary_Warning1\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Secondary_Warning1Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Secondary_Warning1Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Secondary_Warning2": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.4000000059604645,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Secondary_Warning2\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Secondary_Warning2Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Secondary_Warning2Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Secondary_Warning3": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 1.100000023841858,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Secondary_Warning3\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Secondary_Warning3Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Secondary_Warning3Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Secondary_Warning4": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 3,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Secondary_Warning4\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_Secondary_Warning4Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_Secondary_Warning4Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialBronze_Awake": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 3,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialBronze_Awake\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialBronze_AwakeHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialBronze_AwakeHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialBronze_Revealed": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.699999988079071,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialBronze_Revealed\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialBronze_RevealedHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialBronze_RevealedHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialBronze_Warning1": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.699999988079071,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialBronze_Warning1\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialBronze_Warning1Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialBronze_Warning1Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialBronze_Warning2": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 1.2999999523162842,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialBronze_Warning2\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialBronze_Warning2Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialBronze_Warning2Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialBronze_Warning3": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 2.0999999046325684,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialBronze_Warning3\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialBronze_Warning3Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialBronze_Warning3Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialBronze_Warning4": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 3,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialBronze_Warning4\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialBronze_Warning4Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialBronze_Warning4Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialSilver_Awake": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 3,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialSilver_Awake\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialSilver_AwakeHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialSilver_AwakeHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialSilver_Revealed": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.699999988079071,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialSilver_Revealed\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialSilver_RevealedHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialSilver_RevealedHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialSilver_Warning1": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.699999988079071,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialSilver_Warning1\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialSilver_Warning1Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialSilver_Warning1Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialSilver_Warning2": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 1.2999999523162842,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialSilver_Warning2\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialSilver_Warning2Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialSilver_Warning2Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialSilver_Warning3": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 2.0999999046325684,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialSilver_Warning3\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialSilver_Warning3Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialSilver_Warning3Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialSilver_Warning4": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 3,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialSilver_Warning4\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Astral_SpecialSilver_Warning4Hidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://136990313021308"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Astral_SpecialSilver_Warning4Hidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://136990313021308\"}"
+        }
+      },
+      "P12_Glitched_Accent_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://85625474181953",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.8999999761581421,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://85625474181953\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_Accent_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_Accent_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://85625474181953",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://85625474181953\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_Accent_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_Accent_DefaultLow": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.8999999761581421,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_Accent_DefaultLow\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_Accent_DefaultLowHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_Accent_DefaultLowHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_Primary_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://101387442276662",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.8999999761581421,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://101387442276662\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_Primary_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_Primary_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://101387442276662",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://101387442276662\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_Primary_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_Primary_DefaultLow": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_Primary_DefaultLow\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_Primary_DefaultLowHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_Primary_DefaultLowHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_Secondary_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://85625474181953",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://85625474181953\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_Secondary_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_Secondary_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://85625474181953",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://85625474181953\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_Secondary_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_Secondary_DefaultLow": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_Secondary_DefaultLow\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_Secondary_DefaultLowHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_Secondary_DefaultLowHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_SpecialBronze_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://85625474181953",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.8999999761581421,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://85625474181953\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_SpecialBronze_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_SpecialBronze_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://85625474181953",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://85625474181953\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_SpecialBronze_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_SpecialBronze_DefaultLow": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.8999999761581421,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_SpecialBronze_DefaultLow\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_SpecialBronze_DefaultLowHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_SpecialBronze_DefaultLowHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_SpecialSilver_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://85625474181953",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.8999999761581421,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://85625474181953\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_SpecialSilver_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_SpecialSilver_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://85625474181953",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://85625474181953\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_SpecialSilver_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_SpecialSilver_DefaultLow": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.8999999761581421,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_SpecialSilver_DefaultLow\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Glitched_SpecialSilver_DefaultLowHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://114955716236909"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Glitched_SpecialSilver_DefaultLowHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://114955716236909\"}"
+        }
+      },
+      "P12_Golden_Accent_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://93493633769121",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://103598504028806"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Golden_Accent_Default\",\"metalnessMap\":\"rbxassetid://93493633769121\",\"roughnessMap\":\"rbxassetid://103598504028806\"}"
+        }
+      },
+      "P12_Golden_Accent_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://93493633769121",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://103598504028806"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Golden_Accent_DefaultHidden\",\"metalnessMap\":\"rbxassetid://93493633769121\",\"roughnessMap\":\"rbxassetid://103598504028806\"}"
+        }
+      },
+      "P12_Golden_Primary_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://93493633769121",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://103598504028806"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Golden_Primary_Default\",\"metalnessMap\":\"rbxassetid://93493633769121\",\"roughnessMap\":\"rbxassetid://103598504028806\"}"
+        }
+      },
+      "P12_Golden_Primary_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://93493633769121",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://103598504028806"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Golden_Primary_DefaultHidden\",\"metalnessMap\":\"rbxassetid://93493633769121\",\"roughnessMap\":\"rbxassetid://103598504028806\"}"
+        }
+      },
+      "P12_Golden_Secondary_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://93493633769121",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://103598504028806"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Golden_Secondary_Default\",\"metalnessMap\":\"rbxassetid://93493633769121\",\"roughnessMap\":\"rbxassetid://103598504028806\"}"
+        }
+      },
+      "P12_Golden_Secondary_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://93493633769121",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://103598504028806"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Golden_Secondary_DefaultHidden\",\"metalnessMap\":\"rbxassetid://93493633769121\",\"roughnessMap\":\"rbxassetid://103598504028806\"}"
+        }
+      },
+      "P12_Golden_SpecialBronze_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://93493633769121",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://137641196094920"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Golden_SpecialBronze_Default\",\"metalnessMap\":\"rbxassetid://93493633769121\",\"roughnessMap\":\"rbxassetid://137641196094920\"}"
+        }
+      },
+      "P12_Golden_SpecialBronze_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://93493633769121",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://137641196094920"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Golden_SpecialBronze_DefaultHidden\",\"metalnessMap\":\"rbxassetid://93493633769121\",\"roughnessMap\":\"rbxassetid://137641196094920\"}"
+        }
+      },
+      "P12_Golden_SpecialSilver_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://93493633769121",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://138161649494087"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Golden_SpecialSilver_Default\",\"metalnessMap\":\"rbxassetid://93493633769121\",\"roughnessMap\":\"rbxassetid://138161649494087\"}"
+        }
+      },
+      "P12_Golden_SpecialSilver_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://93493633769121",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://138161649494087"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Golden_SpecialSilver_DefaultHidden\",\"metalnessMap\":\"rbxassetid://93493633769121\",\"roughnessMap\":\"rbxassetid://138161649494087\"}"
+        }
+      },
+      "P12_Radioactive_Accent_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 1.2000000476837158,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://119131213536241"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Radioactive_Accent_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://119131213536241\"}"
+        }
+      },
+      "P12_Radioactive_Accent_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://119131213536241"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Radioactive_Accent_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://119131213536241\"}"
+        }
+      },
+      "P12_Radioactive_Primary_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 1.2000000476837158,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://119131213536241"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Radioactive_Primary_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://119131213536241\"}"
+        }
+      },
+      "P12_Radioactive_Primary_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://119131213536241"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Radioactive_Primary_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://119131213536241\"}"
+        }
+      },
+      "P12_Radioactive_Secondary_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://119131213536241"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Radioactive_Secondary_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://119131213536241\"}"
+        }
+      },
+      "P12_Radioactive_Secondary_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://119131213536241"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Radioactive_Secondary_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://119131213536241\"}"
+        }
+      },
+      "P12_Radioactive_SpecialBronze_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://119131213536241"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Radioactive_SpecialBronze_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://119131213536241\"}"
+        }
+      },
+      "P12_Radioactive_SpecialBronze_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://119131213536241"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Radioactive_SpecialBronze_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://119131213536241\"}"
+        }
+      },
+      "P12_Radioactive_SpecialSilver_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 1.2000000476837158,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://119131213536241"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Radioactive_SpecialSilver_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://119131213536241\"}"
+        }
+      },
+      "P12_Radioactive_SpecialSilver_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://119131213536241"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Radioactive_SpecialSilver_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://119131213536241\"}"
+        }
+      },
+      "P12_Shiny_Accent_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.25,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://100815344340263"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Shiny_Accent_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://100815344340263\"}"
+        }
+      },
+      "P12_Shiny_Accent_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://100815344340263"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Shiny_Accent_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://100815344340263\"}"
+        }
+      },
+      "P12_Shiny_Primary_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://138161649494087"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Shiny_Primary_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://138161649494087\"}"
+        }
+      },
+      "P12_Shiny_Primary_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://138161649494087"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Shiny_Primary_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://138161649494087\"}"
+        }
+      },
+      "P12_Shiny_Secondary_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://138161649494087"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Shiny_Secondary_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://138161649494087\"}"
+        }
+      },
+      "P12_Shiny_Secondary_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://138161649494087"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Shiny_Secondary_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://138161649494087\"}"
+        }
+      },
+      "P12_Shiny_SpecialBronze_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://138161649494087"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Shiny_SpecialBronze_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://138161649494087\"}"
+        }
+      },
+      "P12_Shiny_SpecialBronze_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://138161649494087"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Shiny_SpecialBronze_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://138161649494087\"}"
+        }
+      },
+      "P12_Shiny_SpecialSilver_Default": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0.25,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://100815344340263"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Shiny_SpecialSilver_Default\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://100815344340263\"}"
+        }
+      },
+      "P12_Shiny_SpecialSilver_DefaultHidden": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "ColorMap": "rbxassetid://126387978066468",
+          "NormalMap": "rbxassetid://124160206245321",
+          "BaseMaterial": "Glacier",
+          "EmissiveStrength": 0,
+          "MetalnessMap": "rbxassetid://97697742901804",
+          "MaterialPattern": "Regular",
+          "StudsPerTile": 0.550000011920929,
+          "RoughnessMap": "rbxassetid://100815344340263"
+        },
+        "$attributes": {
+          "P12AuthoringProof": "{\"colorMap\":\"rbxassetid://126387978066468\",\"normalMap\":\"rbxassetid://124160206245321\",\"version\":1,\"variantName\":\"P12_Shiny_SpecialSilver_DefaultHidden\",\"metalnessMap\":\"rbxassetid://97697742901804\",\"roughnessMap\":\"rbxassetid://100815344340263\"}"
+        }
+      },
+      "AF2_Building_Plastic": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Plastic",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Plastic": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Plastic",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Plastic": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Plastic",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_SmoothPlastic": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "SmoothPlastic",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_SmoothPlastic": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "SmoothPlastic",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_SmoothPlastic": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "SmoothPlastic",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Neon": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Neon",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Neon": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Neon",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Neon": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Neon",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Wood": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Wood",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Wood": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Wood",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Wood": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Wood",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_WoodPlanks": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "WoodPlanks",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_WoodPlanks": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "WoodPlanks",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_WoodPlanks": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "WoodPlanks",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Marble": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Marble",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Marble": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Marble",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Marble": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Marble",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Basalt": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Basalt",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Basalt": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Basalt",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Basalt": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Basalt",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Slate": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Slate",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Slate": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Slate",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Slate": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Slate",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_CrackedLava": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "CrackedLava",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_CrackedLava": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "CrackedLava",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_CrackedLava": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "CrackedLava",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Concrete": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Concrete",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Concrete": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Concrete",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Concrete": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Concrete",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Limestone": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Limestone",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Limestone": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Limestone",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Limestone": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Limestone",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Granite": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Granite",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Granite": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Granite",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Granite": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Granite",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Pavement": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Pavement",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Pavement": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Pavement",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Pavement": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Pavement",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Brick": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Brick",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Brick": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Brick",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Brick": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Brick",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Pebble": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Pebble",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Pebble": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Pebble",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Pebble": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Pebble",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Cobblestone": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Cobblestone",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Cobblestone": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Cobblestone",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Cobblestone": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Cobblestone",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Rock": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Rock",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Rock": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Rock",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Rock": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Rock",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Sandstone": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Sandstone",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Sandstone": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Sandstone",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Sandstone": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Sandstone",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_CorrodedMetal": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "CorrodedMetal",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_CorrodedMetal": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "CorrodedMetal",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_CorrodedMetal": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "CorrodedMetal",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_DiamondPlate": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "DiamondPlate",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_DiamondPlate": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "DiamondPlate",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_DiamondPlate": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "DiamondPlate",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Foil": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Foil",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Foil": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Foil",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Foil": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Foil",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Metal": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Metal",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Metal": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Metal",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Metal": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Metal",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Grass": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Grass",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Grass": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Grass",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Grass": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Grass",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_LeafyGrass": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "LeafyGrass",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_LeafyGrass": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "LeafyGrass",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_LeafyGrass": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "LeafyGrass",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Sand": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Sand",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Sand": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Sand",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Sand": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Sand",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Fabric": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Fabric",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Fabric": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Fabric",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Fabric": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Fabric",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Snow": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Snow",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Snow": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Snow",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Snow": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Snow",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Mud": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Mud",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Mud": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Mud",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Mud": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Mud",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Ground": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Ground",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Ground": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Ground",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Ground": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Ground",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Asphalt": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Asphalt",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Asphalt": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Asphalt",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Asphalt": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Asphalt",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Salt": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Salt",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Salt": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Salt",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Salt": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Salt",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Ice": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Ice",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Ice": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Ice",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Ice": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Ice",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Glacier": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Glacier",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Glacier": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Glacier",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Glacier": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Glacier",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Glass": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Glass",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Glass": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Glass",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Glass": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Glass",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_ForceField": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "ForceField",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_ForceField": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "ForceField",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_ForceField": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "ForceField",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Air": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Air",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Air": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Air",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Air": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Air",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Water": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Water",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Water": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Water",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Water": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Water",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Cardboard": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Cardboard",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Cardboard": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Cardboard",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Cardboard": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Cardboard",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Carpet": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Carpet",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Carpet": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Carpet",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Carpet": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Carpet",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_CeramicTiles": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "CeramicTiles",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_CeramicTiles": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "CeramicTiles",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_CeramicTiles": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "CeramicTiles",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_ClayRoofTiles": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "ClayRoofTiles",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_ClayRoofTiles": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "ClayRoofTiles",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_ClayRoofTiles": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "ClayRoofTiles",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_RoofShingles": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "RoofShingles",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_RoofShingles": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "RoofShingles",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_RoofShingles": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "RoofShingles",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Leather": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Leather",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Leather": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Leather",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Leather": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Leather",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Plaster": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Plaster",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Plaster": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Plaster",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Plaster": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Plaster",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Building_Rubber": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Rubber",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 1.25,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Prop_Rubber": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Rubber",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.8,
+          "MaterialPattern": "Regular"
+        }
+      },
+      "AF2_Creature_Rubber": {
+        "$className": "MaterialVariant",
+        "$properties": {
+          "BaseMaterial": "Rubber",
+          "NormalMap": "rbxassetid://124160206245321",
+          "ColorMap": "rbxassetid://126387978066468",
+          "StudsPerTile": 0.55,
+          "MaterialPattern": "Regular"
+        }
+      }
+    },
+    "Lighting": {
+      "$className": "Lighting",
+      "$ignoreUnknownInstances": true,
+      "Sky": {
+        "$className": "Sky",
+        "$properties": {
+          "SkyboxBk": "rbxassetid://100222399592416",
+          "SkyboxDn": "rbxassetid://90721852034338",
+          "SkyboxFt": "rbxassetid://115360227121883",
+          "SkyboxLf": "rbxassetid://94989246729655",
+          "SkyboxRt": "rbxassetid://115722743437336",
+          "SkyboxUp": "rbxassetid://97348192380655",
+          "SkyboxOrientation": [
+            0,
+            0,
+            0
+          ],
+          "CelestialBodiesShown": true,
+          "SunAngularSize": 12,
+          "MoonAngularSize": 0,
+          "StarCount": 0
+        }
+      },
+      "SunRays": {
+        "$path": "assets/native/phase14_20261023/Lighting_1.rbxm",
+        "$properties": {
+          "Enabled": false
+        }
+      },
+      "BR_MapAtmosphere": {
+        "$path": "assets/native/phase14_20261023/Lighting_2.rbxm",
+        "$properties": {
+          "Density": 0.12,
+          "Offset": 0,
+          "Color": [
+            0.7333333333333333,
+            0.8862745098039215,
+            1
+          ],
+          "Decay": [
+            0.396078431372549,
+            0.49019607843137253,
+            0.8
+          ],
+          "Glare": 0.05,
+          "Haze": 0.35
+        }
+      },
+      "BR_MapBloom": {
+        "$path": "assets/native/phase14_20261023/Lighting_3.rbxm",
+        "$properties": {
+          "Enabled": true,
+          "Intensity": 0.08,
+          "Size": 12,
+          "Threshold": 1.45
+        }
+      },
+      "DepthOfField": {
+        "$path": "assets/native/phase14_20261023/Lighting_4.rbxm",
+        "$properties": {
+          "Enabled": false
+        }
+      },
+      "BR_MapColorCorrection": {
+        "$path": "assets/native/phase14_20261023/Lighting_5.rbxm",
+        "$properties": {
+          "Enabled": true,
+          "Brightness": 0,
+          "Contrast": 0.14,
+          "Saturation": 0.14,
+          "TintColor": [
+            1,
+            0.9921568627450981,
+            0.9725490196078431
+          ]
+        }
+      },
+      "$properties": {
+        "ExposureCompensation": 0,
+        "ColorShift_Bottom": [
+          0,
+          0,
+          0
+        ],
+        "LightingStyle": "Soft",
+        "ClockTime": 14.5,
+        "EnvironmentDiffuseScale": 0.18,
+        "EnvironmentSpecularScale": 0.23,
+        "ColorShift_Top": [
+          0.0784313725490196,
+          0.047058823529411764,
+          0
+        ],
+        "GeographicLatitude": 35,
+        "Ambient": [
+          0.3607843137254902,
+          0.38823529411764707,
+          0.5607843137254902
+        ],
+        "OutdoorAmbient": [
+          0.5607843137254902,
+          0.6274509803921569,
+          0.7372549019607844
+        ],
+        "GlobalShadows": true,
+        "Brightness": 2.6,
+        "PrioritizeLightingQuality": false
+      },
+      "PlaytestBaselineBlur": {
+        "$className": "BlurEffect",
+        "$properties": {
+          "Enabled": false
+        }
+      }
+    },
+    "StarterGui": {
+      "$className": "StarterGui",
+      "$ignoreUnknownInstances": true,
+      "$properties": {
+        "ScreenOrientation": "LandscapeSensor"
+      }
     }
+  },
+  "servePlaceIds": [
+    91958083796436
+  ],
+  "placeId": 91958083796436,
+  "gameId": 10548905405,
+  "globIgnorePaths": [
+    "**/Tests/**",
+    "**/*.spec.lua"
+  ]
 }

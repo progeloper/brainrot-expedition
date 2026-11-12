@@ -4,8 +4,35 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Environment = require(ReplicatedStorage.Shared.Config.Environment)
+local FeatureFlags = require(ReplicatedStorage.Shared.Config.FeatureFlags)
 
 local Logger = require(ReplicatedStorage.Shared.Utility.Logger)
+local ApprovedEnvironment = require(ReplicatedStorage.Shared.Utility.ApprovedEnvironment)
+
+local LocalCartState = require(script.Parent.State.LocalCartState)
+
+local CartInputController = require(script.Parent.Controllers.CartInputController)
+
+local CartPCInputController = require(script.Parent.Controllers.CartPCInputController)
+
+local CartGamepadInputController = require(script.Parent.Controllers.CartGamepadInputController)
+
+local CartMovementController = require(script.Parent.Controllers.CartMovementController)
+local CartWheelPresentationController =
+	require(script.Parent.Controllers.CartWheelPresentationController)
+
+local CartCameraController = require(script.Parent.Controllers.CartCameraController)
+
+local CartResetController = require(script.Parent.Controllers.CartResetController)
+local CargoHudController = require(script.Parent.Controllers.CargoHudController)
+local IncomePlaqueController = require(script.Parent.Controllers.IncomePlaqueController)
+local BrainrotSaleController = require(script.Parent.Controllers.BrainrotSaleController)
+local BrainrotNametagController = require(script.Parent.Controllers.BrainrotNametagController)
+local Phase12PresentationController =
+	require(script.Parent.Controllers.Phase12PresentationController)
+local PlayerDataStatusController = require(script.Parent.Controllers.PlayerDataStatusController)
+local WorldProgressionController = require(script.Parent.Controllers.WorldProgressionController)
+local CartUpgradeController = require(script.Parent.Controllers.CartUpgradeController)
 
 local player = Players.LocalPlayer
 local log = Logger.new("ClientBootstrap")
@@ -14,7 +41,117 @@ local function start()
 	assert(player ~= nil, "LocalPlayer was unavailable")
 
 	log:Info("Starting client for %s in %s", player.Name, Environment.Name)
+	require(script.Parent.Utility.DefaultCameraStartup).Start(player)
+	ApprovedEnvironment.ApplyBaseline()
+	-- The server creates its remotes during a long boot (terrain, world art). Controllers
+	-- that started first gave up on timed waits and stayed dead for the session: no wild
+	-- creatures to hunt, no shop, no progression. Start them only once the server is ready.
+	local waitedFrom = os.clock()
+	local warnedAt = waitedFrom
+	while ReplicatedStorage:GetAttribute("ServerBootstrapReady") ~= true do
+		task.wait(0.25)
+		if os.clock() - warnedAt >= 15 then
+			warnedAt = os.clock()
+			log:Warn("Still waiting for server bootstrap after %d seconds", math.floor(os.clock() - waitedFrom))
+		end
+	end
+	PlayerDataStatusController.Start()
+	if (FeatureFlags :: any).GameAudioEnabled then
+		task.spawn(require(script.Parent.Controllers.AudioController).Start)
+	end
+	task.spawn(require(script.Parent.Controllers.CreaturePresentationController).Start)
+	require(script.Parent.Controllers.Phase13AppearanceController).Start()
+	-- Camp Rework weapon art feedback (spinners/drum on the shared <=10 Hz scheduler).
+	require(script.Parent.Controllers.WeaponArtController).Start()
+	require(script.Parent.Controllers.Phase14CosmeticController).Start()
+	task.spawn(require(script.Parent.Controllers.RegionVisibilityController).Start)
+	task.spawn(require(script.Parent.Controllers.Phase13ShopController).Start)
+	if require(ReplicatedStorage.Shared.Config.RetentionConfig).Enabled then
+		task.spawn(require(script.Parent.Controllers.RetentionController).Start)
+	end
+	task.spawn(require(script.Parent.Controllers.Phase13TelemetryController).Start)
+	if require(script.Parent.UI.StudPopUI).enabled() then
+		-- Stud Pop HUD: Cash pill, left rail and Settings. Every button reuses a controller's own open path.
+		local Shop = require(script.Parent.Controllers.Phase13ShopController)
+		local retentionOn = require(ReplicatedStorage.Shared.Config.RetentionConfig).Enabled
+		local Retention = if retentionOn then require(script.Parent.Controllers.RetentionController) else nil
+		task.spawn(require(script.Parent.UI.Screens.HudScreen).Start, {
+			openShop = Shop.OpenFromHud,
+			openSettings = Shop.OpenAppearance,
+			openRetention = function(tabName)
+				return Retention ~= nil and Retention.OpenFromHud(tabName)
+			end,
+			retentionAvailable = function()
+				return Retention ~= nil and Retention.IsAvailable()
+			end,
+		})
+	end
+	if require(ReplicatedStorage.Shared.Config.Phase10).Enabled then
+		require(script.Parent.Controllers.PlayerDazeController).Start()
+	end
+	BrainrotNametagController.Start()
+	task.spawn(Phase12PresentationController.Start)
+	task.spawn(require(script.Parent.Controllers.CatchRevealController).Start)
+	task.spawn(require(script.Parent.Controllers.FirstSessionGuideController).Start)
+	IncomePlaqueController.Start()
+	BrainrotSaleController.Start()
+	do
+		-- V5 world: Storm listens to the same progression summary, so it starts first.
+		local StormController = require(script.Parent.Controllers.StormController)
+		task.spawn(StormController.Start)
+		task.spawn(require(script.Parent.Controllers.WorldDetailController).Start, {
+			ShowBanner = StormController.ShowBanner,
+		})
+	end
+	if FeatureFlags.WorldProgressionEnabled then
+		task.spawn(WorldProgressionController.Start)
+	end
 
+	if not FeatureFlags.CartEnabled then
+		log:Info("Cart subsystem disabled")
+		return
+	end
+
+	if FeatureFlags.EquippedTeamsEnabled then
+		require(script.Parent.Controllers.ChariotTeamController).Start()
+		require(script.Parent.Controllers.ChariotFormationController).Start()
+	end
+	CartUpgradeController.Start()
+
+	CartInputController.Start()
+	CartMovementController.Start()
+	CartWheelPresentationController.Start()
+	do
+		-- Cart flair VFX (presentation only). Isolated so a failure never blocks driving.
+		local ok, err = pcall(function()
+			require(script.Parent.Controllers.CartFlairController).Start()
+		end)
+		if not ok then
+			log:Warn("CartFlairController failed to start: %s", tostring(err))
+		end
+	end
+	CartCameraController.Start()
+	CartResetController.Start()
+	CargoHudController.Start()
+	LocalCartState.Start()
+	CartPCInputController.Start()
+	CartGamepadInputController.Start()
+	if FeatureFlags.EquippedTeamsEnabled then
+		require(script.Parent.Controllers.CartBurstController).Start()
+	end
+	if FeatureFlags.EquippedTeamsEnabled then
+		require(script.Parent.Controllers.CartShieldController).Start()
+	end
+
+	require(script.Parent.Controllers.ExactHudController).Start()
+	if FeatureFlags.VillagerGuardsEnabled then
+		-- Villager guards + Escape Ring (presentation only; the server owns every state).
+		require(script.Parent.Controllers.VillagerPresentationController).Start()
+		local EscapeRing = require(script.Parent.Controllers.EscapeRingController)
+		EscapeRing.Start()
+		require(script.Parent.Controllers.VillagerBankFxController).Start(EscapeRing.EscapeCompleted)
+	end
+	require(script.Parent.Controllers.ContactShadowController).Start()
 	log:Info("Client bootstrap complete")
 end
 
