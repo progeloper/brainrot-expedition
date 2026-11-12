@@ -45,6 +45,16 @@ function Flags.RebirthUi(): boolean
 	return latched.RebirthUiV2Enabled
 end
 
+-- Test-only: pin a gate for the duration of a legacy spec (Studio only; returns the previous value).
+-- Live servers never call this, and it refuses outside Studio.
+function Flags._SetForTests(name: Gate, value: boolean): boolean
+	assert(RunService:IsStudio(), "CampReworkFlags._SetForTests is Studio-only")
+	assert(latched[name] ~= nil, "unknown gate")
+	local previous = latched[name]
+	latched[name] = value
+	return previous
+end
+
 -- Pure helper for tests: what a gate resolves to for given inputs.
 function Flags.Resolve(flagValue: boolean, isStudio: boolean, previewAttribute: any): boolean
 	if flagValue then

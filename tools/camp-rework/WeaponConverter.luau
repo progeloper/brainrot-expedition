@@ -656,9 +656,16 @@ function M.BuildArt(entry)
 		end
 		parts = out
 	end
+	-- The whole tool stays within M.Budget: art + the Handle + one invisible rotor per animated group.
+	local rotorCount = 0
+	for _, spec in M.Anim[id] or {} do
+		rotorCount += spec.clusters or 1
+	end
+	local budget = M.Budget - 1 - rotorCount
+	report.artBudget = budget
 	-- 4) halve the biggest repeated groups until within budget
 	local guard = 0
-	while #parts > M.Budget and guard < 40 do
+	while #parts > budget and guard < 40 do
 		guard += 1
 		local best, bestN = nil, 5
 		for _, members in groupsByName() do
@@ -674,7 +681,7 @@ function M.BuildArt(entry)
 		refresh()
 	end
 	-- 5) least-visible first
-	if #parts > M.Budget then
+	if #parts > budget then
 		local ranked = {}
 		for _, p in parts do
 			if not hasFx(p) and not startsWithAny(p.Name, PROTECT_PREFIX) then
@@ -685,7 +692,7 @@ function M.BuildArt(entry)
 			return visibility(a) < visibility(b)
 		end)
 		local i = 1
-		while #parts > M.Budget and ranked[i] do
+		while #parts > budget and ranked[i] do
 			ranked[i]:Destroy()
 			i += 1
 			refresh()

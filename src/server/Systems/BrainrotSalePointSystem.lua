@@ -43,7 +43,7 @@ end
 
 -- Camp Rework: the new Sell stall carries its own SELL sign. Old and new art must never show together,
 -- so the legacy board is skipped whenever that stall is in the world, even with the flag off.
-local function campSellStallPresent(): boolean
+function BrainrotSalePointSystem.CampStallPresent(): boolean
 	local map = Workspace:FindFirstChild("MapBlockout")
 	local art = map and map:FindFirstChild("MapArt")
 	local services = art and art:FindFirstChild("Services")
@@ -224,7 +224,7 @@ end
 
 function BrainrotSalePointSystem:EnsureSalePoint(): boolean
 	local salePoint, parent = resolveSalePoint()
-	local skipLegacySign = BrainrotSalePointSystem.UsesCampMenu() or campSellStallPresent()
+	local skipLegacySign = BrainrotSalePointSystem.UsesCampMenu() or BrainrotSalePointSystem.CampStallPresent()
 	if salePoint and parent and skipLegacySign then
 		warnedUnavailable = false
 		for _, child in parent:GetChildren() do

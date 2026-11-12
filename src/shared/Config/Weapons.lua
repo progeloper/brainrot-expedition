@@ -114,7 +114,7 @@ local function buildDefinitions(v2: boolean): ({ any }, { [string]: any })
 			definitionRevision = TiersV2.DefinitionRevision,
 			starterEntitlement = false,
 			assetName = row[1],
-			special = table.freeze({ source = row[4], unlock = table.freeze(row[5]) }),
+			special = table.freeze({ source = row[4], unlock = if table.isfrozen(row[5]) then row[5] else table.freeze(row[5]) }),
 			stats = stats({ v.damage, v.fireIntervalSeconds, v.rangeStuds }),
 		})
 		byId[definition.id] = definition

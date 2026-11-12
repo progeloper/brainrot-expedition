@@ -49,8 +49,11 @@ end
 function Roles.Resolve(model: Instance, part: BasePart, category: string, templateId: string): string?
  local map=Maps[templateId]
  if not map then
-  if category=="Weapon" and (model.Name=="Phase13Appearance" or model.Name=="Phase13WeaponArt") and part~=model then
-   return weaponRoleByName(part.Name)
+  if category=="Weapon" and part~=model then
+   -- v2 art (Phase13ArtVersion 2) lives under Phase13Appearance; roles come from part names,
+   -- whether the caller passes the art folder or the whole Tool.
+   local art=if model.Name=="Phase13Appearance" or model.Name=="Phase13WeaponArt" then model else model:FindFirstChild("Phase13Appearance")
+   if art and part:IsDescendantOf(art) then return weaponRoleByName(part.Name) end
   end
   return nil
  end

@@ -22,6 +22,9 @@
         "WeaponDisplays": {
           "$path": "assets/native/camp_rework_20261112/WeaponDisplays.rbxm"
         },
+        "CampStallProps": {
+          "$path": "assets/native/camp_rework_20261112/CampStallProps.rbxm"
+        },
         "BaseDesigns": {
           "$path": "assets/native/phase14_20261023/BaseDesigns.rbxm"
         }
