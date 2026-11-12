@@ -66,7 +66,8 @@ function Service:Start()
 	started = true
 	local ok, Villagers = pcall(require, script.Parent.VillagerGuardService)
 	if ok and type(Villagers) == "table" then
-		(Villagers :: any).onCleanEscape = function(player: Player)
+		local villagers: any = Villagers
+		villagers.onCleanEscape = function(player: Player)
 			self:RecordCleanEscape(player)
 		end
 	end

@@ -717,6 +717,32 @@ render = function()
 				end
 			end
 		end
+	elseif current == "Training" then
+		-- Camp Rework Training: cart speed comes from Training levels, trained on the stall rollers.
+		local t = snapshot.training
+		if type(t) ~= "table" then
+			card("Training", Strings.Unavailable)
+		else
+			card(
+				string.format("Training level %d / %d", t.level, t.maxLevel),
+				string.format(
+					"Cart speed +%d%%\n%s\nDrive your cart up the ramp onto the rollers and stay seated to train.",
+					math.floor((t.speedMultiplier - 1) * 100 + 0.5),
+					if t.level >= t.maxLevel then "Max level" else string.format("XP %d / %d", math.floor(t.xp), t.xpToNext)
+				)
+			)
+			for _, roller in t.rollers do
+				local f = card(roller.name, string.format("x%d Training XP%s", roller.multiplier, if roller.owned then "" else " · " .. cash(roller.price)))
+				button(f, if roller.selected then "In use" elseif roller.owned then "Use" else "Buy · " .. cash(roller.price), function()
+					if busy or pending or roller.selected then
+						return
+					end
+					busy = true
+					track(call({ action = "TrainingRoller", rollerId = roller.id, operationId = Http:GenerateGUID(false) }))
+				end)
+			end
+			card("2x Training", if t.pass then "Owned · double Training XP" else "Robux pass · purchases aren't open yet")
+		end
 	elseif current == "Sell" then
 		-- Camp Rework Sell counter: your carried brainrot, then Cash weapons and carts at 25% back.
 		local rate = 0.25
@@ -787,10 +813,15 @@ render = function()
 				preview("Cart", row.assetName)
 			end)
 		end
-		card(
-			Strings.UpgradesTitle,
-			Strings.Format("UpgradeStats", tostring(snapshot.speedLevel), tostring(3 + snapshot.cargoLevel))
-		)
+		if type(snapshot.training) == "table" then
+			card(Strings.UpgradesTitle, string.format("Training level %d (speed +%d%%) · Cargo %d slots",
+				snapshot.training.level, math.floor((snapshot.training.speedMultiplier - 1) * 100 + 0.5), 3 + snapshot.cargoLevel))
+		else
+			card(
+				Strings.UpgradesTitle,
+				Strings.Format("UpgradeStats", tostring(snapshot.speedLevel), tostring(3 + snapshot.cargoLevel))
+			)
+		end
 	elseif current == "Base" then
 		local riftCard = card(Strings.RiftPreview, Strings.RiftPreviewDetail)
 		local riftOwner = Instance.new("Frame")

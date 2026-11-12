@@ -38,7 +38,8 @@ local MOUNTED_PREVIEW_STEP = "MountedSleepPreview"
 local CombatStrings = require(ReplicatedStorage.Shared.Config.Phase13CombatStrings)
 local player = Players.LocalPlayer
 local aimController = ThirdPersonAimController.new(player)
-local WeaponArt = require(script.Parent.WeaponArtController)
+local okWeaponArt, WeaponArtModule = pcall(require, script.Parent.WeaponArtController)
+local WeaponArt = if okWeaponArt then WeaponArtModule else { OnShot = function(_origin: Vector3) end }
 local function selectedProfile()
 	local profile = WeaponStats.Resolve(player:GetAttribute("SelectedWeaponId") or Weapons.StarterWeaponId)
 	return if WeaponStats.IsReady(profile) then profile else DEFAULT_WEAPON_PROFILE

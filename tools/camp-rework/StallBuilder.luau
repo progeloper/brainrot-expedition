@@ -24,7 +24,17 @@ B.Stalls = {
 -- Concept-only screenshot parts (prompt §1) plus rejected/no-sticker pieces.
 local STRIP_EXACT = { Grass = true, Path = true, Yard = true, NewPlank = true, NewNail = true,
 	-- decoration scattered on the concept's screenshot yard/path slabs (the camp floor replaces them)
-	GrassTuft = true, PathStone = true }
+	GrassTuft = true, PathStone = true,
+	-- the rope fence around the concept's screenshot yard
+	YardPost = true, YardPostCap = true, YardRope = true }
+
+-- Dense repeats thinned first (keep every other member, never below 3), in this order, so every
+-- approved element of the stall survives with lighter detail instead of whole elements disappearing.
+local THIN_ORDER = {
+	Carts = { "GearTooth", "PinionTooth", "SpareSpoke", "Rivet", "FestoonWire", "FestoonCap", "FestoonBulb",
+		"RoofMoss", "Moss", "Rust", "CrateSlat", "Roller", "Batten", "HayTwine", "CrankSpoke", "HeldSpoke",
+		"LevelNotch", "LoftHay", "MillBrace", "PatchPlank", "CargoRope" },
+}
 local STRIP_PREFIX = { "Plaza", "Pad" }
 
 -- CanCollide=true only on posts/frames, counters, the Training deck + ramp, barn walls + roof.
@@ -515,6 +525,30 @@ local function cartsRig(m)
 			end
 		end
 	end
+	-- Hitched brainrots belong to the per-player featured cart (team slot): client props, not stall parts.
+	local props = Instance.new("Folder")
+	props.Name = "HitchedBrainrots"
+	local slotsFolder = m:FindFirstChild("CampSlots")
+	local i = 0
+	for _, c in m:GetChildren() do
+		if c:IsA("Model") and c.Name == "HitchedBrainrot" then
+			i += 1
+			if slotsFolder then
+				marker(slotsFolder, "HitchSlot_" .. i, c:GetPivot(), nil, { CampSlot = "Hitch", SlotIndex = i })
+			end
+			c.Name = "HitchedBrainrot_" .. i
+			c.Parent = props
+		end
+	end
+	B.LastProps = props
+	-- Cart upgrade point (Cargo; Speed is retired by Training): the CartUpgradePointSystem needs exactly
+	-- one BasePart tagged CartUpgradeStall. It used to be the BuyCartStall pad; now the anvil workbench.
+	local anvil = m:FindFirstChild("Anvil") or m:FindFirstChild("Bench")
+	if anvil then
+		local a = marker(m:FindFirstChild("CampSlots") or m, "CartUpgradeAnchor",
+			CFrame.new(anvil.Position.X, B.GroundY + 2.5, anvil.Position.Z), Vector3.one, { CampUpgradeAnchor = true })
+		game:GetService("CollectionService"):AddTag(a, "CartUpgradeStall")
+	end
 	-- boiler steam: emitters closest to the chimney top
 	local chimney = m:FindFirstChild("Chimney")
 	if chimney then
@@ -623,6 +657,27 @@ function B.Build(key)
 			end
 		end
 	end
+	for _ = 1, 4 do
+		if #parts(m) <= B.Target then
+			break
+		end
+		for _, name in THIN_ORDER[key] or {} do
+			if #parts(m) <= B.Target then
+				break
+			end
+			local members = {}
+			for _, p in m:GetChildren() do
+				if p:IsA("BasePart") and p.Name == name and not hasFx(p) then
+					table.insert(members, p)
+				end
+			end
+			if #members > 3 then
+				for i = 2, #members, 2 do
+					members[i]:Destroy()
+				end
+			end
+		end
+	end
 	if #parts(m) > B.Target then
 		halveGroups(m, B.Target, key)
 	end
@@ -645,6 +700,8 @@ function B.Build(key)
 	root.CFrame = CFrame.lookAt(Vector3.new(c.X, B.GroundY, c.Z), Vector3.new(c.X, B.GroundY, c.Z + 1))
 	root.Parent = m
 	m.PrimaryPart = root
+	-- Stream the whole stall at once so client bindings (gauge, racks, turntable) see every part.
+	m.ModelStreamingMode = Enum.ModelStreamingMode.Atomic
 	m:SetAttribute("CampReworkStall", key)
 	m:SetAttribute("CampCategory", spec.category)
 	m:SetAttribute("CampObjectText", spec.object)

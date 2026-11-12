@@ -215,11 +215,46 @@ local function refreshWeapons()
 	end
 end
 
+-- Brainrots hitched to the featured cart (approved Carts stall design). Client props so they can
+-- follow the per-player featured cart; they ride the turntable when they stand on it.
+local function placeHitched(stall: Model)
+	local folder = ReplicatedStorage:FindFirstChild("CodeAssets")
+	folder = folder and folder:FindFirstChild("CampStallProps")
+	local source = folder and folder:FindFirstChild("HitchedBrainrots")
+	local rotor = stall:FindFirstChild("TurntableRotor")
+	local turn = slots(stall).TurntableSlot
+	if not source then
+		return
+	end
+	for name, slot in slots(stall) do
+		local index = string.match(name, "^HitchSlot_(%d+)$")
+		local template = index and source:FindFirstChild("HitchedBrainrot_" .. index)
+		local key = "Hitch" .. tostring(index)
+		if template and template:IsA("Model") and not props[key] then
+			local model = template:Clone()
+			for _, d in model:GetDescendants() do
+				if d:IsA("BasePart") then
+					d.CanCollide, d.CanQuery, d.CanTouch = false, false, false
+				end
+			end
+			if model.PrimaryPart then
+				model.PrimaryPart.Anchored = true
+			end
+			model:PivotTo(slot.CFrame)
+			local onTable = turn ~= nil and rotor ~= nil
+				and (Vector3.new(slot.Position.X, 0, slot.Position.Z) - Vector3.new(turn.Position.X, 0, turn.Position.Z)).Magnitude < 6
+			model.Parent = if onTable then rotor else slot
+			props[key] = model
+		end
+	end
+end
+
 local function refreshCarts()
 	local stall = stalls.Cart
 	if not stall or not snapshot then
 		return
 	end
+	placeHitched(stall)
 	local slot = slots(stall).TurntableSlot
 	local rotor = stall:FindFirstChild("TurntableRotor")
 	local asset = Controller.FeaturedCart(snapshot.ownedCarts or {})
@@ -304,7 +339,8 @@ local function coinBurst(stall: Model)
 		e.Parent = attachment
 		emitter = e
 	end
-	(emitter :: ParticleEmitter):Emit(24)
+	local burst = emitter :: ParticleEmitter
+	burst:Emit(24)
 	AudioCue.Play("E5_crate", { bus = "Rewards", cooldown = 0.3 }) -- ka-ching
 end
 
@@ -313,6 +349,32 @@ end
 local function bindTraining(stall: Model)
 	local needle = stall:FindFirstChild("SpeedNeedle") :: Model?
 	local needleBase = if needle then needle:GetPivot() else nil
+	-- The authored needle points at some level already: measure its tip angle in the viewer's frame
+	-- (0° = right, counter-clockwise positive; the pivot's LookVector faces the viewer).
+	local builtDegrees = 225
+	if needle and needleBase then
+		local tip, far = nil, -1
+		for _, p in needle:GetDescendants() do
+			if p:IsA("BasePart") and p ~= needle.PrimaryPart then
+				local h = p.Size / 2
+				for _, sx in { -1, 1 } do
+					for _, sy in { -1, 1 } do
+						local corner = p.CFrame * Vector3.new(h.X * sx, h.Y * sy, 0)
+						local d = (corner - needleBase.Position).Magnitude
+						if d > far then
+							tip, far = corner, d
+						end
+					end
+				end
+			end
+		end
+		if tip then
+			local d = tip - needleBase.Position
+			local x = d:Dot(-needleBase.RightVector)
+			local y = d:Dot(needleBase.UpVector)
+			builtDegrees = math.deg(math.atan2(y, x))
+		end
+	end
 	local lamp = nil
 	local rollers = {}
 	for _, d in stall:GetDescendants() do
@@ -342,8 +404,9 @@ local function bindTraining(stall: Model)
 			readout.Text = "LV " .. tostring(level)
 		end
 		if needle and needleBase then
-			local degrees = Controller.NeedleDegrees(level) - 225 -- concept needle rests at 225°
-			local target = needleBase * CFrame.Angles(0, 0, math.rad(-degrees))
+			-- rotate counter-clockwise (for the viewer) from the authored angle to the level's angle
+			local delta = Controller.NeedleDegrees(level) - builtDegrees
+			local target = needleBase * CFrame.Angles(0, 0, math.rad(-delta))
 			local value = Instance.new("CFrameValue")
 			value.Value = needle:GetPivot()
 			value.Changed:Connect(function(v)
@@ -427,6 +490,49 @@ local function bindStall(model: Instance)
 	task.defer(refresh)
 end
 
+-- "+1 SPEED LV" toast (UI only, never on the stall) + a small sound.
+function Controller.ShowLevelToast(gained: number)
+	local gui = player:FindFirstChildOfClass("PlayerGui")
+	if not gui then
+		return
+	end
+	local screen = gui:FindFirstChild("CampTrainingToast") :: ScreenGui?
+	if not screen then
+		local s = Instance.new("ScreenGui")
+		s.Name = "CampTrainingToast"
+		s.ResetOnSpawn = false
+		s.DisplayOrder = 40
+		s.Parent = gui
+		screen = s
+	end
+	local label = Instance.new("TextLabel")
+	label.AnchorPoint = Vector2.new(0.5, 0.5)
+	label.Position = UDim2.fromScale(0.5, 0.32)
+	label.Size = UDim2.fromScale(0.36, 0.08)
+	label.BackgroundTransparency = 1
+	label.Font = Enum.Font.LuckiestGuy
+	label.TextScaled = true
+	label.TextColor3 = Color3.fromRGB(120, 255, 120)
+	label.Text = string.format("+%d SPEED LV", gained)
+	local stroke = Instance.new("UIStroke")
+	stroke.Thickness = 3
+	stroke.Color = Color3.fromRGB(20, 60, 20)
+	stroke.Parent = label
+	local scale = Instance.new("UIScale")
+	scale.Scale = 0.6
+	scale.Parent = label
+	label.Parent = screen
+	TweenService:Create(scale, TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Scale = 1 }):Play()
+	AudioCue.Play("U6", { bus = "UI", cooldown = 0.2 })
+	task.delay(1.6, function()
+		local fade = TweenService:Create(label, TweenInfo.new(0.4), { TextTransparency = 1, Position = UDim2.fromScale(0.5, 0.26) })
+		fade:Play()
+		fade.Completed:Once(function()
+			label:Destroy()
+		end)
+	end)
+end
+
 function Controller.Start()
 	if started or not CampFlags.CampRework() then
 		return
@@ -462,6 +568,27 @@ function Controller.Start()
 				coinBurst(stalls.Sell)
 			end
 		end)
+	end
+	if CampFlags.Training() then
+		-- AFK detection: ping the server at most every 20 s while the player is actually giving input.
+		local UserInputService = game:GetService("UserInputService")
+		local trainingInput = remotes and remotes:WaitForChild("TrainingInput", 30)
+		local lastPing = 0
+		UserInputService.InputBegan:Connect(function()
+			local now = os.clock()
+			if trainingInput and now - lastPing >= 20 then
+				lastPing = now
+				local remote = trainingInput :: RemoteEvent
+				remote:FireServer()
+			end
+		end)
+		if campEvent and campEvent:IsA("RemoteEvent") then
+			campEvent.OnClientEvent:Connect(function(payload)
+				if type(payload) == "table" and payload.kind == "TrainingLevelUp" then
+					Controller.ShowLevelToast(tonumber(payload.gained) or 1)
+				end
+			end)
+		end
 	end
 	-- Balance changes move the rack picks (affordability); refresh at most every few seconds.
 	local pending = false

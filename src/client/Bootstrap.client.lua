@@ -62,9 +62,22 @@ local function start()
 	task.spawn(require(script.Parent.Controllers.CreaturePresentationController).Start)
 	require(script.Parent.Controllers.Phase13AppearanceController).Start()
 	-- Camp Rework weapon art feedback (spinners/drum on the shared <=10 Hz scheduler).
-	require(script.Parent.Controllers.WeaponArtController).Start()
+	-- Camp Rework presentation is isolated: an error here must never stop the rest of the client.
+	local okArt, artError = pcall(function()
+		require(script.Parent.Controllers.WeaponArtController).Start()
+	end)
+	if not okArt then
+		log:Warn("WeaponArtController failed to start: %s", tostring(artError))
+	end
 	-- Camp Rework stalls (racks, featured cart, windmill/turntable, sale burst, speedometer).
-	task.spawn(require(script.Parent.Controllers.CampStallController).Start)
+	task.spawn(function()
+		local ok, err = pcall(function()
+			require(script.Parent.Controllers.CampStallController).Start()
+		end)
+		if not ok then
+			log:Warn("CampStallController failed to start: %s", tostring(err))
+		end
+	end)
 	require(script.Parent.Controllers.Phase14CosmeticController).Start()
 	task.spawn(require(script.Parent.Controllers.RegionVisibilityController).Start)
 	task.spawn(require(script.Parent.Controllers.Phase13ShopController).Start)

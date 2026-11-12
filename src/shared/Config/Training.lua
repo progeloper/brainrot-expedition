@@ -25,7 +25,7 @@ local Training = {
 	PassMultiplier = 2,
 	PassId = "TRAINING_2X",
 	AfkKickSeconds = 600, -- 10 minutes without input frees the bay
-	StationarySpeed = 1.5, -- studs/s: the cart must be (nearly) still on the rollers
+	StationarySpeed = 3, -- studs/s: the cart must be (nearly) still; carts settle and creep on round rollers
 	OldSpeedStep = 0.10, -- CartPerformanceResolver: +10% per old Speed level
 	Rollers = {
 		{ id = "Wooden", name = "Wooden rollers", multiplier = 1, price = 0, order = 1 },

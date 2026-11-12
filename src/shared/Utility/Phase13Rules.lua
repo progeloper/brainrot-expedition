@@ -3,6 +3,8 @@
 local Config = require(script.Parent.Parent.Config.Phase13)
 local Catalog = require(script.Parent.Parent.Config.BrainrotCatalog)
 local Weapons = require(script.Parent.Parent.Config.Weapons)
+local Training = require(script.Parent.Parent.Config.Training)
+local CampFlags = require(script.Parent.Parent.Config.CampReworkFlags)
 local Money = require(script.Parent.CurrencyDenomination)
 local Values = require(script.Parent.Phase12Rules)
 local Commerce = require(script.Parent.Phase13CommerceRules)
@@ -88,10 +90,99 @@ function Rules.Default()
 		NewcomerProtectionEnded = false,
 	}
 end
+-- Camp Rework Training (TrainingV1Enabled): SpeedLevel n -> TrainingLevel 5n, never lowering anyone's
+-- speed. Idempotent and versioned (TrainingVersion). SpeedLevel is kept for migration only.
+function Rules.MigrateTraining(data, force)
+	if not force and not CampFlags.Training() then
+		return false
+	end
+	local p = data.Phase13
+	if type(p) ~= "table" then
+		return false
+	end
+	local speed = if type(p.SpeedLevel) == "number" then p.SpeedLevel else 0
+	local current = if type(p.TrainingLevel) == "number" then p.TrainingLevel else nil
+	local target = math.max(current or 0, Training.LevelForOldSpeed(speed))
+	local changed = p.TrainingVersion ~= Training.Version or current ~= target
+	p.TrainingLevel = target
+	if type(p.TrainingXp) ~= "number" or p.TrainingXp ~= p.TrainingXp or p.TrainingXp < 0 then
+		p.TrainingXp = 0
+		changed = true
+	end
+	if type(p.OwnedRollers) ~= "table" then
+		p.OwnedRollers = {}
+		changed = true
+	end
+	if p.OwnedRollers.Wooden ~= true then
+		p.OwnedRollers.Wooden = true
+		changed = true
+	end
+	if type(p.SelectedRoller) ~= "string" or p.OwnedRollers[p.SelectedRoller] ~= true then
+		p.SelectedRoller = "Wooden"
+		changed = true
+	end
+	p.TrainingVersion = Training.Version
+	return changed
+end
+-- Best (highest multiplier) owned roller id.
+function Rules.BestRoller(p)
+	local best, multiplier = "Wooden", 1
+	for _, roller in Training.Rollers do
+		if type(p.OwnedRollers) == "table" and p.OwnedRollers[roller.id] == true and roller.multiplier > multiplier then
+			best, multiplier = roller.id, roller.multiplier
+		end
+	end
+	return best
+end
+-- One Training tick: add XP and level up (possibly several levels). Returns levels gained.
+function Rules.ApplyTrainingTick(data, xp)
+	local p = data.Phase13
+	if type(p) ~= "table" or type(p.TrainingLevel) ~= "number" then
+		return false, reject("TRAINING_NOT_READY")
+	end
+	if type(xp) ~= "number" or xp ~= xp or xp <= 0 or xp > 10_000 then
+		return false, reject("INVALID_XP")
+	end
+	if p.TrainingLevel >= Training.MaxLevel then
+		p.TrainingXp = 0
+		return true, { levels = 0, level = p.TrainingLevel, xp = 0 }
+	end
+	p.TrainingXp += xp
+	local gained = 0
+	while p.TrainingLevel < Training.MaxLevel and p.TrainingXp >= Training.XpToNext(p.TrainingLevel) do
+		p.TrainingXp -= Training.XpToNext(p.TrainingLevel)
+		p.TrainingLevel += 1
+		gained += 1
+	end
+	if p.TrainingLevel >= Training.MaxLevel then
+		p.TrainingXp = 0
+	end
+	return true, { levels = gained, level = p.TrainingLevel, xp = p.TrainingXp }
+end
+-- Permanent roller purchase (Cash). Selecting a roller you own is free.
+function Rules.ApplyRollerPurchase(data, rollerId)
+	local p = data.Phase13
+	local roller = Training.RollersById[rollerId]
+	if not roller or type(p.OwnedRollers) ~= "table" then
+		return false, reject("UNKNOWN_OFFER")
+	end
+	if p.OwnedRollers[rollerId] == true then
+		p.SelectedRoller = rollerId
+		return true, { code = "APPLIED", category = "Roller", id = rollerId, price = 0, selected = true }
+	end
+	if data.Economy.Balance < roller.price then
+		return false, reject("INSUFFICIENT_CASH")
+	end
+	data.Economy.Balance -= roller.price
+	p.OwnedRollers[rollerId] = true
+	p.SelectedRoller = Rules.BestRoller(p)
+	return true, { code = "APPLIED", category = "Roller", id = rollerId, price = roller.price }
+end
 function Rules.Migrate(data)
 	if data.Phase13 ~= nil then
+		local changed = Rules.MigrateTraining(data)
 		local ok, reason = Rules.Validate(data)
-		return ok, reason, false
+		return ok, reason, changed
 	end
 	local p = Rules.Default()
 	local old = data.Progression and data.Progression.Upgrades or {}
@@ -102,6 +193,7 @@ function Rules.Migrate(data)
 		p.CargoLevel = 1
 	end
 	data.Phase13 = p
+	Rules.MigrateTraining(data)
 	for i = 1, 48 do
 		if data.Base.Slots[tostring(i)] == nil then
 			data.Base.Slots[tostring(i)] = { accumulatedCash = 0 }
@@ -173,6 +265,25 @@ function Rules.Validate(data)
 	-- Camp Rework (optional; absent on older profiles).
 	if p.CleanEscapes ~= nil and not integer(p.CleanEscapes, 0, 1000000) then
 		return false, "PHASE13_INVALID_CleanEscapes"
+	end
+	if p.TrainingLevel ~= nil then
+		if not integer(p.TrainingLevel, 0, Training.MaxLevel) then
+			return false, "PHASE13_INVALID_TrainingLevel"
+		end
+		if type(p.TrainingXp) ~= "number" or p.TrainingXp ~= p.TrainingXp or p.TrainingXp < 0 or p.TrainingXp > 1e12 then
+			return false, "PHASE13_INVALID_TrainingXp"
+		end
+		if not map(p.OwnedRollers) or p.OwnedRollers.Wooden ~= true then
+			return false, "PHASE13_INVALID_OwnedRollers"
+		end
+		for id, owned in p.OwnedRollers do
+			if Training.RollersById[id] == nil or owned ~= true then
+				return false, "PHASE13_INVALID_OwnedRollers"
+			end
+		end
+		if type(p.SelectedRoller) ~= "string" or p.OwnedRollers[p.SelectedRoller] ~= true then
+			return false, "PHASE13_INVALID_SelectedRoller"
+		end
 	end
 	if #p.OperationOrder > Config.OperationJournalLimit then
 		return false, "PHASE13_JOURNAL_OVERFLOW"
@@ -421,6 +532,9 @@ function Rules.GrantUpgrade(data, offer)
 	local p = data.Phase13
 	local track = offer.grant and offer.grant.trackId
 	local level = offer.grant and offer.grant.level
+	if track == "CartSpeed" and CampFlags.Training() then
+		return false, "SPEED_RETIRED_USE_TRAINING"
+	end
 	local field = if track == "CartSpeed" then "SpeedLevel" elseif track == "Cargo" then "CargoLevel" else nil
 	if not field or not integer(level, 1, if field == "SpeedLevel" then 5 else 3) then
 		return false, "UNSUPPORTED_UPGRADE"

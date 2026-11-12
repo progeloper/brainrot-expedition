@@ -358,6 +358,7 @@ local function snapshot(player)
 		-- Camp Rework: special weapons (pedestals, shop rows) and sell-back eligibility.
 		campRework = CampFlags.CampRework(),
 		specials = if CampFlags.CampRework() then SpecialRules.Snapshot(data) else nil,
+		training = Training.Snapshot(data),
 	}
 end
 -- Camp Rework stalls carry a marker for their prompt (counter, or the Training speedometer post).
@@ -682,6 +683,15 @@ function Service:Start(_options)
 						return self:Reconcile(player, nil)
 					end,
 				})
+			elseif payload.action == "TrainingRoller" then
+				for key in payload do
+					if key ~= "action" and key ~= "rollerId" and key ~= "operationId" then
+						return { ok = false, code = "INVALID_REQUEST" }
+					end
+				end
+				return Training:PurchaseRoller(player, payload, function(inside)
+					return self:ValidateContext(player, "Training", inside)
+				end)
 			elseif payload.action == "SellCarried" then
 				-- Opens the existing carried-brainrot sale dialog from the Sell menu.
 				if not CampFlags.CampRework() then
