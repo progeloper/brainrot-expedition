@@ -14,7 +14,8 @@ local Builder = require(ReplicatedStorage.Shared.Utility.VillagerBodyBuilder)
 local Skins = ReplicatedStorage.Shared.Config.VillagerSkins
 -- The villager skin shown in the back row of the plinths. Change it when the next skin goes
 -- to review; Nonna Pina stays in the behaviour demo.
-local REVIEW_SKIN = { module = "Forest_PicchioPepe", villager = "VIL_FOREST_PEPE" }
+local REVIEW_SKIN =
+	{ module = "Beach_BagninoBruno", villager = "VIL_BEACH_BRUNO", region = "Beach" }
 local ForestVillagers = require(ReplicatedStorage.Shared.Config.Villagers.Forest)
 
 local Pen = {}
@@ -155,6 +156,10 @@ function Pen.Start()
 		if row.id == "VIL_FOREST_PINA" then
 			pinaPalette = row.palette
 		end
+	end
+	-- the review skin's palette comes from its own region's villager list
+	local regionRows = require(ReplicatedStorage.Shared.Config.Villagers[REVIEW_SKIN.region]) :: any
+	for _, row in regionRows.villagers do
 		if row.id == REVIEW_SKIN.villager then
 			reviewPalette = row.palette
 		end
