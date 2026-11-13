@@ -62,4 +62,17 @@ return table.freeze({
 		}),
 		notes = "Upright tail: it sways and leans instead of lifting.",
 	}),
+	BRT_002 = table.freeze({
+		archetype = "Hopper",
+		rigVersion = 1,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>RightLeg",
+			"Torso>LeftLeg",
+			"Torso>RightArm",
+			"Torso>LeftArm",
+		}),
+		notes = "First hopper; the base for the others (AnimationAuthoring.Archetypes.Hopper). Baked through the floor clamp: the belly rests on the ground.",
+	}),
 })
