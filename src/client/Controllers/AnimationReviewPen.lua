@@ -12,6 +12,9 @@ local Workspace = game:GetService("Workspace")
 local Config = require(ReplicatedStorage.Shared.Config.AnimationReview)
 local Builder = require(ReplicatedStorage.Shared.Utility.VillagerBodyBuilder)
 local Skins = ReplicatedStorage.Shared.Config.VillagerSkins
+-- The villager skin shown in the back row of the plinths. Change it when the next skin goes
+-- to review; Nonna Pina stays in the behaviour demo.
+local REVIEW_SKIN = { module = "Forest_TaglialegnaTito", villager = "VIL_FOREST_TITO" }
 local ForestVillagers = require(ReplicatedStorage.Shared.Config.Villagers.Forest)
 
 local Pen = {}
@@ -145,9 +148,15 @@ function Pen.Start()
 	local neutralSkin = require(Skins.Neutral) :: any
 	local pinaSkin = require(Skins.Forest_NonnaPina) :: any
 	local pinaPalette = neutralSkin.palette
+	-- The skin under review fills the back row of the plinths (REVIEW_SKIN at the top).
+	local reviewSkin = require(Skins[REVIEW_SKIN.module]) :: any
+	local reviewPalette = neutralSkin.palette
 	for _, row in ForestVillagers.villagers do
 		if row.id == "VIL_FOREST_PINA" then
 			pinaPalette = row.palette
+		end
+		if row.id == REVIEW_SKIN.villager then
+			reviewPalette = row.palette
 		end
 	end
 
@@ -181,7 +190,9 @@ function Pen.Start()
 	-- 1. One copy per animation: neutral skin in front, Nonna Pina behind.
 	sign(
 		folder,
-		"VILLAGER BODY: every animation (front row neutral skin, back row Nonna Pina)",
+		"VILLAGER BODY: every animation (front row neutral skin, back row "
+			.. reviewSkin.name
+			.. ")",
 		CFrame.new(origin + Vector3.new(0, 9, 40)),
 		Vector3.new(60, 3, 0.3)
 	)
@@ -191,7 +202,7 @@ function Pen.Start()
 		local bank = math.floor((index - 1) / 12)
 		local x = -55 + column * 10
 		local z = 10 + bank * 22
-		for layer, skin in { neutralSkin, pinaSkin } do
+		for layer, skin in { neutralSkin, reviewSkin } do
 			local spot = origin + Vector3.new(x, 0.6, z + (layer - 1) * 7)
 			block(
 				folder,
@@ -201,7 +212,7 @@ function Pen.Start()
 			)
 			local who = actor(
 				skin,
-				if layer == 1 then neutralSkin.palette else pinaPalette,
+				if layer == 1 then neutralSkin.palette else reviewPalette,
 				CFrame.new(spot)
 			)
 			table.insert(plinths, { who = who, name = name })
