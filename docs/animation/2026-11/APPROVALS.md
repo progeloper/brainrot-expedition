@@ -16,3 +16,4 @@
 | BRT_007 Tung Tung Tung Sahur (Bat joint + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
 | BRT_008 Lirili Larila (Trunk joint + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
 | BRT_009 Chimpanzini Bananini (elbow and knee joints + 11 animations) | 2 | 13 Nov 2026 | Round 1: owner asked for elbows and knees. Round 2 approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
+| BRT_010 Talpa Di Fero (Drill and elbow joints + 11 animations) | 2 | 13 Nov 2026 | Round 1 approved, then owner asked for elbows. Round 2 approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |

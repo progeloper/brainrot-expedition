@@ -2,7 +2,7 @@
 
 Started 13 November 2026. Branch `feature/camp-rework`, base commit `4e5ce25`, build stamp `P14_VILLAGER_OUTFITS_20261110_R1`, DEV place 91958083796436. Nothing published. Nothing committed yet.
 
-**Status: Part A, the villager body and twelve brainrots (BRT_019, 011, 013, 001 to 009) are approved (13 November 2026). Their 156 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. BRT_010 is next.**
+**Status: Part A, the villager body and thirteen brainrots (BRT_019, 011, 013, 001 to 010) are approved (13 November 2026). That is every Forest brainrot. Their 167 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. Next: the Forest villager skins, starting with Taglialegna Tito.**
 
 ## 0. Reconcile and snapshots
 
@@ -122,6 +122,7 @@ That is 35 brainrots, 1 villager body and 36 roster villagers (45 templates incl
 | BRT_007 Tung Tung Tung Sahur | Biped, face on the body | 6: Torso, two legs, two arms, Bat (new, under the arm) | 1 | 13 Nov 2026 | not uploaded |
 | BRT_008 Lirili Larila | Biped with knees | 9: Torso, Head, Trunk (new), two arms, two thighs, two lower legs | 1 | 13 Nov 2026 | not uploaded |
 | BRT_009 Chimpanzini Bananini | Biped with elbows and knees | 10: Torso, Head, two upper arms, two forearms (new), two thighs, two lower legs (new) | 2 | 13 Nov 2026 | not uploaded |
+| BRT_010 Talpa Di Fero | Squat biped with elbows | 10: Torso, Head, Drill (new), two upper arms, two forearms (new), two legs, Tail | 2 | 13 Nov 2026 | not uploaded |
 
 The Voxel V4 models already carried a basic Motor6D rig from the 7 November pass (`tools/voxel_v4/rig.js`). Species are rigged by extending that data through the existing export pipeline, not by a separate rig builder. Quadrupeds share `ServerAssets.AnimationAuthoring.Archetypes.Quadruped` as a starting point.
 

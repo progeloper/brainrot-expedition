@@ -177,4 +177,21 @@ return table.freeze({
 		}),
 		notes = "Biped with elbows and knees, added at the owner's request in review round 2. Forearms carry the hands and bananas; lower legs carry the feet. Set written for him.",
 	}),
+	BRT_010 = table.freeze({
+		archetype = "Biped",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Head>Drill",
+			"Torso>RightArm",
+			"RightArm>RightForearm",
+			"Torso>LeftArm",
+			"LeftArm>LeftForearm",
+			"Torso>RightLeg",
+			"Torso>LeftLeg",
+			"Torso>Tail",
+		}),
+		notes = "Squat biped. The drill spins on its own bone under the head (signature prop). Elbows added at the owner's request in review round 2; no knees. Toe claws moved from the arm bones to the legs. Set written for him.",
+	}),
 })
