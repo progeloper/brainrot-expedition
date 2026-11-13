@@ -2,7 +2,7 @@
 
 Started 13 November 2026. Branch `feature/camp-rework`, base commit `4e5ce25`, build stamp `P14_VILLAGER_OUTFITS_20261110_R1`, DEV place 91958083796436. Nothing published. Nothing committed yet.
 
-**Status: Part A, the villager body and sixteen brainrots (BRT_019, 011, 013, 001 to 010, 020, 012, 014) are approved (13 November 2026). That is every Forest brainrot and the first three in the Beach order. Their 200 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. All Forest villager skins are approved (13 November 2026): Taglialegna Tito, Gufo Gelato, Funghetto Franco, Zia Castagna and Picchio Pepe, with Nonna Pina approved alongside the body. The Forest region is complete. Beach continues with BRT_015, the last Beach-order brainrot.**
+**Status: Part A, the villager body and seventeen brainrots (BRT_019, 011, 013, 001 to 010, 020, 012, 014, 015) are approved (13 November 2026). That is every Forest brainrot and every Beach-order one. Their 211 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. All Forest villager skins are approved (13 November 2026): Taglialegna Tito, Gufo Gelato, Funghetto Franco, Zia Castagna and Picchio Pepe, with Nonna Pina approved alongside the body. The Forest region is complete. Next: the Beach villager skins.**
 
 ## 0. Reconcile and snapshots
 
@@ -126,6 +126,7 @@ That is 35 brainrots, 1 villager body and 36 roster villagers (45 templates incl
 | BRT_020 Bisonte Giuppitere | Hoverer (planet on sneakers) | 6: Torso, Head, MoonIo (new), MoonEuropa (new), two sneakers | 1 | 13 Nov 2026 | not uploaded |
 | BRT_012 Frigo Camelo | Quadruped with neck, knees and a door | 13: Torso, Neck (new), Head, four thighs, four lower legs (new), Tail, FridgeDoor (new) | 2 | 13 Nov 2026 | not uploaded |
 | BRT_014 Bandito Bobritto | Biped with knees | 10: Torso, Head, two arms, Gun (new), two thighs, two lower legs (new), Tail | 1 | 13 Nov 2026 | not uploaded |
+| BRT_015 Strawberelli Flamingelli | Wader | 11: Torso, NeckBase (new), Neck (new), Head, two wings, Tail, two upper legs, two lower legs (new) | 1 | 13 Nov 2026 | not uploaded |
 
 The Voxel V4 models already carried a basic Motor6D rig from the 7 November pass (`tools/voxel_v4/rig.js`). Species are rigged by extending that data through the existing export pipeline, not by a separate rig builder. Quadrupeds share `ServerAssets.AnimationAuthoring.Archetypes.Quadruped` as a starting point.
 

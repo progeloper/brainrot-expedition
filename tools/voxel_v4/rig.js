@@ -153,8 +153,11 @@ function planRig(parts, ov = {}) {
 			const lo = [b.lo[0] - m, b.lo[1] - m, b.lo[2] - m], hi = [b.hi[0] + m, b.hi[1] + up, b.hi[2] + m];
 			const heads = core.map((i) => parts[i]).filter((p) => p.slot === 'Head');
 			const neckY = ov.neckY ?? (heads.length ? Math.min(...heads.map((p) => p.min[1])) : b.lo[1]);
-			// optional neck bone between Torso and Head (rigOverrides.neck = { pivot, slots }); opt-in per species
-			const neck = ov.neck ? add('Neck', 'Torso', ov.neck.pivot) : null;
+			// optional neck bone between Torso and Head (rigOverrides.neck = { pivot, slots }); opt-in per species.
+			// neck.base = { pivot } adds a NeckBase bone under it for a two-joint neck (a long S-shaped neck):
+			// Torso > NeckBase > Neck > Head. Boxes are moved onto NeckBase with a `regions` entry.
+			const neckBase = ov.neck && ov.neck.base ? add('NeckBase', 'Torso', ov.neck.base.pivot) : null;
+			const neck = ov.neck ? add('Neck', neckBase || 'Torso', ov.neck.pivot) : null;
 			const h = add('Head', neck || 'Torso', ov.headPivot || [(b.lo[0] + b.hi[0]) / 2, neckY, 0]);
 			parts.forEach((p, i) => {
 				if (bone[i] !== 'Torso' || p === body) return;

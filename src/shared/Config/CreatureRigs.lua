@@ -244,4 +244,22 @@ return table.freeze({
 		}),
 		notes = "Biped with knees. The drum-gun has its own bone on the shoulder line so both paws stay on it (signature prop); keep its raise under about 20 degrees or it enters his muzzle. No elbows because both paws hold the gun. Set written for him.",
 	}),
+	BRT_015 = table.freeze({
+		archetype = "Wader",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>NeckBase",
+			"NeckBase>Neck",
+			"Neck>Head",
+			"Torso>RightWing",
+			"Torso>LeftWing",
+			"Torso>Tail",
+			"Torso>RightLeg",
+			"RightLeg>RightLowerLeg",
+			"Torso>LeftLeg",
+			"LeftLeg>LeftLowerLeg",
+		}),
+		notes = "Wader: a biped with knees, a two-joint S-shaped neck (NeckBase, Neck), wings and tail plumes. Sleeps on one leg with the neck twisted back; the Signature is the one-leg flamingo pose. Set written for it.",
+	}),
 })
