@@ -15,7 +15,8 @@ local UprightProp = require(ReplicatedStorage.Shared.Utility.VillagerUprightProp
 local Skins = ReplicatedStorage.Shared.Config.VillagerSkins
 -- The villager skin shown in the back row of the plinths. Change it when the next skin goes
 -- to review; Nonna Pina stays in the behaviour demo.
-local REVIEW_SKIN = { module = "Beach_SurfistaSara", villager = "VIL_BEACH_SARA", region = "Beach" }
+local REVIEW_SKIN =
+	{ module = "Beach_NonnoConchiglia", villager = "VIL_BEACH_CONCHIGLIA", region = "Beach" }
 local ForestVillagers = require(ReplicatedStorage.Shared.Config.Villagers.Forest)
 
 local Pen = {}
