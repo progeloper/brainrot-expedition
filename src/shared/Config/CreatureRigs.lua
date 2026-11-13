@@ -393,4 +393,23 @@ return table.freeze({
 		}),
 		notes = "Upright biped with long arms, knees and a swinging skirt: a pineapple orangutan in a tiki grass skirt. Skirt (with the glowing waistband) hinges at the waist for the hula. Shoulders pivot at the top of the upper arm (they were at its middle); the shoulder caps stay on the pineapple. The Signature is the big hula ending in aloha arms. Set written for it.",
 	}),
+	BRT_018 = table.freeze({
+		archetype = "Quadruped",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>FrontRightLeg",
+			"FrontRightLeg>FrontRightLowerLeg",
+			"Torso>BackRightLeg",
+			"BackRightLeg>BackRightLowerLeg",
+			"Torso>FrontLeftLeg",
+			"FrontLeftLeg>FrontLeftLowerLeg",
+			"Torso>BackLeftLeg",
+			"BackLeftLeg>BackLeftLowerLeg",
+			"Torso>Tail",
+			"Torso>Neck",
+			"Neck>Head",
+		}),
+		notes = "Quadruped with a neck and knees: a cowboy zebra bursting out of a watermelon. Neck (with the mane) pivots where it leaves the cut melon; the head turns at the neck top. Walk is a four-beat horse walk, Run a gallop; the Signature is the rodeo rear. IdleWild, Alert, Hit, Carried and Celebrate are the shared quadruped clips with neck and knee motion. Set written for it.",
+	}),
 })
