@@ -2,7 +2,7 @@
 
 Started 13 November 2026. Branch `feature/camp-rework`, base commit `4e5ce25`, build stamp `P14_VILLAGER_OUTFITS_20261110_R1`, DEV place 91958083796436. Nothing published. Nothing committed yet.
 
-**Status: Part A, the villager body and BRT_019 are approved (13 November 2026). Their 35 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. BRT_011 is drafted and waiting for review: `review/BRT_011/REVIEW.md`.**
+**Status: Part A, the villager body, BRT_019 and BRT_011 are approved (13 November 2026). Their 46 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. BRT_013 is drafted and waiting for review: `review/BRT_013/REVIEW.md`.**
 
 ## 0. Reconcile and snapshots
 
@@ -112,6 +112,7 @@ That is 35 brainrots, 1 villager body and 36 roster villagers (45 templates incl
 | Villager body | VillagerBody | 17 (12 body + 5 attachment bones) | 1 | 13 Nov 2026 | not uploaded |
 | BRT_019 Trenostruzzo Turbo 3000 | Vehicle-hybrid | 6: Torso, Neck, Head, RightLeg, LeftLeg, ToiletLid | 1 | 13 Nov 2026 | not uploaded |
 | BRT_011 Glorbo Fruttodrillo | Quadruped | 7: Torso, Head, four legs, Tail (existing V4 rig, unchanged) | 1 | 13 Nov 2026 | not uploaded |
+| BRT_013 Cavallo Virtuoso | Biped | 6: Torso, Neck (new), Head, RightLeg, LeftLeg, Tail | 1 | 13 Nov 2026 | not uploaded |
 
 The Voxel V4 models already carried a basic Motor6D rig from the 7 November pass (`tools/voxel_v4/rig.js`). Species are rigged by extending that data through the existing export pipeline, not by a separate rig builder. Quadrupeds share `ServerAssets.AnimationAuthoring.Archetypes.Quadruped` as a starting point.
 

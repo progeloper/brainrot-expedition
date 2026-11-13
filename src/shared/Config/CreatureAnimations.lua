@@ -42,6 +42,23 @@ local CreatureAnimations: { [string]: any } = {
 			Signature = { id = 0, length = 1.6, loop = false, priority = "Action" },
 		}),
 	}),
+	BRT_013 = table.freeze({
+		approved = true,
+		approvedOn = "2026-11-13",
+		animations = table.freeze({
+			IdleDisplay = { id = 0, length = 3, loop = true, priority = "Idle" },
+			IdleWild = { id = 0, length = 3.6, loop = true, priority = "Idle" },
+			IdleWild2 = { id = 0, length = 2, loop = false, priority = "Idle" },
+			Walk = { id = 0, length = 0.7, loop = true, priority = "Movement", speed = 6.6 },
+			Run = { id = 0, length = 0.36, loop = true, priority = "Movement", speed = 11 },
+			Alert = { id = 0, length = 0.4, loop = false, priority = "Action" },
+			Hit = { id = 0, length = 0.25, loop = false, priority = "Action" },
+			Carried = { id = 0, length = 1, loop = true, priority = "Movement" },
+			Sleep = { id = 0, length = 4, loop = true, priority = "Idle" },
+			Celebrate = { id = 0, length = 1.2, loop = false, priority = "Action" },
+			Signature = { id = 0, length = 1.6, loop = false, priority = "Action" },
+		}),
+	}),
 }
 
 local Module = { Species = table.freeze(CreatureAnimations) }
