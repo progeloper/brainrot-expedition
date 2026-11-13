@@ -337,4 +337,23 @@ return table.freeze({
 		}),
 		notes = "Six-legged crawler: a turtle shell and head on six spider legs (hip and knee each). Walks with a tripod gait; the legs are fanned in Walk and Run so neighbouring feet can pass. The head pivots inside the shell front and can pull back into it. The Signature is the rear-up spider threat. Set written for it.",
 	}),
+	BRT_030 = table.freeze({
+		archetype = "Rider",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Dino",
+			"Dino>Head",
+			"Head>Jaw",
+			"Dino>RightArm",
+			"Dino>LeftArm",
+			"Dino>Tail",
+			"Torso>RearRightWheel",
+			"Torso>RearLeftWheel",
+			"Torso>FrontRightWheel",
+			"Torso>FrontLeftWheel",
+			"Torso>Exhaust",
+		}),
+		notes = "Rider on a vehicle: Torso is the tractor (pivots on the rear axle for wheelies), Dino is the T-rex riding it, with Head, Jaw (owner approved an opening jaw), arms and Tail. Only the wheel hubs turn (the blocky tyres would dip under the floor). Walk and Run hold whole hub turns, so they loop every 2.6 s and 1.6 s. The Signature is the wheelie roar. Set written for it.",
+	}),
 })

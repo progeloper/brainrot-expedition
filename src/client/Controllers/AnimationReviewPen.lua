@@ -529,6 +529,9 @@ function Pen.Start()
 				})
 			end
 			row += 1
+			-- Building a species' models is slow; yield between rows so a long roster does not
+			-- run into the script timeout (Start is spawned, so this delays nothing else).
+			task.wait()
 		end
 		-- One floor under every species row (each row is 40 studs deep).
 		local depth = 70 + math.max(1, row) * 40
