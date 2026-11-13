@@ -21,4 +21,18 @@ return table.freeze({
 		signatureProp = "ToiletLid",
 		notes = "Bogies are rigid boxes on the chassis (no wheel joints). Feet hinge at the heel and only lift.",
 	}),
+	BRT_011 = table.freeze({
+		archetype = "Quadruped",
+		rigVersion = 1,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>FrontRightLeg",
+			"Torso>FrontLeftLeg",
+			"Torso>BackRightLeg",
+			"Torso>BackLeftLeg",
+			"Torso>Tail",
+		}),
+		notes = "First quadruped; the base for the others (AnimationAuthoring.Archetypes.Quadruped). Jaw is rigid with the head.",
+	}),
 })
