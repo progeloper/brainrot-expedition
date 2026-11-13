@@ -89,4 +89,17 @@ return table.freeze({
 		}),
 		notes = "No tail. The cappuccino sits on its own Cup bone (signature prop) and is balanced against the head and body in every clip.",
 	}),
+	BRT_004 = table.freeze({
+		archetype = "Biped",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>RightLeg",
+			"Torso>LeftLeg",
+			"Torso>RightArm",
+			"Torso>LeftArm",
+			"Torso>Tutu",
+		}),
+		notes = "Face on the body: no head or neck joint. The tutu sits on its own bone (signature prop). Set written for her, not from a shared base.",
+	}),
 })
