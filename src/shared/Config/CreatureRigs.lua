@@ -131,4 +131,17 @@ return table.freeze({
 		}),
 		notes = "The meatball sits on its own bone (signature prop) and bounces a beat behind the body. Belly almost on the ground: baked through the floor clamp.",
 	}),
+	BRT_007 = table.freeze({
+		archetype = "Biped",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>RightLeg",
+			"Torso>LeftLeg",
+			"Torso>RightArm",
+			"Torso>LeftArm",
+			"LeftArm>Bat",
+		}),
+		notes = "Face on the body: no head or neck joint. The bat sits on its own bone under the arm that holds it (signature prop); it was welded to the body before. Set written for him.",
+	}),
 })
