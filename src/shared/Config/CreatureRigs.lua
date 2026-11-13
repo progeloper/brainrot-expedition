@@ -116,4 +116,19 @@ return table.freeze({
 		}),
 		notes = "First flyer; the base for the others (AnimationAuthoring.Archetypes.Flyer). Wings are rigid spread plates: they hang, they do not fold. Flees in the air (visual only).",
 	}),
+	BRT_006 = table.freeze({
+		archetype = "Quadruped",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>FrontRightLeg",
+			"Torso>FrontLeftLeg",
+			"Torso>BackRightLeg",
+			"Torso>BackLeftLeg",
+			"Torso>Tail",
+			"Torso>Meatball",
+		}),
+		notes = "The meatball sits on its own bone (signature prop) and bounces a beat behind the body. Belly almost on the ground: baked through the floor clamp.",
+	}),
 })
