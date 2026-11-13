@@ -43,3 +43,4 @@
 | Pescatore Pozzo skin (Swamp, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: fisherman, nón lá with the glow band (thrown in his tantrum), net held upright by `uprightProp`, idle Fish. Not live. | 13 Nov 2026 |
 | Lumaca Lampione skin (Swamp, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: person-shaped snail, eye stalks through the nón lá, lantern shell on the Back joint. Not live. | 13 Nov 2026 |
 | Rospo Rocco skin (Swamp, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Rana's boxes with his colours. Not live. | 13 Nov 2026 |
+| Zia Palude skin (Swamp, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Pozzo's boxes with her colours, net held upright. Not live. | 13 Nov 2026 |
