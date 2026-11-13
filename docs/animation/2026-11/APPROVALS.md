@@ -21,3 +21,4 @@
 | Gufo Gelato skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as sent, tail feathers included. Not live. | 13 Nov 2026 |
 | Funghetto Franco skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Tito's boxes with Franco's colours, axe kept, no mushroom prop. Not live. | 13 Nov 2026 |
 | Zia Castagna skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Pina's boxes with her colours, rolling pin kept, no chestnut prop. Not live. | 13 Nov 2026 |
+| Picchio Pepe skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as a recolour of Gufo: owl-shaped head and gelato cone kept. Not live. | 13 Nov 2026 |

@@ -2,7 +2,7 @@
 
 Started 13 November 2026. Branch `feature/camp-rework`, base commit `4e5ce25`, build stamp `P14_VILLAGER_OUTFITS_20261110_R1`, DEV place 91958083796436. Nothing published. Nothing committed yet.
 
-**Status: Part A, the villager body and thirteen brainrots (BRT_019, 011, 013, 001 to 010) are approved (13 November 2026). That is every Forest brainrot. Their 167 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. Villager skins approved: Taglialegna Tito, Gufo Gelato, Funghetto Franco and Zia Castagna (13 November 2026). Picchio Pepe's skin, the last Forest one, is drafted and waiting for review: `review/Forest_PicchioPepe/REVIEW.md`.**
+**Status: Part A, the villager body and thirteen brainrots (BRT_019, 011, 013, 001 to 010) are approved (13 November 2026). That is every Forest brainrot. Their 167 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. All Forest villager skins are approved (13 November 2026): Taglialegna Tito, Gufo Gelato, Funghetto Franco, Zia Castagna and Picchio Pepe, with Nonna Pina approved alongside the body. The Forest region is complete. Next: Beach, starting with BRT_020.**
 
 ## 0. Reconcile and snapshots
 
