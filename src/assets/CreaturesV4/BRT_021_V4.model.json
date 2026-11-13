@@ -1,0 +1,10080 @@
+{
+ "className": "Model",
+ "properties": {
+  "ModelStreamingMode": "Atomic",
+  "WorldPivotData": {
+   "OptionalCFrame": {
+    "position": [
+     0,
+     0,
+     0
+    ],
+    "orientation": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1
+     ]
+    ]
+   }
+  }
+ },
+ "children": [
+  {
+   "className": "Part",
+   "name": "Root",
+   "properties": {
+    "Size": [
+     0.4000000059604645,
+     0.20000000298023224,
+     0.4000000059604645
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       0,
+       0
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.6392157077789307,
+     0.6352941393852234,
+     0.6470588445663452
+    ],
+    "Material": "Plastic",
+    "Transparency": 1,
+    "Reflectance": 0,
+    "Anchored": true,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "Attachment",
+     "name": "FrontTeamMount",
+     "properties": {
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         0,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": []
+    },
+    {
+     "className": "Attachment",
+     "name": "BankDisplay",
+     "properties": {
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         0,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": []
+    },
+    {
+     "className": "Attachment",
+     "name": "HeadTop",
+     "properties": {
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         4.619999885559082,
+         -0.18000000715255737
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": []
+    },
+    {
+     "className": "Attachment",
+     "name": "FxCore",
+     "properties": {
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         2.309999942779541,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": []
+    },
+    {
+     "className": "Attachment",
+     "name": "Mouth",
+     "properties": {
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         2.7899999618530273,
+         -1.1200000047683716
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": []
+    },
+    {
+     "className": "Attachment",
+     "name": "CargoSeat",
+     "properties": {
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         0,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": []
+    },
+    {
+     "className": "Attachment",
+     "name": "CarryGrip",
+     "properties": {
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         4.300000190734863,
+         0.4699999988079071
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": []
+    }
+   ],
+   "attributes": {
+    "BrainrotVisualHelper": true,
+    "Rojo_Id": "V4Root_BRT_021"
+   }
+  },
+  {
+   "className": "AnimationController",
+   "name": "AnimationController",
+   "children": [
+    {
+     "className": "Animator",
+     "name": "Animator",
+     "children": []
+    }
+   ]
+  },
+  {
+   "className": "Part",
+   "name": "RigTorso",
+   "properties": {
+    "Size": [
+     0.20000000298023224,
+     0.20000000298023224,
+     0.20000000298023224
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       2.4800000190734863,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.6392157077789307,
+     0.6352941393852234,
+     0.6470588445663452
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 1,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "Motor6D",
+     "name": "RootJoint",
+     "properties": {
+      "C0": {
+       "CFrame": {
+        "position": [
+         0,
+         2.4800000190734863,
+         0.4699999988079071
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "C1": {
+       "CFrame": {
+        "position": [
+         0,
+         0,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4Root_BRT_021",
+      "Rojo_Target_Part1": "V4_BRT_021_B_Torso"
+     }
+    }
+   ],
+   "attributes": {
+    "BrainrotVisualHelper": true,
+    "RigBone": "Torso",
+    "Rojo_Id": "V4_BRT_021_B_Torso"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "RigRightLeg",
+   "properties": {
+    "Size": [
+     0.20000000298023224,
+     0.20000000298023224,
+     0.20000000298023224
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.46000000834465027,
+       0.699999988079071,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.6392157077789307,
+     0.6352941393852234,
+     0.6470588445663452
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 1,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "Motor6D",
+     "name": "RightHip",
+     "properties": {
+      "C0": {
+       "CFrame": {
+        "position": [
+         0.46000000834465027,
+         -1.7799999713897705,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "C1": {
+       "CFrame": {
+        "position": [
+         0,
+         0,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_B_RightLeg"
+     }
+    }
+   ],
+   "attributes": {
+    "BrainrotVisualHelper": true,
+    "RigBone": "RightLeg",
+    "Rojo_Id": "V4_BRT_021_B_RightLeg"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "RigLeftLeg",
+   "properties": {
+    "Size": [
+     0.20000000298023224,
+     0.20000000298023224,
+     0.20000000298023224
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.46000000834465027,
+       0.699999988079071,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.6392157077789307,
+     0.6352941393852234,
+     0.6470588445663452
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 1,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "Motor6D",
+     "name": "LeftHip",
+     "properties": {
+      "C0": {
+       "CFrame": {
+        "position": [
+         -0.46000000834465027,
+         -1.7799999713897705,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "C1": {
+       "CFrame": {
+        "position": [
+         0,
+         0,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_B_LeftLeg"
+     }
+    }
+   ],
+   "attributes": {
+    "BrainrotVisualHelper": true,
+    "RigBone": "LeftLeg",
+    "Rojo_Id": "V4_BRT_021_B_LeftLeg"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "RigHead",
+   "properties": {
+    "Size": [
+     0.20000000298023224,
+     0.20000000298023224,
+     0.20000000298023224
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       2.759999990463257,
+       -0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.6392157077789307,
+     0.6352941393852234,
+     0.6470588445663452
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 1,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "Motor6D",
+     "name": "Neck",
+     "properties": {
+      "C0": {
+       "CFrame": {
+        "position": [
+         0,
+         0.2799999713897705,
+         -0.9399999976158142
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "C1": {
+       "CFrame": {
+        "position": [
+         0,
+         0,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_B_Head"
+     }
+    }
+   ],
+   "attributes": {
+    "BrainrotVisualHelper": true,
+    "RigBone": "Head",
+    "Rojo_Id": "V4_BRT_021_B_Head"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Body",
+   "properties": {
+    "Size": [
+     0.892799973487854,
+     3.640000104904175,
+     1.2400000095367432
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       2.4800000190734863,
+       0.4700000286102295
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": true,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_1"
+     }
+    },
+    {
+     "className": "Attachment",
+     "name": "CaptureAttachment",
+     "properties": {
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         0,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": []
+    },
+    {
+     "className": "Attachment",
+     "name": "CargoAttachment",
+     "properties": {
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         -2.4800000190734863,
+         -0.4700000286102295
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     },
+     "children": []
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "Body",
+    "VoxelIndex": 1,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_1"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Cactus",
+   "properties": {
+    "Size": [
+     1.2400000095367432,
+     3.640000104904175,
+     0.8679999709129333
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       2.4800000190734863,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": true,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_2"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "Cactus",
+    "VoxelIndex": 2,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_2"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Cactus",
+   "properties": {
+    "Size": [
+     0.699999988079071,
+     0.19999980926513672,
+     1
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       4.400000095367432,
+       0.4700000286102295
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_3"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "Cactus",
+    "VoxelIndex": 3,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_3"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Cactus",
+   "properties": {
+    "Size": [
+     1,
+     0.19999980926513672,
+     0.6600000262260437
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       4.400000095367432,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_4"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "Cactus",
+    "VoxelIndex": 4,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_4"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Cactus",
+   "properties": {
+    "Size": [
+     0.41999998688697815,
+     0.11999988555908203,
+     0.5999999642372131
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       4.559999942779541,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_5"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "Cactus",
+    "VoxelIndex": 5,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_5"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Cactus",
+   "properties": {
+    "Size": [
+     0.6000000238418579,
+     0.11999988555908203,
+     0.3959999680519104
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       4.559999942779541,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_6"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "Cactus",
+    "VoxelIndex": 6,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_6"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "RibGroove",
+   "properties": {
+    "Size": [
+     0.06000000238418579,
+     3.640000104904175,
+     0.039999961853027344
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.20000000298023224,
+       2.4800000190734863,
+       1.100000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.07450980693101883,
+     0.47058823704719543,
+     0.18039216101169586
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_7"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "feather",
+    "Slot": "RibGroove",
+    "VoxelIndex": 7,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_7"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "RibGroove",
+   "properties": {
+    "Size": [
+     0.06000000238418579,
+     1.9599997997283936,
+     0.040000006556510925
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.20000000298023224,
+       1.6399999856948853,
+       -0.1599999964237213
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.07450980693101883,
+     0.47058823704719543,
+     0.18039216101169586
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_8"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "feather",
+    "Slot": "RibGroove",
+    "VoxelIndex": 8,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_8"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "RibGroove",
+   "properties": {
+    "Size": [
+     0.039999961853027344,
+     3.640000104904175,
+     0.06000000238418579
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6299999952316284,
+       2.4800000190734863,
+       0.6699999570846558
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.07450980693101883,
+     0.47058823704719543,
+     0.18039216101169586
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_9"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "feather",
+    "Slot": "RibGroove",
+    "VoxelIndex": 9,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_9"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "RibGroove",
+   "properties": {
+    "Size": [
+     0.039999961853027344,
+     3.640000104904175,
+     0.06000000238418579
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6299999952316284,
+       2.4800000190734863,
+       0.6699999570846558
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.07450980693101883,
+     0.47058823704719543,
+     0.18039216101169586
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_10"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "feather",
+    "Slot": "RibGroove",
+    "VoxelIndex": 10,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_10"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "RibGroove",
+   "properties": {
+    "Size": [
+     0.06000000238418579,
+     3.640000104904175,
+     0.039999961853027344
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.20000000298023224,
+       2.4800000190734863,
+       1.100000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.07450980693101883,
+     0.47058823704719543,
+     0.18039216101169586
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_11"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "feather",
+    "Slot": "RibGroove",
+    "VoxelIndex": 11,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_11"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "RibGroove",
+   "properties": {
+    "Size": [
+     0.06000000238418579,
+     1.9599997997283936,
+     0.040000006556510925
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.20000000298023224,
+       1.6399999856948853,
+       -0.1599999964237213
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.07450980693101883,
+     0.47058823704719543,
+     0.18039216101169586
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_12"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "feather",
+    "Slot": "RibGroove",
+    "VoxelIndex": 12,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_12"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "RibGroove",
+   "properties": {
+    "Size": [
+     0.039999961853027344,
+     3.640000104904175,
+     0.060000017285346985
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6299999952316284,
+       2.4800000190734863,
+       0.27000001072883606
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.07450980693101883,
+     0.47058823704719543,
+     0.18039216101169586
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_13"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "feather",
+    "Slot": "RibGroove",
+    "VoxelIndex": 13,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_13"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "RibGroove",
+   "properties": {
+    "Size": [
+     0.039999961853027344,
+     3.640000104904175,
+     0.060000017285346985
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6299999952316284,
+       2.4800000190734863,
+       0.27000001072883606
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.07450980693101883,
+     0.47058823704719543,
+     0.18039216101169586
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_14"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "feather",
+    "Slot": "RibGroove",
+    "VoxelIndex": 14,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_14"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000004291534424,
+     0.08000004291534424
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6549999713897705,
+       1.0499999523162842,
+       0.8700000047683716
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_15"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 15,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_15"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000004291534424,
+     0.08000004291534424
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6549999713897705,
+       1.0499999523162842,
+       0.8700000047683716
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_16"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 16,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_16"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999998331069946,
+     0.08000004291534424,
+     0.04999995231628418
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.4000000059604645,
+       1.0499999523162842,
+       1.125
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_17"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 17,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_17"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999998331069946,
+     0.08000004291534424,
+     0.04999999701976776
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.4000000059604645,
+       1.0499999523162842,
+       -0.1850000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_18"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 18,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_18"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000004291534424,
+     0.07999999821186066
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6549999713897705,
+       1.0499999523162842,
+       0.07000000029802322
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_19"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 19,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_19"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000004291534424,
+     0.07999999821186066
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6549999713897705,
+       1.0499999523162842,
+       0.07000000029802322
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_20"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 20,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_20"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999998331069946,
+     0.08000004291534424,
+     0.04999995231628418
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.4000000059604645,
+       1.0499999523162842,
+       1.125
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_21"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 21,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_21"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999998331069946,
+     0.08000004291534424,
+     0.04999999701976776
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.4000000059604645,
+       1.0499999523162842,
+       -0.1850000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_22"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 22,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_22"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.07999992370605469,
+     0.07999998331069946
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6549999713897705,
+       1.5,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_23"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 23,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_23"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.07999992370605469,
+     0.07999998331069946
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6549999713897705,
+       1.5,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_24"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 24,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_24"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999999821186066,
+     0.07999992370605469,
+     0.04999995231628418
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       1.5,
+       1.125
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_25"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 25,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_25"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999999821186066,
+     0.07999992370605469,
+     0.04999999701976776
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       1.5,
+       -0.1850000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_26"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 26,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_26"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000004291534424,
+     0.08000004291534424
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6549999713897705,
+       1.9500000476837158,
+       0.8700000047683716
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_27"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 27,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_27"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000004291534424,
+     0.08000004291534424
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6549999713897705,
+       1.9500000476837158,
+       0.8700000047683716
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_28"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 28,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_28"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999998331069946,
+     0.08000004291534424,
+     0.04999995231628418
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.4000000059604645,
+       1.9500000476837158,
+       1.125
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_29"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 29,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_29"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999998331069946,
+     0.08000004291534424,
+     0.04999999701976776
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.4000000059604645,
+       1.9500000476837158,
+       -0.1850000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_30"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 30,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_30"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000004291534424,
+     0.07999999821186066
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6549999713897705,
+       1.9500000476837158,
+       0.07000000029802322
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_31"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 31,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_31"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000004291534424,
+     0.07999999821186066
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6549999713897705,
+       1.9500000476837158,
+       0.07000000029802322
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_32"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 32,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_32"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999998331069946,
+     0.08000004291534424,
+     0.04999995231628418
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.4000000059604645,
+       1.9500000476837158,
+       1.125
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_33"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 33,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_33"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999998331069946,
+     0.08000004291534424,
+     0.04999999701976776
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.4000000059604645,
+       1.9500000476837158,
+       -0.1850000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_34"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 34,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_34"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000016212463379,
+     0.07999998331069946
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6549999713897705,
+       2.4000000953674316,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_35"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 35,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_35"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000016212463379,
+     0.07999998331069946
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6549999713897705,
+       2.4000000953674316,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_36"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 36,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_36"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999999821186066,
+     0.08000016212463379,
+     0.04999995231628418
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       2.4000000953674316,
+       1.125
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_37"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 37,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_37"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999999821186066,
+     0.08000016212463379,
+     0.04999999701976776
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       2.4000000953674316,
+       -0.1850000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_38"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 38,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_38"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000016212463379,
+     0.08000004291534424
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6549999713897705,
+       2.8499999046325684,
+       0.8700000047683716
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_39"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 39,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_39"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000016212463379,
+     0.08000004291534424
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6549999713897705,
+       2.8499999046325684,
+       0.8700000047683716
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_40"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 40,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_40"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999998331069946,
+     0.08000016212463379,
+     0.04999995231628418
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.4000000059604645,
+       2.8499999046325684,
+       1.125
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_41"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 41,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_41"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000016212463379,
+     0.07999999821186066
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6549999713897705,
+       2.8499999046325684,
+       0.07000000029802322
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_42"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 42,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_42"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000016212463379,
+     0.07999999821186066
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6549999713897705,
+       2.8499999046325684,
+       0.07000000029802322
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_43"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 43,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_43"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999998331069946,
+     0.08000016212463379,
+     0.04999995231628418
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.4000000059604645,
+       2.8499999046325684,
+       1.125
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_44"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 44,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_44"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.07999992370605469,
+     0.07999998331069946
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6549999713897705,
+       3.299999952316284,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_45"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 45,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_45"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.07999992370605469,
+     0.07999998331069946
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6549999713897705,
+       3.299999952316284,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_46"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 46,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_46"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999999821186066,
+     0.07999992370605469,
+     0.04999995231628418
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       3.299999952316284,
+       1.125
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_47"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 47,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_47"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000016212463379,
+     0.08000004291534424
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6549999713897705,
+       3.8499999046325684,
+       0.8700000047683716
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_48"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 48,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_48"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000016212463379,
+     0.08000004291534424
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6549999713897705,
+       3.8499999046325684,
+       0.8700000047683716
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_49"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 49,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_49"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999998331069946,
+     0.08000016212463379,
+     0.04999995231628418
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.4000000059604645,
+       3.8499999046325684,
+       1.125
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_50"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 50,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_50"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000016212463379,
+     0.07999999821186066
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6549999713897705,
+       3.8499999046325684,
+       0.07000000029802322
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_51"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 51,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_51"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.050000011920928955,
+     0.08000016212463379,
+     0.07999999821186066
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6549999713897705,
+       3.8499999046325684,
+       0.07000000029802322
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_52"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 52,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_52"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SpineDot",
+   "properties": {
+    "Size": [
+     0.07999998331069946,
+     0.08000016212463379,
+     0.04999995231628418
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.4000000059604645,
+       3.8499999046325684,
+       1.125
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9411764740943909,
+     0.3019607961177826
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Torso",
+      "Rojo_Target_Part1": "V4_BRT_021_V_53"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Torso",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "stripe",
+    "Slot": "SpineDot",
+    "VoxelIndex": 53,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_53"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Head",
+   "properties": {
+    "Size": [
+     1.2400000095367432,
+     1.1600000858306885,
+     0.699999988079071
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       3.3400001525878906,
+       -0.17999997735023499
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.6549019813537598,
+     0.6078431606292725,
+     0.8156862854957581
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": true,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_54"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "skin",
+    "Slot": "Head",
+    "VoxelIndex": 54,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_54"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Muzzle",
+   "properties": {
+    "Size": [
+     1.3200000524520874,
+     0.7400000095367432,
+     0.5399999618530273
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       2.989999771118164,
+       -0.7599999904632568
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.8235294222831726,
+     0.7882353067398071,
+     0.9490196108818054
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": true,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_55"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "skin2",
+    "Slot": "Muzzle",
+    "VoxelIndex": 55,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_55"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Muzzle",
+   "properties": {
+    "Size": [
+     1.0800000429153442,
+     0.5399999618530273,
+     0.08000004291534424
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       2.990000009536743,
+       -1.0699999332427979
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.8235294222831726,
+     0.7882353067398071,
+     0.9490196108818054
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_56"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "skin2",
+    "Slot": "Muzzle",
+    "VoxelIndex": 56,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_56"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Nostril",
+   "properties": {
+    "Size": [
+     0.1599999964237213,
+     0.12000012397766113,
+     0.019999980926513672
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.23999999463558197,
+       3.179999828338623,
+       -1.1200000047683716
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.0784313753247261,
+     0.062745101749897,
+     0.0941176488995552
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_57"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Nostril",
+    "VoxelIndex": 57,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_57"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Nostril",
+   "properties": {
+    "Size": [
+     0.1599999964237213,
+     0.12000012397766113,
+     0.019999980926513672
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.23999999463558197,
+       3.179999828338623,
+       -1.1200000047683716
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.0784313753247261,
+     0.062745101749897,
+     0.0941176488995552
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_58"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Nostril",
+    "VoxelIndex": 58,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_58"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Mouth",
+   "properties": {
+    "Size": [
+     0.800000011920929,
+     0.059999942779541016,
+     0.019999980926513672
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0,
+       2.7899999618530273,
+       -1.1200000047683716
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.0784313753247261,
+     0.062745101749897,
+     0.0941176488995552
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_59"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Mouth",
+    "VoxelIndex": 59,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_59"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "BuckTooth",
+   "properties": {
+    "Size": [
+     0.11999999731779099,
+     0.18000006675720215,
+     0.10000002384185791
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.09999999403953552,
+       2.6700000762939453,
+       -1.0999999046325684
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9647058844566345,
+     0.8705882430076599
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_60"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "BuckTooth",
+    "VoxelIndex": 60,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_60"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "BuckTooth",
+   "properties": {
+    "Size": [
+     0.11999999731779099,
+     0.18000006675720215,
+     0.10000002384185791
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.09999999403953552,
+       2.6700000762939453,
+       -1.0999999046325684
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.9647058844566345,
+     0.8705882430076599
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_61"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "BuckTooth",
+    "VoxelIndex": 61,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_61"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Cheek",
+   "properties": {
+    "Size": [
+     0.019999980926513672,
+     0.24000000953674316,
+     0.25999999046325684
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6700000166893005,
+       2.880000114440918,
+       -0.8600000143051147
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.49803921580314636,
+     0.7215686440467834
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_62"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "feather2",
+    "Slot": "Cheek",
+    "VoxelIndex": 62,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_62"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Cheek",
+   "properties": {
+    "Size": [
+     0.019999980926513672,
+     0.24000000953674316,
+     0.25999999046325684
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6700000166893005,
+       2.880000114440918,
+       -0.8600000143051147
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.49803921580314636,
+     0.7215686440467834
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_63"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "feather2",
+    "Slot": "Cheek",
+    "VoxelIndex": 63,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_63"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Ear",
+   "properties": {
+    "Size": [
+     0.24000000953674316,
+     0.23999977111816406,
+     0.2199999988079071
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.48000001907348633,
+       4.039999961853027,
+       -0.04000000283122063
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.6549019813537598,
+     0.6078431606292725,
+     0.8156862854957581
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_64"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "skin",
+    "Slot": "Ear",
+    "VoxelIndex": 64,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_64"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "InnerEar",
+   "properties": {
+    "Size": [
+     0.1599999964237213,
+     0.15999984741210938,
+     0.019999995827674866
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.48000001907348633,
+       4.039999961853027,
+       -0.1599999964237213
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.49803921580314636,
+     0.7215686440467834
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_65"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "feather2",
+    "Slot": "InnerEar",
+    "VoxelIndex": 65,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_65"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Ear",
+   "properties": {
+    "Size": [
+     0.24000000953674316,
+     0.23999977111816406,
+     0.2199999988079071
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.48000001907348633,
+       4.039999961853027,
+       -0.04000000283122063
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.6549019813537598,
+     0.6078431606292725,
+     0.8156862854957581
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_66"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "skin",
+    "Slot": "Ear",
+    "VoxelIndex": 66,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_66"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "InnerEar",
+   "properties": {
+    "Size": [
+     0.1599999964237213,
+     0.15999984741210938,
+     0.019999995827674866
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.48000001907348633,
+       4.039999961853027,
+       -0.1599999964237213
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.49803921580314636,
+     0.7215686440467834
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_67"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "feather2",
+    "Slot": "InnerEar",
+    "VoxelIndex": 67,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_67"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "EyeDome",
+   "properties": {
+    "Size": [
+     0.5,
+     0.5600001811981201,
+     0.24000000953674316
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.2900000214576721,
+       3.5999999046325684,
+       -0.5099999904632568
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     1,
+     1
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_68"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "EyeDome",
+    "VoxelIndex": 68,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_68"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "EyeWhite",
+   "properties": {
+    "Size": [
+     0.4415999948978424,
+     0.5627999305725098,
+     0.04000002145767212
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.28999999165534973,
+       3.5585999488830566,
+       -0.6499999761581421
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     1,
+     1
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_69"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "EyeWhite",
+    "VoxelIndex": 69,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_69"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "EyeWhite",
+   "properties": {
+    "Size": [
+     0.5336000323295593,
+     0.46199989318847656,
+     0.04000002145767212
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.28999999165534973,
+       3.5585999488830566,
+       -0.6499999761581421
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     1,
+     1
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_70"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "EyeWhite",
+    "VoxelIndex": 70,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_70"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Iris",
+   "properties": {
+    "Size": [
+     0.3628000020980835,
+     0.18910002708435059,
+     0.029999971389770508
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.28999999165534973,
+       3.6790499687194824,
+       -0.6850000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.47843137383461,
+     0.16470588743686676,
+     0.062745101749897
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_71"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Iris",
+    "VoxelIndex": 71,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_71"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Iris",
+   "properties": {
+    "Size": [
+     0.3628000020980835,
+     0.15600013732910156,
+     0.029999971389770508
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.28999999165534973,
+       3.506500005722046,
+       -0.6850000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.4156862795352936,
+     0.10196078568696976
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_72"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Iris",
+    "VoxelIndex": 72,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_72"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Iris",
+   "properties": {
+    "Size": [
+     0.3628000020980835,
+     0.1276998519897461,
+     0.029999971389770508
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.28999999165534973,
+       3.364650011062622,
+       -0.6850000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.8117647171020508,
+     0.2705882489681244
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_73"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Iris",
+    "VoxelIndex": 73,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_73"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Pupil",
+   "properties": {
+    "Size": [
+     0.1777999848127365,
+     0.2222001552581787,
+     0.030000030994415283
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.28999999165534973,
+       3.5595998764038086,
+       -0.7150000333786011
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.10196078568696976,
+     0.04313725605607033,
+     0.0235294122248888
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_74"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Pupil",
+    "VoxelIndex": 74,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_74"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Catchlight",
+   "properties": {
+    "Size": [
+     0.1378999948501587,
+     0.1324000358581543,
+     0.019999980926513672
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.3641499876976013,
+       3.65939998626709,
+       -0.7400000095367432
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     1,
+     1
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_75"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": true,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Catchlight",
+    "VoxelIndex": 75,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_75"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Catchlight",
+   "properties": {
+    "Size": [
+     0.0689999908208847,
+     0.06150007247924805,
+     0.019999980926513672
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.18520000576972961,
+       3.393049955368042,
+       -0.7400000095367432
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     1,
+     1
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_76"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": true,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Catchlight",
+    "VoxelIndex": 76,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_76"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Catchlight",
+   "properties": {
+    "Size": [
+     0.028999999165534973,
+     0.028300046920776367,
+     0.019999980926513672
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.1956000030040741,
+       3.6085500717163086,
+       -0.7400000095367432
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     1,
+     1
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_77"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": true,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Catchlight",
+    "VoxelIndex": 77,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_77"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Lid",
+   "properties": {
+    "Size": [
+     0.5935999751091003,
+     0.15999984741210938,
+     0.06999999284744263
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.28999999165534973,
+       3.7799999713897705,
+       -0.6649999618530273
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.6549019813537598,
+     0.6078431606292725,
+     0.8156862854957581
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_78"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "skin",
+    "Slot": "Lid",
+    "VoxelIndex": 78,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_78"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Lid",
+   "properties": {
+    "Size": [
+     0.5735999941825867,
+     0.039999961853027344,
+     0.07999998331069946
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.28999999165534973,
+       3.680000066757202,
+       -0.6699999570846558
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.0784313753247261,
+     0.062745101749897,
+     0.0941176488995552
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_79"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Lid",
+    "VoxelIndex": 79,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_79"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Brow",
+   "properties": {
+    "Size": [
+     0.19999998807907104,
+     0.039999961853027344,
+     0.2800000011920929
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.28999999165534973,
+       3.9000000953674316,
+       -0.550000011920929
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.0784313753247261,
+     0.062745101749897,
+     0.0941176488995552
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_80"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Brow",
+    "VoxelIndex": 80,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_80"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "EyeDome",
+   "properties": {
+    "Size": [
+     0.5,
+     0.5600001811981201,
+     0.24000000953674316
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.2900000214576721,
+       3.5999999046325684,
+       -0.5099999904632568
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     1,
+     1
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_81"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "EyeDome",
+    "VoxelIndex": 81,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_81"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "EyeWhite",
+   "properties": {
+    "Size": [
+     0.4415999948978424,
+     0.5627999305725098,
+     0.04000002145767212
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.28999999165534973,
+       3.5585999488830566,
+       -0.6499999761581421
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     1,
+     1
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_82"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "EyeWhite",
+    "VoxelIndex": 82,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_82"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "EyeWhite",
+   "properties": {
+    "Size": [
+     0.5336000323295593,
+     0.46199989318847656,
+     0.04000002145767212
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.28999999165534973,
+       3.5585999488830566,
+       -0.6499999761581421
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     1,
+     1
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_83"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "EyeWhite",
+    "VoxelIndex": 83,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_83"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Iris",
+   "properties": {
+    "Size": [
+     0.3628000020980835,
+     0.18910002708435059,
+     0.029999971389770508
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.28999999165534973,
+       3.6790499687194824,
+       -0.6850000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.47843137383461,
+     0.16470588743686676,
+     0.062745101749897
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_84"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Iris",
+    "VoxelIndex": 84,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_84"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Iris",
+   "properties": {
+    "Size": [
+     0.3628000020980835,
+     0.15600013732910156,
+     0.029999971389770508
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.28999999165534973,
+       3.506500005722046,
+       -0.6850000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.4156862795352936,
+     0.10196078568696976
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_85"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Iris",
+    "VoxelIndex": 85,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_85"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Iris",
+   "properties": {
+    "Size": [
+     0.3628000020980835,
+     0.1276998519897461,
+     0.029999971389770508
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.28999999165534973,
+       3.364650011062622,
+       -0.6850000023841858
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.8117647171020508,
+     0.2705882489681244
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_86"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Iris",
+    "VoxelIndex": 86,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_86"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Pupil",
+   "properties": {
+    "Size": [
+     0.1777999848127365,
+     0.2222001552581787,
+     0.030000030994415283
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.28999999165534973,
+       3.5595998764038086,
+       -0.7150000333786011
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.10196078568696976,
+     0.04313725605607033,
+     0.0235294122248888
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_87"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Pupil",
+    "VoxelIndex": 87,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_87"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Catchlight",
+   "properties": {
+    "Size": [
+     0.1378999948501587,
+     0.1324000358581543,
+     0.019999980926513672
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.3641499876976013,
+       3.65939998626709,
+       -0.7400000095367432
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     1,
+     1
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_88"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": true,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Catchlight",
+    "VoxelIndex": 88,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_88"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Catchlight",
+   "properties": {
+    "Size": [
+     0.0689999908208847,
+     0.06150007247924805,
+     0.019999980926513672
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.18520000576972961,
+       3.393049955368042,
+       -0.7400000095367432
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     1,
+     1
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_89"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": true,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Catchlight",
+    "VoxelIndex": 89,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_89"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Catchlight",
+   "properties": {
+    "Size": [
+     0.028999999165534973,
+     0.028300046920776367,
+     0.019999980926513672
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.1956000030040741,
+       3.6085500717163086,
+       -0.7400000095367432
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     1,
+     1
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_90"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": true,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Catchlight",
+    "VoxelIndex": 90,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_90"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Lid",
+   "properties": {
+    "Size": [
+     0.5935999751091003,
+     0.15999984741210938,
+     0.06999999284744263
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.28999999165534973,
+       3.7799999713897705,
+       -0.6649999618530273
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.6549019813537598,
+     0.6078431606292725,
+     0.8156862854957581
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_91"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "skin",
+    "Slot": "Lid",
+    "VoxelIndex": 91,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_91"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Lid",
+   "properties": {
+    "Size": [
+     0.5735999941825867,
+     0.039999961853027344,
+     0.07999998331069946
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.28999999165534973,
+       3.680000066757202,
+       -0.6699999570846558
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.0784313753247261,
+     0.062745101749897,
+     0.0941176488995552
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_92"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Lid",
+    "VoxelIndex": 92,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_92"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Brow",
+   "properties": {
+    "Size": [
+     0.19999998807907104,
+     0.039999961853027344,
+     0.2800000011920929
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.28999999165534973,
+       3.9000000953674316,
+       -0.550000011920929
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.0784313753247261,
+     0.062745101749897,
+     0.0941176488995552
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_Head",
+      "Rojo_Target_Part1": "V4_BRT_021_V_93"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "Head",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "Brow",
+    "VoxelIndex": 93,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_93"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "HipCollar",
+   "properties": {
+    "Size": [
+     0.47999998927116394,
+     0.07999998331069946,
+     0.47999995946884155
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.4599999785423279,
+       0.6599999666213989,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.11372549086809158,
+     0.12941177189350128,
+     0.20000000298023224
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_RightLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_94"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "RightLeg",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "HipCollar",
+    "VoxelIndex": 94,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_94"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Leg",
+   "properties": {
+    "Size": [
+     0.4399999976158142,
+     0.2799999713897705,
+     0.4399999976158142
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.46000000834465027,
+       0.5,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_RightLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_95"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "RightLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "Leg",
+    "VoxelIndex": 95,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_95"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "AnkleCollar",
+   "properties": {
+    "Size": [
+     0.4599999785423279,
+     0.06999999284744263,
+     0.4599999785423279
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.46000000834465027,
+       0.33500000834465027,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.11372549086809158,
+     0.12941177189350128,
+     0.20000000298023224
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_RightLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_96"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "RightLeg",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "AnkleCollar",
+    "VoxelIndex": 96,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_96"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Foot",
+   "properties": {
+    "Size": [
+     0.5600000023841858,
+     0.1600000113248825,
+     1.1800000667572021
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.46000000834465027,
+       0.2800000011920929,
+       0.20000001788139343
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_RightLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_97"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "RightLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "Foot",
+    "VoxelIndex": 97,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_97"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "CactusToe",
+   "properties": {
+    "Size": [
+     0.1599999964237213,
+     0.14000000059604645,
+     0.19999998807907104
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.26999998092651367,
+       0.27000001072883606,
+       -0.4899999797344208
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_RightLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_98"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "RightLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "CactusToe",
+    "VoxelIndex": 98,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_98"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "CactusToe",
+   "properties": {
+    "Size": [
+     0.1600000262260437,
+     0.14000000059604645,
+     0.19999998807907104
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.46000000834465027,
+       0.27000001072883606,
+       -0.4899999797344208
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_RightLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_99"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "RightLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "CactusToe",
+    "VoxelIndex": 99,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_99"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "CactusToe",
+   "properties": {
+    "Size": [
+     0.1600000262260437,
+     0.14000000059604645,
+     0.19999998807907104
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.6499999761581421,
+       0.27000001072883606,
+       -0.4899999797344208
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_RightLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_100"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "RightLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "CactusToe",
+    "VoxelIndex": 100,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_100"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SlipperSole",
+   "properties": {
+    "Size": [
+     0.7199999690055847,
+     0.1599999964237213,
+     1.6600000858306885
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.46000000834465027,
+       0.12000000476837158,
+       0.14000001549720764
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.8235294222831726,
+     0.10196078568696976
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_RightLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_101"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "RightLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "prop",
+    "Slot": "SlipperSole",
+    "VoxelIndex": 101,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_101"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SlipperUpper",
+   "properties": {
+    "Size": [
+     0.7199999690055847,
+     0.25999999046325684,
+     0.6399999856948853
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.46000000834465027,
+       0.33000001311302185,
+       -0.01000000536441803
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.8235294222831726,
+     0.10196078568696976
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_RightLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_102"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "RightLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "prop",
+    "Slot": "SlipperUpper",
+    "VoxelIndex": 102,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_102"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SlipperTrim",
+   "properties": {
+    "Size": [
+     0.7400000095367432,
+     0.06000000238418579,
+     0.6800000071525574
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.4599999785423279,
+       0.4699999988079071,
+       -0.009999990463256836
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.5411764979362488,
+     0.12156862765550613
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_RightLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_103"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "RightLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "trim",
+    "Slot": "SlipperTrim",
+    "VoxelIndex": 103,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_103"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Sole",
+   "properties": {
+    "Size": [
+     0.7199999690055847,
+     0.03999999910593033,
+     1.6600000858306885
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.46000000834465027,
+       0.019999999552965164,
+       0.14000001549720764
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.239215686917305,
+     0.8196078538894653
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_RightLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_104"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "RightLeg",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "accent",
+    "Slot": "Sole",
+    "VoxelIndex": 104,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_104"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "HipCollar",
+   "properties": {
+    "Size": [
+     0.47999998927116394,
+     0.07999998331069946,
+     0.47999995946884155
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.4599999785423279,
+       0.6599999666213989,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.11372549086809158,
+     0.12941177189350128,
+     0.20000000298023224
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_LeftLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_105"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "LeftLeg",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "HipCollar",
+    "VoxelIndex": 105,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_105"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Leg",
+   "properties": {
+    "Size": [
+     0.4399999976158142,
+     0.2799999713897705,
+     0.4399999976158142
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.46000000834465027,
+       0.5,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_LeftLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_106"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "LeftLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "Leg",
+    "VoxelIndex": 106,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_106"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "AnkleCollar",
+   "properties": {
+    "Size": [
+     0.4599999785423279,
+     0.06999999284744263,
+     0.4599999785423279
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.46000000834465027,
+       0.33500000834465027,
+       0.4699999988079071
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.11372549086809158,
+     0.12941177189350128,
+     0.20000000298023224
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_LeftLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_107"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "LeftLeg",
+    "Emissive": false,
+    "Protected": true,
+    "Relief": false,
+    "Role": "Protected",
+    "Slot": "AnkleCollar",
+    "VoxelIndex": 107,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_107"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Foot",
+   "properties": {
+    "Size": [
+     0.5600000023841858,
+     0.1600000113248825,
+     1.1800000667572021
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.46000000834465027,
+       0.2800000011920929,
+       0.20000001788139343
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_LeftLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_108"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "LeftLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "Foot",
+    "VoxelIndex": 108,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_108"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "CactusToe",
+   "properties": {
+    "Size": [
+     0.1600000262260437,
+     0.14000000059604645,
+     0.19999998807907104
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.6499999761581421,
+       0.27000001072883606,
+       -0.4899999797344208
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_LeftLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_109"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "LeftLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "CactusToe",
+    "VoxelIndex": 109,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_109"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "CactusToe",
+   "properties": {
+    "Size": [
+     0.1600000262260437,
+     0.14000000059604645,
+     0.19999998807907104
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.46000000834465027,
+       0.27000001072883606,
+       -0.4899999797344208
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_LeftLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_110"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "LeftLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "CactusToe",
+    "VoxelIndex": 110,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_110"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "CactusToe",
+   "properties": {
+    "Size": [
+     0.1599999964237213,
+     0.14000000059604645,
+     0.19999998807907104
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.26999998092651367,
+       0.27000001072883606,
+       -0.4899999797344208
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.2078431397676468,
+     0.8509804010391235,
+     0.30980393290519714
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_LeftLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_111"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "LeftLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "upper",
+    "Slot": "CactusToe",
+    "VoxelIndex": 111,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_111"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SlipperSole",
+   "properties": {
+    "Size": [
+     0.7199999690055847,
+     0.1599999964237213,
+     1.6600000858306885
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.46000000834465027,
+       0.12000000476837158,
+       0.14000001549720764
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.8235294222831726,
+     0.10196078568696976
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_LeftLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_112"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "LeftLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "prop",
+    "Slot": "SlipperSole",
+    "VoxelIndex": 112,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_112"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SlipperUpper",
+   "properties": {
+    "Size": [
+     0.7199999690055847,
+     0.25999999046325684,
+     0.6399999856948853
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.46000000834465027,
+       0.33000001311302185,
+       -0.01000000536441803
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.8235294222831726,
+     0.10196078568696976
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth",
+    "MaterialVariant": "AF2_Creature_SmoothPlastic"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_LeftLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_113"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "LeftLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": true,
+    "Role": "prop",
+    "Slot": "SlipperUpper",
+    "VoxelIndex": 113,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_113"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "SlipperTrim",
+   "properties": {
+    "Size": [
+     0.7400000095367432,
+     0.06000000238418579,
+     0.6800000071525574
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.4599999785423279,
+       0.4699999988079071,
+       -0.009999990463256836
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.5411764979362488,
+     0.12156862765550613
+    ],
+    "Material": "SmoothPlastic",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_LeftLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_114"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "LeftLeg",
+    "Emissive": false,
+    "Protected": false,
+    "Relief": false,
+    "Role": "trim",
+    "Slot": "SlipperTrim",
+    "VoxelIndex": 114,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_114"
+   }
+  },
+  {
+   "className": "Part",
+   "name": "Sole",
+   "properties": {
+    "Size": [
+     0.7199999690055847,
+     0.03999999910593033,
+     1.6600000858306885
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.46000000834465027,
+       0.019999999552965164,
+       0.14000001549720764
+      ],
+      "orientation": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ]
+      ]
+     }
+    },
+    "Color": [
+     1,
+     0.239215686917305,
+     0.8196078538894653
+    ],
+    "Material": "Neon",
+    "Transparency": 0,
+    "Reflectance": 0,
+    "Anchored": false,
+    "Massless": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "WeldConstraint",
+     "name": "RigWeld",
+     "children": [],
+     "attributes": {
+      "Rojo_Target_Part0": "V4_BRT_021_B_LeftLeg",
+      "Rojo_Target_Part1": "V4_BRT_021_V_115"
+     }
+    }
+   ],
+   "attributes": {
+    "Bone": "LeftLeg",
+    "Emissive": true,
+    "Protected": false,
+    "Relief": false,
+    "Role": "accent",
+    "Slot": "Sole",
+    "VoxelIndex": 115,
+    "VoxelV4": true,
+    "Rojo_Id": "V4_BRT_021_V_115"
+   }
+  },
+  {
+   "className": "Folder",
+   "name": "Mutations",
+   "children": [
+    {
+     "className": "Configuration",
+     "name": "Shiny",
+     "children": [],
+     "attributes": {
+      "AuraSize": 6.467999839782714,
+      "EmitterBox": {
+       "Vector3": [
+        1.49399995803833,
+        4.1579999923706055,
+        2.069999933242798
+       ]
+      },
+      "EmitterRate": 3,
+      "Glow": {
+       "Color3": [
+        1,
+        0.95686274766922,
+        0.8039215803146362
+       ]
+      },
+      "Overlay": "ShinyTwinkle",
+      "OverlayImage": "",
+      "OverlayStudsPerTile": 0.5,
+      "Reflectance": 0.12,
+      "Role_accent": {
+       "Color3": [
+        1,
+        0.529411792755127,
+        0.7176470756530762
+       ]
+      },
+      "Role_feather": {
+       "Color3": [
+        1,
+        0.37254902720451355,
+        0.6274510025978088
+       ]
+      },
+      "Role_feather2": {
+       "Color3": [
+        1,
+        1,
+        1
+       ]
+      },
+      "Role_foot": {
+       "Color3": [
+        1,
+        0.6117647290229797,
+        0.7764706015586853
+       ]
+      },
+      "Role_lower": {
+       "Color3": [
+        1,
+        0.95686274766922,
+        0.8039215803146362
+       ]
+      },
+      "Role_prop": {
+       "Color3": [
+        1,
+        0.95686274766922,
+        0.8039215803146362
+       ]
+      },
+      "Role_skin": {
+       "Color3": [
+        1,
+        0.8784313797950745,
+        0.9254902005195618
+       ]
+      },
+      "Role_skin2": {
+       "Color3": [
+        1,
+        0.7137255072593689,
+        0.8274509906768799
+       ]
+      },
+      "Role_stripe": {
+       "Color3": [
+        1,
+        1,
+        1
+       ]
+      },
+      "Role_trim": {
+       "Color3": [
+        1,
+        0.8901960849761963,
+        0.9333333373069763
+       ]
+      },
+      "Role_upper": {
+       "Color3": [
+        1,
+        0.529411792755127,
+        0.7176470756530762
+       ]
+      }
+     }
+    },
+    {
+     "className": "Configuration",
+     "name": "Golden",
+     "children": [],
+     "attributes": {
+      "AuraSize": 6.467999839782714,
+      "EmitterBox": {
+       "Vector3": [
+        1.49399995803833,
+        4.1579999923706055,
+        2.069999933242798
+       ]
+      },
+      "EmitterRate": 4,
+      "Glow": {
+       "Color3": [
+        1,
+        0.8313725590705872,
+        0.27843138575553894
+       ]
+      },
+      "Overlay": "GoldVariance",
+      "OverlayImage": "",
+      "OverlayStudsPerTile": 0.5,
+      "Reflectance": 0.28,
+      "Role_accent": {
+       "Color3": [
+        1,
+        0.9411764740943909,
+        0.6392157077789307
+       ]
+      },
+      "Role_feather": {
+       "Color3": [
+        0.5490196347236633,
+        0.29019609093666077,
+        0.0313725508749485
+       ]
+      },
+      "Role_feather2": {
+       "Color3": [
+        1,
+        0.9411764740943909,
+        0.6392157077789307
+       ]
+      },
+      "Role_foot": {
+       "Color3": [
+        0.8509804010391235,
+        0.5843137502670288,
+        0.062745101749897
+       ]
+      },
+      "Role_lower": {
+       "Color3": [
+        1,
+        0.8313725590705872,
+        0.27843138575553894
+       ]
+      },
+      "Role_prop": {
+       "Color3": [
+        1,
+        0.8313725590705872,
+        0.27843138575553894
+       ]
+      },
+      "Role_skin": {
+       "Color3": [
+        1,
+        0.8313725590705872,
+        0.27843138575553894
+       ]
+      },
+      "Role_skin2": {
+       "Color3": [
+        0.8980392217636108,
+        0.6470588445663452,
+        0.125490203499794
+       ]
+      },
+      "Role_stripe": {
+       "Color3": [
+        1,
+        0.9411764740943909,
+        0.6392157077789307
+       ]
+      },
+      "Role_trim": {
+       "Color3": [
+        1,
+        0.886274516582489,
+        0.47843137383461
+       ]
+      },
+      "Role_upper": {
+       "Color3": [
+        0.8509804010391235,
+        0.5843137502670288,
+        0.062745101749897
+       ]
+      }
+     }
+    },
+    {
+     "className": "Configuration",
+     "name": "Glitched",
+     "children": [],
+     "attributes": {
+      "AuraSize": 6.467999839782714,
+      "EmitterBox": {
+       "Vector3": [
+        1.49399995803833,
+        4.1579999923706055,
+        2.069999933242798
+       ]
+      },
+      "EmitterRate": 4,
+      "Glow": {
+       "Color3": [
+        1,
+        0.2862745225429535,
+        0.8823529481887817
+       ]
+      },
+      "Overlay": "GlitchTiles",
+      "OverlayImage": "",
+      "OverlayStudsPerTile": 0.5,
+      "Reflectance": 0,
+      "Role_accent": {
+       "Color3": [
+        0.24313725531101227,
+        1,
+        0.9411764740943909
+       ]
+      },
+      "Role_feather": {
+       "Color3": [
+        0.16862745583057404,
+        0.05882352963089943,
+        0.32156863808631897
+       ]
+      },
+      "Role_feather2": {
+       "Color3": [
+        1,
+        0.2862745225429535,
+        0.8823529481887817
+       ]
+      },
+      "Role_foot": {
+       "Color3": [
+        0.24313725531101227,
+        1,
+        0.9411764740943909
+       ]
+      },
+      "Role_lower": {
+       "Color3": [
+        0.16862745583057404,
+        0.05882352963089943,
+        0.32156863808631897
+       ]
+      },
+      "Role_prop": {
+       "Color3": [
+        1,
+        0.2862745225429535,
+        0.8823529481887817
+       ]
+      },
+      "Role_skin": {
+       "Color3": [
+        1,
+        0.5411764979362488,
+        0.9411764740943909
+       ]
+      },
+      "Role_skin2": {
+       "Color3": [
+        0.24313725531101227,
+        1,
+        0.9411764740943909
+       ]
+      },
+      "Role_stripe": {
+       "Color3": [
+        0.24313725531101227,
+        1,
+        0.9411764740943909
+       ]
+      },
+      "Role_trim": {
+       "Color3": [
+        0.3529411852359772,
+        0.12156862765550613,
+        0.6039215922355652
+       ]
+      },
+      "Role_upper": {
+       "Color3": [
+        1,
+        0.2862745225429535,
+        0.8823529481887817
+       ]
+      }
+     }
+    },
+    {
+     "className": "Configuration",
+     "name": "Radioactive",
+     "children": [],
+     "attributes": {
+      "AuraSize": 6.467999839782714,
+      "EmitterBox": {
+       "Vector3": [
+        1.49399995803833,
+        4.1579999923706055,
+        2.069999933242798
+       ]
+      },
+      "EmitterRate": 3,
+      "Glow": {
+       "Color3": [
+        0.8627451062202454,
+        1,
+        0.16862745583057404
+       ]
+      },
+      "Overlay": "",
+      "OverlayImage": "",
+      "OverlayStudsPerTile": 0.5,
+      "Reflectance": 0,
+      "Role_accent": {
+       "Color3": [
+        0.8627451062202454,
+        1,
+        0.16862745583057404
+       ]
+      },
+      "Role_feather": {
+       "Color3": [
+        0.0941176488995552,
+        0.125490203499794,
+        0.0941176488995552
+       ]
+      },
+      "Role_feather2": {
+       "Color3": [
+        0.8627451062202454,
+        1,
+        0.16862745583057404
+       ]
+      },
+      "Role_foot": {
+       "Color3": [
+        0.8627451062202454,
+        1,
+        0.16862745583057404
+       ]
+      },
+      "Role_lower": {
+       "Color3": [
+        0.0941176488995552,
+        0.125490203499794,
+        0.0941176488995552
+       ]
+      },
+      "Role_prop": {
+       "Color3": [
+        0.0941176488995552,
+        0.125490203499794,
+        0.0941176488995552
+       ]
+      },
+      "Role_skin": {
+       "Color3": [
+        0.7882353067398071,
+        1,
+        0.3529411852359772
+       ]
+      },
+      "Role_skin2": {
+       "Color3": [
+        0.6235294342041016,
+        0.8784313797950745,
+        0.10196078568696976
+       ]
+      },
+      "Role_stripe": {
+       "Color3": [
+        0.8627451062202454,
+        1,
+        0.16862745583057404
+       ]
+      },
+      "Role_trim": {
+       "Color3": [
+        0.16470588743686676,
+        0.22745098173618317,
+        0.125490203499794
+       ]
+      },
+      "Role_upper": {
+       "Color3": [
+        0.8627451062202454,
+        1,
+        0.16862745583057404
+       ]
+      }
+     }
+    },
+    {
+     "className": "Configuration",
+     "name": "Astral",
+     "children": [],
+     "attributes": {
+      "AuraSize": 6.467999839782714,
+      "EmitterBox": {
+       "Vector3": [
+        1.49399995803833,
+        4.1579999923706055,
+        2.069999933242798
+       ]
+      },
+      "EmitterRate": 2,
+      "Glow": {
+       "Color3": [
+        0.929411768913269,
+        0.8784313797950745,
+        1
+       ]
+      },
+      "HaloHeight": 4.819999885559082,
+      "HaloRadius": 1.4259999704360962,
+      "HaloTilt": -12,
+      "Overlay": "StarSpeckle",
+      "OverlayImage": "",
+      "OverlayStudsPerTile": 0.5,
+      "Reflectance": 0,
+      "Role_accent": {
+       "Color3": [
+        0.929411768913269,
+        0.8784313797950745,
+        1
+       ]
+      },
+      "Role_feather": {
+       "Color3": [
+        0.0784313753247261,
+        0.05098039284348488,
+        0.21960784494876862
+       ]
+      },
+      "Role_feather2": {
+       "Color3": [
+        0.929411768913269,
+        0.8784313797950745,
+        1
+       ]
+      },
+      "Role_foot": {
+       "Color3": [
+        0.4274509847164154,
+        0.45490196347236633,
+        1
+       ]
+      },
+      "Role_lower": {
+       "Color3": [
+        0.16470588743686676,
+        0.12156862765550613,
+        0.4313725531101227
+       ]
+      },
+      "Role_prop": {
+       "Color3": [
+        0.4274509847164154,
+        0.45490196347236633,
+        1
+       ]
+      },
+      "Role_skin": {
+       "Color3": [
+        0.7686274647712708,
+        0.7137255072593689,
+        1
+       ]
+      },
+      "Role_skin2": {
+       "Color3": [
+        0.5607843399047852,
+        0.501960813999176,
+        1
+       ]
+      },
+      "Role_stripe": {
+       "Color3": [
+        0.929411768913269,
+        0.8784313797950745,
+        1
+       ]
+      },
+      "Role_trim": {
+       "Color3": [
+        0.23137255012989044,
+        0.18431372940540314,
+        0.5607843399047852
+       ]
+      },
+      "Role_upper": {
+       "Color3": [
+        0.4274509847164154,
+        0.45490196347236633,
+        1
+       ]
+      }
+     }
+    }
+   ]
+  }
+ ],
+ "attributes": {
+  "VoxelCreatureVersion": 4,
+  "VoxelDesignHeight": 4.62,
+  "VoxelIrisFamily": "Amber",
+  "VoxelRigged": true,
+  "VoxelSignature": "a0854460",
+  "VoxelSpeciesId": "BRT_021",
+  "Rojo_Target_PrimaryPart": "V4Root_BRT_021"
+ }
+}

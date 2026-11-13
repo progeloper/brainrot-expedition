@@ -262,4 +262,15 @@ return table.freeze({
 		}),
 		notes = "Wader: a biped with knees, a two-joint S-shaped neck (NeckBase, Neck), wings and tail plumes. Sleeps on one leg with the neck twisted back; the Signature is the one-leg flamingo pose. Set written for it.",
 	}),
+	BRT_021 = table.freeze({
+		archetype = "Column",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>RightLeg",
+			"Torso>LeftLeg",
+		}),
+		notes = "Column: a tall rigid cactus body on two giant slippers, with the hippo face mounted flat on its front (it moves about 5 degrees). No arms, tail or neck. The Signature is the slipper slap. Set written for it.",
+	}),
 })
