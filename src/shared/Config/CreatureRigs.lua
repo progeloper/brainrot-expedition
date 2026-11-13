@@ -194,4 +194,17 @@ return table.freeze({
 		}),
 		notes = "Squat biped. The drill spins on its own bone under the head (signature prop). Elbows added at the owner's request in review round 2; no knees. Toe claws moved from the arm bones to the legs. Set written for him.",
 	}),
+	BRT_020 = table.freeze({
+		archetype = "Hoverer",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>MoonIo",
+			"Torso>MoonEuropa",
+			"Torso>RightLeg",
+			"Torso>LeftLeg",
+		}),
+		notes = "A planet on sneakers. Each moon orbits on its own bone at the planet's centre (signature props). Beard, mouth and all mane moved onto the head so the face is one rigid group. Set written for him.",
+	}),
 })
