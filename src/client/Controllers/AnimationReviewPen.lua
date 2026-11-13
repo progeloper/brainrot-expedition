@@ -16,7 +16,7 @@ local Skins = ReplicatedStorage.Shared.Config.VillagerSkins
 -- The villager skin shown in the back row of the plinths. Change it when the next skin goes
 -- to review; Nonna Pina stays in the behaviour demo.
 local REVIEW_SKIN =
-	{ module = "Swamp_PescatorePozzo", villager = "VIL_SWAMP_POZZO", region = "Swamp" }
+	{ module = "Swamp_LumacaLampione", villager = "VIL_SWAMP_LUMACA", region = "Swamp" }
 local ForestVillagers = require(ReplicatedStorage.Shared.Config.Villagers.Forest)
 
 local Pen = {}

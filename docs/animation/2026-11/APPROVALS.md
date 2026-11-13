@@ -41,3 +41,4 @@
 | Nonno Conchiglia skin (Beach, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Zio Sabbia's boxes with his colours, upright umbrella. Not live. | 13 Nov 2026 |
 | Rana Rapida skin (Swamp, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: frog skin, nón lá on his back with the glow strap as a collar band. Not live. | 13 Nov 2026 |
 | Pescatore Pozzo skin (Swamp, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: fisherman, nón lá with the glow band (thrown in his tantrum), net held upright by `uprightProp`, idle Fish. Not live. | 13 Nov 2026 |
+| Lumaca Lampione skin (Swamp, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: person-shaped snail, eye stalks through the nón lá, lantern shell on the Back joint. Not live. | 13 Nov 2026 |
