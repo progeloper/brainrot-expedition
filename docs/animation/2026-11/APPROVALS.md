@@ -19,3 +19,4 @@
 | BRT_010 Talpa Di Fero (Drill and elbow joints + 11 animations) | 2 | 13 Nov 2026 | Round 1 approved, then owner asked for elbows. Round 2 approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
 | Taglialegna Tito skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as sent. Not live: `VillagerAnimationEnabled` is off and the body's animations are not uploaded. | 13 Nov 2026 |
 | Gufo Gelato skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as sent, tail feathers included. Not live. | 13 Nov 2026 |
+| Funghetto Franco skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Tito's boxes with Franco's colours, axe kept, no mushroom prop. Not live. | 13 Nov 2026 |
