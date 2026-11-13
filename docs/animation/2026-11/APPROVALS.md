@@ -39,3 +39,4 @@
 | Granchio Megafono skin (Beach, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: megaphone upright in the right claw. Not live. | 13 Nov 2026 |
 | Surfista Sara skin (Beach, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Bruno's boxes with her colours, rescue tube kept, no surfboard. Not live. | 13 Nov 2026 |
 | Nonno Conchiglia skin (Beach, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Zio Sabbia's boxes with his colours, upright umbrella. Not live. | 13 Nov 2026 |
+| Rana Rapida skin (Swamp, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: frog skin, nón lá on his back with the glow strap as a collar band. Not live. | 13 Nov 2026 |
