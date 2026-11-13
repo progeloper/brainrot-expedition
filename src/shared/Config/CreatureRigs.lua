@@ -227,4 +227,21 @@ return table.freeze({
 		}),
 		notes = "Quadruped with a neck joint, four knees and a hinged fridge door (signature prop). Walk is a camel's pace written for him (review round 2); Sleep and Signature are his own; the other clips are the quadruped base with neck, knee and door motion added.",
 	}),
+	BRT_014 = table.freeze({
+		archetype = "Biped",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>RightArm",
+			"Torso>LeftArm",
+			"Torso>Gun",
+			"Torso>RightLeg",
+			"RightLeg>RightLowerLeg",
+			"Torso>LeftLeg",
+			"LeftLeg>LeftLowerLeg",
+			"Torso>Tail",
+		}),
+		notes = "Biped with knees. The drum-gun has its own bone on the shoulder line so both paws stay on it (signature prop); keep its raise under about 20 degrees or it enters his muzzle. No elbows because both paws hold the gun. Set written for him.",
+	}),
 })
