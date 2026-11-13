@@ -79,12 +79,26 @@ function Baker.Bake(definition: any, bones: { Bone }): KeyframeSequence
 	return sequence
 end
 
-function Baker.BakeSet(set: { any }, bones: { Bone }, folderName: string): Folder
+function Baker.BakeSet(
+	set: { any },
+	bones: { Bone },
+	folderName: string,
+	groupName: string?
+): Folder
 	local sources = ServerStorage:FindFirstChild("AnimationSources")
 	if not sources then
 		sources = Instance.new("Folder")
 		sources.Name = "AnimationSources"
 		sources.Parent = ServerStorage
+	end
+	if groupName then
+		local group = sources:FindFirstChild(groupName)
+		if not group then
+			group = Instance.new("Folder")
+			group.Name = groupName
+			group.Parent = sources
+		end
+		sources = group
 	end
 	local old = sources:FindFirstChild(folderName)
 	if old then
@@ -109,7 +123,9 @@ function Baker.PoseModel(model: Model, definition: any, t: number)
 				bind = motor.C0
 				motor:SetAttribute("BindC0", bind)
 			end
-			motor.C0 = (bind :: CFrame) * (poses[motor.Name] or CFrame.identity)
+			-- Poses are keyed by the bone part (Part1) name, the same name the Animator uses.
+			local bone = if motor.Part1 then motor.Part1.Name else motor.Name
+			motor.C0 = (bind :: CFrame) * (poses[bone] or CFrame.identity)
 		end
 	end
 end
@@ -140,7 +156,9 @@ function Baker.BuildSheet(
 	origin: Vector3,
 	definitions: { any },
 	templates: { Model },
-	frames: number
+	frames: number,
+	figureSpacing: number?,
+	shelfHeight: number?
 ): Folder
 	local old = parent:FindFirstChild("ContactSheet")
 	if old then
@@ -148,7 +166,7 @@ function Baker.BuildSheet(
 	end
 	local stage = Instance.new("Folder")
 	stage.Name = "ContactSheet"
-	local spacing, rowHeight = 3.3, 7.6
+	local spacing, rowHeight = figureSpacing or 3.3, shelfHeight or 7.6
 	local columns = frames * #templates
 	local width = columns * spacing + 14
 	local backdrop = Instance.new("Part")
@@ -164,7 +182,7 @@ function Baker.BuildSheet(
 		local shelf = Instance.new("Part")
 		shelf.Name = "Shelf_" .. definition.name
 		shelf.Anchored = true
-		shelf.Size = Vector3.new(width, 0.4, 5)
+		shelf.Size = Vector3.new(width, 0.4, math.max(5, spacing))
 		shelf.Position = origin + Vector3.new(0, y - 0.2, 1.4)
 		shelf.Color = Color3.fromRGB(150, 196, 132)
 		shelf.Material = Enum.Material.SmoothPlastic

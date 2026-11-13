@@ -133,9 +133,7 @@ function Pen.Start()
 		Color3.fromRGB(150, 196, 132)
 	)
 	floor.Name = "PenFloor"
-	for _, edge in
-		{ { 0, 55.5, 150, 1 }, { 0, -55.5, 150, 1 }, { 75.5, 0, 1, 110 }, { -75.5, 0, 1, 110 } }
-	do
+	for _, edge in { { 0, 55.5, 150, 1 }, { 75.5, 0, 1, 110 }, { -75.5, 0, 1, 110 } } do
 		block(
 			folder,
 			Vector3.new(edge[3], 4, edge[4]),
@@ -391,6 +389,135 @@ function Pen.Start()
 	track(waver, "Idle"):Play()
 	local nextWave = 0
 
+	-- 4. Brainrots: every species with baked drafts gets a row behind the behaviour demo.
+	local walkers: {
+		{
+			model: Model,
+			walk: AnimationTrack,
+			run: AnimationTrack,
+			centre: Vector3,
+			walkSpeed: number,
+			runSpeed: number,
+			scale: number,
+			angle: number,
+		}
+	} =
+		{}
+	local brainrotSources = sources and sources:FindFirstChild("Brainrots")
+	if brainrotSources and #brainrotSources:GetChildren() > 0 then
+		local VoxelBuilder = require(ReplicatedStorage.Shared.Utility.VoxelCreatureBuilder)
+		local Registry = require(ReplicatedStorage.Shared.Utility.VoxelCreatureRegistry)
+		local area = origin + Vector3.new(0, 0, -150)
+		block(
+			folder,
+			Vector3.new(190, 1, 110),
+			CFrame.new(area - Vector3.new(0, 0.5, 0)),
+			Color3.fromRGB(150, 196, 132)
+		)
+		block(
+			folder,
+			Vector3.new(30, 1, 42),
+			CFrame.new(origin + Vector3.new(0, -0.5, -75)),
+			Color3.fromRGB(150, 196, 132)
+		)
+		local row = 0
+		for _, speciesFolder in brainrotSources:GetChildren() do
+			local data = Registry.GetData(speciesFolder.Name)
+			if not data or not data.rig then
+				continue
+			end
+			local scale = VoxelBuilder.GameplayScale(data)
+			local function creature(cframe: CFrame, factor: number): (Model, Animator)
+				local model = VoxelBuilder.Build(data)
+				model:ScaleTo(scale * factor)
+				model:PivotTo(cframe)
+				model.Parent = folder
+				local controller =
+					model:FindFirstChildOfClass("AnimationController") :: AnimationController
+				return model, controller:FindFirstChildOfClass("Animator") :: Animator
+			end
+			local clips: { [string]: Animation } = {}
+			local names = {}
+			for _, sequence in speciesFolder:GetChildren() do
+				if sequence:IsA("KeyframeSequence") then
+					local animation = Instance.new("Animation")
+					animation.AnimationId =
+						KeyframeSequenceProvider:RegisterKeyframeSequence(sequence)
+					clips[sequence.Name] = animation
+					table.insert(names, sequence.Name)
+				end
+			end
+			table.sort(names)
+			local z = 30 - row * 40
+			sign(
+				folder,
+				speciesFolder.Name
+					.. ": every animation, then 0.6x / 1.0x / 1.6x scale test (Celebrate), then walk and run at real speed",
+				CFrame.new(area + Vector3.new(0, 12, z + 12)),
+				Vector3.new(90, 3, 0.3)
+			)
+			for index, name in names do
+				local spot = area + Vector3.new(-85 + (index - 1) * 14, 0, z)
+				local _, animator = creature(CFrame.new(spot), 1)
+				sign(
+					folder,
+					name,
+					CFrame.new(spot + Vector3.new(0, 1, -7)) * CFrame.Angles(math.rad(-25), 0, 0),
+					Vector3.new(9, 1.6, 0.2)
+				)
+				local sequence = speciesFolder:FindFirstChild(name) :: KeyframeSequence
+				local animationTrack = animator:LoadAnimation(clips[name])
+				if sequence.Loop then
+					animationTrack:Play(0)
+				else
+					local length = (sequence:GetAttribute("Length") :: number?) or 1
+					task.spawn(function()
+						while folder.Parent do
+							animationTrack:Play(0.05)
+							task.wait(math.max(2, length + 0.6))
+						end
+					end)
+				end
+			end
+			if clips.Celebrate then
+				for index, factor in { 0.6, 1.0, 1.6 } do
+					local spot = area + Vector3.new(-60 + index * 22, 0, z - 22)
+					local _, animator = creature(CFrame.new(spot), factor)
+					sign(
+						folder,
+						string.format("scale x%.1f", factor),
+						CFrame.new(spot + Vector3.new(0, 1, -9))
+							* CFrame.Angles(math.rad(-25), 0, 0),
+						Vector3.new(8, 1.6, 0.2)
+					)
+					local animationTrack = animator:LoadAnimation(clips.Celebrate)
+					task.spawn(function()
+						while folder.Parent do
+							animationTrack:Play(0.05)
+							task.wait(2)
+						end
+					end)
+				end
+			end
+			if clips.Walk and clips.Run then
+				local model, animator = creature(CFrame.new(area + Vector3.new(55, 0, z - 22)), 1)
+				local walkSequence = speciesFolder:FindFirstChild("Walk") :: KeyframeSequence
+				local runSequence = speciesFolder:FindFirstChild("Run") :: KeyframeSequence
+				table.insert(walkers, {
+					model = model,
+					walk = animator:LoadAnimation(clips.Walk),
+					run = animator:LoadAnimation(clips.Run),
+					centre = area + Vector3.new(55, 0, z - 22),
+					walkSpeed = (walkSequence:GetAttribute("AuthoredSpeed") :: number?) or 6,
+					runSpeed = (runSequence:GetAttribute("AuthoredSpeed") :: number?) or 12,
+					scale = scale,
+					angle = 0,
+				})
+			end
+			row += 1
+		end
+	end
+
 	local player = Players.LocalPlayer
 	task.spawn(function()
 		local character = player.Character or player.CharacterAdded:Wait()
@@ -408,6 +535,25 @@ function Pen.Start()
 		end
 		local now = os.clock()
 		demoStep(now)
+		for _, walker in walkers do
+			-- 8 s of Walk then 4 s of Run around a 12-stud circle, at the authored ground speeds.
+			local phase = now % 12
+			local running = phase >= 8
+			local speed = if running then walker.runSpeed else walker.walkSpeed
+			walker.angle += speed / 12 * (1 / 60)
+			local angle = walker.angle
+			local position = walker.centre
+				+ Vector3.new(math.cos(angle) * 12, 0, math.sin(angle) * 12)
+			local tangent = Vector3.new(-math.sin(angle), 0, math.cos(angle))
+			walker.model:PivotTo(CFrame.lookAt(position, position + tangent))
+			if running and not walker.run.IsPlaying then
+				walker.walk:Stop(0.12)
+				walker.run:Play(0.12)
+			elseif not running and not walker.walk.IsPlaying then
+				walker.run:Stop(0.2)
+				walker.walk:Play(0.2)
+			end
+		end
 		local character = player.Character
 		if character and now >= nextWave then
 			local distance = (character:GetPivot().Position - waver.model:GetPivot().Position).Magnitude
