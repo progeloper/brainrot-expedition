@@ -160,4 +160,21 @@ return table.freeze({
 		}),
 		notes = "Biped with knees (the rig already had them). The trunk sits on its own bone under the head (signature prop). Set written for him.",
 	}),
+	BRT_009 = table.freeze({
+		archetype = "Biped",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>RightArm",
+			"RightArm>RightForearm",
+			"Torso>LeftArm",
+			"LeftArm>LeftForearm",
+			"Torso>RightLeg",
+			"RightLeg>RightLowerLeg",
+			"Torso>LeftLeg",
+			"LeftLeg>LeftLowerLeg",
+		}),
+		notes = "Biped with elbows and knees, added at the owner's request in review round 2. Forearms carry the hands and bananas; lower legs carry the feet. Set written for him.",
+	}),
 })
