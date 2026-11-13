@@ -11,3 +11,4 @@
 | BRT_002 Tralalero Toad (11 animations, existing hopper rig) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
 | BRT_003 Cappuccino Capybara (Cup joint + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
 | BRT_004 Ballerina Banana (Tutu joint + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
+| BRT_005 Bombardiro Pigeon (11 animations, existing flyer rig) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |

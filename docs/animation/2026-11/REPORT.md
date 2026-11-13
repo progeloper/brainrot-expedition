@@ -2,7 +2,7 @@
 
 Started 13 November 2026. Branch `feature/camp-rework`, base commit `4e5ce25`, build stamp `P14_VILLAGER_OUTFITS_20261110_R1`, DEV place 91958083796436. Nothing published. Nothing committed yet.
 
-**Status: Part A, the villager body and six brainrots (BRT_019, 011, 013, 001, 002, 003) are approved (13 November 2026). Their 90 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. BRT_004 is drafted and waiting for review: `review/BRT_004/REVIEW.md`.**
+**Status: Part A, the villager body and seven brainrots (BRT_019, 011, 013, 001, 002, 003, 004) are approved (13 November 2026). Their 101 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. BRT_005 is drafted and waiting for review: `review/BRT_005/REVIEW.md`.**
 
 ## 0. Reconcile and snapshots
 
@@ -117,6 +117,7 @@ That is 35 brainrots, 1 villager body and 36 roster villagers (45 templates incl
 | BRT_002 Tralalero Toad | Hopper | 6: Torso, Head, two hind legs, two front limbs (existing V4 rig, unchanged) | 1 | 13 Nov 2026 | not uploaded |
 | BRT_003 Cappuccino Capybara | Quadruped | 7: Torso, Head, four legs, Cup (new, on the head) | 1 | 13 Nov 2026 | not uploaded |
 | BRT_004 Ballerina Banana | Biped, face on the body | 6: Torso, two legs, two arms, Tutu (new) | 1 | 13 Nov 2026 | not uploaded |
+| BRT_005 Bombardiro Pigeon | Flyer | 7: Torso, Head, two wings, Tail, two legs (existing V4 rig, unchanged) | 1 | 13 Nov 2026 | not uploaded |
 
 The Voxel V4 models already carried a basic Motor6D rig from the 7 November pass (`tools/voxel_v4/rig.js`). Species are rigged by extending that data through the existing export pipeline, not by a separate rig builder. Quadrupeds share `ServerAssets.AnimationAuthoring.Archetypes.Quadruped` as a starting point.
 

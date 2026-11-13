@@ -102,4 +102,18 @@ return table.freeze({
 		}),
 		notes = "Face on the body: no head or neck joint. The tutu sits on its own bone (signature prop). Set written for her, not from a shared base.",
 	}),
+	BRT_005 = table.freeze({
+		archetype = "Flyer",
+		rigVersion = 1,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>RightWing",
+			"Torso>LeftWing",
+			"Torso>Tail",
+			"Torso>RightLeg",
+			"Torso>LeftLeg",
+		}),
+		notes = "First flyer; the base for the others (AnimationAuthoring.Archetypes.Flyer). Wings are rigid spread plates: they hang, they do not fold. Flees in the air (visual only).",
+	}),
 })
