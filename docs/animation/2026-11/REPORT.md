@@ -2,7 +2,7 @@
 
 Started 13 November 2026. Branch `feature/camp-rework`, base commit `4e5ce25`, build stamp `P14_VILLAGER_OUTFITS_20261110_R1`, DEV place 91958083796436. Nothing published. Nothing committed yet.
 
-**Status: Part A (movement) approved by the owner on 13 November 2026 (flags still off). Next: the villager body.**
+**Status: Part A and the villager body (24 animations) are approved (13 November 2026). The animations are built as upload files but not uploaded: the upload folder needs the owner's approval in Studio. Next: BRT_019.**
 
 ## 0. Reconcile and snapshots
 
@@ -88,7 +88,7 @@ Also inside the brief: uniform walk 2 to 5 s and pause 1.5 to 4 s gives about 44
 ## 4. Planned order (owner may reorder)
 
 1. Part A checkpoint: approved 13 November 2026.
-2. The villager body and its 24 animations, on a neutral skin and on Nonna Pina.
+2. The villager body and its 24 animations, on a neutral skin and on Nonna Pina: approved 13 November 2026; upload pending.
 3. Trenostruzzo Turbo 3000 (BRT_019), the brainrot reference.
 4. Regions in unlock order. Brainrots by spawn share, first region they appear in; then that region's villager skins.
 

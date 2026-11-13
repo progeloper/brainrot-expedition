@@ -1,0 +1,194 @@
+{
+ "Alarm": {
+  "length": 0.5,
+  "speed": null,
+  "loop": true,
+  "priority": "Movement",
+  "keyframes": 11,
+  "bytes": 1792
+ },
+ "Chat": {
+  "length": 2.4,
+  "speed": null,
+  "loop": true,
+  "priority": "Idle",
+  "keyframes": 49,
+  "bytes": 6759
+ },
+ "Chop": {
+  "length": 1.2,
+  "speed": null,
+  "loop": true,
+  "priority": "Idle",
+  "keyframes": 25,
+  "bytes": 3225
+ },
+ "Curious": {
+  "length": 1.2,
+  "speed": 13.0,
+  "loop": true,
+  "priority": "Movement",
+  "keyframes": 25,
+  "bytes": 2929
+ },
+ "Fiddle": {
+  "length": 1.6,
+  "speed": null,
+  "loop": true,
+  "priority": "Idle",
+  "keyframes": 33,
+  "bytes": 2103
+ },
+ "Fish": {
+  "length": 3.0,
+  "speed": null,
+  "loop": true,
+  "priority": "Idle",
+  "keyframes": 61,
+  "bytes": 3439
+ },
+ "Idle": {
+  "length": 3.6,
+  "speed": null,
+  "loop": true,
+  "priority": "Idle",
+  "keyframes": 73,
+  "bytes": 9593
+ },
+ "Knead": {
+  "length": 0.9,
+  "speed": null,
+  "loop": true,
+  "priority": "Idle",
+  "keyframes": 19,
+  "bytes": 2756
+ },
+ "Lookout": {
+  "length": 3.0,
+  "speed": null,
+  "loop": true,
+  "priority": "Idle",
+  "keyframes": 61,
+  "bytes": 4475
+ },
+ "Reach": {
+  "length": 0.4,
+  "speed": null,
+  "loop": true,
+  "priority": "Action",
+  "keyframes": 9,
+  "bytes": 1046
+ },
+ "RunSprint": {
+  "length": 0.28,
+  "speed": 30.0,
+  "loop": true,
+  "priority": "Movement",
+  "keyframes": 7,
+  "bytes": 2023
+ },
+ "RunTrot": {
+  "length": 0.42,
+  "speed": 24.0,
+  "loop": true,
+  "priority": "Movement",
+  "keyframes": 10,
+  "bytes": 3126
+ },
+ "Shout": {
+  "length": 0.75,
+  "speed": null,
+  "loop": false,
+  "priority": "Action",
+  "keyframes": 16,
+  "bytes": 3283
+ },
+ "Skate": {
+  "length": 1.6,
+  "speed": 3.0,
+  "loop": true,
+  "priority": "Movement",
+  "keyframes": 33,
+  "bytes": 4629
+ },
+ "Stir": {
+  "length": 1.2,
+  "speed": null,
+  "loop": true,
+  "priority": "Idle",
+  "keyframes": 25,
+  "bytes": 2673
+ },
+ "Sweep": {
+  "length": 1.4,
+  "speed": null,
+  "loop": true,
+  "priority": "Idle",
+  "keyframes": 29,
+  "bytes": 4486
+ },
+ "Tag": {
+  "length": 0.35,
+  "speed": null,
+  "loop": false,
+  "priority": "Action",
+  "keyframes": 8,
+  "bytes": 1772
+ },
+ "TantrumFlail": {
+  "length": 1.5,
+  "speed": null,
+  "loop": false,
+  "priority": "Action",
+  "keyframes": 31,
+  "bytes": 4536
+ },
+ "TantrumSquawk": {
+  "length": 1.5,
+  "speed": null,
+  "loop": false,
+  "priority": "Action",
+  "keyframes": 31,
+  "bytes": 4745
+ },
+ "TantrumStomp": {
+  "length": 1.5,
+  "speed": null,
+  "loop": false,
+  "priority": "Action",
+  "keyframes": 31,
+  "bytes": 4734
+ },
+ "Tired": {
+  "length": 1.12,
+  "speed": 24.0,
+  "loop": true,
+  "priority": "Movement",
+  "keyframes": 24,
+  "bytes": 6682
+ },
+ "Walk": {
+  "length": 0.8,
+  "speed": 3.0,
+  "loop": true,
+  "priority": "Movement",
+  "keyframes": 17,
+  "bytes": 2701
+ },
+ "WalkGrumble": {
+  "length": 0.5,
+  "speed": 10.0,
+  "loop": true,
+  "priority": "Movement",
+  "keyframes": 11,
+  "bytes": 1971
+ },
+ "Wave": {
+  "length": 1.0,
+  "speed": null,
+  "loop": false,
+  "priority": "Action",
+  "keyframes": 21,
+  "bytes": 2644
+ }
+}
