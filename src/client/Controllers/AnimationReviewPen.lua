@@ -14,7 +14,7 @@ local Builder = require(ReplicatedStorage.Shared.Utility.VillagerBodyBuilder)
 local Skins = ReplicatedStorage.Shared.Config.VillagerSkins
 -- The villager skin shown in the back row of the plinths. Change it when the next skin goes
 -- to review; Nonna Pina stays in the behaviour demo.
-local REVIEW_SKIN = { module = "Forest_FunghettoFranco", villager = "VIL_FOREST_FRANCO" }
+local REVIEW_SKIN = { module = "Forest_ZiaCastagna", villager = "VIL_FOREST_CASTAGNA" }
 local ForestVillagers = require(ReplicatedStorage.Shared.Config.Villagers.Forest)
 
 local Pen = {}

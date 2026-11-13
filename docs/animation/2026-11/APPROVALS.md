@@ -20,3 +20,4 @@
 | Taglialegna Tito skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as sent. Not live: `VillagerAnimationEnabled` is off and the body's animations are not uploaded. | 13 Nov 2026 |
 | Gufo Gelato skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as sent, tail feathers included. Not live. | 13 Nov 2026 |
 | Funghetto Franco skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Tito's boxes with Franco's colours, axe kept, no mushroom prop. Not live. | 13 Nov 2026 |
+| Zia Castagna skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Pina's boxes with her colours, rolling pin kept, no chestnut prop. Not live. | 13 Nov 2026 |
