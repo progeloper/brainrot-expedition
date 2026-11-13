@@ -144,4 +144,20 @@ return table.freeze({
 		}),
 		notes = "Face on the body: no head or neck joint. The bat sits on its own bone under the arm that holds it (signature prop); it was welded to the body before. Set written for him.",
 	}),
+	BRT_008 = table.freeze({
+		archetype = "Biped",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Head>Trunk",
+			"Torso>RightArm",
+			"Torso>LeftArm",
+			"Torso>RightLeg",
+			"RightLeg>RightLowerLeg",
+			"Torso>LeftLeg",
+			"LeftLeg>LeftLowerLeg",
+		}),
+		notes = "Biped with knees (the rig already had them). The trunk sits on its own bone under the head (signature prop). Set written for him.",
+	}),
 })
