@@ -21,6 +21,7 @@ export type Shape = {
 	walkSpeed: number,
 	runSpeed: number,
 	jump: number, -- Celebrate jump height
+	tailUpright: boolean?, -- the tail points up at rest instead of back
 }
 
 local function R(rx: number?, ry: number?, rz: number?): CFrame
@@ -97,6 +98,12 @@ Quadruped.With = with
 
 function Quadruped.Build(shape: Shape): { [string]: any }
 	local set: { [string]: any } = {}
+	-- A tail that stands upright (a cat's) sways sideways and leans back instead of lifting.
+	local tailPose = if shape.tailUpright
+		then function(up: number, side: number, _unused: number?): CFrame
+			return R(up * 0.25, 0, -side)
+		end
+		else Quadruped.Tail
 	local function trot(t: number, period: number, amount: number): { number }
 		local s = wave(t, period) * amount
 		return { s, -s, -s, s } -- diagonal pairs move together
@@ -120,7 +127,7 @@ function Quadruped.Build(shape: Shape): { [string]: any }
 				),
 				{
 					RigHead = R(8 + 6 * bounce, 16 * wave(t, 3.0), 6 * wave(t, 1.5)),
-					RigTail = tail(18 + 8 * bounce, 34 * wave(t, 0.75), 0),
+					RigTail = tailPose(18 + 8 * bounce, 34 * wave(t, 0.75), 0),
 				}
 			)
 		end,
@@ -143,7 +150,7 @@ function Quadruped.Build(shape: Shape): { [string]: any }
 				),
 				{
 					RigHead = R(3 * breathe, 28 * wave(t, 3.6, 0.05), 4 * wave(t, 1.8, 0.2)),
-					RigTail = tail(2 * breathe, 14 * wave(t, 3.6, 0.3), 0),
+					RigTail = tailPose(2 * breathe, 14 * wave(t, 3.6, 0.3), 0),
 				}
 			)
 		end,
@@ -159,7 +166,7 @@ function Quadruped.Build(shape: Shape): { [string]: any }
 			local scratch = on * (58 + 14 * wave(t, 0.14))
 			return with(Quadruped.Stance(shape, { 0, 0, scratch, 0 }, 0, 4 * on, -7 * on, 0), {
 				RigHead = R(8 * on, -16 * on, -14 * on),
-				RigTail = tail(6 * on, 24 * on, 0),
+				RigTail = tailPose(6 * on, 24 * on, 0),
 			})
 		end,
 	}
@@ -183,7 +190,7 @@ function Quadruped.Build(shape: Shape): { [string]: any }
 				),
 				{
 					RigHead = R(2 + 3 * wave(t, 0.35), -8 * s, -2 * s),
-					RigTail = tail(4, -22 * s, 0),
+					RigTail = tailPose(4, -22 * s, 0),
 				}
 			)
 		end,
@@ -208,7 +215,7 @@ function Quadruped.Build(shape: Shape): { [string]: any }
 				),
 				{
 					RigHead = R(8 + 3 * wave(t, 0.17), -9 * s, 0),
-					RigTail = tail(16, -30 * s, 0),
+					RigTail = tailPose(16, -30 * s, 0),
 				}
 			)
 		end,
@@ -225,7 +232,7 @@ function Quadruped.Build(shape: Shape): { [string]: any }
 				Quadruped.Stance(shape, { 0, 0, 0, 0 }, 22 * duck, 7 * up - 3 * duck, 0, 0.06 * up),
 				{
 					RigHead = R(mix(-12 * duck, 26, up), 0, 0),
-					RigTail = tail(mix(-8 * duck, 48, up), 0, 0),
+					RigTail = tailPose(mix(-8 * duck, 48, up), 0, 0),
 				}
 			)
 		end,
@@ -239,7 +246,7 @@ function Quadruped.Build(shape: Shape): { [string]: any }
 			local hit = snap(t, 0, 0.08) * (1 - seg(t, 0.1, 0.25))
 			return with(Quadruped.Stance(shape, { 0, 0, 0, 0 }, 16 * hit, 3 * hit, 8 * hit, 0), {
 				RigHead = R(-14 * hit, 10 * hit, 14 * hit),
-				RigTail = tail(20 * hit, -30 * hit, 0),
+				RigTail = tailPose(20 * hit, -30 * hit, 0),
 			})
 		end,
 	}
@@ -262,7 +269,7 @@ function Quadruped.Build(shape: Shape): { [string]: any }
 				),
 				{
 					RigHead = R(6 * wave(t, 0.5), 18 * wave(t, 1.0, 0.1), 10 * wave(t, 0.5, 0.25)),
-					RigTail = tail(8, 38 * wave(t, 0.5), 0),
+					RigTail = tailPose(8, 38 * wave(t, 0.5), 0),
 				}
 			)
 		end,
@@ -292,7 +299,7 @@ function Quadruped.Build(shape: Shape): { [string]: any }
 				),
 				{
 					RigHead = R(-10 + 1.5 * breathe, 14, 8),
-					RigTail = tail(0, 34, 0),
+					RigTail = tailPose(0, 34, 0),
 				}
 			)
 		end,
@@ -320,7 +327,7 @@ function Quadruped.Build(shape: Shape): { [string]: any }
 				),
 				{
 					RigHead = R(mix(-8 * crouch, 20, air) - 8 * land, 0, 0),
-					RigTail = tail(40 * air + 10 * land, 30 * wave(t, 0.2) * air, 0),
+					RigTail = tailPose(40 * air + 10 * land, 30 * wave(t, 0.2) * air, 0),
 				}
 			)
 		end,

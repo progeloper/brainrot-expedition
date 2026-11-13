@@ -48,4 +48,18 @@ return table.freeze({
 		}),
 		notes = "First biped; the base for the others (AnimationAuthoring.Archetypes.Biped). The piano lid is rigid: the neck passes through it.",
 	}),
+	BRT_001 = table.freeze({
+		archetype = "Quadruped",
+		rigVersion = 1,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>FrontRightLeg",
+			"Torso>FrontLeftLeg",
+			"Torso>BackRightLeg",
+			"Torso>BackLeftLeg",
+			"Torso>Tail",
+		}),
+		notes = "Upright tail: it sways and leans instead of lifting.",
+	}),
 })

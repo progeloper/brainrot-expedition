@@ -130,6 +130,44 @@ function Baker.PoseModel(model: Model, definition: any, t: number)
 	end
 end
 
+-- Floor clamp. Returns a copy of `definition` whose pose is lifted, frame by frame, by
+-- exactly what the lowest visible part would otherwise sink below `groundY`. The lift goes
+-- on the first bone under Root, so the whole body rises and nothing else changes. With
+-- this, a species file can pose limbs freely and never put a foot through the floor.
+function Baker.Grounded(model: Model, definition: any, groundY: number): any
+	local rootBone: string? = nil
+	for _, motor in model:GetDescendants() do
+		if motor:IsA("Motor6D") and motor.Part0 == model.PrimaryPart and motor.Part1 then
+			rootBone = motor.Part1.Name
+		end
+	end
+	assert(rootBone, "rig has no bone under Root")
+	local copy = table.clone(definition)
+	copy.pose = function(t: number)
+		local poses = table.clone(definition.pose(t))
+		Baker.PoseModel(model, {
+			pose = function()
+				return poses
+			end,
+		}, 0)
+		local low = Baker.VerticalExtent(model)
+		if low < groundY - 0.001 then
+			poses[rootBone :: string] = CFrame.new(0, groundY - low, 0)
+				* (poses[rootBone :: string] or CFrame.identity)
+		end
+		return poses
+	end
+	return table.freeze(copy)
+end
+
+function Baker.GroundedSet(model: Model, set: { any }, groundY: number): { any }
+	local out = {}
+	for _, definition in set do
+		table.insert(out, Baker.Grounded(model, definition, groundY))
+	end
+	return out
+end
+
 -- Lowest and highest point of any visible part (for the self-check: nothing underground).
 function Baker.VerticalExtent(model: Model): (number, number)
 	local low, high = math.huge, -math.huge
@@ -147,6 +185,132 @@ function Baker.VerticalExtent(model: Model): (number, number)
 		end
 	end
 	return low, high
+end
+
+-- Text dump of baked sequences for tools/animation/build_rbxm.py. The result is padded to
+-- just under 100,000 characters so the tool harness saves it to a file instead of printing it.
+function Baker.Dump(folder: Instance, names: { string }): string
+	local out = {}
+	for _, name in names do
+		local sequence = folder:FindFirstChild(name) :: KeyframeSequence
+		table.insert(
+			out,
+			string.format(
+				"A|%s|%s|%s|%s|%s",
+				sequence.Name,
+				tostring(sequence.Loop),
+				sequence.Priority.Name,
+				tostring(sequence:GetAttribute("Length")),
+				tostring(sequence:GetAttribute("AuthoredSpeed"))
+			)
+		)
+		local keyframes = sequence:GetKeyframes() :: { any }
+		table.sort(keyframes, function(a, b)
+			return a.Time < b.Time
+		end)
+		for _, keyframe in keyframes do
+			table.insert(out, string.format("K|%.4f", keyframe.Time))
+			local function walk(pose: Pose, parent: string)
+				local p = pose.CFrame.Position
+				local rx, ry, rz = pose.CFrame:ToEulerAnglesXYZ()
+				table.insert(
+					out,
+					string.format(
+						"P|%s|%s|%.4f|%.4f|%.4f|%.5f|%.5f|%.5f|%d",
+						pose.Name,
+						parent,
+						p.X,
+						p.Y,
+						p.Z,
+						rx,
+						ry,
+						rz,
+						pose.Weight
+					)
+				)
+				for _, child in pose:GetChildren() do
+					if child:IsA("Pose") then
+						walk(child, pose.Name)
+					end
+				end
+			end
+			for _, child in keyframe:GetChildren() do
+				if child:IsA("Pose") then
+					walk(child, "")
+				end
+			end
+		end
+	end
+	local text = table.concat(out, "\n") .. "\nEND\n"
+	assert(#text < 99000, "dump too big: " .. #text .. " characters; ask for fewer animations")
+	return text .. string.rep("#", 99500 - #text)
+end
+
+-- Bone list for BakeSet, read from a built rig (parent-first).
+function Baker.BonesOf(model: Model): { Bone }
+	local parentOf: { [string]: string } = {}
+	for _, motor in model:GetDescendants() do
+		if motor:IsA("Motor6D") and motor.Part0 and motor.Part1 then
+			parentOf[motor.Part1.Name] = motor.Part0.Name
+		end
+	end
+	local function depth(name: string): number
+		local count = 0
+		local current: string? = name
+		while current and parentOf[current] do
+			count += 1
+			current = parentOf[current]
+		end
+		return count
+	end
+	local bones = {}
+	for name, parent in parentOf do
+		table.insert(bones, { name = name, parent = parent, at = { 0, 0, 0 } })
+	end
+	table.sort(bones, function(a, b)
+		local da, db = depth(a.name), depth(b.name)
+		return if da == db then a.name < b.name else da < db
+	end)
+	return bones
+end
+
+-- Self-check for a whole set on a posed rig standing at ground height `groundY`:
+-- lowest point of any visible part, and the first/last pose mismatch of each loop.
+-- Returns one line per animation that fails, and restores the bind pose.
+function Baker.Check(model: Model, set: { any }, groundY: number): { string }
+	local issues = {}
+	for _, definition in set do
+		local worst, seam = 0, 0
+		for step = 0, 16 do
+			Baker.PoseModel(model, definition, definition.length * step / 16)
+			worst = math.min(worst, (Baker.VerticalExtent(model)) - groundY)
+		end
+		if definition.loop then
+			local first, last = definition.pose(0), definition.pose(definition.length)
+			for bone, cf in first do
+				local other = last[bone] or CFrame.identity
+				local _, angle = (cf:Inverse() * other):ToAxisAngle()
+				seam =
+					math.max(seam, math.deg(angle) + (cf.Position - other.Position).Magnitude * 100)
+			end
+		end
+		if worst < -0.05 or seam > 0.5 then
+			table.insert(
+				issues,
+				string.format("%s under=%.2f seam=%.1f", definition.name, worst, seam)
+			)
+		end
+		task.wait()
+	end
+	for _, motor in model:GetDescendants() do
+		if motor:IsA("Motor6D") then
+			local bind = motor:GetAttribute("BindC0")
+			if typeof(bind) == "CFrame" then
+				motor.C0 = bind
+			end
+		end
+	end
+	return issues
 end
 
 -- Contact-sheet stage: one shelf per animation, `frames` evenly spaced poses per template.

@@ -7,3 +7,4 @@
 | BRT_019 Trenostruzzo Turbo 3000 (rig + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. V4 template regenerated. Upload blocked like the villager set (ids 0, not live). | 13 Nov 2026 |
 | BRT_011 Glorbo Fruttodrillo (11 animations, existing quadruped rig) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
 | BRT_013 Cavallo Virtuoso (neck joint + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. V4 template regenerated. Upload blocked (ids 0, not live). | 13 Nov 2026 |
+| BRT_001 Bingus Baguette (11 animations, existing quadruped rig) | 1 | 13 Nov 2026 | Approved as sent. Upload files and upload still to do (ids 0, not live). | 13 Nov 2026 |

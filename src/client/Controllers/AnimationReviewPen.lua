@@ -410,12 +410,6 @@ function Pen.Start()
 		local area = origin + Vector3.new(0, 0, -150)
 		block(
 			folder,
-			Vector3.new(190, 1, 110),
-			CFrame.new(area - Vector3.new(0, 0.5, 0)),
-			Color3.fromRGB(150, 196, 132)
-		)
-		block(
-			folder,
 			Vector3.new(30, 1, 42),
 			CFrame.new(origin + Vector3.new(0, -0.5, -75)),
 			Color3.fromRGB(150, 196, 132)
@@ -516,6 +510,14 @@ function Pen.Start()
 			end
 			row += 1
 		end
+		-- One floor under every species row (each row is 40 studs deep).
+		local depth = 70 + math.max(1, row) * 40
+		block(
+			folder,
+			Vector3.new(190, 1, depth),
+			CFrame.new(area + Vector3.new(0, -0.5, 55 - depth / 2)),
+			Color3.fromRGB(150, 196, 132)
+		)
 	end
 
 	local player = Players.LocalPlayer
