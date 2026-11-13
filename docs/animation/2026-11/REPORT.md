@@ -2,7 +2,7 @@
 
 Started 13 November 2026. Branch `feature/camp-rework`, base commit `4e5ce25`, build stamp `P14_VILLAGER_OUTFITS_20261110_R1`, DEV place 91958083796436. Nothing published. Nothing committed yet.
 
-**Status: Part A, the villager body and twenty-two brainrots (BRT_019, 011, 013, 001 to 010, 020, 012, 014, 015, 021, 022, 026, 028, 030) are approved (13 November 2026). That is every Forest brainrot, every Beach-order one and the first five Swamp ones. Their 266 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. All Forest villager skins are approved (13 November 2026): Taglialegna Tito, Gufo Gelato, Funghetto Franco, Zia Castagna and Picchio Pepe, with Nonna Pina approved alongside the body. The Forest region is complete. All Beach villager skins are approved (13 November 2026): Bagnino Bruno, Zio Sabbia, Granchio Megafono, Surfista Sara and Nonno Conchiglia. The Beach region is complete. Zio Sabbia's hand-held umbrella relies on the client rule `Shared.Utility.VillagerUprightProp`, which Part D playback must call for marked villagers. Next: BRT_016 Gorillo Subwoofero (Swamp).**
+**Status: Part A, the villager body and twenty-three brainrots (BRT_019, 011, 013, 001 to 010, 020, 012, 014, 015, 021, 022, 026, 028, 030, 016) are approved (13 November 2026). That is every Forest brainrot, every Beach-order one and the first six Swamp ones. Their 277 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. All Forest villager skins are approved (13 November 2026): Taglialegna Tito, Gufo Gelato, Funghetto Franco, Zia Castagna and Picchio Pepe, with Nonna Pina approved alongside the body. The Forest region is complete. All Beach villager skins are approved (13 November 2026): Bagnino Bruno, Zio Sabbia, Granchio Megafono, Surfista Sara and Nonno Conchiglia. The Beach region is complete. Zio Sabbia's hand-held umbrella relies on the client rule `Shared.Utility.VillagerUprightProp`, which Part D playback must call for marked villagers. Next: BRT_017 Orangutini Ananassini (Swamp).**
 
 ## 0. Reconcile and snapshots
 
@@ -132,6 +132,7 @@ That is 35 brainrots, 1 villager body and 36 roster villagers (45 templates incl
 | BRT_026 Rhino Toasterino | Upright biped with working parts | 14: Torso, Head, two upper arms, two forearms, two thighs, two lower legs, LeftToast (new), RightToast (new), LeverKnob (new), Tail (new) | 1 | 13 Nov 2026 | not uploaded |
 | BRT_028 Tartaragno | Six-legged crawler | 15: Torso, Head, Tail, six hips, six knees | 1 | 13 Nov 2026 | not uploaded |
 | BRT_030 Tractoro Dinosauro | Rider on a vehicle | 12: Torso (tractor), Dino (new), Head, Jaw (new), two arms, Tail, four wheel hubs (new), Exhaust (new) | 1 | 13 Nov 2026 | not uploaded |
+| BRT_016 Gorillo Subwoofero | Biped with speakers | 12: Torso, Head, two upper arms, two forearms, two thighs, two lower legs (new), RightWoofer (new), LeftWoofer (new) | 1 | 13 Nov 2026 | not uploaded |
 
 The Voxel V4 models already carried a basic Motor6D rig from the 7 November pass (`tools/voxel_v4/rig.js`). Species are rigged by extending that data through the existing export pipeline, not by a separate rig builder. Quadrupeds share `ServerAssets.AnimationAuthoring.Archetypes.Quadruped` as a starting point.
 

@@ -356,4 +356,23 @@ return table.freeze({
 		}),
 		notes = "Rider on a vehicle: Torso is the tractor (pivots on the rear axle for wheelies), Dino is the T-rex riding it, with Head, Jaw (owner approved an opening jaw), arms and Tail. Only the wheel hubs turn (the blocky tyres would dip under the floor). Walk and Run hold whole hub turns, so they loop every 2.6 s and 1.6 s. The Signature is the wheelie roar. Set written for it.",
 	}),
+	BRT_016 = table.freeze({
+		archetype = "Biped",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>RightArm",
+			"RightArm>RightForearm",
+			"Torso>LeftArm",
+			"LeftArm>LeftForearm",
+			"Torso>RightLeg",
+			"RightLeg>RightLowerLeg",
+			"Torso>LeftLeg",
+			"LeftLeg>LeftLowerLeg",
+			"Torso>RightWoofer",
+			"Torso>LeftWoofer",
+		}),
+		notes = "Upright biped with elbows, knees and speakers: the V4 bodybuilder gorilla. RightWoofer and LeftWoofer are the chest speaker cones, which pump. The deltoids stay on the chest as fixed shoulder caps; mouth, teeth and each whole biceps speaker were moved onto their proper bones. The Signature is the bass drop (chest drum roll, then both fists on both woofers). Set written for it.",
+	}),
 })
