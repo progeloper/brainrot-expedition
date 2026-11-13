@@ -11,11 +11,11 @@ local Workspace = game:GetService("Workspace")
 
 local Config = require(ReplicatedStorage.Shared.Config.AnimationReview)
 local Builder = require(ReplicatedStorage.Shared.Utility.VillagerBodyBuilder)
+local UprightProp = require(ReplicatedStorage.Shared.Utility.VillagerUprightProp)
 local Skins = ReplicatedStorage.Shared.Config.VillagerSkins
 -- The villager skin shown in the back row of the plinths. Change it when the next skin goes
 -- to review; Nonna Pina stays in the behaviour demo.
-local REVIEW_SKIN =
-	{ module = "Beach_BagninoBruno", villager = "VIL_BEACH_BRUNO", region = "Beach" }
+local REVIEW_SKIN = { module = "Beach_ZioSabbia", villager = "VIL_BEACH_SABBIA", region = "Beach" }
 local ForestVillagers = require(ReplicatedStorage.Shared.Config.Villagers.Forest)
 
 local Pen = {}
@@ -169,6 +169,9 @@ function Pen.Start()
 		local model = Builder.Build(skin, palette)
 		model:PivotTo(cframe)
 		model.Parent = folder
+		if model:GetAttribute("UprightProp") then
+			UprightProp.Bind(model)
+		end
 		local controller = model:FindFirstChildOfClass("AnimationController") :: AnimationController
 		local animator = controller:FindFirstChildOfClass("Animator") :: Animator
 		return { model = model, animator = animator, tracks = {}, current = nil }

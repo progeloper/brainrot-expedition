@@ -144,6 +144,8 @@ function Builder.Build(skin: any?, palette: { [string]: string }): Model
 	model:SetAttribute("RigArchetype", "VillagerBody")
 	model:SetAttribute("RigVersion", Body.Version)
 	model:SetAttribute("VillagerSkin", if skin then skin.id else nil)
+	-- a held prop that must stay vertical (Utility/VillagerUprightProp); the client binds it
+	model:SetAttribute("UprightProp", if skin and skin.uprightProp then true else nil)
 	return model
 end
 
