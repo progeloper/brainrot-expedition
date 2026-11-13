@@ -9,3 +9,4 @@
 | BRT_013 Cavallo Virtuoso (neck joint + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. V4 template regenerated. Upload blocked (ids 0, not live). | 13 Nov 2026 |
 | BRT_001 Bingus Baguette (11 animations, existing quadruped rig) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
 | BRT_002 Tralalero Toad (11 animations, existing hopper rig) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
+| BRT_003 Cappuccino Capybara (Cup joint + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |

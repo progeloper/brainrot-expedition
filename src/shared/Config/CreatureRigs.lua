@@ -75,4 +75,18 @@ return table.freeze({
 		}),
 		notes = "First hopper; the base for the others (AnimationAuthoring.Archetypes.Hopper). Baked through the floor clamp: the belly rests on the ground.",
 	}),
+	BRT_003 = table.freeze({
+		archetype = "Quadruped",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>FrontRightLeg",
+			"Torso>FrontLeftLeg",
+			"Torso>BackRightLeg",
+			"Torso>BackLeftLeg",
+			"Head>Cup",
+		}),
+		notes = "No tail. The cappuccino sits on its own Cup bone (signature prop) and is balanced against the head and body in every clip.",
+	}),
 })
