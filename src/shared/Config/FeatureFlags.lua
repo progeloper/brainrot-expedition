@@ -13,7 +13,6 @@ export type FeatureFlags = {
 	MonetisationEnabled: boolean,
 	VoxelCreaturesV4Enabled: boolean,
 	VillagerGuardsEnabled: boolean,
-	StudPopUIEnabled: boolean,
 	GameAudioEnabled: boolean,
 	TrendAudioTest: boolean,
 	TrendAudioShare: number,
@@ -22,6 +21,10 @@ export type FeatureFlags = {
 	TrainingV1Enabled: boolean,
 	RebirthUiV2Enabled: boolean,
 	DriveAndHuntV1Enabled: boolean,
+	PlaytestFixesV1Enabled: boolean,
+	CreatureAnimationEnabled: boolean,
+	VillagerAnimationEnabled: boolean,
+	VillagerLifeEnabled: boolean,
 }
 
 local FeatureFlags: FeatureFlags = {
@@ -29,7 +32,8 @@ local FeatureFlags: FeatureFlags = {
 	CartEnabled = true,
 	BankingEnabled = false,
 	KeepersEnabled = false,
-	EquippedTeamsEnabled = require(script.Parent.Environment).MainGameplayEnabled or not require(script.Parent.Environment).IsProduction,
+	EquippedTeamsEnabled = require(script.Parent.Environment).MainGameplayEnabled
+		or not require(script.Parent.Environment).IsProduction,
 	MutationsEnabled = false,
 	GadgetsEnabled = false,
 	TheftEnabled = false,
@@ -43,9 +47,6 @@ local FeatureFlags: FeatureFlags = {
 	-- Villager guards + Escape Ring (NPC/presentation only). Owner authorised CP-D on
 	-- 10 Nov 2026. Set false to remove villagers, chases and their remote entirely.
 	VillagerGuardsEnabled = true,
-	-- Stud Pop v2 menu/HUD skin + brainrot portraits (view layer only). On for DEV review; when false
-	-- every legacy ScreenGui renders exactly as before. The owner removes the legacy look after approval.
-	StudPopUIEnabled = true,
 	-- v2 game audio (client presentation only; AudioController + AudioCatalog). On for DEV. When false
 	-- no BE_ sounds or SoundGroups are created and the game sounds exactly as before.
 	GameAudioEnabled = true,
@@ -69,6 +70,19 @@ local FeatureFlags: FeatureFlags = {
 	-- aiming, scoop feedback and first-time hints. Off until the owner approves; when false the game
 	-- behaves exactly as before. Parts are switched individually in Config/DriveAndHunt.
 	DriveAndHuntV1Enabled = true, -- CP-D, owner authorised 12 Nov 2026
+	-- Playtest Fixes v1 (12 Nov playtest): stall weapon poses, weapon VFX, Train-to-rollers, brainrot
+	-- size ladder, Gems stall. Off until the owner approves; when false the game behaves as before.
+	-- Parts are switched individually in Config/PlaytestFixes. Map studs are an authored world change
+	-- (scripts/RevertMapStuds.server.lua restores the backup).
+	PlaytestFixesV1Enabled = false,
+	-- Rig + animation brief v5 (13 Nov 2026). All three stay false until the owner approves;
+	-- with them off, movement, packets, templates and villagers are exactly as before.
+	-- Brainrots: natural roaming (Config/CharacterMotion) and, per approved species, rigs + animations.
+	CreatureAnimationEnabled = false,
+	-- Villagers: steering movement, the one villager body and its skins.
+	VillagerAnimationEnabled = false,
+	-- Village life while Idle (work spots, chat, wave). Never changes noticing or chasing.
+	VillagerLifeEnabled = false,
 }
 
 return table.freeze(FeatureFlags)
