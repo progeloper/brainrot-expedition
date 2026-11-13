@@ -29,6 +29,7 @@
 | BRT_021 Cacto Hipopotamo (spine-dot rig fix + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
 | BRT_022 Trulimero Trulicina (fin joints, head and tail pivots + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
 | BRT_026 Rhino Toasterino (toast, lever and cord joints + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
+| BRT_028 Tartaragno (head pivot + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
 | Bagnino Bruno skin (Beach, on the villager body) | 1 | 13 Nov 2026 | Approved as sent, Sweep kept. Not live. | 13 Nov 2026 |
 | Zio Sabbia skin (Beach, on the villager body) + upright-prop rule | 2 | 13 Nov 2026 | Round 1 (umbrella on his back): owner asked to keep it in his hand. Round 2 (hand-held, kept upright by `VillagerUprightProp`) approved as sent. Not live. | 13 Nov 2026 |
 | Granchio Megafono skin (Beach, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: megaphone upright in the right claw. Not live. | 13 Nov 2026 |
