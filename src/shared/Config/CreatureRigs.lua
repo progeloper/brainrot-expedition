@@ -375,4 +375,22 @@ return table.freeze({
 		}),
 		notes = "Upright biped with elbows, knees and speakers: the V4 bodybuilder gorilla. RightWoofer and LeftWoofer are the chest speaker cones, which pump. The deltoids stay on the chest as fixed shoulder caps; mouth, teeth and each whole biceps speaker were moved onto their proper bones. The Signature is the bass drop (chest drum roll, then both fists on both woofers). Set written for it.",
 	}),
+	BRT_017 = table.freeze({
+		archetype = "Biped",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>RightArm",
+			"RightArm>RightForearm",
+			"Torso>LeftArm",
+			"LeftArm>LeftForearm",
+			"Torso>RightLeg",
+			"RightLeg>RightLowerLeg",
+			"Torso>LeftLeg",
+			"LeftLeg>LeftLowerLeg",
+			"Torso>Skirt",
+		}),
+		notes = "Upright biped with long arms, knees and a swinging skirt: a pineapple orangutan in a tiki grass skirt. Skirt (with the glowing waistband) hinges at the waist for the hula. Shoulders pivot at the top of the upper arm (they were at its middle); the shoulder caps stay on the pineapple. The Signature is the big hula ending in aloha arms. Set written for it.",
+	}),
 })
