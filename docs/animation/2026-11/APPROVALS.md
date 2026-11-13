@@ -23,3 +23,4 @@
 | Zia Castagna skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Pina's boxes with her colours, rolling pin kept, no chestnut prop. Not live. | 13 Nov 2026 |
 | Picchio Pepe skin (Forest, on the villager body) | 1 | 13 Nov 2026 | Approved as a recolour of Gufo: owl-shaped head and gelato cone kept. Not live. | 13 Nov 2026 |
 | BRT_020 Bisonte Giuppitere (moon joints, face regrouped + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
+| BRT_012 Frigo Camelo (neck, knee and fridge-door joints + 11 animations) | 2 | 13 Nov 2026 | Round 1: owner asked for a camel walk. Round 2 (pacing walk) approved as sent. Upload blocked (ids 0, not live). | 13 Nov 2026 |
