@@ -22,6 +22,8 @@ export type FeatureFlags = {
 	RebirthUiV2Enabled: boolean,
 	DriveAndHuntV1Enabled: boolean,
 	PlaytestFixesV1Enabled: boolean,
+	PlaytestFixesV2Enabled: boolean,
+	LegsTrainingV1Enabled: boolean,
 	CreatureAnimationEnabled: boolean,
 	VillagerAnimationEnabled: boolean,
 	VillagerLifeEnabled: boolean,
@@ -59,13 +61,14 @@ local FeatureFlags: FeatureFlags = {
 	-- See Config/WeaponTiersV2.
 	WeaponTiersV2Enabled = false,
 	-- Camp Rework (owner-approved 11–12 Nov 2026). All three stay false live until the owner flips
-	-- them; Studio previews them by default (see Config/CampReworkFlags).
+	-- them; Studio previews one only when ReplicatedStorage.<Name>Preview = true (opt-in since
+	-- 14 Nov 2026, see Config/CampReworkFlags).
 	-- New stalls, seeded camp layout, continuous camp floor, special weapons, sell-back.
-	CampReworkV1Enabled = false,
+	CampReworkV1Enabled = true, -- Part H release, owner go 14 Nov 2026
 	-- Training stall + 25 Training levels replace the cart Speed upgrades.
-	TrainingV1Enabled = false,
+	TrainingV1Enabled = true, -- Part H release, owner go 14 Nov 2026
 	-- "Rebirth" naming, YOU LOSE / YOU GET window, payback line and READY glow.
-	RebirthUiV2Enabled = false,
+	RebirthUiV2Enabled = true, -- Part H release, owner go 14 Nov 2026
 	-- Drive-and-Hunt (12 Nov 2026): gate launch, HOP OUT / CART / LOAD & GO switch button, auto-lock
 	-- aiming, scoop feedback and first-time hints. Off until the owner approves; when false the game
 	-- behaves exactly as before. Parts are switched individually in Config/DriveAndHunt.
@@ -74,7 +77,14 @@ local FeatureFlags: FeatureFlags = {
 	-- size ladder, Gems stall. Off until the owner approves; when false the game behaves as before.
 	-- Parts are switched individually in Config/PlaytestFixes. Map studs are an authored world change
 	-- (scripts/RevertMapStuds.server.lua restores the backup).
-	PlaytestFixesV1Enabled = false,
+	PlaytestFixesV1Enabled = true, -- Part H release, owner go 14 Nov 2026
+	-- Playtest Fixes 2 (14 Nov 2026): menus/selection can never block driving or firing, Jump hops
+	-- out of the cart, reliable cash pads with a coin beat, steady progress bars. Off until the owner
+	-- approves; parts are switched individually in Config/PlaytestFixes2. Base walls are an authored
+	-- world change (scripts/RevertBaseWalls.server.lua).
+	PlaytestFixesV2Enabled = true, -- Part H release, owner go 14 Nov 2026
+	-- Legs treadmill at the Training stall, Legs levels -> WalkSpeed, trails (Config/LegsTraining).
+	LegsTrainingV1Enabled = true, -- Part H release, owner go 14 Nov 2026
 	-- Rig + animation brief v5 (13 Nov 2026). All three stay false until the owner approves;
 	-- with them off, movement, packets, templates and villagers are exactly as before.
 	-- Brainrots: natural roaming (Config/CharacterMotion) and, per approved species, rigs + animations.

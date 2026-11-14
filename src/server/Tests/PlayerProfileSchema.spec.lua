@@ -5,6 +5,9 @@ return function()
 	-- (it previews on in Studio). Training is covered by CampRework.spec.
 	local CampFlagsForSpec = require(game:GetService("ReplicatedStorage").Shared.Config.CampReworkFlags)
 	local trainingBeforeSpec = CampFlagsForSpec._SetForTests("TrainingV1Enabled", false) -- restored at the end (synchronous runner)
+	-- Same for Legs training (Phase13 Legs fields); covered by PlaytestFixes2.spec.
+	local LegsFlagsForSpec = require(game:GetService("ReplicatedStorage").Shared.Config.LegsTrainingFlags)
+	local legsBeforeSpec = LegsFlagsForSpec._SetForTests(false)
 	local Schema = require(script.Parent.Parent.Data.PlayerProfileSchema)
 	local Config = require(script.Parent.Parent.Config.PlayerDataConfig)
 	local Fixtures = require(script.Parent.Support.PlayerProfileFixtures)
@@ -385,4 +388,5 @@ return function()
 		end)
 	end)
 	CampFlagsForSpec._SetForTests("TrainingV1Enabled", trainingBeforeSpec)
+	LegsFlagsForSpec._SetForTests(legsBeforeSpec)
 end
