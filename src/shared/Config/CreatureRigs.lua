@@ -412,4 +412,20 @@ return table.freeze({
 		}),
 		notes = "Quadruped with a neck and knees: a cowboy zebra bursting out of a watermelon. Neck (with the mane) pivots where it leaves the cut melon; the head turns at the neck top. Walk is a four-beat horse walk, Run a gallop; the Signature is the rodeo rear. IdleWild, Alert, Hit, Carried and Celebrate are the shared quadruped clips with neck and knee motion. Set written for it.",
 	}),
+	BRT_027 = table.freeze({
+		archetype = "ThreeLegged",
+		rigVersion = 2,
+		joints = table.freeze({
+			"Root>Torso",
+			"Torso>Head",
+			"Torso>Tail",
+			"Torso>RightLeg",
+			"RightLeg>RightLowerLeg",
+			"Torso>LeftLeg",
+			"LeftLeg>LeftLowerLeg",
+			"Torso>CentreLeg",
+			"CentreLeg>CentreLowerLeg",
+		}),
+		notes = "Three-legged walker: a grinning blue shark on two front fin-legs and a tail leg, all in blue sneakers. The head (face, grin, gills) turns behind the gills; each leg has a knee above the sneaker. Tail-leg sneakers moved wholly onto the lower leg; fin-leg roots kept on the body. Sleep is belly-down with the fin-legs spread; the Signature is the Tralala hop-kick and spin. Set written for him.",
+	}),
 })

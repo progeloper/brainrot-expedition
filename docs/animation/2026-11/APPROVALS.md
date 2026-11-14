@@ -44,3 +44,4 @@
 | Lumaca Lampione skin (Swamp, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: person-shaped snail, eye stalks through the nón lá, lantern shell on the Back joint. Not live. | 13 Nov 2026 |
 | Rospo Rocco skin (Swamp, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Rana's boxes with his colours. Not live. | 13 Nov 2026 |
 | Zia Palude skin (Swamp, on the villager body) | 1 | 13 Nov 2026 | Approved as sent: Pozzo's boxes with her colours, net held upright. Not live. | 13 Nov 2026 |
+| BRT_027 Tralalero Tralala (head joint, three knees, two rig fixes + 11 animations) | 1 | 13 Nov 2026 | Approved as sent. Owner then asked for the remaining brainrots in one batch, reusing sets where body shapes match. Upload blocked (ids 0, not live). | 14 Nov 2026 |
