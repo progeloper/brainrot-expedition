@@ -164,6 +164,9 @@ function Pen.Start()
 			reviewPalette = row.palette
 		end
 	end
+	-- Guard skins (14 Nov 2026) carry their own full palette: uniform plus skin tone and hair.
+	pinaPalette = pinaSkin.palette or pinaPalette
+	reviewPalette = reviewSkin.palette or reviewPalette
 
 	local function actor(skin: any, palette: any, cframe: CFrame): Actor
 		local model = Builder.Build(skin, palette)

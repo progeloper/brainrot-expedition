@@ -1,19 +1,18 @@
 --!strict
--- Zia Castagna (VIL_FOREST_CASTAGNA) on the one villager body.
--- Forest set: Alpine farm dress (women), docs/villagers/Forest_outfit_reference.md.
--- Today Zia Castagna is the same Plodder kit as Nonna Pina with her own palette, so her
--- skin is Pina's boxes unchanged: headscarf, hair fringe, shawl, laced bodice, puffed
--- sleeves, wool skirt, work apron with the single Forest glow band, and the rolling pin.
--- What tells them apart is colour, from her palette row: green headscarf, red bodice,
--- brown skirt, navy shawl and dark brown hair.
-local Pina = require(script.Parent.Forest_NonnaPina) :: any
+-- Zia Castagna (VIL_FOREST_CASTAGNA): a Forest guard in the Alpine loden work dress.
+-- Long brown hair, skin tone 2, Ruby eyes. Built by Guard.Make (owner, 14 Nov 2026:
+-- guards are ordinary people with V4 anime eyes in their region's uniform).
+local Guard = require(script.Parent.Guard)
 
-return table.freeze({
+return Guard.Make({
 	id = "Forest_ZiaCastagna",
 	villagerId = "VIL_FOREST_CASTAGNA",
 	name = "Zia Castagna",
-	approved = true, -- owner, 13 Nov 2026 (review round 1)
-	hooks = table.freeze({ "green headscarf", "red bodice", "work apron", "rolling pin" }),
-	activities = table.freeze({ "Sweep", "Knead" }),
-	boxes = Pina.boxes,
+	uniform = require(script.Parent.Uniform_Forest),
+	skin = "#E8B48F",
+	skin2 = "#C98A66",
+	hair = "#5A2E12",
+	style = "Long",
+	eyes = "Ruby",
+	activities = {},
 })
