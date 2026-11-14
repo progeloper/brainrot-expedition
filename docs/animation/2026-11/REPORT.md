@@ -2,7 +2,7 @@
 
 Started 13 November 2026. Branch `feature/camp-rework`, base commit `4e5ce25`, build stamp `P14_VILLAGER_OUTFITS_20261110_R1`, DEV place 91958083796436. Nothing published. Nothing committed yet.
 
-**Status: Part A, the villager body and all thirty-five brainrots (BRT_001 to BRT_035) are approved (13 and 14 November 2026). That is every Forest brainrot, every Beach-order one and every Swamp-order one. Their 409 animations are built as upload files but not uploaded: `assets/animations` needs approving as an upload folder in Studio. All Forest villager skins are approved (13 November 2026): Taglialegna Tito, Gufo Gelato, Funghetto Franco, Zia Castagna and Picchio Pepe, with Nonna Pina approved alongside the body. The Forest region is complete. All Beach villager skins are approved (13 November 2026): Bagnino Bruno, Zio Sabbia, Granchio Megafono, Surfista Sara and Nonno Conchiglia. The Beach region is complete. Zio Sabbia's hand-held umbrella relies on the client rule `Shared.Utility.VillagerUprightProp`, which Part D playback must call for marked villagers. The Swamp brainrots are complete. All Swamp villager skins are approved (13 November 2026): Rana Rapida, Pescatore Pozzo, Lumaca Lampione, Rospo Rocco and Zia Palude. Pescatore Pozzo and Zia Palude hold their nets with the same `VillagerUprightProp` rule as Zio Sabbia. The Swamp region is complete. Jungle: BRT_027 Tralalero Tralala is approved (14 November 2026). The owner then asked for the remaining nine brainrots to be rigged and animated in one batch, reusing animation sets where body shapes match. That batch (BRT_023, 024, 025, 029, 031, 032, 033, 034, 035; 99 animations) was approved on 14 November 2026 in review round 2, after the owner asked for more energy; it uses a new high-energy base set, `Archetypes/BipedHype.lua` (`review/batch_remaining/`). Every brainrot is now rigged and animated. Still to do: the Jungle, Arctic, Volcano and Glitch villager skins, uploads (blocked until `assets/animations` is approved for uploads in Studio), and Part D playback.**
+**Status: Part A, the villager body and all thirty-five brainrots (BRT_001 to BRT_035) are approved (13 and 14 November 2026). That is every Forest brainrot, every Beach-order one and every Swamp-order one. Their 409 animations are uploaded (14 November 2026) and their ids are in the config files. All Forest villager skins are approved (13 November 2026): Taglialegna Tito, Gufo Gelato, Funghetto Franco, Zia Castagna and Picchio Pepe, with Nonna Pina approved alongside the body. The Forest region is complete. All Beach villager skins are approved (13 November 2026): Bagnino Bruno, Zio Sabbia, Granchio Megafono, Surfista Sara and Nonno Conchiglia. The Beach region is complete. Zio Sabbia's hand-held umbrella relies on the client rule `Shared.Utility.VillagerUprightProp`, which Part D playback must call for marked villagers. The Swamp brainrots are complete. All Swamp villager skins are approved (13 November 2026): Rana Rapida, Pescatore Pozzo, Lumaca Lampione, Rospo Rocco and Zia Palude. Pescatore Pozzo and Zia Palude hold their nets with the same `VillagerUprightProp` rule as Zio Sabbia. The Swamp region is complete. Jungle: BRT_027 Tralalero Tralala is approved (14 November 2026). The owner then asked for the remaining nine brainrots to be rigged and animated in one batch, reusing animation sets where body shapes match. That batch (BRT_023, 024, 025, 029, 031, 032, 033, 034, 035; 99 animations) was approved on 14 November 2026 in review round 2, after the owner asked for more energy; it uses a new high-energy base set, `Archetypes/BipedHype.lua` (`review/batch_remaining/`). Every brainrot is now rigged and animated. Still to do: the Jungle, Arctic, Volcano and Glitch villager skins, and Part D playback (the animation flags stay off until then).**
 
 ## 0. Reconcile and snapshots
 
@@ -109,46 +109,46 @@ That is 35 brainrots, 1 villager body and 36 roster villagers (45 templates incl
 
 | Species | Archetype | Joints | Rounds | Approved | Asset ids |
 |---|---|---|---|---|---|
-| Villager body | VillagerBody | 17 (12 body + 5 attachment bones) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_019 Trenostruzzo Turbo 3000 | Vehicle-hybrid | 6: Torso, Neck, Head, RightLeg, LeftLeg, ToiletLid | 1 | 13 Nov 2026 | not uploaded |
-| BRT_011 Glorbo Fruttodrillo | Quadruped | 7: Torso, Head, four legs, Tail (existing V4 rig, unchanged) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_013 Cavallo Virtuoso | Biped | 6: Torso, Neck (new), Head, RightLeg, LeftLeg, Tail | 1 | 13 Nov 2026 | not uploaded |
-| BRT_001 Bingus Baguette | Quadruped | 7 (existing V4 rig, unchanged) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_002 Tralalero Toad | Hopper | 6: Torso, Head, two hind legs, two front limbs (existing V4 rig, unchanged) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_003 Cappuccino Capybara | Quadruped | 7: Torso, Head, four legs, Cup (new, on the head) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_004 Ballerina Banana | Biped, face on the body | 6: Torso, two legs, two arms, Tutu (new) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_005 Bombardiro Pigeon | Flyer | 7: Torso, Head, two wings, Tail, two legs (existing V4 rig, unchanged) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_006 Spaghetti Crocodilo | Quadruped | 8: Torso, Head, four legs, Tail, Meatball (new) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_007 Tung Tung Tung Sahur | Biped, face on the body | 6: Torso, two legs, two arms, Bat (new, under the arm) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_008 Lirili Larila | Biped with knees | 9: Torso, Head, Trunk (new), two arms, two thighs, two lower legs | 1 | 13 Nov 2026 | not uploaded |
-| BRT_009 Chimpanzini Bananini | Biped with elbows and knees | 10: Torso, Head, two upper arms, two forearms (new), two thighs, two lower legs (new) | 2 | 13 Nov 2026 | not uploaded |
-| BRT_010 Talpa Di Fero | Squat biped with elbows | 10: Torso, Head, Drill (new), two upper arms, two forearms (new), two legs, Tail | 2 | 13 Nov 2026 | not uploaded |
-| BRT_020 Bisonte Giuppitere | Hoverer (planet on sneakers) | 6: Torso, Head, MoonIo (new), MoonEuropa (new), two sneakers | 1 | 13 Nov 2026 | not uploaded |
-| BRT_012 Frigo Camelo | Quadruped with neck, knees and a door | 13: Torso, Neck (new), Head, four thighs, four lower legs (new), Tail, FridgeDoor (new) | 2 | 13 Nov 2026 | not uploaded |
-| BRT_014 Bandito Bobritto | Biped with knees | 10: Torso, Head, two arms, Gun (new), two thighs, two lower legs (new), Tail | 1 | 13 Nov 2026 | not uploaded |
-| BRT_015 Strawberelli Flamingelli | Wader | 11: Torso, NeckBase (new), Neck (new), Head, two wings, Tail, two upper legs, two lower legs (new) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_021 Cacto Hipopotamo | Column (rigid body on slippers) | 4: Torso, Head, two legs | 1 | 13 Nov 2026 | not uploaded |
-| BRT_022 Trulimero Trulicina | Quadruped with knees and fins | 14: Torso, Head, four thighs, four lower legs, Tail, RightFin (new), LeftFin (new), DorsalFin (new) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_026 Rhino Toasterino | Upright biped with working parts | 14: Torso, Head, two upper arms, two forearms, two thighs, two lower legs, LeftToast (new), RightToast (new), LeverKnob (new), Tail (new) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_028 Tartaragno | Six-legged crawler | 15: Torso, Head, Tail, six hips, six knees | 1 | 13 Nov 2026 | not uploaded |
-| BRT_030 Tractoro Dinosauro | Rider on a vehicle | 12: Torso (tractor), Dino (new), Head, Jaw (new), two arms, Tail, four wheel hubs (new), Exhaust (new) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_016 Gorillo Subwoofero | Biped with speakers | 12: Torso, Head, two upper arms, two forearms, two thighs, two lower legs (new), RightWoofer (new), LeftWoofer (new) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_017 Orangutini Ananassini | Biped with long arms and a skirt | 11: Torso, Head, two upper arms, two forearms, two thighs, two lower legs, Skirt (new) | 1 | 13 Nov 2026 | not uploaded |
-| BRT_018 Zibra Zubra Zibralini | Quadruped with neck and knees | 12: Torso, Neck (new), Head, four thighs, four lower legs, Tail | 1 | 13 Nov 2026 | not uploaded |
-| BRT_027 Tralalero Tralala | Three-legged walker | 9: Torso, Head (new), Tail, two fin-legs, tail leg, three lower legs (new) | 1 | 14 Nov 2026 | not uploaded |
-| BRT_023 Giraffa Celeste | Biped with knees (high-energy base) | 6: Torso, Head, two thighs, two lower legs | 2 | 14 Nov 2026 | not uploaded |
-| BRT_024 Nooo My Hotspot | Biped with elbows and knees (high-energy base) | 9: Torso, two upper arms, two forearms (phone on the right, new), two thighs, two lower legs | 2 | 14 Nov 2026 | not uploaded |
-| BRT_025 Salamino Penguino | Biped with flippers (high-energy base) | 7: Torso, Head, two flippers, two legs, Tail | 2 | 14 Nov 2026 | not uploaded |
-| BRT_029 Cocofanto Elefanto | Quadruped (own high-energy clips) | 7: Torso, Head, four legs, Tail | 2 | 14 Nov 2026 | not uploaded |
-| BRT_031 Odin Din Din Dun | Biped with elbows and knees (high-energy base) | 9: Torso, two upper arms, two forearms, two thighs, two lower legs | 2 | 14 Nov 2026 | not uploaded |
-| BRT_032 La Vaca Saturno Saturnita | Biped (high-energy base) | 5: Torso, Head, two legs, Tail | 2 | 14 Nov 2026 | not uploaded |
-| BRT_033 Dragon Cannelloni (teased) | Biped with knees, arms and wings (high-energy base) | 11: Torso, Head, two arms, two wings, Tail, two thighs, two lower legs | 2 | 14 Nov 2026 | not uploaded |
-| BRT_034 Orcalero Orcala (teased) | Four-legged walker (BRT_027's set) | 11: Torso, Head (new), Tail, four legs, four lower legs (new) | 2 | 14 Nov 2026 | not uploaded |
-| BRT_035 La Secret Combinasion (teased) | Biped with a phone rider (high-energy base) | 7: Torso, two legs, two arms, PhoneBody, PhoneHead | 2 | 14 Nov 2026 | not uploaded |
+| Villager body | VillagerBody | 17 (12 body + 5 attachment bones) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_019 Trenostruzzo Turbo 3000 | Vehicle-hybrid | 6: Torso, Neck, Head, RightLeg, LeftLeg, ToiletLid | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_011 Glorbo Fruttodrillo | Quadruped | 7: Torso, Head, four legs, Tail (existing V4 rig, unchanged) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_013 Cavallo Virtuoso | Biped | 6: Torso, Neck (new), Head, RightLeg, LeftLeg, Tail | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_001 Bingus Baguette | Quadruped | 7 (existing V4 rig, unchanged) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_002 Tralalero Toad | Hopper | 6: Torso, Head, two hind legs, two front limbs (existing V4 rig, unchanged) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_003 Cappuccino Capybara | Quadruped | 7: Torso, Head, four legs, Cup (new, on the head) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_004 Ballerina Banana | Biped, face on the body | 6: Torso, two legs, two arms, Tutu (new) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_005 Bombardiro Pigeon | Flyer | 7: Torso, Head, two wings, Tail, two legs (existing V4 rig, unchanged) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_006 Spaghetti Crocodilo | Quadruped | 8: Torso, Head, four legs, Tail, Meatball (new) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_007 Tung Tung Tung Sahur | Biped, face on the body | 6: Torso, two legs, two arms, Bat (new, under the arm) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_008 Lirili Larila | Biped with knees | 9: Torso, Head, Trunk (new), two arms, two thighs, two lower legs | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_009 Chimpanzini Bananini | Biped with elbows and knees | 10: Torso, Head, two upper arms, two forearms (new), two thighs, two lower legs (new) | 2 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_010 Talpa Di Fero | Squat biped with elbows | 10: Torso, Head, Drill (new), two upper arms, two forearms (new), two legs, Tail | 2 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_020 Bisonte Giuppitere | Hoverer (planet on sneakers) | 6: Torso, Head, MoonIo (new), MoonEuropa (new), two sneakers | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_012 Frigo Camelo | Quadruped with neck, knees and a door | 13: Torso, Neck (new), Head, four thighs, four lower legs (new), Tail, FridgeDoor (new) | 2 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_014 Bandito Bobritto | Biped with knees | 10: Torso, Head, two arms, Gun (new), two thighs, two lower legs (new), Tail | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_015 Strawberelli Flamingelli | Wader | 11: Torso, NeckBase (new), Neck (new), Head, two wings, Tail, two upper legs, two lower legs (new) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_021 Cacto Hipopotamo | Column (rigid body on slippers) | 4: Torso, Head, two legs | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_022 Trulimero Trulicina | Quadruped with knees and fins | 14: Torso, Head, four thighs, four lower legs, Tail, RightFin (new), LeftFin (new), DorsalFin (new) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_026 Rhino Toasterino | Upright biped with working parts | 14: Torso, Head, two upper arms, two forearms, two thighs, two lower legs, LeftToast (new), RightToast (new), LeverKnob (new), Tail (new) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_028 Tartaragno | Six-legged crawler | 15: Torso, Head, Tail, six hips, six knees | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_030 Tractoro Dinosauro | Rider on a vehicle | 12: Torso (tractor), Dino (new), Head, Jaw (new), two arms, Tail, four wheel hubs (new), Exhaust (new) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_016 Gorillo Subwoofero | Biped with speakers | 12: Torso, Head, two upper arms, two forearms, two thighs, two lower legs (new), RightWoofer (new), LeftWoofer (new) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_017 Orangutini Ananassini | Biped with long arms and a skirt | 11: Torso, Head, two upper arms, two forearms, two thighs, two lower legs, Skirt (new) | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_018 Zibra Zubra Zibralini | Quadruped with neck and knees | 12: Torso, Neck (new), Head, four thighs, four lower legs, Tail | 1 | 13 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_027 Tralalero Tralala | Three-legged walker | 9: Torso, Head (new), Tail, two fin-legs, tail leg, three lower legs (new) | 1 | 14 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_023 Giraffa Celeste | Biped with knees (high-energy base) | 6: Torso, Head, two thighs, two lower legs | 2 | 14 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_024 Nooo My Hotspot | Biped with elbows and knees (high-energy base) | 9: Torso, two upper arms, two forearms (phone on the right, new), two thighs, two lower legs | 2 | 14 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_025 Salamino Penguino | Biped with flippers (high-energy base) | 7: Torso, Head, two flippers, two legs, Tail | 2 | 14 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_029 Cocofanto Elefanto | Quadruped (own high-energy clips) | 7: Torso, Head, four legs, Tail | 2 | 14 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_031 Odin Din Din Dun | Biped with elbows and knees (high-energy base) | 9: Torso, two upper arms, two forearms, two thighs, two lower legs | 2 | 14 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_032 La Vaca Saturno Saturnita | Biped (high-energy base) | 5: Torso, Head, two legs, Tail | 2 | 14 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_033 Dragon Cannelloni (teased) | Biped with knees, arms and wings (high-energy base) | 11: Torso, Head, two arms, two wings, Tail, two thighs, two lower legs | 2 | 14 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_034 Orcalero Orcala (teased) | Four-legged walker (BRT_027's set) | 11: Torso, Head (new), Tail, four legs, four lower legs (new) | 2 | 14 Nov 2026 | uploaded 14 Nov 2026 |
+| BRT_035 La Secret Combinasion (teased) | Biped with a phone rider (high-energy base) | 7: Torso, two legs, two arms, PhoneBody, PhoneHead | 2 | 14 Nov 2026 | uploaded 14 Nov 2026 |
 
 The Voxel V4 models already carried a basic Motor6D rig from the 7 November pass (`tools/voxel_v4/rig.js`). Species are rigged by extending that data through the existing export pipeline, not by a separate rig builder. Quadrupeds share `ServerAssets.AnimationAuthoring.Archetypes.Quadruped` as a starting point.
 
-Uploads: all approved animation files are in `assets/animations/`. Studio refuses the upload until that folder is added under Assistant Settings → MCP Permissions.
+Uploads: all 409 approved animations (385 brainrot, 24 villager body) were uploaded to the owner's account on 14 November 2026 through Open Cloud, after `assets/animations` was approved for uploads in Studio. Every one passed moderation. Ids are in `assets/animations/ASSET_IDS.md` and in `Config/CreatureAnimations.lua` and `Config/VillagerAnimations.lua`. The text filter replaced the display names of BRT_018's 11 uploads with "#"; the animations and descriptions are unaffected.
 
 ## 5. Open questions before Part B
 
