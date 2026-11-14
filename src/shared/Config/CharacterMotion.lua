@@ -88,6 +88,20 @@ function CharacterMotion.VillagersEnabled(): boolean
 	return villagers :: boolean
 end
 
+-- Village life (C.6): needs villager motion on as well.
+--   ReplicatedStorage.VillagerLifePreview = true
+local life: boolean? = nil
+function CharacterMotion.LifeEnabled(): boolean
+	if life == nil then
+		life = CharacterMotion.VillagersEnabled()
+			and (
+				(FeatureFlags :: any).VillagerLifeEnabled == true
+				or preview("VillagerLifePreview")
+			)
+	end
+	return life :: boolean
+end
+
 -- Stable small integer per id, used to desynchronise loops and pick idle variants.
 function CharacterMotion.SeedFor(id: string): number
 	local hash = 5381

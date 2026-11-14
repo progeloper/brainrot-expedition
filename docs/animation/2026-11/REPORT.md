@@ -152,6 +152,8 @@ Uploads: all 409 approved animations (385 brainrot, 24 villager body) were uploa
 
 Guards (14 Nov 2026): the owner ruled that villagers are called **guards** and are ordinary people, not animals, with V4 anime eyes and their region's uniform. All 36 guards now use the one guard body (VillagerBody, 24 uploaded animations) with `VillagerSkins/Guard.lua` and seven `Uniform_<Region>.lua` modules: Forest (Alpine loden dress), Beach (fisherman's dress), Swamp (áo bà ba and nón lá), Jungle (Guatemalan highland dress), Arctic (hooded parka), Volcano (Andean poncho and chullo) and Glitch Zone (the Forest dress remixed). Each guard has its own skin tone, hair style and colour, and iris colour; its skin carries the full palette (`skin.palette`), which playback and the review pen use. The batch was approved as sent on 14 Nov 2026 from the line-up in `review/guards_batch/`. It supersedes the 15 animal-themed skins approved on 13 Nov.
 
+Part D, guards (approved 14 Nov 2026): guard playback on the one body, guard LOD and village life are built behind the existing flags (still off) and verified in Studio Play with the previews on. Shout lands within 0.003 s of the server's 0.75 s wind-up. 42 of 42 villager specs pass. Points of interest were generated and validated against the map for 35 of 36 guards. Details, findings and the POI list: `village_life.md`; captures: `review/guards_partD/`. Brainrot playback (D.1) is not started.
+
 ## 5. Open questions before Part B
 
 1. **Which brainrot models get rigged?** Play shows the Voxel V4 models (`CodeAssets.CreaturesV4`, about 300 parts each) through the Studio preview, but `VoxelCreaturesV4Enabled` is `false` live, where the 25-part sculptures in `Phase13CreatureAssets` still load. The brief reads as V4.

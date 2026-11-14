@@ -12,6 +12,7 @@ local Config = require(ReplicatedStorage.Shared.Config.VillagerGuards)
 local Rules = require(ReplicatedStorage.Shared.Utility.VillagerChaseRules)
 local CharacterMotion = require(ReplicatedStorage.Shared.Config.CharacterMotion)
 local MotionTuning = CharacterMotion.Villager
+local VillageLife = require(script.Parent.VillageLife)
 
 export type State = "Idle" | "Suspicious" | "WindUp" | "Chase" | "GiveUp" | "Return"
 
@@ -40,6 +41,9 @@ export type Villager = {
 	motion: string?,
 	motionAt: number?,
 	seed: number?,
+	-- Village life (VillageLife, C.6); nil while the feature is off.
+	life: any?,
+	lifeMotion: string?,
 }
 
 export type Chase = {
@@ -96,6 +100,7 @@ local villagers: { Villager } = {}
 local villagersById: { [string]: Villager } = {}
 local chases: { [number]: Chase } = {}
 local taggedStreak: { [number]: number } = {}
+local lastHitAt: { [number]: number } = {} -- village life: no wave for active hunters
 local adapters: Adapters? = nil
 local nextChaseId = 0
 local accumulator = 0
@@ -113,6 +118,9 @@ local function setState(villager: Villager, state: State, now: number)
 		villager.targetUserId = nil
 		villager.noticePoint = nil
 		villager.tagged = false
+	end
+	if state ~= "Idle" and CharacterMotion.LifeEnabled() then
+		VillageLife.Leave(villager, now)
 	end
 	if CharacterMotion.VillagersEnabled() then
 		-- Publish the motion with the state, in the same tick.
@@ -142,6 +150,8 @@ function Service.Reset()
 	table.clear(villagersById)
 	table.clear(chases)
 	table.clear(taggedStreak)
+	table.clear(lastHitAt)
+	VillageLife.Reset()
 	nextChaseId = 0
 	accumulator = 0
 end
@@ -220,6 +230,7 @@ end
 function Service.OnHit(player: Player, hitPosition: Vector3)
 	local a = adapters :: Adapters
 	local now = a.now()
+	lastHitAt[player.UserId] = now
 	for _, villager in villagers do
 		if
 			villager.state == "Suspicious"
@@ -614,6 +625,9 @@ function motionFor(villager: Villager, now: number): string
 			then "Tag"
 			else "Tantrum"
 	end
+	if state == "Idle" and villager.lifeMotion then
+		return villager.lifeMotion
+	end
 	return if villager.speedNow > MotionTuning.MovingSpeed then "Walk" else "Idle"
 end
 
@@ -673,6 +687,41 @@ function Service.Step(dt: number)
 	local now = a.now()
 	local byId = playersById()
 	updateAwake(byId)
+	local lifeContext: VillageLife.Context? = nil
+	local function life(): VillageLife.Context
+		if not lifeContext then
+			local positions = {}
+			for userId, player in byId do
+				local position = a.playerPosition(player)
+				if position then
+					table.insert(positions, { userId = userId, position = position })
+				end
+			end
+			lifeContext = {
+				now = now,
+				steer = function(villager: any, target: Vector3, stepDt: number)
+					steerMove(
+						villager,
+						target,
+						Config.IdleWalkSpeed,
+						stepDt,
+						0,
+						nil,
+						nil,
+						MotionTuning.TurnRateDegrees,
+						MotionTuning.EaseInSeconds,
+						nil,
+						false
+					)
+				end,
+				groundY = a.groundY,
+				players = positions,
+				lastHitAt = lastHitAt,
+				villagers = villagers,
+			}
+		end
+		return lifeContext :: VillageLife.Context
+	end
 
 	-- Chases first: decide ends before villagers move.
 	for userId, chase in chases do
@@ -844,6 +893,12 @@ function Service.Step(dt: number)
 					end
 				end
 				moved = true
+			elseif
+				villager.state == "Idle"
+				and CharacterMotion.LifeEnabled()
+				and VillageLife.Has(villager)
+			then
+				moved = VillageLife.Step(villager, dt, life())
 			elseif villager.state == "Idle" then
 				if now >= villager.idleNextAt then
 					local angle = math.random() * math.pi * 2
