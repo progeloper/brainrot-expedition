@@ -1,0 +1,90 @@
+{
+ "Alert": {
+  "length": 0.5,
+  "speed": null,
+  "loop": false,
+  "priority": "Action",
+  "keyframes": 11,
+  "bytes": 1974
+ },
+ "Carried": {
+  "length": 0.8,
+  "speed": null,
+  "loop": true,
+  "priority": "Movement",
+  "keyframes": 17,
+  "bytes": 2839
+ },
+ "Celebrate": {
+  "length": 1.5,
+  "speed": null,
+  "loop": false,
+  "priority": "Action",
+  "keyframes": 31,
+  "bytes": 5115
+ },
+ "Hit": {
+  "length": 0.3,
+  "speed": null,
+  "loop": false,
+  "priority": "Action",
+  "keyframes": 7,
+  "bytes": 2079
+ },
+ "IdleDisplay": {
+  "length": 3.0,
+  "speed": null,
+  "loop": true,
+  "priority": "Idle",
+  "keyframes": 61,
+  "bytes": 2844
+ },
+ "IdleWild": {
+  "length": 3.0,
+  "speed": null,
+  "loop": true,
+  "priority": "Idle",
+  "keyframes": 61,
+  "bytes": 7796
+ },
+ "IdleWild2": {
+  "length": 2.2,
+  "speed": null,
+  "loop": false,
+  "priority": "Idle",
+  "keyframes": 45,
+  "bytes": 5971
+ },
+ "Run": {
+  "length": 0.3,
+  "speed": 11.0,
+  "loop": true,
+  "priority": "Movement",
+  "keyframes": 7,
+  "bytes": 1522
+ },
+ "Signature": {
+  "length": 2.0,
+  "speed": null,
+  "loop": false,
+  "priority": "Action",
+  "keyframes": 41,
+  "bytes": 4274
+ },
+ "Sleep": {
+  "length": 4.0,
+  "speed": null,
+  "loop": true,
+  "priority": "Idle",
+  "keyframes": 81,
+  "bytes": 9552
+ },
+ "Walk": {
+  "length": 0.6,
+  "speed": 6.6,
+  "loop": true,
+  "priority": "Movement",
+  "keyframes": 13,
+  "bytes": 2345
+ }
+}
