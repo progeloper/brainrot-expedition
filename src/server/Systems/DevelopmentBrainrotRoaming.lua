@@ -20,6 +20,10 @@ local NaturalTerritory = require(script.Parent.NaturalTerritory)
 local ReactiveRunner = require(script.Parent.Behaviours.ReactiveRunner)
 local Sprinter = require(script.Parent.Behaviours.Sprinter)
 local Zigzag = require(script.Parent.Behaviours.Zigzag)
+-- Core Loop V2 (Part E): director-owned brainrots use temperaments when the part is on.
+local CoreLoopTemperament = require(script.Parent.Behaviours.CoreLoopTemperament)
+local temperamentsOn = require(ReplicatedStorage.Shared.Config.CoreLoopFlags).Part("Temperaments")
+local CoreLoop = require(ReplicatedStorage.Shared.Config.CoreLoop)
 local RegionSpawnCatalog = require(script.Parent.RegionSpawnCatalog)
 local RouteRules = require(ReplicatedStorage.Shared.Utility.BrainrotRouteRules)
 local RouteMotor = require(script.Parent.Parent.Utility.BurrowRouteMotor)
@@ -2227,6 +2231,33 @@ local function updateAll(deltaTime: number)
 				or controller.Sprint.lockedThreatUserId ~= nil
 				or controller.Zigzag.Mode ~= "Inactive"
 				or controller.LegendaryPursuit.active
+			if temperamentsOn and CoreLoopTemperament.Handles(brainrot) then
+				-- E2: 10 Hz near a hunter, 2 Hz otherwise. The module owns movement and Motion.
+				local rate = if nearby then 1 / CoreLoop.Behaviour.Herd.NearHz else 1 / CoreLoop.Behaviour.Herd.FarHz
+				if controller.AccumulatedDelta + 1e-6 < rate then
+					continue
+				end
+				local stepSeconds = controller.AccumulatedDelta
+				controller.AccumulatedDelta = 0
+				if controller.TerritoryRegionId ~= nil and sensing then
+					local inside = isInsideTerritory(brainrot, controller, position)
+					reconcileTerritoryPresence(brainrot, controller, inside, now)
+				end
+				if controller.RecoveringTerritory then
+					updateTerritoryRecovery(brainrot, controller, now, stepSeconds)
+				else
+					CoreLoopTemperament.Update(brainrot, controller, now, stepSeconds, candidates, {
+						moveToward = moveToward,
+						canAdvance = if controller.TerritoryRegionId
+							then function(current, nextPosition)
+								return isSafeMovementStep(brainrot, controller, current, nextPosition)
+							end
+							else nil,
+						setMotion = setMotion,
+					})
+				end
+				continue
+			end
 			local interval = if observed or nearby or active then 0.1 else 0.5
 			if controller.RouteMotor and controller.AccumulatedDelta + 1e-6 < interval then
 				continue
@@ -2367,6 +2398,9 @@ function DevelopmentBrainrotRoaming.Resume(brainrot: Model, resumePosition: Vect
 			BrainrotBehaviours.LegendaryPursuit
 		)
 		cancelMovement(controller)
+		if temperamentsOn and CoreLoopTemperament.Handles(brainrot) then
+			CoreLoopTemperament.OnWake(brainrot, os.clock()) -- E7: groggy 1 s, then wary
+		end
 	end
 	startMovement(brainrot, controller)
 	return true
@@ -2381,6 +2415,7 @@ function DevelopmentBrainrotRoaming.Unregister(brainrot: Model, reason: string?)
 	if controller.RouteMotor then
 		RouteMotor.Destroy(controller.RouteMotor)
 	end
+	CoreLoopTemperament.Forget(brainrot)
 	controllers[brainrot] = nil
 	for _, connection in controller.Connections do
 		connection:Disconnect()

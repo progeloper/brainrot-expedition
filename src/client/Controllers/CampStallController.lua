@@ -18,6 +18,11 @@ local Weapons = require(ReplicatedStorage.Shared.Config.Weapons)
 local WeaponTiersV2 = require(ReplicatedStorage.Shared.Config.WeaponTiersV2)
 local Phase13 = require(ReplicatedStorage.Shared.Config.Phase13)
 local TrainingConfig = require(ReplicatedStorage.Shared.Config.Training)
+local PlaytestFixes = require(ReplicatedStorage.Shared.Config.PlaytestFixes)
+local PlaytestFlags = require(ReplicatedStorage.Shared.Config.PlaytestFixesFlags)
+local StallDisplayPose = require(ReplicatedStorage.Shared.Utility.StallDisplayPose)
+local WeaponFx = require(ReplicatedStorage.Shared.Utility.WeaponFxLibrary)
+local PresentationQuality = require(ReplicatedStorage.Shared.Utility.ResolvedPresentationQuality)
 local Scheduler = require(script.Parent.Parent.Utility.CampAnimationScheduler)
 local AudioCue = require(script.Parent.Parent.Utility.AudioCue)
 
@@ -54,6 +59,27 @@ function Controller.RackPicks(owned: { [string]: boolean }, count: number): { st
 	return out
 end
 
+-- Pure (Playtest Fixes, owner 13 Nov): a random few of the same pool for the racks, not every
+-- weapon. The same seed always gives the same picks, so the rack only changes between sessions.
+function Controller.RandomRackPicks(
+	owned: { [string]: boolean },
+	count: number,
+	seed: number
+): { string }
+	local pool = Controller.RackPicks(owned, math.huge)
+	local rng = Random.new(seed)
+	for i = #pool, 2, -1 do
+		local j = rng:NextInteger(1, i)
+		pool[i], pool[j] = pool[j], pool[i]
+	end
+	local out = {}
+	for i = 1, math.min(count, #pool) do
+		out[i] = pool[i]
+	end
+	return out
+end
+local rackSeed = os.time()
+
 -- Pure: the three best owned weapons for the back wall (power tier, then price).
 function Controller.WallPicks(owned: { [string]: boolean }): { string }
 	local rows = {}
@@ -62,7 +88,11 @@ function Controller.WallPicks(owned: { [string]: boolean }): { string }
 		if isOwned and d then
 			local tier = WeaponTiersV2.TierFromWeaponId(id)
 			local special = WeaponTiersV2.Specials[id]
-			table.insert(rows, { id = id, tier = if special then special.powerTier else (tier or 0), price = d.price })
+			table.insert(rows, {
+				id = id,
+				tier = if special then special.powerTier else (tier or 0),
+				price = d.price,
+			})
 		end
 	end
 	table.sort(rows, function(a, b)
@@ -112,23 +142,121 @@ end
 local function clearProp(key: string)
 	local old = props[key]
 	if old then
+		Scheduler.Unregister(old) -- Playtest Fixes C1 display-effect culling entry, if any
 		old:Destroy()
 		props[key] = nil
 	end
 end
 
-local function staticize(model: Instance)
+local function staticize(model: Instance, keepEffects: boolean?)
 	for _, d in model:GetDescendants() do
 		if d:IsA("BasePart") then
 			d.Anchored = true
 			d.CanCollide, d.CanQuery, d.CanTouch = false, false, false
-		elseif d:IsA("LuaSourceContainer") or d:IsA("ProximityPrompt") or d:IsA("Seat") or d:IsA("VehicleSeat")
-			or d:IsA("JointInstance") or d:IsA("WeldConstraint") or d:IsA("ClickDetector") then
+		elseif
+			d:IsA("LuaSourceContainer")
+			or d:IsA("ProximityPrompt")
+			or d:IsA("Seat")
+			or d:IsA("VehicleSeat")
+			or d:IsA("JointInstance")
+			or d:IsA("WeldConstraint")
+			or d:IsA("ClickDetector")
+		then
 			d:Destroy()
-		elseif d:IsA("ParticleEmitter") then
+		elseif d:IsA("ParticleEmitter") and not keepEffects then
 			d.Enabled = false
 		end
 	end
+end
+
+-- Playtest Fixes C1: a rack/wall display keeps its effects, switched on only while it is within
+-- WeaponFx.DisplayCullRadius and on screen (shared <=10 Hz scheduler). Low quality keeps beams and
+-- lights but no particles.
+local function cullDisplayEffects(model: Model)
+	local fx: { Instance } = {}
+	for _, d in model:GetDescendants() do
+		if
+			(d:IsA("ParticleEmitter") or d:IsA("Beam") or d:IsA("Trail") or d:IsA("Light"))
+			and (d :: any).Enabled
+		then
+			(d :: any).Enabled = false
+			table.insert(fx, d)
+		end
+	end
+	if #fx == 0 then
+		return
+	end
+	local on = false
+	local function set(enabled: boolean)
+		local low = PresentationQuality.GetTier(player:GetAttribute("VFXQuality")) == "Low"
+		for _, d in fx do
+			(d :: any).Enabled = enabled and not (low and d:IsA("ParticleEmitter"))
+		end
+		on = enabled
+	end
+	Scheduler.Register(model, {
+		radius = PlaytestFixes.WeaponFx.DisplayCullRadius,
+		position = function()
+			return if model.Parent then model:GetPivot().Position else nil
+		end,
+		step = function()
+			if not on then
+				set(true)
+			end
+		end,
+		hidden = function()
+			set(false)
+		end,
+	})
+end
+
+-- Playtest Fixes B1: warn once per rack/wall slot whose frame does not face the customer or whose lean
+-- differs from its group (dev aid; never changes anything).
+local checkedSlots: { [BasePart]: boolean } = {}
+local function checkSlot(slot: BasePart)
+	if checkedSlots[slot] then
+		return
+	end
+	checkedSlots[slot] = true
+	local group = slot:GetAttribute("CampSlot")
+	if group ~= "Rack" and group ~= "Wall" then
+		return
+	end
+	local stall = slot:FindFirstAncestorWhichIsA("Model")
+	if not stall then
+		return
+	end
+	local lean = if group == "Wall" then PlaytestFixes.StallPoses.WallLeanDegrees else 0
+	local problem = StallDisplayPose.CheckSlot(slot.CFrame, stall:GetPivot().LookVector, lean)
+	if problem then
+		warn(string.format("[CampStallController] %s: %s", slot.Name, problem))
+	end
+end
+
+-- Playtest Fixes B2/B3: family pose in the normalised slot frame, 1.5x held size (>= 1.2x to fit).
+local function posePlaytest(model: Model, slot: BasePart, weaponId: string)
+	checkSlot(slot)
+	local group = tostring(slot:GetAttribute("CampSlot") or "Rack")
+	local _, size = model:GetBoundingBox()
+	local family = StallDisplayPose.Family(weaponId, model:GetAttribute("Family") :: string?)
+	local axes = StallDisplayPose.Axes(size, family, weaponId)
+	local along = (size :: any)[axes.along] :: number
+	local rail = tonumber(slot:GetAttribute("SlotLength")) or 3
+	local scale = if group == "Medal"
+		then rail / along -- medal pedestals keep their small fit; pose only (B4)
+		else StallDisplayPose.Fit(
+			size,
+			axes,
+			rail,
+			if group == "Rack" then PlaytestFixes.StallPoses.RowHeight else nil
+		).scale
+	if along > 0 then
+		model:ScaleTo(model:GetScale() * scale)
+	end
+	local boxCF, scaled = model:GetBoundingBox()
+	local rel = model:GetPivot():ToObjectSpace(boxCF)
+	local clearance = (PlaytestFixes.StallPoses.BoardClearance :: any)[group] or 0
+	model:PivotTo(slot.CFrame * StallDisplayPose.BoxInSlot(scaled, axes, clearance) * rel:Inverse())
 end
 
 -- Place a WeaponDisplays copy on a slot: display forward (-Z) along the slot's long axis, side-on.
@@ -137,31 +265,57 @@ local function placeDisplay(key: string, slot: BasePart, weaponId: string, greye
 	local folder = ReplicatedStorage:FindFirstChild("CodeAssets")
 	local displays = folder and folder:FindFirstChild("WeaponDisplays")
 	local source = displays and displays:FindFirstChild(weaponId)
+	local fxOn = PlaytestFlags.Part("WeaponFx")
+	-- Playtest Fixes C4: Trailwood v2 displays for the two v1 weapons.
+	local override = fxOn and folder and folder:FindFirstChild("PlaytestDisplaysV2")
+	if override and override:FindFirstChild(weaponId) then
+		source = override[weaponId]
+	end
 	if not source or not source:IsA("Model") then
 		return
 	end
 	local model = source:Clone()
-	staticize(model)
-	-- Size in the display's own frame (X = side, Y = up, Z = forward). The length that lies on the
-	-- pegs is the longer of up (bow limbs) and forward (stocks/barrels); the side stays facing out.
-	local _, size = model:GetBoundingBox()
-	local length = tonumber(slot:GetAttribute("SlotLength")) or 3
-	local along = math.max(size.Y, size.Z)
-	local turn = if size.Y > size.Z then CFrame.Angles(math.rad(90), 0, 0) else CFrame.new()
-	if along > 0 then
-		model:ScaleTo(model:GetScale() * (length / along))
+	staticize(model, fxOn and not greyed)
+	if PlaytestFlags.Part("StallPoses") then
+		posePlaytest(model, slot, weaponId)
+	else
+		-- Legacy pose. The slots were normalised for Playtest Fixes; their former frame/length are kept
+		-- in Legacy* attributes so this path looks exactly as before.
+		-- Size in the display's own frame (X = side, Y = up, Z = forward). The length that lies on the
+		-- pegs is the longer of up (bow limbs) and forward (stocks/barrels); the side stays facing out.
+		local _, size = model:GetBoundingBox()
+		local legacyLength = slot:GetAttribute("LegacySlotLength")
+		local length = tonumber(
+			if legacyLength ~= nil then legacyLength else slot:GetAttribute("SlotLength")
+		) or 3
+		local legacyFrame = slot:GetAttribute("LegacySlotCFrame")
+		local frame = if typeof(legacyFrame) == "CFrame" then legacyFrame else slot.CFrame
+		local along = math.max(size.Y, size.Z)
+		local turn = if size.Y > size.Z then CFrame.Angles(math.rad(90), 0, 0) else CFrame.new()
+		if along > 0 then
+			model:ScaleTo(model:GetScale() * (length / along))
+		end
+		model:PivotTo(frame * turn)
 	end
-	model:PivotTo(slot.CFrame * turn)
 	if greyed then
 		for _, d in model:GetDescendants() do
 			if d:IsA("BasePart") then
 				local h, s, v = d.Color:ToHSV()
-				d.Color = Color3.fromHSV(h, s * 0.15, math.clamp(v * 0.75, 0.25, 0.75)):Lerp(GREY, 0.35)
+				d.Color = Color3.fromHSV(h, s * 0.15, math.clamp(v * 0.75, 0.25, 0.75))
+					:Lerp(GREY, 0.35)
 				d.Material = Enum.Material.SmoothPlastic
-			elseif d:IsA("Beam") or d:IsA("Light") then
-				d.Enabled = false
+			elseif
+				d:IsA("Beam")
+				or d:IsA("Light")
+				-- greyed medals carry no effects at all (Playtest Fixes C1)
+				or (fxOn and (d:IsA("ParticleEmitter") or d:IsA("Trail")))
+			then
+				(d :: any).Enabled = false
 			end
 		end
+	elseif fxOn then
+		WeaponFx.Author(model, weaponId, nil)
+		cullDisplayEffects(model)
 	end
 	model.Name = "CampDisplay_" .. weaponId
 	model.Parent = slot
@@ -188,18 +342,44 @@ local function refreshWeapons()
 	end
 	local owned = snapshot.ownedWeapons or {}
 	local s = slots(stall)
-	local rack = Controller.RackPicks(owned, 6)
-	for i = 1, 6 do
-		local slot = s["RackSlot_" .. i]
-		if slot and rack[i] then
-			placeDisplay("Rack" .. i, slot, rack[i], false)
-		else
-			clearProp("Rack" .. i)
+	if PlaytestFlags.Part("StallPoses") then
+		-- Two per board, a random few (owner 13 Nov). Inactive slots stay empty.
+		local active = {}
+		for name in PlaytestFixes.StallPoses.RackRows do
+			table.insert(active, name)
+		end
+		table.sort(active)
+		local rack = Controller.RandomRackPicks(owned, #active, rackSeed)
+		for i = 1, 6 do
+			local name = "RackSlot_" .. i
+			local index = table.find(active, name)
+			local slot = s[name]
+			if slot and index and rack[index] then
+				placeDisplay("Rack" .. i, slot, rack[index], false)
+			else
+				clearProp("Rack" .. i)
+			end
+		end
+	else
+		local rack = Controller.RackPicks(owned, 6)
+		for i = 1, 6 do
+			local slot = s["RackSlot_" .. i]
+			if slot and rack[i] then
+				placeDisplay("Rack" .. i, slot, rack[i], false)
+			else
+				clearProp("Rack" .. i)
+			end
 		end
 	end
 	local wall = Controller.WallPicks(owned)
+	local wallSlots = PlaytestFixes.StallPoses.WallSlots :: { [string]: number }
+	local twoOnWall = PlaytestFlags.Part("StallPoses")
 	for i = 1, 3 do
 		local slot = s["WallSlot_" .. i]
+		-- Playtest Fixes: two on the wall (owner 13 Nov); WallSlot_3 stays empty.
+		if twoOnWall and wallSlots[slot and slot.Name or ""] == nil then
+			slot = nil
+		end
 		if slot and wall[i] then
 			placeDisplay("Wall" .. i, slot, wall[i], false)
 		else
@@ -241,8 +421,14 @@ local function placeHitched(stall: Model)
 				model.PrimaryPart.Anchored = true
 			end
 			model:PivotTo(slot.CFrame)
-			local onTable = turn ~= nil and rotor ~= nil
-				and (Vector3.new(slot.Position.X, 0, slot.Position.Z) - Vector3.new(turn.Position.X, 0, turn.Position.Z)).Magnitude < 6
+			local onTable = turn ~= nil
+				and rotor ~= nil
+				and (Vector3.new(slot.Position.X, 0, slot.Position.Z) - Vector3.new(
+						turn.Position.X,
+						0,
+						turn.Position.Z
+					)).Magnitude
+					< 6
 			model.Parent = if onTable then rotor else slot
 			props[key] = model
 		end
@@ -328,7 +514,10 @@ local function coinBurst(stall: Model)
 		e.Name = "CampCoinBurst"
 		e.Texture = "rbxasset://textures/particles/sparkles_main.dds"
 		e.Color = ColorSequence.new(Color3.fromRGB(255, 214, 64), Color3.fromRGB(255, 170, 30))
-		e.Size = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.6), NumberSequenceKeypoint.new(1, 0.1) })
+		e.Size = NumberSequence.new({
+			NumberSequenceKeypoint.new(0, 0.6),
+			NumberSequenceKeypoint.new(1, 0.1),
+		})
 		e.Lifetime = NumberRange.new(0.6, 1.1)
 		e.Speed = NumberRange.new(8, 14)
 		e.SpreadAngle = Vector2.new(35, 35)
@@ -342,6 +531,100 @@ local function coinBurst(stall: Model)
 	local burst = emitter :: ParticleEmitter
 	burst:Emit(24)
 	AudioCue.Play("E5_crate", { bus = "Rewards", cooldown = 0.3 }) -- ka-ching
+end
+
+-- Playtest Fixes D4/D5 (flag-gated): shared-bay presentation.
+local sharedBay = PlaytestFlags.Part("TrainPlace")
+local bayCount = 0 -- trainers on the rollers (prompt attribute BayTrainingCount)
+local xpPool: { BillboardGui } = {}
+local xpNext = 1
+
+-- "+XP" pops off the rollers: four pooled billboards, reused round-robin (never more on screen).
+local function popXp(trigger: BasePart, amount: number)
+	if #xpPool == 0 then
+		for i = 1, PlaytestFixes.TrainPlace.MaxXpPops do
+			local gui = Instance.new("BillboardGui")
+			gui.Name = "TrainingXpPop" .. i
+			gui.Size = UDim2.fromScale(3, 1.2)
+			gui.LightInfluence = 0
+			gui.MaxDistance = 90
+			gui.Enabled = false
+			local label = Instance.new("TextLabel")
+			label.Name = "Text"
+			label.BackgroundTransparency = 1
+			label.Size = UDim2.fromScale(1, 1)
+			label.Font = Enum.Font.FredokaOne
+			label.TextScaled = true
+			label.TextColor3 = Color3.fromRGB(120, 255, 120)
+			label.TextStrokeTransparency = 0
+			label.TextStrokeColor3 = Color3.fromRGB(20, 60, 20)
+			label.Parent = gui
+			gui.Parent = player:FindFirstChildOfClass("PlayerGui")
+			table.insert(xpPool, gui)
+		end
+	end
+	local gui = xpPool[xpNext]
+	xpNext = xpNext % #xpPool + 1
+	local label = gui:FindFirstChild("Text") :: TextLabel
+	gui.Adornee = trigger
+	label.Text = string.format("+%d XP", amount)
+	label.TextTransparency, label.TextStrokeTransparency = 0, 0
+	local start = Vector3.new((math.random() - 0.5) * 4, 2, 0)
+	gui.StudsOffsetWorldSpace = start
+	gui.Enabled = true
+	local info = TweenInfo.new(0.9, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	TweenService:Create(gui, info, { StudsOffsetWorldSpace = start + Vector3.new(0, 3, 0) }):Play()
+	local fade =
+		TweenService:Create(label, info, { TextTransparency = 1, TextStrokeTransparency = 1 })
+	fade.Completed:Once(function()
+		gui.Enabled = false
+	end)
+	fade:Play()
+end
+
+local burstEmitters: { [BasePart]: ParticleEmitter } = {}
+local function levelBurst(trigger: BasePart)
+	-- one emitter per trigger (Training rollers, Legs treadmill: Playtest Fixes 2 G1)
+	local emitter = burstEmitters[trigger]
+	if not emitter then
+		local attachment = Instance.new("Attachment")
+		attachment.Name = "TrainingLevelBurst"
+		attachment.Parent = trigger
+		local e = WeaponFx.NewEmitter(
+			"Spark",
+			ColorSequence.new(Color3.fromRGB(120, 255, 120), Color3.fromRGB(255, 225, 74))
+		)
+		e.Enabled = false
+		e.EmissionDirection = Enum.NormalId.Top
+		e.SpreadAngle = Vector2.new(60, 60)
+		e.Parent = attachment
+		burstEmitters[trigger] = e
+		emitter = e
+	end
+	local low = PresentationQuality.GetTier(player:GetAttribute("VFXQuality")) == "Low"
+	local e = emitter :: ParticleEmitter
+	e:Emit(if low then 8 else 16)
+end
+
+-- Other players' carts on the shared bay are drawn at half transparency (visual parts only).
+local function ghostCart(cart: Instance)
+	if not cart:IsA("Model") then
+		return
+	end
+	local function apply()
+		local mine = cart:GetAttribute("OwnerUserId") == player.UserId
+		local ghost = cart:GetAttribute("PlaytestTrainingBay") == true and not mine
+		local visual = cart:FindFirstChild("Visual") or cart
+		for _, d in visual:GetDescendants() do
+			if d:IsA("BasePart") then
+				d.LocalTransparencyModifier = if ghost
+					then PlaytestFixes.TrainPlace.OthersTransparency
+					else 0
+			end
+		end
+	end
+	cart:GetAttributeChangedSignal("PlaytestTrainingBay"):Connect(apply)
+	apply()
 end
 
 -- Training stall visuals (data from player attributes the server mirrors: TrainingLevel, TrainingActive,
@@ -381,7 +664,10 @@ local function bindTraining(stall: Model)
 		if d:IsA("BasePart") and d:GetAttribute("CampLamp") then
 			lamp = d
 		elseif d:IsA("BasePart") and d:GetAttribute("CampRoller") then
-			table.insert(rollers, { part = d, base = d.CFrame, axis = d:GetAttribute("CampRollerAxis") })
+			table.insert(
+				rollers,
+				{ part = d, base = d.CFrame, axis = d:GetAttribute("CampRollerAxis") }
+			)
 		end
 	end
 	local lampColor = if lamp then lamp.Color else Color3.new(1, 0, 0)
@@ -423,6 +709,25 @@ local function bindTraining(stall: Model)
 	end
 	applyLevel()
 	player:GetAttributeChangedSignal("TrainingLevel"):Connect(applyLevel)
+	if sharedBay then
+		local slots = stall:FindFirstChild("CampSlots")
+		local trigger = slots and slots:FindFirstChild("RollerTrigger")
+		if trigger and trigger:IsA("BasePart") then
+			local lastXp = tonumber(player:GetAttribute("TrainingXp")) or 0
+			player:GetAttributeChangedSignal("TrainingXp"):Connect(function()
+				local xp = tonumber(player:GetAttribute("TrainingXp")) or 0
+				local gain = tonumber(player:GetAttribute("TrainingXpGain")) or (xp - lastXp)
+				lastXp = xp
+				if player:GetAttribute("TrainingActive") == true and gain > 0 then
+					popXp(trigger, gain)
+				end
+			end)
+			local controller: any = Controller
+			controller.OnLevelBurst = function()
+				levelBurst(trigger)
+			end
+		end
+	end
 	local center = stall:GetPivot().Position
 	Scheduler.Register(stall, {
 		position = function()
@@ -431,10 +736,14 @@ local function bindTraining(stall: Model)
 		radius = 150,
 		always = true,
 		step = function(_now, dt)
-			local active = player:GetAttribute("TrainingActive") == true
+			local mine = player:GetAttribute("TrainingActive") == true
+			-- Shared bay: the rollers spin while anyone trains.
+			local active = mine or (sharedBay and bayCount > 0)
 			if lamp then
 				blink = active and not blink
-				lamp.Color = if blink then Color3.fromRGB(255, 40, 40) else lampColor:Lerp(Color3.new(0.2, 0, 0), if active then 0.6 else 0)
+				lamp.Color = if blink
+					then Color3.fromRGB(255, 40, 40)
+					else lampColor:Lerp(Color3.new(0.2, 0, 0), if active then 0.6 else 0)
 				lamp.Material = if blink then Enum.Material.Neon else Enum.Material.SmoothPlastic
 			end
 			if active then
@@ -443,8 +752,16 @@ local function bindTraining(stall: Model)
 				rollerAngle = (rollerAngle + speed * math.min(dt, 0.25)) % 360
 				for _, r in rollers do
 					local axis = if typeof(r.axis) == "Vector3" then r.axis else Vector3.xAxis
-					local cf = CFrame.new(r.base.Position) * CFrame.fromAxisAngle(axis, math.rad(rollerAngle)) * r.base.Rotation
-					TweenService:Create(r.part, TweenInfo.new(0.1, Enum.EasingStyle.Linear), { CFrame = cf }):Play()
+					local cf = CFrame.new(r.base.Position)
+						* CFrame.fromAxisAngle(axis, math.rad(rollerAngle))
+						* r.base.Rotation
+					TweenService
+						:Create(
+							r.part,
+							TweenInfo.new(0.1, Enum.EasingStyle.Linear),
+							{ CFrame = cf }
+						)
+						:Play()
 				end
 			end
 		end,
@@ -453,10 +770,16 @@ local function bindTraining(stall: Model)
 	local function bindPrompt(prompt: ProximityPrompt)
 		local function apply()
 			local occupant = tonumber(prompt:GetAttribute("BayOccupantUserId")) or 0
-			prompt.ActionText = if occupant ~= 0 and occupant ~= player.UserId then "Bay busy" else "Open"
+			bayCount = tonumber(prompt:GetAttribute("BayTrainingCount")) or 0
+			prompt.ActionText = if not sharedBay
+					and occupant ~= 0
+					and occupant ~= player.UserId
+				then "Bay busy"
+				else "Open"
 		end
 		apply()
 		prompt:GetAttributeChangedSignal("BayOccupantUserId"):Connect(apply)
+		prompt:GetAttributeChangedSignal("BayTrainingCount"):Connect(apply)
 	end
 	for _, d in stall:GetDescendants() do
 		if d:IsA("ProximityPrompt") then
@@ -487,11 +810,46 @@ local function bindStall(model: Instance)
 	if key == "Training" then
 		bindTraining(model)
 	end
+	if key == "Gems" and PlaytestFlags.Part("GemsStall") then
+		-- Playtest Fixes F1: Neon gem cores pulse gently (GlowPulseHz) on the shared <=10 Hz scheduler;
+		-- the one sparkle emitter is off on Low quality.
+		local cores = {}
+		for _, d in model:GetDescendants() do
+			if d:IsA("BasePart") and type(d:GetAttribute("GlowPulseHz")) == "number" then
+				table.insert(cores, { part = d, base = d.Color })
+			elseif d:IsA("ParticleEmitter") then
+				d.Enabled = PresentationQuality.GetTier(player:GetAttribute("VFXQuality")) ~= "Low"
+			end
+		end
+		local hz = PlaytestFixes.GemsStall.GlowPulseHz
+		Scheduler.Register(model, {
+			position = function()
+				return if model.Parent then model:GetPivot().Position else nil
+			end,
+			step = function(now)
+				local glow = 0.5 + 0.5 * math.sin(now * hz * math.pi * 2)
+				for _, core in cores do
+					TweenService:Create(core.part, TweenInfo.new(0.1, Enum.EasingStyle.Linear), {
+						Color = core.base:Lerp(Color3.new(1, 1, 1), 0.35 * glow),
+					}):Play()
+				end
+			end,
+		})
+	end
 	task.defer(refresh)
 end
 
 -- "+1 SPEED LV" toast (UI only, never on the stall) + a small sound.
-function Controller.ShowLevelToast(gained: number)
+-- Playtest Fixes 2 G1: the Legs treadmill reuses the Training "+XP" pops and level-up burst.
+function Controller.PopXp(trigger: BasePart, amount: number)
+	popXp(trigger, amount)
+end
+
+function Controller.LevelBurst(trigger: BasePart)
+	levelBurst(trigger)
+end
+
+function Controller.ShowLevelToast(gained: number, suffix: string?)
 	local gui = player:FindFirstChildOfClass("PlayerGui")
 	if not gui then
 		return
@@ -513,7 +871,7 @@ function Controller.ShowLevelToast(gained: number)
 	label.Font = Enum.Font.LuckiestGuy
 	label.TextScaled = true
 	label.TextColor3 = Color3.fromRGB(120, 255, 120)
-	label.Text = string.format("+%d SPEED LV", gained)
+	label.Text = string.format("+%d %s", gained, suffix or "SPEED LV")
 	local stroke = Instance.new("UIStroke")
 	stroke.Thickness = 3
 	stroke.Color = Color3.fromRGB(20, 60, 20)
@@ -522,10 +880,18 @@ function Controller.ShowLevelToast(gained: number)
 	scale.Scale = 0.6
 	scale.Parent = label
 	label.Parent = screen
-	TweenService:Create(scale, TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Scale = 1 }):Play()
+	TweenService:Create(
+		scale,
+		TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.Out),
+		{ Scale = 1 }
+	):Play()
 	AudioCue.Play("U6", { bus = "UI", cooldown = 0.2 })
 	task.delay(1.6, function()
-		local fade = TweenService:Create(label, TweenInfo.new(0.4), { TextTransparency = 1, Position = UDim2.fromScale(0.5, 0.26) })
+		local fade = TweenService:Create(
+			label,
+			TweenInfo.new(0.4),
+			{ TextTransparency = 1, Position = UDim2.fromScale(0.5, 0.26) }
+		)
 		fade:Play()
 		fade.Completed:Once(function()
 			label:Destroy()
@@ -569,6 +935,18 @@ function Controller.Start()
 			end
 		end)
 	end
+	if CampFlags.Training() and sharedBay then
+		task.spawn(function()
+			local runtime = Workspace:WaitForChild("Runtime", 30)
+			local carts = runtime and runtime:WaitForChild("Carts", 30)
+			if carts then
+				for _, cart in carts:GetChildren() do
+					ghostCart(cart)
+				end
+				carts.ChildAdded:Connect(ghostCart)
+			end
+		end)
+	end
 	if CampFlags.Training() then
 		-- AFK detection: ping the server at most every 20 s while the player is actually giving input.
 		local UserInputService = game:GetService("UserInputService")
@@ -586,6 +964,10 @@ function Controller.Start()
 			campEvent.OnClientEvent:Connect(function(payload)
 				if type(payload) == "table" and payload.kind == "TrainingLevelUp" then
 					Controller.ShowLevelToast(tonumber(payload.gained) or 1)
+					local burst = (Controller :: any).OnLevelBurst
+					if burst then
+						burst()
+					end
 				end
 			end)
 		end

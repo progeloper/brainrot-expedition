@@ -1,0 +1,39 @@
+{
+    "ClassName": "Tool",
+    "Properties": {
+        "CanBeDropped": false,
+        "RequiresHandle": true,
+        "Enabled": true,
+        "ManualActivationOnly": false,
+        "ToolTip": "Sleep launcher — aim and activate, or press G",
+        "Grip": [0, -0.3, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1],
+        "Attributes": {
+            "BrainrotSleepLauncher": { "Bool": true }
+        }
+    },
+    "Children": [
+        {
+            "Name": "Handle",
+            "ClassName": "Part",
+            "Properties": {
+                "Size": [0.7, 0.8, 2.2],
+                "Color": [0.18, 0.3, 0.36],
+                "Material": "SmoothPlastic",
+                "Anchored": false,
+                "CanCollide": false,
+                "CanTouch": false,
+                "CanQuery": false,
+                "Massless": true
+            },
+            "Children": [
+                {
+                    "Name": "Muzzle",
+                    "ClassName": "Attachment",
+                    "Properties": {
+                        "CFrame": [0, 0, -1.1, 1, 0, 0, 0, 1, 0, 0, 0, 1]
+                    }
+                }
+            ]
+        }
+    ]
+}

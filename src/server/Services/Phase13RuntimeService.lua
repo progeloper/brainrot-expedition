@@ -8,6 +8,8 @@ local Config = require(RS.Shared.Config.Phase13)
 local Rules = require(RS.Shared.Utility.Phase13Rules)
 local CommerceRules = require(RS.Shared.Utility.Phase13CommerceRules)
 local AppearanceRules = require(RS.Shared.Utility.Phase13AppearanceRules)
+local PlaytestFlags = require(RS.Shared.Config.PlaytestFixesFlags)
+local WeaponFx = require(RS.Shared.Utility.WeaponFxLibrary)
 local AttachmentCosmetics = require(RS.Shared.Utility.Phase14CosmeticRules)
 local CosmeticPresenter = require(script.Parent.Parent.Utility.Phase14CosmeticPresenter)
 local CreatureReplication = require(script.Parent.CreatureReplicationService)
@@ -34,6 +36,7 @@ local Reset = require(script.Parent.Phase12WorldService)
 local CampFlags = require(RS.Shared.Config.CampReworkFlags)
 local SpecialRules = require(RS.Shared.Utility.SpecialWeaponRules)
 local SaleSystem = require(script.Parent.Parent.Systems.BrainrotSaleSystem)
+local Banked = require(script.Parent.BankedBrainrotService)
 local Training = require(script.Parent.TrainingService)
 local Service = {}
 local started = false
@@ -48,21 +51,39 @@ local reconcileQueue = {}
 local sacrificePreviews = {}
 local function invalidateAssignedBase(player)
 	local assignment = Bases:GetAssignment(player)
-	if assignment == nil or not Bases:IsCurrentAssignment(assignment) then return false end
+	if assignment == nil or not Bases:IsCurrentAssignment(assignment) then
+		return false
+	end
 	local base = assignment.Base
-	if base:GetAttribute("OwnerUserId") ~= player.UserId
-		or base:GetAttribute("BaseOwnershipRevision") ~= assignment.Generation then return false end
+	if
+		base:GetAttribute("OwnerUserId") ~= player.UserId
+		or base:GetAttribute("BaseOwnershipRevision") ~= assignment.Generation
+	then
+		return false
+	end
 	local unavailableState = string.format("0:%d:%d:0", player.UserId, assignment.Generation)
-	if base:GetAttribute("BasePresentationState") ~= unavailableState or base:GetAttribute("BasePresentationReady") ~= false then
+	if
+		base:GetAttribute("BasePresentationState") ~= unavailableState
+		or base:GetAttribute("BasePresentationReady") ~= false
+	then
 		SlotPresentation.Invalidate(base, player.UserId, assignment.Generation)
 	end
-	if started then reconcileQueue[player] = true end
+	if started then
+		reconcileQueue[player] = true
+	end
 	return true
 end
 function Service:OnProfileDiagnostic(player, diagnostic)
-	if type(diagnostic) ~= "table" or not ({SessionLost=true,LoadRejected=true,CloseUnconfirmed=true})[diagnostic.kind] then return false end
+	if
+		type(diagnostic) ~= "table"
+		or not ({ SessionLost = true, LoadRejected = true, CloseUnconfirmed = true })[diagnostic.kind]
+	then
+		return false
+	end
 	-- A late failure notification from an earlier session must not hide a recovered owner.
-	if Profiles:GetStatus(player) ~= "Failed" then return false end
+	if Profiles:GetStatus(player) ~= "Failed" then
+		return false
+	end
 	return invalidateAssignedBase(player)
 end
 local function rootOf(player)
@@ -95,7 +116,12 @@ function Service:ValidateContext(player, category, insideMutation)
 	local root = rootOf(player)
 	local character = player.Character
 	local humanoid = character and character:FindFirstChildOfClass("Humanoid")
-	if not character or not character:IsDescendantOf(workspace) or not humanoid or humanoid.Health <= 0 then
+	if
+		not character
+		or not character:IsDescendantOf(workspace)
+		or not humanoid
+		or humanoid.Health <= 0
+	then
 		return false, "NOT_READY"
 	end
 	if not root or not Regions.ContainsPosition("REGION_CAMP", root.Position, 16) then
@@ -110,21 +136,23 @@ function Service:ValidateContext(player, category, insideMutation)
 		return base ~= nil and near(player, baseEntrance(base).Position, 12), "OWN_BASE_REQUIRED"
 	elseif category == "Cart" then
 		local dock = base and base:FindFirstChild("CartSpawn")
-		return anchors.Cart ~= nil and near(player, anchors.Cart.Position, 12) or dock ~= nil and near(
-			player,
-			dock.Position,
-			18
-		),
+		return anchors.Cart ~= nil and near(player, anchors.Cart.Position, 12)
+			or dock ~= nil and near(player, dock.Position, 18),
 			"SHOP_REQUIRED"
 	elseif category == "Weapon" then
 		-- The Kit kiosk was removed (Camp Rework); it opened this same Weapons menu.
 		return anchors.Weapon ~= nil and near(player, anchors.Weapon.Position, 12), "SHOP_REQUIRED"
 	elseif category == "Training" then
-		return CampFlags.Training() and anchors.Training ~= nil and near(player, anchors.Training.Position, 12),
+		return CampFlags.Training() and anchors.Training ~= nil and near(
+			player,
+			anchors.Training.Position,
+			12
+		),
 			"SHOP_REQUIRED"
 	elseif category == "Sell" then
 		local point = salePoint()
-		return CampFlags.CampRework() and point ~= nil and near(player, point.Position, 14), "SHOP_REQUIRED"
+		return CampFlags.CampRework() and point ~= nil and near(player, point.Position, 14),
+			"SHOP_REQUIRED"
 	end
 	return false, "INVALID_CATEGORY"
 end
@@ -155,7 +183,19 @@ local function applyWeapon(player)
 		local art = Instance.new("Model")
 		art.Name = "Phase13WeaponArt"
 		local sourceArt = template:FindFirstChild("Phase13WeaponArt") or template
-		local v2Folder = template:GetAttribute("Phase13ArtVersion") == 2 and template:FindFirstChild("Phase13Appearance")
+		local v2Folder = template:GetAttribute("Phase13ArtVersion") == 2
+			and template:FindFirstChild("Phase13Appearance")
+		-- Playtest Fixes C4: v1 weapons (WPN_C01, WPN_G01) get Trailwood v2 art from
+		-- CodeAssets.PlaytestArtV2 while WeaponFx is on. Same Handle frame; muzzle moves to the new tip.
+		local artOverride = if PlaytestFlags.Part("WeaponFx")
+			then RS.CodeAssets:FindFirstChild("PlaytestArtV2")
+				and RS.CodeAssets.PlaytestArtV2:FindFirstChild(id)
+			else nil
+		if artOverride and artOverride:FindFirstChild("Phase13Appearance") then
+			v2Folder = artOverride.Phase13Appearance
+		else
+			artOverride = nil
+		end
 		if v2Folder then
 			-- Camp Rework art: clone the folder in one go so Beams keep their attachments, then
 			-- re-weld to the live Handle. SPINS/MOVES groups ride one rotor Weld each (CampAnimRotor tag).
@@ -192,7 +232,9 @@ local function applyWeapon(player)
 				else
 					local rotorName = part:GetAttribute("CampAnimRotor")
 					local weld = Instance.new("WeldConstraint")
-					weld.Part0 = if type(rotorName) == "string" then art:FindFirstChild(rotorName) or handle else handle
+					weld.Part0 = if type(rotorName) == "string"
+						then art:FindFirstChild(rotorName) or handle
+						else handle
 					weld.Part1 = part
 					weld.Parent = part
 				end
@@ -221,13 +263,15 @@ local function applyWeapon(player)
 			end
 		end
 		handle.Size = source.Size
-		handle.Transparency = if #art:GetChildren()>0 then 1 else source.Transparency
-		handle:SetAttribute("Phase13HelperHandle",#art:GetChildren()>0)
-		local grip=if v2Folder then nil else sourceArt:FindFirstChild("Grip",true)
-		if grip and grip:IsA("BasePart")then
-			tool.Grip=source.CFrame:ToObjectSpace(grip.CFrame)
-			local attachment=handle:FindFirstChild("RightGripAttachment")
-			if attachment and attachment:IsA("Attachment")then attachment.CFrame=tool.Grip end
+		handle.Transparency = if #art:GetChildren() > 0 then 1 else source.Transparency
+		handle:SetAttribute("Phase13HelperHandle", #art:GetChildren() > 0)
+		local grip = if v2Folder then nil else sourceArt:FindFirstChild("Grip", true)
+		if grip and grip:IsA("BasePart") then
+			tool.Grip = source.CFrame:ToObjectSpace(grip.CFrame)
+			local attachment = handle:FindFirstChild("RightGripAttachment")
+			if attachment and attachment:IsA("Attachment") then
+				attachment.CFrame = tool.Grip
+			end
 		end
 		handle.Color = source.Color
 		handle.Material = source.Material
@@ -237,11 +281,22 @@ local function applyWeapon(player)
 		if muzzle and sm then
 			muzzle.CFrame = sm.CFrame
 		end
+		if muzzle and artOverride and typeof(artOverride:GetAttribute("MuzzleZ")) == "number" then
+			muzzle.Position = Vector3.new(
+				artOverride:GetAttribute("MuzzleX") :: number,
+				artOverride:GetAttribute("MuzzleY") :: number,
+				artOverride:GetAttribute("MuzzleZ") :: number
+			)
+		end
 		local finish = AppearanceRules.ResolveFinish(data, "Weapon", id)
 		-- Reset the source handle color before the shared finish pass; no cumulative tint.
 		handle:SetAttribute("Phase13FinishOriginalColor", source.Color)
 		AppearanceRules.Apply(handle, finish, "Weapon", id)
 		AppearanceRules.Apply(art, finish, "Weapon", id)
+		-- Playtest Fixes Part C: idle/signature effects on the existing art parts (flag-gated).
+		if PlaytestFlags.Part("WeaponFx") then
+			WeaponFx.Author(art, id, handle)
+		end
 		art.Parent = tool
 		tool:SetAttribute("SelectedWeaponId", id)
 		tool.ToolTip = Weapons.Get(id).displayName
@@ -295,7 +350,11 @@ function Service:Reconcile(player, receipt)
 		return false
 	end
 	local assignment = Bases:GetAssignment(player)
-	if assignment == nil or assignment.Base ~= base or not Bases:IsCurrentAssignment(assignment) then
+	if
+		assignment == nil
+		or assignment.Base ~= base
+		or not Bases:IsCurrentAssignment(assignment)
+	then
 		return false
 	end
 	if
@@ -304,7 +363,11 @@ function Service:Reconcile(player, receipt)
 			Rules.GetCapacity(data),
 			data.Phase13.SelectedBaseDesignId,
 			AppearanceRules.ResolveFinish(data, "Base", data.Phase13.SelectedBaseDesignId),
-			{ OwnerUserId = player.UserId, AssignmentRevision = assignment.Generation, ProfileReady = true }
+			{
+				OwnerUserId = player.UserId,
+				AssignmentRevision = assignment.Generation,
+				ProfileReady = true,
+			}
 		)
 	then
 		return false
@@ -319,8 +382,18 @@ function Service:Reconcile(player, receipt)
 		if art then
 			local selected = data.Phase13.SelectedCartId
 			local assetName = art.Name
-			for _, row in Config.CartRows do if row.id == selected then assetName = row.assetName; break end end
-			AppearanceRules.Apply(art, AppearanceRules.ResolveFinish(data, "Cart", selected), "Cart", assetName)
+			for _, row in Config.CartRows do
+				if row.id == selected then
+					assetName = row.assetName
+					break
+				end
+			end
+			AppearanceRules.Apply(
+				art,
+				AppearanceRules.ResolveFinish(data, "Cart", selected),
+				"Cart",
+				assetName
+			)
 		end
 	end
 	CosmeticPresenter.Reconcile(player, data, base, cart)
@@ -351,7 +424,11 @@ local function snapshot(player)
 		cargoLevel = p.CargoLevel,
 		commerce = Commerce:GetCatalogue(player),
 		appearance = data.Commerce.Appearance,
-		attachmentCosmetics = CosmeticPresenter.Snapshot(data, Bases:GetBase(player), Carts:GetCart(player)),
+		attachmentCosmetics = CosmeticPresenter.Snapshot(
+			data,
+			Bases:GetBase(player),
+			Carts:GetCart(player)
+		),
 		busy = Transactions:IsBusy(player),
 		configurationVersion = Config.ConfigurationVersion,
 		-- P15 economy: Gems, income breakdown, Gem shop, Prestige and the server storm.
@@ -361,6 +438,8 @@ local function snapshot(player)
 		campRework = CampFlags.CampRework(),
 		specials = if CampFlags.CampRework() then SpecialRules.Snapshot(data) else nil,
 		training = Training.Snapshot(data),
+		-- Favourite lock: ids of the owned brainrots the player starred (they cannot be sold).
+		favourites = Banked:GetFavourites(player),
 	}
 end
 -- Camp Rework stalls carry a marker for their prompt (counter, or the Training speedometer post).
@@ -469,7 +548,9 @@ function Service:Start(_options)
 			SlotPresentation.Capture(prompt)
 			CollectionService:AddTag(prompt, SHOP_PROMPT_TAG)
 			prompt.Triggered:Connect(function(player)
-				if Bases:GetBase(player) == base and near(player, baseEntrance(base).Position, 12) then
+				if
+					Bases:GetBase(player) == base and near(player, baseEntrance(base).Position, 12)
+				then
 					event:FireClient(player, { kind = "Open", category = "Base" })
 				end
 			end)
@@ -492,6 +573,8 @@ function Service:Start(_options)
 			end
 		end
 	end
+	-- Playtest Fixes Part F: Gems stall hidden while its flag is off; NEWS board panel when on.
+	require(script.Parent.Parent.Systems.PlaytestCampStalls).Start()
 	Transactions:Start({
 		Telemetry = Analytics,
 		ValidateContext = function(...)
@@ -535,10 +618,24 @@ function Service:Start(_options)
 		ReconcileRecovery = function(oldPlayer, newPlayer, canonicalData, previousData)
 			-- A newly acquired backend snapshot is the sole authority here. The departed
 			-- Player's old readable handle and uncertain transaction are fenced already.
-			if not Carry.HandleAuthoritativeRecovery(oldPlayer, newPlayer, canonicalData, previousData) then
+			if
+				not Carry.HandleAuthoritativeRecovery(
+					oldPlayer,
+					newPlayer,
+					canonicalData,
+					previousData
+				)
+			then
 				return false
 			end
-			if not Cargo:HandleAuthoritativeRecovery(oldPlayer, newPlayer, canonicalData, previousData) then
+			if
+				not Cargo:HandleAuthoritativeRecovery(
+					oldPlayer,
+					newPlayer,
+					canonicalData,
+					previousData
+				)
+			then
 				return false
 			end
 			sacrificePreviews[oldPlayer] = nil
@@ -682,29 +779,43 @@ function Service:Start(_options)
 					return { ok = false, code = "UNAVAILABLE" }
 				end
 				for key in payload do
-					if key ~= "action" and key ~= "category" and key ~= "id" and key ~= "operationId" then
+					if
+						key ~= "action"
+						and key ~= "category"
+						and key ~= "id"
+						and key ~= "operationId"
+					then
 						return { ok = false, code = "INVALID_REQUEST" }
 					end
 				end
-				if payload.category ~= "Weapon" and payload.category ~= "Cart" or type(payload.id) ~= "string" then
+				if
+					payload.category ~= "Weapon" and payload.category ~= "Cart"
+					or type(payload.id) ~= "string"
+				then
 					return { ok = false, code = "INVALID_REQUEST" }
 				end
 				local allowed, why = self:ValidateContext(player, "Sell", false)
 				if not allowed then
 					return { ok = false, code = why or "SHOP_REQUIRED" }
 				end
-				return Transactions:CommitCritical(player, payload.operationId, "SellBack", function(data)
-					return Rules.ApplySellBack(data, payload.category, payload.id)
-				end, {
-					validate = function()
-						return self:ValidateContext(player, "Sell", true)
+				return Transactions:CommitCritical(
+					player,
+					payload.operationId,
+					"SellBack",
+					function(data)
+						return Rules.ApplySellBack(data, payload.category, payload.id)
 					end,
-					onConfirmed = function()
-						pcall(CurrencyMirror.SyncBalance, CurrencyMirror, player)
-						campEvent:FireAllClients({ kind = "SaleBurst", userId = player.UserId })
-						return self:Reconcile(player, nil)
-					end,
-				})
+					{
+						validate = function()
+							return self:ValidateContext(player, "Sell", true)
+						end,
+						onConfirmed = function()
+							pcall(CurrencyMirror.SyncBalance, CurrencyMirror, player)
+							campEvent:FireAllClients({ kind = "SaleBurst", userId = player.UserId })
+							return self:Reconcile(player, nil)
+						end,
+					}
+				)
 			elseif payload.action == "TrainingRoller" then
 				for key in payload do
 					if key ~= "action" and key ~= "rollerId" and key ~= "operationId" then
@@ -720,7 +831,51 @@ function Service:Start(_options)
 					return { ok = false, code = "UNAVAILABLE" }
 				end
 				local preview, reason = SaleSystem:CreatePreview(player)
-				return if preview then { ok = true } else { ok = false, code = reason or "NOT_CARRYING" }
+				return if preview
+					then { ok = true }
+					else { ok = false, code = reason or "NOT_CARRYING" }
+			elseif payload.action == "Favourite" then
+				-- Stars or unstars one owned brainrot. No location rule: it only ever blocks a sale.
+				for key in payload do
+					if key ~= "action" and key ~= "id" and key ~= "value" then
+						return { ok = false, code = "INVALID_REQUEST" }
+					end
+				end
+				if Profiles:GetStatus(player) ~= "Ready" then
+					return { ok = false, code = "NOT_READY" }
+				end
+				local outcome = Banked:SetFavourite(player, payload.id, payload.value)
+				return {
+					ok = outcome.ok == true,
+					code = outcome.code,
+					favourite = if outcome.ok == true then payload.value == true else nil,
+				}
+			elseif payload.action == "SellList" then
+				-- Sell stall: the player's banked brainrots with authoritative sale values (read-only).
+				if not CampFlags.CampRework() then
+					return { ok = false, code = "UNAVAILABLE" }
+				end
+				for key in payload do
+					if key ~= "action" then
+						return { ok = false, code = "INVALID_REQUEST" }
+					end
+				end
+				return SaleSystem:ListBanked(player)
+			elseif payload.action == "SellBanked" then
+				-- Sell stall: sells the picked banked brainrots from their platforms in one request.
+				if not CampFlags.CampRework() then
+					return { ok = false, code = "UNAVAILABLE" }
+				end
+				for key in payload do
+					if key ~= "action" and key ~= "ids" and key ~= "expectedTotal" then
+						return { ok = false, code = "INVALID_REQUEST" }
+					end
+				end
+				local allowed, why = self:ValidateContext(player, "Sell", false)
+				if not allowed then
+					return { ok = false, code = why or "SHOP_REQUIRED" }
+				end
+				return SaleSystem:SellBanked(player, payload.ids, payload.expectedTotal)
 			elseif payload.action == "Select" then
 				return Transactions:Select(player, payload)
 			elseif payload.action == "Status" then
@@ -735,37 +890,72 @@ function Service:Start(_options)
 						return { ok = false, code = "INVALID_REQUEST" }
 					end
 				end
-				local item = type(payload.itemId) == "string" and EconomyConfig.GemShopById[payload.itemId]
+				local item = type(payload.itemId) == "string"
+					and EconomyConfig.GemShopById[payload.itemId]
 				if not item then
 					return { ok = false, code = "UNKNOWN_ITEM" }
 				end
 				if item.kind == "MutationStorm" and not MutationStorm.CanAdd(item.seconds) then
 					return { ok = false, code = "STORM_FULL" }
 				end
-				return Transactions:CommitCritical(player, payload.operationId, "GemShop", function(data, at)
-					return GemRules.ApplyShopItem(data, payload.itemId, at)
-				end, {
-					onConfirmed = function(result)
-						if type(result) == "table" and result.kind == "MutationStorm" then
-							MutationStorm.Activate(player, result.seconds, "Gems")
-						end
-						pcall(CurrencyMirror.SyncBalance, CurrencyMirror, player)
-						return true
+				return Transactions:CommitCritical(
+					player,
+					payload.operationId,
+					"GemShop",
+					function(data, at)
+						return GemRules.ApplyShopItem(data, payload.itemId, at)
 					end,
-				})
+					{
+						onConfirmed = function(result)
+							if type(result) == "table" and result.kind == "MutationStorm" then
+								MutationStorm.Activate(player, result.seconds, "Gems")
+							end
+							if type(result) == "table" and result.kind == "Trail" then
+								-- Playtest Fixes 2 Part G: show the new trail in Inventory > Trails at once.
+								pcall(function()
+									require(script.Parent.LegsTrainingService).Publish(player)
+								end)
+							end
+							pcall(CurrencyMirror.SyncBalance, CurrencyMirror, player)
+							return true
+						end,
+					}
+				)
 			elseif payload.action == "CosmeticPurchase" then
 				for key in payload do
-					if key ~= "action" and key ~= "id" and key ~= "operationId" then return {ok=false,code="INVALID_REQUEST"} end
+					if key ~= "action" and key ~= "id" and key ~= "operationId" then
+						return { ok = false, code = "INVALID_REQUEST" }
+					end
 				end
-				if not self:ValidateContext(player, "Appearance", false) then return {ok=false,code="OWN_BASE_REQUIRED"} end
-				if not CosmeticPresenter.Ready(payload.id) then return {ok=false,code="PRESENTATION_UNAVAILABLE"} end
-				return Transactions:CommitCritical(player, payload.operationId, "CosmeticPurchase", function(data)
-					return AttachmentCosmetics.ApplyPurchase(data, payload.id)
-				end, {onConfirmed=function(result)
- local ok=self:Reconcile(player,nil)
- if ok then pcall(function()require(script.Parent.RetentionService):ObserveCosmeticConfirmed(player,result,payload.operationId)end)end
- return ok
- end})
+				if not self:ValidateContext(player, "Appearance", false) then
+					return { ok = false, code = "OWN_BASE_REQUIRED" }
+				end
+				if not CosmeticPresenter.Ready(payload.id) then
+					return { ok = false, code = "PRESENTATION_UNAVAILABLE" }
+				end
+				return Transactions:CommitCritical(
+					player,
+					payload.operationId,
+					"CosmeticPurchase",
+					function(data)
+						return AttachmentCosmetics.ApplyPurchase(data, payload.id)
+					end,
+					{
+						onConfirmed = function(result)
+							local ok = self:Reconcile(player, nil)
+							if ok then
+								pcall(function()
+									require(script.Parent.RetentionService):ObserveCosmeticConfirmed(
+										player,
+										result,
+										payload.operationId
+									)
+								end)
+							end
+							return ok
+						end,
+					}
+				)
 			elseif payload.action == "Appearance" then
 				local allowed = self:ValidateContext(player, "Appearance", false)
 				if not allowed then
@@ -774,32 +964,53 @@ function Service:Start(_options)
 				local key = payload.key
 				local value = payload.value
 				local selectedData = Profiles:GetReadableData(player)
-				if AttachmentCosmetics.IsSlot(key) and value ~= "None" and not CosmeticPresenter.Ready(value) then return {ok=false,code="PRESENTATION_UNAVAILABLE"} end
-				local canSelect, selectionReason = AppearanceRules.CanSelect(selectedData, key, value)
+				if
+					AttachmentCosmetics.IsSlot(key)
+					and value ~= "None"
+					and not CosmeticPresenter.Ready(value)
+				then
+					return { ok = false, code = "PRESENTATION_UNAVAILABLE" }
+				end
+				local canSelect, selectionReason =
+					AppearanceRules.CanSelect(selectedData, key, value)
 				if not canSelect then
 					return { ok = false, code = selectionReason }
 				end
-				return Transactions:CommitCritical(player, payload.operationId, "Appearance", function(data)
-					local owned, why = AppearanceRules.CanSelect(data, key, value)
-					if not owned then
-						return false, { code = why }
-					end
-					data.Commerce.Appearance = data.Commerce.Appearance or {}
-					data.Commerce.Appearance[key] = value
-					return true, { category = "Cosmetic", key = key, value = value }
-				end, {
-					onConfirmed = function()
-						local data = Profiles:GetReadableData(player)
-						if data then
-							for k, v in data.Commerce.Appearance do
-								player:SetAttribute("Appearance_" .. k, v)
-							end
+				return Transactions:CommitCritical(
+					player,
+					payload.operationId,
+					"Appearance",
+					function(data)
+						local owned, why = AppearanceRules.CanSelect(data, key, value)
+						if not owned then
+							return false, { code = why }
 						end
-						local reconciled = self:Reconcile(player, nil)
-						if reconciled then pcall(function()require(script.Parent.RetentionService):ObserveCosmeticConfirmed(player,{key=key,value=value},payload.operationId)end)end
-						return reconciled
+						data.Commerce.Appearance = data.Commerce.Appearance or {}
+						data.Commerce.Appearance[key] = value
+						return true, { category = "Cosmetic", key = key, value = value }
 					end,
-				})
+					{
+						onConfirmed = function()
+							local data = Profiles:GetReadableData(player)
+							if data then
+								for k, v in data.Commerce.Appearance do
+									player:SetAttribute("Appearance_" .. k, v)
+								end
+							end
+							local reconciled = self:Reconcile(player, nil)
+							if reconciled then
+								pcall(function()
+									require(script.Parent.RetentionService):ObserveCosmeticConfirmed(
+										player,
+										{ key = key, value = value },
+										payload.operationId
+									)
+								end)
+							end
+							return reconciled
+						end,
+					}
+				)
 			end
 			return { ok = false, code = "INVALID_REQUEST" }
 		end)

@@ -12,6 +12,7 @@ export type Entry = {
 	step: (now: number, dt: number) -> (),
 	radius: number?, -- cull distance (studs); default 150
 	always: boolean?, -- skip on-screen culling (still distance-culled)
+	hidden: (() -> ())?, -- called once when a stepped entry becomes culled (Playtest Fixes C1)
 }
 
 local Scheduler = {}
@@ -19,6 +20,7 @@ Scheduler.Hz = 10
 Scheduler.DefaultRadius = 150
 
 local entries: { [any]: Entry } = {}
+local shown: { [any]: boolean } = {}
 local count = 0
 local connection: RBXScriptConnection? = nil
 local accumulator = 0
@@ -50,6 +52,7 @@ local function tick()
 	for key, entry in entries do
 		local ok, isVisible = pcall(visible, entry, camera)
 		if ok and isVisible then
+			shown[key] = true
 			stats.stepped += 1
 			local stepped, err = pcall(entry.step, now, dt)
 			if not stepped then
@@ -58,6 +61,12 @@ local function tick()
 			end
 		else
 			stats.culled += 1
+			if shown[key] then
+				shown[key] = nil
+				if entry.hidden then
+					pcall(entry.hidden)
+				end
+			end
 		end
 	end
 end
@@ -88,6 +97,7 @@ end
 function Scheduler.Unregister(key: any)
 	if entries[key] ~= nil then
 		entries[key] = nil
+		shown[key] = nil
 		count -= 1
 	end
 	if count == 0 and connection then

@@ -1,14 +1,12 @@
 --!nocheck
--- Stud Pop HUD (flag StudPopUIEnabled). View only:
+-- The HUD (view only):
 --   top-left  Cash pill (player attribute `Cash`) + Gem pill (attribute `Gems`), count-up on change;
---             below them, live chips for an active 2× Cash boost and a server Mutation Storm
---   rail      Shop (orange), Gems (purple), Index (blue), Gifts (pink), Rebirth (green) — each opens an existing menu
---             through that controller's own open path; nothing here talks to a remote.
---             Landscape phones: one row under the pills (clear of the thumbstick). Taller screens: a left column.
---   top-right small grey Settings button (Shop > Settings, which already owns appearance/motion settings)
--- The contextual action (PICK UP / LOAD / PLACE / DROP) stays in ExactHud bottom-right, restyled by the skin;
--- ExactHud's status rows sit top-right under Settings (StatusAnchor) so nothing overlaps.
--- While a menu is open the HUD steps aside (hidden) so windows never sit on top of HUD chrome.
+--             display only. Below them, live chips for an active 2× Cash boost / Mutation Storm.
+--   rail      exactly two menu buttons: Brainrots (pink) and Inventory (blue). Shops open only at
+--             their camp stalls; Rebirth at the base entrance; Settings is the gear in Inventory.
+--             Landscape phones: one row under the pills. Taller screens: a left column.
+-- The contextual action (PICK UP / LOAD / PLACE / DROP) stays in ExactHud bottom-right; its status
+-- rows hang top-right (StatusAnchor). While a menu is open the HUD steps aside.
 -- Income (+$X/s) is not shown: the game publishes no total income rate and the UI must not compute one.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -24,6 +22,11 @@ local gui: ScreenGui? = nil
 local rail: Frame? = nil
 local pill = nil
 local gemPill = nil
+-- Playtest Fixes 2 C3: the counter rolls when the first claim coin lands (see Screen.HoldCash).
+local cashPadsOn =
+	require(game:GetService("ReplicatedStorage").Shared.Config.PlaytestFixes2Flags).Part("CashPads")
+local cashHoldUntil = 0
+local cashHeld = false
 local chips = nil
 local settingsRoot: GuiObject? = nil
 local railButtons = {}
@@ -32,10 +35,8 @@ local actions = {}
 local menuOpen = false
 
 export type Actions = {
-	openShop: (category: string?) -> boolean,
-	openRetention: (tab: string?) -> boolean,
-	retentionAvailable: () -> boolean,
-	openSettings: () -> boolean,
+	openBrainrots: (() -> ())?, -- the two HUD windows
+	openInventory: (() -> ())?,
 }
 
 -- Baseline (844x390) sizes; Theme.px grows them up to Theme.MaxScale on bigger screens.
@@ -169,26 +170,12 @@ local function hudButton(name: string, variant: string, icon: string, order: num
 end
 
 -- Menus that take the screen: the HUD steps aside while any is open.
-local MENU_ATTRIBUTES = { "Phase13ShopOpen", "RetentionPanelOpen", "ChariotTeamMenuOpen", "Phase13ConsentDialogOpen", "Phase13CompareDialogOpen" }
-local MENU_GUIS = { "BrainrotShopGui", "CartUpgradeGui" }
+local MENU_ATTRIBUTES = { "MenusV2Open", "Phase13ShopOpen", "ChariotTeamMenuOpen", "Phase13ConsentDialogOpen", "Phase13CompareDialogOpen" }
 local function computeMenuOpen(): boolean
 	local p = Players.LocalPlayer
 	for _, a in MENU_ATTRIBUTES do
-		if p:GetAttribute(a) == true then
-			return true
-		end
-	end
-	local pg = p:FindFirstChildOfClass("PlayerGui")
-	if pg then
-		for _, n in MENU_GUIS do
-			local g = pg:FindFirstChild(n)
-			if g and g:IsA("ScreenGui") and g.Enabled then
-				return true
-			end
-		end
-		local wp = pg:FindFirstChild("WorldProgressionGui")
-		local gate = wp and wp:FindFirstChild("GatePanel")
-		if gate and gate:IsA("GuiObject") and gate.Visible then
+		local v = p:GetAttribute(a)
+		if v == true or (type(v) == "string" and v ~= "") then
 			return true
 		end
 	end
@@ -196,7 +183,7 @@ local function computeMenuOpen(): boolean
 end
 
 function Screen.Start(actionTable: Actions)
-	if gui or not StudPopUI.enabled() then
+	if gui then
 		return false
 	end
 	actions = actionTable
@@ -216,18 +203,27 @@ function Screen.Start(actionTable: Actions)
 	gui:SetAttribute("StudPopOwned", true)
 
 	-- top-left Cash pill ("+" opens Shop > Cash)
-	pill = StudPop.CashPill(gui, cashValue(), function()
-		actions.openShop("Cash")
-	end)
+	-- the pills are displays, not shop buttons (shops open only at their stalls)
+	pill = StudPop.CashPill(gui, cashValue(), nil)
 	pill.Root.Name = "CashPill"
 	table.insert(connections, Players.LocalPlayer:GetAttributeChangedSignal("Cash"):Connect(function()
-		pill.set(cashValue())
+		if not cashPadsOn then
+			pill.set(cashValue())
+			return
+		end
+		-- Playtest Fixes 2 C3: a pad claim's coins land on the counter; the claim's ClaimRevision
+		-- arrives in the same replication batch, so wait a beat before showing a rise.
+		task.delay(0.03, function()
+			if os.clock() < cashHoldUntil then
+				cashHeld = true
+			elseif pill then
+				pill.set(cashValue())
+			end
+		end)
 	end))
 
 	-- Gem pill to the right of Cash; "+" opens the Gems tab (Gem shop + Gem packs).
-	gemPill = StudPop.GemPill(gui, gemValue(), function()
-		actions.openShop("Cash")
-	end)
+	gemPill = StudPop.GemPill(gui, gemValue(), nil)
 	gemPill.Root.Name = "GemPill"
 	local lastGems = gemValue()
 	table.insert(connections, Players.LocalPlayer:GetAttributeChangedSignal("Gems"):Connect(function()
@@ -254,9 +250,6 @@ function Screen.Start(actionTable: Actions)
 			variant = variant,
 			text = name,
 			size = UDim2.fromOffset(px(SIZE.ChipW), px(SIZE.ChipH)),
-			onClick = function()
-				actions.openShop("Cash")
-			end,
 		})
 		b.Root.Name = name
 		b.Root.LayoutOrder = order
@@ -302,63 +295,50 @@ function Screen.Start(actionTable: Actions)
 	grid.FillDirection = Enum.FillDirection.Horizontal
 	grid.Parent = rail
 	rail.Parent = gui
-	hudButton("Shop", "alert", Theme.Icons.Shop, 1, function()
-		actions.openShop("Passes")
+	-- exactly two menu buttons: Brainrots (pink) and Inventory (blue), >= 56 px
+	SIZE.CellW, SIZE.CellH = 64, 78
+	local shots = require(ReplicatedStorage.Shared.Config.UIDisplayShots)
+	local brainrotIcon = shots.get("BRT_002")
+	local brainrotsButton = hudButton("Brainrots", "robux", if brainrotIcon ~= "" then brainrotIcon else Theme.Icons.Index, 1, function()
+		Screen.clearNewCatches()
+		if actions.openBrainrots then
+			actions.openBrainrots()
+		end
 	end)
-	hudButton("Gems", "gem", Theme.Icons.Gem, 2, function()
-		actions.openShop("Cash")
+	hudButton("Inventory", "info", Theme.Icons.Shop, 2, function()
+		if actions.openInventory then
+			actions.openInventory()
+		end
 	end)
-	local index = hudButton("Index", "info", Theme.Icons.Index, 3, function()
-		actions.openRetention("Collection")
-	end)
-	local gifts = hudButton("Gifts", "robux", Theme.Icons.Gift, 4, function()
-		actions.openRetention("Supplies")
-	end)
-	local rebirthButton = hudButton("Rebirth", "go", Theme.Icons.Rebirth, 5, function()
-		actions.openShop("Base")
-	end)
-	-- Rebirth UI v2: glow + the existing StudPop breathe while either rebirth route is READY (UI only).
-	if require(ReplicatedStorage.Shared.Config.CampReworkFlags).RebirthUi() then
-		local stopBreathe: (() -> ())? = nil
-		local glow = Instance.new("UIStroke")
-		glow.Name = "RebirthReadyGlow"
-		glow.Color = Color3.fromRGB(150, 255, 120)
-		glow.Thickness = px(4)
-		glow.Enabled = false
-		glow.Parent = rebirthButton
+	-- red dot = brainrots caught since the window was last opened (session only; a real waiting thing)
+	local dot = brainrotsButton:FindFirstChild("Dot", true)
+	Screen._newDot = dot
+	if dot and dot:IsA("GuiObject") and not Juice.reduced() then
+		local sc = Juice.scaleOf(dot)
+		Juice.play(sc, "pulse", TweenInfo.new(0.6, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true), { Scale = 1.18 })
+	end
+	-- Rebirth lives at the base entrance prompt (the server relabels it "Rebirth — Ready!"); the HUD
+	-- only says so once per session when the server's RebirthReady attribute turns true.
+	do
+		local told = false
 		local function apply()
-			local ready = Players.LocalPlayer:GetAttribute("RebirthReady") == true
-			glow.Enabled = ready
-			if ready and not stopBreathe then
-				stopBreathe = Juice.breathe(rebirthButton)
-			elseif not ready and stopBreathe then
-				stopBreathe()
-				stopBreathe = nil
+			if not told and Players.LocalPlayer:GetAttribute("RebirthReady") == true then
+				told = true
+				require(ReplicatedStorage.Shared.UI.Plate).Toast(gui, "Rebirth ready at your base!", { color = Color3.fromHex("#FFD447"), top = px(96) })
 			end
 		end
-		apply()
-		Players.LocalPlayer:GetAttributeChangedSignal("RebirthReady"):Connect(apply)
+		table.insert(connections, Players.LocalPlayer:GetAttributeChangedSignal("RebirthReady"):Connect(apply))
+		task.delay(6, apply)
 	end
 
-	-- top-right small grey Settings
-	local settings = StudPop.Button(gui, {
-		variant = "tab", -- neutral grey: not an action colour
-		text = "SETTINGS",
-		icon = Theme.Icons.Settings,
-		size = UDim2.fromOffset(px(SIZE.Settings), px(SIZE.Settings)),
-		position = UDim2.new(1, -px(SIZE.Margin), 0, px(SIZE.Margin)),
-		anchor = Vector2.new(1, 0),
-		onClick = function()
-			actions.openSettings()
-		end,
-	})
-	settings.Root.Name = "Settings"
-	local sa = settings.Root:FindFirstChildOfClass("UIAspectRatioConstraint")
-	if sa then
-		sa.AspectRatio = 1
-	end
-	settings.Label.Visible = false
-	settingsRoot = settings.Root
+	-- no cog on the HUD (Settings is the gear in the Inventory header); an invisible anchor keeps
+	-- the status rows' top-right position
+	local anchor = Instance.new("Frame")
+	anchor.Name = "TopRightAnchor"
+	anchor.BackgroundTransparency = 1
+	anchor.AnchorPoint = Vector2.new(1, 0)
+	anchor.Parent = gui
+	settingsRoot = anchor
 
 	-- Visibility: hidden during cinematics and while a menu is open (windows never cover HUD chrome).
 	local function syncVisible()
@@ -370,15 +350,9 @@ function Screen.Start(actionTable: Actions)
 	end
 	table.insert(connections, Players.LocalPlayer:GetAttributeChangedSignal("Phase13CinematicActive"):Connect(syncVisible))
 
-	-- Retention (Index/Gifts) is only offered when that controller says the player is eligible;
-	-- the same 1 s tick also catches menus that publish no attribute (sell, cart upgrade, gate).
+	-- a slow tick as a safety net for menu state that changes without an attribute signal
 	task.spawn(function()
 		while gui do
-			local ok = actions.retentionAvailable()
-			if index.Visible ~= ok or gifts.Visible ~= ok then
-				index.Visible, gifts.Visible = ok, ok
-				layout()
-			end
 			syncVisible()
 			task.wait(0.25)
 		end
@@ -395,6 +369,29 @@ end
 
 -- Bottom of the HUD's top band (pills, chips and — on landscape phones — the rail), in ScreenGui pixels.
 -- Top-of-screen UI (rare card, catch reveal, data banner) starts below it.
+-- Playtest Fixes 2 C3 (CashPadController): hold Cash rises for `seconds` (coins in flight), then
+-- ReleaseCash rolls the counter up on the first landing. Always self-releases.
+function Screen.HoldCash(seconds: number)
+	cashHoldUntil = math.max(cashHoldUntil, os.clock() + seconds)
+	task.delay(seconds + 0.1, function()
+		if cashHeld and os.clock() >= cashHoldUntil then
+			Screen.ReleaseCash()
+		end
+	end)
+end
+
+function Screen.ReleaseCash()
+	cashHoldUntil = 0
+	cashHeld = false
+	if pill then
+		pill.set(cashValue())
+	end
+end
+
+function Screen.CashPillRoot(): GuiObject?
+	return if pill then pill.Root else nil
+end
+
 function Screen.TopBand(): number
 	if not gui then
 		return 0
@@ -409,6 +406,24 @@ function Screen.StatusAnchor(): Vector2?
 	end
 	local s = settingsRoot
 	return Vector2.new(s.AbsolutePosition.X + s.AbsoluteSize.X, s.AbsolutePosition.Y + s.AbsoluteSize.Y + px(SIZE.Gap))
+end
+
+-- MenusV2 red dot: brainrots caught since the Brainrots window was last opened (session only).
+local newCatches = 0
+function Screen.noteCatch()
+	newCatches += 1
+	local dot = Screen._newDot
+	if dot and dot:IsA("TextLabel") then
+		dot.Text = if newCatches > 9 then "9+" else tostring(newCatches)
+		dot.Visible = true
+	end
+end
+function Screen.clearNewCatches()
+	newCatches = 0
+	local dot = Screen._newDot
+	if dot and dot:IsA("GuiObject") then
+		dot.Visible = false
+	end
 end
 
 function Screen.MenuOpen(): boolean

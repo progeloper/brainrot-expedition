@@ -5,6 +5,8 @@ local Catalog = require(script.Parent.Parent.Config.BrainrotCatalog)
 local Weapons = require(script.Parent.Parent.Config.Weapons)
 local Training = require(script.Parent.Parent.Config.Training)
 local CampFlags = require(script.Parent.Parent.Config.CampReworkFlags)
+local Legs = require(script.Parent.Parent.Config.LegsTraining)
+local LegsFlags = require(script.Parent.Parent.Config.LegsTrainingFlags)
 local Money = require(script.Parent.CurrencyDenomination)
 local Values = require(script.Parent.Phase12Rules)
 local Commerce = require(script.Parent.Phase13CommerceRules)
@@ -124,6 +126,91 @@ function Rules.MigrateTraining(data, force)
 	p.TrainingVersion = Training.Version
 	return changed
 end
+-- Playtest Fixes 2 Part G (LegsTrainingV1Enabled): Legs fields default to zero / empty. Idempotent
+-- and versioned (LegsVersion); also grants any free trail the saved level already earned. Profiles
+-- are never touched while the flag is off.
+function Rules.MigrateLegs(data, force)
+	if not force and not LegsFlags.Enabled() then
+		return false
+	end
+	local p = data.Phase13
+	if type(p) ~= "table" then
+		return false
+	end
+	local changed = p.LegsVersion ~= Legs.Version
+	if not integer(p.LegsLevel, 0, Legs.MaxLevel) then
+		p.LegsLevel = 0
+		changed = true
+	end
+	if type(p.LegsXP) ~= "number" or p.LegsXP ~= p.LegsXP or p.LegsXP < 0 then
+		p.LegsXP = 0
+		changed = true
+	end
+	if type(p.OwnedTrails) ~= "table" then
+		p.OwnedTrails = {}
+		changed = true
+	end
+	for _, id in Legs.FreeTrailsAt(p.LegsLevel) do
+		if p.OwnedTrails[id] ~= true then
+			p.OwnedTrails[id] = true
+			changed = true
+		end
+	end
+	if type(p.EquippedTrail) ~= "string" or (p.EquippedTrail ~= "" and p.OwnedTrails[p.EquippedTrail] ~= true) then
+		p.EquippedTrail = ""
+		changed = true
+	end
+	p.LegsVersion = Legs.Version
+	return changed
+end
+-- One Legs tick: add XP, level up (possibly several levels), grant free trails. Returns the levels
+-- gained and the trail ids newly unlocked.
+function Rules.ApplyLegsTick(data, xp)
+	local p = data.Phase13
+	if type(p) ~= "table" or type(p.LegsLevel) ~= "number" or type(p.OwnedTrails) ~= "table" then
+		return false, reject("LEGS_NOT_READY")
+	end
+	if type(xp) ~= "number" or xp ~= xp or xp <= 0 or xp > 10_000 then
+		return false, reject("INVALID_XP")
+	end
+	if p.LegsLevel >= Legs.MaxLevel then
+		p.LegsXP = 0
+		return true, { levels = 0, level = p.LegsLevel, xp = 0, unlocked = {} }
+	end
+	p.LegsXP += xp
+	local gained = 0
+	while p.LegsLevel < Legs.MaxLevel and p.LegsXP >= Legs.XpToNext(p.LegsLevel) do
+		p.LegsXP -= Legs.XpToNext(p.LegsLevel)
+		p.LegsLevel += 1
+		gained += 1
+	end
+	if p.LegsLevel >= Legs.MaxLevel then
+		p.LegsXP = 0
+	end
+	local unlocked = {}
+	for _, id in Legs.FreeTrailsAt(p.LegsLevel) do
+		if p.OwnedTrails[id] ~= true then
+			p.OwnedTrails[id] = true
+			table.insert(unlocked, id)
+		end
+	end
+	return true, { levels = gained, level = p.LegsLevel, xp = p.LegsXP, unlocked = unlocked }
+end
+-- Equip an owned trail ("" unequips). One trail at a time.
+function Rules.ApplyTrailEquip(data, trailId)
+	local p = data.Phase13
+	if type(p) ~= "table" or type(p.OwnedTrails) ~= "table" then
+		return false, reject("LEGS_NOT_READY")
+	end
+	if trailId ~= "" and (type(trailId) ~= "string" or Legs.TrailsById[trailId] == nil) then
+		return false, reject("UNKNOWN_TRAIL")
+	end
+	if trailId ~= "" and p.OwnedTrails[trailId] ~= true then
+		return false, reject("NOT_OWNED")
+	end
+	p.EquippedTrail = trailId
+	return true, { equipped = trailId }
+end
 -- Best (highest multiplier) owned roller id.
 function Rules.BestRoller(p)
 	local best, multiplier = "Wooden", 1
@@ -181,6 +268,7 @@ end
 function Rules.Migrate(data)
 	if data.Phase13 ~= nil then
 		local changed = Rules.MigrateTraining(data)
+		changed = Rules.MigrateLegs(data) or changed
 		local ok, reason = Rules.Validate(data)
 		return ok, reason, changed
 	end
@@ -194,6 +282,7 @@ function Rules.Migrate(data)
 	end
 	data.Phase13 = p
 	Rules.MigrateTraining(data)
+	Rules.MigrateLegs(data)
 	for i = 1, 48 do
 		if data.Base.Slots[tostring(i)] == nil then
 			data.Base.Slots[tostring(i)] = { accumulatedCash = 0 }
@@ -283,6 +372,26 @@ function Rules.Validate(data)
 		end
 		if type(p.SelectedRoller) ~= "string" or p.OwnedRollers[p.SelectedRoller] ~= true then
 			return false, "PHASE13_INVALID_SelectedRoller"
+		end
+	end
+	-- Legs training (optional; absent while LegsTrainingV1Enabled has never been on).
+	if p.LegsLevel ~= nil then
+		if not integer(p.LegsLevel, 0, Legs.MaxLevel) then
+			return false, "PHASE13_INVALID_LegsLevel"
+		end
+		if type(p.LegsXP) ~= "number" or p.LegsXP ~= p.LegsXP or p.LegsXP < 0 or p.LegsXP > 1e12 then
+			return false, "PHASE13_INVALID_LegsXP"
+		end
+		if not map(p.OwnedTrails) then
+			return false, "PHASE13_INVALID_OwnedTrails"
+		end
+		for id, owned in p.OwnedTrails do
+			if Legs.TrailsById[id] == nil or owned ~= true then
+				return false, "PHASE13_INVALID_OwnedTrails"
+			end
+		end
+		if type(p.EquippedTrail) ~= "string" or (p.EquippedTrail ~= "" and p.OwnedTrails[p.EquippedTrail] ~= true) then
+			return false, "PHASE13_INVALID_EquippedTrail"
 		end
 	end
 	if #p.OperationOrder > Config.OperationJournalLimit then

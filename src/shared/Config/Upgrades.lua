@@ -269,8 +269,13 @@ local rows: { UpgradeDefinition } = {
 
 local ordered: { UpgradeDefinition } = {}
 local byId: { [string]: UpgradeDefinition } = {}
+local priceCurve = require(game:GetService("ReplicatedStorage").Shared.CoreLoop.PriceCurve)
 for _, definition in rows do
 	-- Prices are final denomination 2; never FromLegacy here.
+	-- Core Loop V2 lever (b): Speed and Cargo scale with the global price curve (factor 1 when off).
+	if string.sub(definition.id, 1, 11) == "CART_SPEED_" or string.sub(definition.id, 1, 6) == "CARGO_" then
+		definition.price = priceCurve.Scale(definition.price)
+	end
 	deepFreeze(definition)
 	assert(byId[definition.id] == nil, "Duplicate upgrade ID " .. definition.id)
 	byId[definition.id] = definition

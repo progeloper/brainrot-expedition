@@ -22,6 +22,11 @@ local RemoteNames = require(Shared.Constants.RemoteNames)
 local Rules = require(Shared.Utility.DriveAndHuntRules)
 local StormGeometry = require(Shared.Utility.StormGeometry)
 local CartGeometry = require(Shared.Utility.CartGeometry)
+-- Playtest Fixes Part D (flag-gated): "Train!" puts the player's own cart on the Training rollers.
+local PlaytestFlags = require(Shared.Config.PlaytestFixesFlags)
+local CampFlags = require(Shared.Config.CampReworkFlags)
+local TrainPlaceRules = require(Shared.Utility.TrainPlaceRules)
+local PlaytestFixes = require(Shared.Config.PlaytestFixes)
 
 type Dependencies = {
 	CartService: any,
@@ -757,6 +762,110 @@ local function loadAndGo(player: Player, state: PlayerState): (boolean, string?)
 	return seated, seatReason
 end
 
+--------------------------------------------------------------------------------
+-- Playtest Fixes D1-D3: TrainPlace (server decides everything; one bounds query; one FX event)
+--------------------------------------------------------------------------------
+
+local function trainPlace(player: Player, state: PlayerState): (boolean, string?)
+	local d = deps :: Dependencies
+	local Training = require(script.Parent.TrainingService)
+	local _, humanoid, root = body(player)
+	local bay, distance = nil, math.huge
+	if root then
+		bay, distance = Training.NearestBay(root.Position)
+	end
+	local cart = d.CartService:GetCart(player)
+	local reason = TrainPlaceRules.Check({
+		trainingOn = CampFlags.Training(),
+		alreadyTraining = player:GetAttribute("TrainingActive") == true,
+		alive = humanoid ~= nil and humanoid.Health > 0,
+		distance = distance,
+		promptDistance = if bay then bay.prompt.MaxActivationDistance else 0,
+		canAct = d.Combat:CanAct(player),
+		busy = state.busy,
+		carrying = d.Interaction.IsCarrying(player),
+		hasCart = cart ~= nil and cart.Parent ~= nil,
+	})
+	if not reason and not bay then
+		reason = "NoBay"
+	end
+	if reason then
+		local text = TrainPlaceRules.Message(reason)
+		if text then
+			tell(player, text)
+		end
+		return false, reason
+	end
+	local liveCart = cart :: Model
+	-- Already driving it elsewhere: step out first (the cart must be parked to be moved).
+	if humanoid and d.Occupants:GetDriver(liveCart) == player then
+		d.Occupants:UnseatOwner(player, liveCart)
+		local deadline = now() + 0.3
+		while humanoid.SeatPart ~= nil and now() < deadline do
+			task.wait()
+		end
+	end
+	local parked, parkedReason = ownParkedCart(player)
+	if not parked then
+		tell(player, TrainPlaceRules.Message("CartOccupied") or "")
+		return false, parkedReason
+	end
+	-- Deck height under the trigger, ignoring every cart (others may already be training there).
+	local ignore: { Instance } = { liveCart }
+	local runtime = Workspace:FindFirstChild("Runtime")
+	if runtime then
+		table.insert(ignore, runtime)
+	end
+	if player.Character then
+		table.insert(ignore, player.Character)
+	end
+	local trigger = bay.trigger :: BasePart
+	-- Deck height = the highest deck-level surface under the cart's footprint (roller tops, pit rails),
+	-- plus a small lift, so the strict placement overlap check never touches the rails.
+	local probe = TrainPlaceRules.BayFrame(trigger.CFrame, trigger.Position.Y, CFrame.identity)
+	local low, high = visualExtents(liveCart)
+	local groundY = -math.huge
+	for _, x in { low.X, 0, high.X } do
+		for _, z in { low.Z, 0, high.Z } do
+			local hit = groundAt(probe:PointToWorldSpace(Vector3.new(x, 0, z)), ignore, nil)
+			if hit and hit.Y <= trigger.Position.Y then
+				groundY = math.max(groundY, hit.Y)
+			end
+		end
+	end
+	-- Thin roller bands can slip between probe rays: clear the tallest deck piece in the bay too.
+	groundY = math.max(groundY, Training.DeckTop(bay))
+	if groundY == -math.huge then
+		return false, "NoGround"
+	end
+	local frame = TrainPlaceRules.BayFrame(
+		trigger.CFrame,
+		groundY + PlaytestFixes.TrainPlace.DeckLift,
+		CartGeometry.SpawnOffset(liveCart)
+	)
+	-- One placement check: nobody standing where the cart lands (other training carts are fine).
+	local overlap = OverlapParams.new()
+	overlap.FilterType = Enum.RaycastFilterType.Exclude
+	overlap.FilterDescendantsInstances = ignore
+	for _, part in
+		Workspace:GetPartBoundsInBox(frame * CFrame.new((low + high) / 2), high - low, overlap)
+	do
+		local model = part:FindFirstAncestorOfClass("Model")
+		if model and model:FindFirstChildOfClass("Humanoid") then
+			tell(player, TrainPlaceRules.Message("DeckBlocked") or "")
+			return false, "DeckBlocked"
+		end
+	end
+	local from = liveCart:GetPivot().Position
+	Training.JoinGroup(liveCart) -- shared bay: never collide with carts already training
+	local moved, moveReason = d.CartService:RelocateParkedCart(player, liveCart, frame)
+	if not moved then
+		Training.LeaveGroup(liveCart)
+		return false, moveReason
+	end
+	return seatAfterMove(player, liveCart, state, "TrainPlace", from)
+end
+
 local function onRequest(player: Player, action: any, payload: any)
 	if type(action) ~= "string" or #action > 16 then
 		return
@@ -766,7 +875,9 @@ local function onRequest(player: Player, action: any, payload: any)
 		state.busy = payload == true
 		return
 	end
-	if not Flags.Part("SwitchButton") then
+	local trainVerb = (action == "TrainPlace" or action == "TrainStop")
+		and PlaytestFlags.Part("TrainPlace")
+	if not Flags.Part("SwitchButton") and not trainVerb then
 		return
 	end
 	local at = now()
@@ -778,6 +889,11 @@ local function onRequest(player: Player, action: any, payload: any)
 		then hopOut
 		elseif action == "CallCart" then callCart
 		elseif action == "LoadAndGo" then loadAndGo
+		elseif action == "TrainPlace" and trainVerb then function(p: Player, s: PlayerState)
+			return trainPlace(p, s)
+		end -- STOP while training: the ordinary HOP OUT (unseat beside the cart on clear deck).
+
+		elseif action == "TrainStop" and trainVerb then hopOut
 		else nil
 	if not handler then
 		return

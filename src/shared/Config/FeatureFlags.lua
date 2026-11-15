@@ -27,6 +27,7 @@ export type FeatureFlags = {
 	CreatureAnimationEnabled: boolean,
 	VillagerAnimationEnabled: boolean,
 	VillagerLifeEnabled: boolean,
+	CoreLoopV2Enabled: boolean,
 }
 
 local FeatureFlags: FeatureFlags = {
@@ -93,6 +94,11 @@ local FeatureFlags: FeatureFlags = {
 	VillagerAnimationEnabled = false,
 	-- Village life while Idle (work spots, chat, wave). Never changes noticing or chasing.
 	VillagerLifeEnabled = false,
+	-- Core Loop V2 (14 Nov 2026): herd spawn director, Stars, Lucky Meter + pity, combo, temperaments,
+	-- guarded villages, BRAINROT RUSH, mutation reveal/rain, burrow and reset removal. Off until the
+	-- owner approves CP-D; when false the game behaves exactly as before. Studio preview only with
+	-- ReplicatedStorage.CoreLoopV2Preview = true. Parts: Config/CoreLoop.Flags.
+	CoreLoopV2Enabled = false,
 }
 
 return table.freeze(FeatureFlags)

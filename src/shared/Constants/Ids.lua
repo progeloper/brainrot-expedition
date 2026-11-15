@@ -26,12 +26,15 @@ local Ids = {
 		SludgeBomb = "GDT_001",
 	},
 
-	Zones = {
-		HuntersCamp = "ZON_000",
-		MemeMeadows = "ZON_001",
-		BrainrotBadlands = "ZON_002",
-		Glitchwood = "ZON_003",
-		TheRift = "ZON_004",
+	Regions = {
+		Beach = "REGION_BEACH",
+		Forest = "REGION_FOREST",
+		Swamp = "REGION_SWAMP",
+		Jungle = "REGION_JUNGLE",
+		Arctic = "REGION_ARCTIC",
+		Volcano = "REGION_VOLCANO",
+		Glitch = "REGION_GLITCH",
+		Camp = "REGION_CAMP",
 	},
 
 	CartSpawns = {

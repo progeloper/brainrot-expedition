@@ -14,6 +14,7 @@ local Logger = require(ReplicatedStorage.Shared.Utility.Logger)
 local log = Logger.new("CartSpawnRegistry")
 
 local CART_OCCUPANCY_RADIUS = 12
+local DEPENDENCY_WAIT_TIMEOUT_SECONDS = 10
 
 export type CartSpawnRecord = {
 	Id: string,
@@ -31,8 +32,9 @@ local spawnRecords: { [string]: CartSpawnRecord } = {}
 local hasStarted = false
 
 local function getSpawnFolder(): Folder
-	local instance = Workspace:WaitForChild("CartSpawns")
+	local instance = Workspace:WaitForChild("CartSpawns", DEPENDENCY_WAIT_TIMEOUT_SECONDS)
 
+	assert(instance ~= nil, "Timed out waiting for Workspace.CartSpawns")
 	assert(instance:IsA("Folder"), "Workspace.CartSpawns must be a Folder")
 
 	return instance
@@ -79,7 +81,7 @@ local function registerSpawn(spawnPart: BasePart)
 	log:Info("Registered cart spawn %s for %s", spawnId, cartId)
 end
 
-local function isSpawnOccupied(record: CartSpawnRecord): boolean
+local function isSpawnOccupied(record: CartSpawnRecord, excludedCart: Model?): boolean
 	local runtime = Workspace:FindFirstChild("Runtime")
 
 	if runtime == nil then
@@ -94,6 +96,10 @@ local function isSpawnOccupied(record: CartSpawnRecord): boolean
 
 	for _, child in carts:GetChildren() do
 		if not child:IsA("Model") then
+			continue
+		end
+
+		if child == excludedCart then
 			continue
 		end
 
@@ -130,11 +136,43 @@ function CartSpawnRegistry:Start()
 		end
 	end
 
-	assert(next(spawnRecords) ~= nil, "No valid cart spawn points were registered")
-
+	-- Shared pads are optional; CartService resolves owner-specific base spawns directly.
 	hasStarted = true
 
 	log:Info("Cart spawn registry ready")
+end
+
+function CartSpawnRegistry:IsStarted(): boolean
+	return hasStarted
+end
+
+function CartSpawnRegistry:RegisterSpawns(spawnParts: { BasePart })
+	assert(hasStarted, "CartSpawnRegistry has not started in this server execution context")
+
+	for _, spawnPart in spawnParts do
+		registerSpawn(spawnPart)
+	end
+end
+
+function CartSpawnRegistry:UnregisterSpawns(spawnParts: { BasePart })
+	if not hasStarted then
+		return
+	end
+
+	for _, spawnPart in spawnParts do
+		local spawnId = spawnPart:GetAttribute("SpawnId")
+
+		if type(spawnId) ~= "string" then
+			continue
+		end
+
+		local record = spawnRecords[spawnId]
+
+		if record ~= nil and record.Part == spawnPart then
+			spawnRecords[spawnId] = nil
+			log:Info("Unregistered cart spawn %s", spawnId)
+		end
+	end
 end
 
 function CartSpawnRegistry:GetById(spawnId: string): CartSpawnRecord?
@@ -161,6 +199,10 @@ function CartSpawnRegistry:GetDefaultForCart(cartId: string): CartSpawnRecord?
 	end
 
 	table.sort(candidates, function(a: CartSpawnRecord, b: CartSpawnRecord): boolean
+		if a.Priority == b.Priority then
+			return a.Id < b.Id
+		end
+
 		return a.Priority < b.Priority
 	end)
 
@@ -171,7 +213,7 @@ function CartSpawnRegistry:GetDefaultForCart(cartId: string): CartSpawnRecord?
 	end
 
 	for _, record in candidates do
-		if not isSpawnOccupied(record) then
+		if not isSpawnOccupied(record, nil) then
 			return record
 		end
 	end
@@ -179,6 +221,16 @@ function CartSpawnRegistry:GetDefaultForCart(cartId: string): CartSpawnRecord?
 	-- Every valid spawn is currently occupied.
 	-- Fall back to the highest-priority spawn.
 	return candidates[1]
+end
+
+function CartSpawnRegistry:IsOccupied(spawnId: string, excludedCart: Model?): boolean
+	assert(hasStarted, "CartSpawnRegistry has not started in this server execution context")
+
+	local record = spawnRecords[spawnId]
+
+	assert(record ~= nil, string.format("Unknown cart SpawnId %s", spawnId))
+
+	return isSpawnOccupied(record, excludedCart)
 end
 
 function CartSpawnRegistry:GetAll(): { CartSpawnRecord }
@@ -189,10 +241,24 @@ function CartSpawnRegistry:GetAll(): { CartSpawnRecord }
 	end
 
 	table.sort(result, function(a: CartSpawnRecord, b: CartSpawnRecord): boolean
+		if a.Priority == b.Priority then
+			return a.Id < b.Id
+		end
+
 		return a.Priority < b.Priority
 	end)
 
 	return result
+end
+
+function CartSpawnRegistry:Stop()
+	if not hasStarted then
+		return
+	end
+
+	table.clear(spawnRecords)
+	hasStarted = false
+	log:Info("Cart spawn registry stopped")
 end
 
 return CartSpawnRegistry

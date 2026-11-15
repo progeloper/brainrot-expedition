@@ -95,6 +95,16 @@ Service.__index = Service
 -- Single hook for a future Clean Escape payout/collection track (owner decision pending).
 -- Called with (player, chaseSummary). Nothing is wired to it.
 Service.onCleanEscape = nil :: ((Player, any) -> ())?
+-- Core Loop V2 (C1): extra subscribers for the Lucky Meter (+12 clean escape, +8 SNEAKY load).
+-- The single onCleanEscape slot above (SpecialWeaponService) is unchanged.
+local coreLoopCleanEscape: { (Player) -> () } = {}
+local coreLoopSneaky: { (Player) -> () } = {}
+function Service.AddCleanEscapeSubscriber(fn: (Player) -> ())
+	table.insert(coreLoopCleanEscape, fn)
+end
+function Service.AddSneakySubscriber(fn: (Player) -> ())
+	table.insert(coreLoopSneaky, fn)
+end
 
 local villagers: { Villager } = {}
 local villagersById: { [string]: Villager } = {}
@@ -322,6 +332,9 @@ function Service.OnCargoLoaded(player: Player)
 	if #noticed == 0 then
 		a.fire(player, { kind = "Sneaky" })
 		a.record(player, "SneakyLoad", 1, regionId, "Recorded")
+		for _, fn in coreLoopSneaky do
+			task.spawn(fn, player)
+		end
 		return
 	end
 	nextChaseId += 1
@@ -429,6 +442,11 @@ local function endChase(chase: Chase, result: string, now: number)
 		chase.regionId,
 		if clean then "Clean" else "Tagged"
 	)
+	if clean then
+		for _, fn in coreLoopCleanEscape do
+			task.spawn(fn, chase.player)
+		end
+	end
 	if clean and Service.onCleanEscape then
 		task.spawn(Service.onCleanEscape :: any, chase.player, {
 			chaseId = chase.id,

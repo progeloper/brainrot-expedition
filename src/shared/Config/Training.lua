@@ -30,9 +30,27 @@ local Training = {
 	Rollers = {
 		{ id = "Wooden", name = "Wooden rollers", multiplier = 1, price = 0, order = 1 },
 		{ id = "Steel", name = "Steel rollers", multiplier = 3, price = 2_500_000_000, order = 2 }, -- ≈ Speed 2
-		{ id = "Turbo", name = "Turbo rollers", multiplier = 10, price = 15_000_000_000, order = 3 }, -- ≈ Speed 3
-		{ id = "Rocket", name = "Rocket rollers", multiplier = 40, price = 75_000_000_000, order = 4 }, -- ≈ Speed 4
-		{ id = "Rift", name = "Rift rollers", multiplier = 150, price = 300_000_000_000, order = 5 }, -- ≈ Speed 5
+		{
+			id = "Turbo",
+			name = "Turbo rollers",
+			multiplier = 10,
+			price = 15_000_000_000,
+			order = 3,
+		}, -- ≈ Speed 3
+		{
+			id = "Rocket",
+			name = "Rocket rollers",
+			multiplier = 40,
+			price = 75_000_000_000,
+			order = 4,
+		}, -- ≈ Speed 4
+		{
+			id = "Rift",
+			name = "Rift rollers",
+			multiplier = 150,
+			price = 300_000_000_000,
+			order = 5,
+		}, -- ≈ Speed 5
 	} :: { Roller },
 	-- Client presentation only: how fast the stall rollers/wheels spin per roller tier (deg/s, ≤ 1700
 	-- so a 10 Hz tween never wraps the wrong way).
@@ -40,7 +58,10 @@ local Training = {
 }
 
 local byId: { [string]: Roller } = {}
+local priceCurve = require(game:GetService("ReplicatedStorage").Shared.CoreLoop.PriceCurve)
 for _, roller in Training.Rollers do
+	-- Core Loop V2 lever (b): rollers replace the Speed upgrades, so they follow the same price curve.
+	roller.price = priceCurve.Scale(roller.price)
 	byId[roller.id] = table.freeze(roller)
 end
 Training.RollersById = byId
@@ -87,7 +108,9 @@ end
 -- XP gained per tick for a roller and pass ownership.
 function Training.XpPerTick(rollerId: string?, hasPass: boolean): number
 	local roller = byId[rollerId or "Wooden"] or byId.Wooden
-	return Training.BaseXpPerTick * roller.multiplier * (if hasPass then Training.PassMultiplier else 1)
+	return Training.BaseXpPerTick
+		* roller.multiplier
+		* (if hasPass then Training.PassMultiplier else 1)
 end
 
 return table.freeze(Training)

@@ -40,6 +40,7 @@ type Ring = {
 	frame: CFrame,
 	colour: Color3,
 	height: number,
+	radius: number?,
 	segments: number,
 }
 type Pending = { proxy: Model?, frame: CFrame, colour: Color3, expires: number }
@@ -206,7 +207,8 @@ local function layRing(ring: Ring)
 			continue
 		end
 		local angle = (index - 1) / count * math.pi * 2
-		local offset = Vector3.new(math.cos(angle), 0, math.sin(angle)) * Config.RingStuds
+		local offset = Vector3.new(math.cos(angle), 0, math.sin(angle))
+			* (ring.radius or Config.RingStuds)
 		part.CFrame = CFrame.lookAt(
 			centre + offset + Vector3.new(0, 0.2, 0),
 			centre + Vector3.new(0, 0.2, 0)
@@ -245,6 +247,9 @@ local function assignRing(ring: Ring, model: Model, itemId: string)
 	ring.frame = model:GetPivot()
 	ring.colour = rarityColour(model)
 	ring.height = if body and body:IsA("BasePart") then body.Size.Y * 0.5 + 3 else 4
+	-- Playtest Fixes size ladder: the ground ring grows with the brainrot (ratio to the shared height).
+	local ratio = model:GetAttribute("PlaytestSizeRatio")
+	ring.radius = Config.RingStuds * (if type(ratio) == "number" and ratio > 0 then ratio else 1)
 	ring.segments = if lowQuality() then Config.RingSegmentsLow else Config.RingSegments
 	ring.proxy = makeProxy(model)
 	ringByModel[model] = ring

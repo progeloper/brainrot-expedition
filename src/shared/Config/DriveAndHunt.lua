@@ -132,6 +132,7 @@ return table.freeze({
 			Sleep = "DRIVE OVER IT!",
 			Scoop = "+1! Fill up, then drive home",
 			HopOut = "HOP OUT to reach it",
+			HopOutJump = "JUMP to hop out and reach it", -- Playtest Fixes 2 B
 			LoadAndGo = "LOAD & GO!",
 		}),
 	}),

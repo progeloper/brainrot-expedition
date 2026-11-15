@@ -12,6 +12,9 @@ local Workspace = game:GetService("Workspace")
 
 local Scheduler = require(script.Parent.Parent.Utility.CampAnimationScheduler)
 local FeatureFlags = require(ReplicatedStorage.Shared.Config.FeatureFlags)
+local PlaytestFlags = require(ReplicatedStorage.Shared.Config.PlaytestFixesFlags)
+local PresentationQuality = require(ReplicatedStorage.Shared.Utility.ResolvedPresentationQuality)
+local IDLE_TAG = "PlaytestIdleFx"
 
 local Controller = {}
 local TICK = 1 / Scheduler.Hz
@@ -45,12 +48,21 @@ end
 
 local function equipped(rotor: BasePart): boolean
 	local tool = rotor:FindFirstAncestorOfClass("Tool")
-	return tool ~= nil and tool.Parent ~= nil and tool.Parent:FindFirstChildOfClass("Humanoid") ~= nil
+	return tool ~= nil
+		and tool.Parent ~= nil
+		and tool.Parent:FindFirstChildOfClass("Humanoid") ~= nil
 		and rotor:IsDescendantOf(Workspace)
 end
 
 -- Pure: the motor offset for a continuous rig at time `now` (tests use this).
-function Controller.ContinuousOffset(kind: string, rate: number, distance: number, phase: number, angle: number, now: number): (CFrame, number)
+function Controller.ContinuousOffset(
+	kind: string,
+	rate: number,
+	distance: number,
+	phase: number,
+	angle: number,
+	now: number
+): (CFrame, number)
 	if kind == "Spin" then
 		return CFrame.Angles(0, 0, math.rad(angle)), angle
 	elseif kind == "Pump" then
@@ -95,7 +107,14 @@ local function bind(rotor: Instance)
 				if rig.kind == "Spin" then
 					rig.angle = (rig.angle + rig.rate * math.min(dt, 0.25)) % 360
 				end
-				local offset = Controller.ContinuousOffset(rig.kind, rig.rate, rig.distance, rig.phase, rig.angle, now + TICK)
+				local offset = Controller.ContinuousOffset(
+					rig.kind,
+					rig.rate,
+					rig.distance,
+					rig.phase,
+					rig.angle,
+					now + TICK
+				)
 				play(rig, rig.base * offset, TweenInfo.new(TICK, Enum.EasingStyle.Linear))
 			end,
 		})
@@ -181,6 +200,24 @@ function Controller.Start()
 	end
 	CollectionService:GetInstanceAddedSignal("CampAnimRotor"):Connect(bind)
 	CollectionService:GetInstanceRemovedSignal("CampAnimRotor"):Connect(unbind)
+	if PlaytestFlags.Part("WeaponFx") then
+		-- Playtest Fixes C5: idle emitters on held weapons are off on Low quality (bursts still play).
+		local player = Players.LocalPlayer
+		local function apply(e: Instance)
+			if e:IsA("ParticleEmitter") and e:FindFirstAncestorOfClass("Tool") then
+				e.Enabled = PresentationQuality.GetTier(player:GetAttribute("VFXQuality")) ~= "Low"
+			end
+		end
+		for _, e in CollectionService:GetTagged(IDLE_TAG) do
+			apply(e)
+		end
+		CollectionService:GetInstanceAddedSignal(IDLE_TAG):Connect(apply)
+		player:GetAttributeChangedSignal("VFXQuality"):Connect(function()
+			for _, e in CollectionService:GetTagged(IDLE_TAG) do
+				apply(e)
+			end
+		end)
+	end
 end
 
 return Controller

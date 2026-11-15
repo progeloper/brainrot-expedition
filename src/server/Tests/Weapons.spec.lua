@@ -1,0 +1,37 @@
+--!strict
+
+return function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local Ids = require(ReplicatedStorage.Shared.Constants.Ids)
+	local Weapons = require(ReplicatedStorage.Shared.Config.Weapons)
+
+	describe("Phase 13 weapon profile catalogue", function()
+		it("preserves the starter entitlement and resolves Trailwood B1 in explicit units", function()
+			local basic = assert(Weapons.Get(Ids.Harpoons.Basic))
+			expect(basic.id).to.equal("HRP_001")
+			expect(basic.assetName).to.equal("HRP_001")
+			expect(basic.starterEntitlement).to.equal(true)
+			expect(basic.stats.rangeStuds).to.equal(100)
+			expect(basic.stats.fireIntervalSeconds).to.equal(0.75)
+			expect(basic.stats.projectileSpeedStudsPerSecond).to.equal(500)
+			expect(basic.stats.projectileSpeedAuthority).to.equal("PresentationOnly")
+			expect(math.deg(basic.stats.assistAcquireHalfAngleRadians)).to.equal(10)
+			expect(math.deg(basic.stats.assistRetainHalfAngleRadians)).to.equal(16)
+		end)
+
+		it("does not turn the stable Longshot ID into an approved profile", function()
+			expect(Ids.Harpoons.Longshot).to.equal("HRP_002")
+			expect(Weapons.Get(Ids.Harpoons.Longshot)).to.equal(nil)
+			expect(#Weapons.GetAll()).to.equal(24)
+		end)
+
+		it("is immutable, deterministic and statically valid", function()
+			local first = Weapons.GetAll()
+			local second = Weapons.GetAll()
+			expect(first[1]).to.equal(second[1])
+			expect(table.isfrozen(first[1])).to.equal(true)
+			expect(table.isfrozen(first[1].stats)).to.equal(true)
+			expect(#Weapons.Validate()).to.equal(0)
+		end)
+	end)
+end

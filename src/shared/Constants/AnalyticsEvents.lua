@@ -4,13 +4,16 @@ local AnalyticsEvents = {
 	SessionStarted = "session_started",
 
 	CartSpawned = "cart_spawned",
-	CartReset = "cart_reset",
+	CartDriverEntered = "cart_driver_entered",
+	CartMovementStarted = "cart_movement_started",
+	CartDriverExited = "cart_driver_exited",
+	CartResetRequested = "cart_reset_requested",
+	CartResetApproved = "cart_reset_approved",
+	CartResetRejected = "cart_reset_rejected",
+	CartResetCompleted = "cart_reset_completed",
 	CartDespawned = "cart_despawned",
-	CartEntered = "cart_entered",
-	CartExited = "cart_exited",
+	CartMovementCorrected = "cart_movement_corrected",
 
-	CaptureAttempted = "capture_attempted",
-	CaptureCompleted = "capture_completed",
 	BrainrotBanked = "brainrot_banked",
 	KeeperSaved = "keeper_saved",
 }

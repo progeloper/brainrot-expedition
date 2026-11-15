@@ -8,7 +8,6 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local Workspace = game:GetService("Workspace")
 local HttpService = game:GetService("HttpService")
-local GuiService = game:GetService("GuiService")
 local UserInputService = game:GetService("UserInputService")
 
 local LocalCartState = require(script.Parent.Parent.State.LocalCartState)
@@ -23,12 +22,18 @@ local InputRegistry = require(ReplicatedStorage.Shared.Config.CartInputRegistry)
 local InputPolicy = require(script.Parent.Parent.Utility.Phase10InputPolicy)
 local Feedback = require(script.Parent.Parent.Utility.Phase10Feedback)
 local RemoteBinding = require(script.Parent.Parent.Utility.RemoteDependencyBinding)
+-- Drive-and-Hunt auto-lock (inert unless its flag is on): supplies the lock FIRE shoots at.
+local AutoLock = require(script.Parent.AutoLockController)
+-- Playtest Fixes Part C (inert unless its flag is on): pooled muzzle / trail / impact / Zzz effects.
+local PlaytestFlags = require(ReplicatedStorage.Shared.Config.PlaytestFixesFlags)
+local WeaponFx = require(ReplicatedStorage.Shared.Utility.WeaponFxLibrary)
+local PresentationQuality = require(ReplicatedStorage.Shared.Utility.ResolvedPresentationQuality)
 local SleepRequest: RemoteEvent? = nil
 
 local triggerHeld = false
 local touchFireInput: InputObject? = nil
-local consentGui: ScreenGui? = nil
-local consentStatus: TextLabel? = nil
+local consentDialog: any = nil -- Plate.Confirm window while the opt-out question is on screen
+local consentToast: Instance? = nil
 local DEFAULT_WEAPON_PROFILE = WeaponStats.Resolve(Weapons.StarterWeaponId)
 assert(WeaponStats.IsReady(DEFAULT_WEAPON_PROFILE), "Starter weapon profile must be valid")
 local BOLT_LENGTH, BOLT_WIDTH = 1.5, 0.25
@@ -36,19 +41,26 @@ local ACTION_NAME = "SleepLauncherFire" -- Keep the established G action binding
 local MOUNTED_ACTION = "MountedSleepFire"
 local MOUNTED_PREVIEW_STEP = "MountedSleepPreview"
 local CombatStrings = require(ReplicatedStorage.Shared.Config.Phase13CombatStrings)
+local Plate = require(ReplicatedStorage.Shared.UI.Plate) :: any
+local PlateTheme = require(ReplicatedStorage.Shared.UI.Theme) :: any
+local MenusV2 = require(script.Parent.Parent.UI.MenusV2) :: any
 local player = Players.LocalPlayer
 local aimController = ThirdPersonAimController.new(player)
 local okWeaponArt, WeaponArtModule = pcall(require, script.Parent.WeaponArtController)
-local WeaponArt = if okWeaponArt then WeaponArtModule else { OnShot = function(_origin: Vector3) end }
+local WeaponArt = if okWeaponArt
+	then WeaponArtModule
+	else { OnShot = function(_origin: Vector3) end }
 local function selectedProfile()
-	local profile = WeaponStats.Resolve(player:GetAttribute("SelectedWeaponId") or Weapons.StarterWeaponId)
+	local profile =
+		WeaponStats.Resolve(player:GetAttribute("SelectedWeaponId") or Weapons.StarterWeaponId)
 	return if WeaponStats.IsReady(profile) then profile else DEFAULT_WEAPON_PROFILE
 end
 local function refreshWeaponProfile()
 	aimController:SetWeaponProfile(selectedProfile())
 end
 refreshWeaponProfile()
-local selectedWeaponConnection = player:GetAttributeChangedSignal("SelectedWeaponId"):Connect(refreshWeaponProfile)
+local selectedWeaponConnection =
+	player:GetAttributeChangedSignal("SelectedWeaponId"):Connect(refreshWeaponProfile)
 local destroyed = false
 -- Adapt the current PlayerModule input, not its source or an independent
 -- Camera.CFrame writer. Both shipped PlayerModule layouts expose CameraInput.
@@ -61,7 +73,10 @@ task.spawn(function()
 		return
 	end
 	local ok, adapter = pcall(function()
-		assert(inputModule and inputModule:IsA("ModuleScript"), "PlayerModule.CameraInput unavailable")
+		assert(
+			inputModule and inputModule:IsA("ModuleScript"),
+			"PlayerModule.CameraInput unavailable"
+		)
 		return require(inputModule)
 	end)
 	if destroyed then
@@ -81,7 +96,10 @@ local characterConnections: { RBXScriptConnection } = {}
 local observedCharacter: Model? = nil
 local backpackConnection: RBXScriptConnection? = nil
 local hiddenLauncherParts: { [BasePart]: number } = {}
-local launcherLabels: { [Tool]: { Name: string, Tip: string, ManualActivationOnly: boolean } } = setmetatable({}, { __mode = "k" }) :: any
+local launcherLabels: { [Tool]: { Name: string, Tip: string, ManualActivationOnly: boolean } } = setmetatable(
+	{},
+	{ __mode = "k" }
+) :: any
 local HUNTING_TOOLTIP = "Equip Hunting · aim and fire to sleep"
 
 -- ViewportPointToRay and this GUI both use DEVICE-safe coordinates, including
@@ -122,15 +140,20 @@ do
 end
 reticleGui.Parent = player:WaitForChild("PlayerGui")
 local fireSafeArea = Instance.new("Frame")
-fireSafeArea.Name, fireSafeArea.Size, fireSafeArea.BackgroundTransparency = "FireSafeArea", UDim2.fromScale(1, 1), 1
+fireSafeArea.Name, fireSafeArea.Size, fireSafeArea.BackgroundTransparency =
+	"FireSafeArea", UDim2.fromScale(1, 1), 1
 fireSafeArea.Parent = reticleGui
-require(script.Parent.Parent.UI.StudPopUI).skin(fireSafeArea, { hints = { MountedFire = "go", MountedAim = "info" }, windowDepth = 0 })
+require(script.Parent.Parent.UI.StudPopUI).skin(
+	fireSafeArea,
+	{ hints = { MountedFire = "go", MountedAim = "info" }, windowDepth = 0 }
+)
 local fireButton = Instance.new("TextButton")
 fireButton.Name = "MountedFire"
 fireButton.AnchorPoint, fireButton.Position = Vector2.new(1, 0), UDim2.new(1, -20, 1, -202)
 fireButton.Size = UDim2.fromOffset(64, 64)
 fireButton.Text, fireButton.TextSize, fireButton.Font = "Fire", 20, Enum.Font.GothamBold
-fireButton.BackgroundColor3, fireButton.TextColor3 = Color3.fromRGB(30, 36, 42), Color3.fromRGB(220, 245, 255)
+fireButton.BackgroundColor3, fireButton.TextColor3 =
+	Color3.fromRGB(30, 36, 42), Color3.fromRGB(220, 245, 255)
 fireButton.BackgroundTransparency, fireButton.Visible = 0.15, false
 fireButton.Parent = fireSafeArea
 local touchAimToggled = false
@@ -138,18 +161,34 @@ local aimButton = Instance.new("TextButton")
 aimButton.Name, aimButton.AnchorPoint = "MountedAim", Vector2.new(1, 0)
 aimButton.Position, aimButton.Size = UDim2.new(1, -96, 1, -202), UDim2.fromOffset(64, 64)
 aimButton.Text, aimButton.TextSize, aimButton.Font = "Aim", 18, Enum.Font.GothamBold
-aimButton.BackgroundColor3, aimButton.TextColor3 = Color3.fromRGB(30, 36, 42), Color3.fromRGB(220, 245, 255)
+aimButton.BackgroundColor3, aimButton.TextColor3 =
+	Color3.fromRGB(30, 36, 42), Color3.fromRGB(220, 245, 255)
 aimButton.BackgroundTransparency, aimButton.Visible, aimButton.Parent = 0.15, false, fireSafeArea
 local aimCorner = Instance.new("UICorner")
 aimCorner.CornerRadius, aimCorner.Parent = UDim.new(0, 16), aimButton
-local fireLayoutConnection = fireSafeArea:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
-	local size = fireSafeArea.AbsoluteSize
-	local top = if size.Y < 340 and size.X < 384 then 122 else math.max(8, size.Y - 202)
-	local y = math.clamp(top, 8, math.max(8, size.Y - 72))
-	fireButton.Position, aimButton.Position = UDim2.new(1, -20, 0, y), UDim2.new(1, -96, 0, y)
-end)
+local fireLayoutConnection = fireSafeArea
+	:GetPropertyChangedSignal("AbsoluteSize")
+	:Connect(function()
+		local size = fireSafeArea.AbsoluteSize
+		local top = if size.Y < 340 and size.X < 384 then 122 else math.max(8, size.Y - 202)
+		local y = math.clamp(top, 8, math.max(8, size.Y - 72))
+		fireButton.Position, aimButton.Position = UDim2.new(1, -20, 0, y), UDim2.new(1, -96, 0, y)
+	end)
 local fireCorner = Instance.new("UICorner")
 fireCorner.CornerRadius, fireCorner.Parent = UDim.new(0, 16), fireButton
+AutoLock.Start()
+if AutoLock.IsEnabled() then
+	-- Auto-lock: FIRE is the one shooting control, so it is a full thumb target. It dims when
+	-- nothing is locked but stays tappable.
+	fireButton.Size, fireButton.TextSize, fireButton.Text = UDim2.fromOffset(88, 88), 24, "FIRE"
+	local function dimFire()
+		local locked = AutoLock.HasLock()
+		fireButton.BackgroundTransparency = if locked then 0.15 else 0.55
+		fireButton.TextTransparency = if locked then 0 else 0.45
+	end
+	AutoLock.Changed:Connect(dimFire)
+	dimFire()
+end
 local impactDot = Instance.new("Frame")
 impactDot.Name, impactDot.AnchorPoint = "MountedImpactDot", Vector2.new(0.5, 0.5)
 impactDot.Size, impactDot.BorderSizePixel = UDim2.fromOffset(5, 5), 0
@@ -158,18 +197,22 @@ impactDot.Active, impactDot.Parent = false, reticleGui
 local impactCorner = Instance.new("UICorner")
 impactCorner.CornerRadius, impactCorner.Parent = UDim.new(1, 0), impactDot
 local impactStroke = Instance.new("UIStroke")
-impactStroke.Thickness, impactStroke.Color, impactStroke.Parent = 1, Color3.fromRGB(15, 20, 25), impactDot
+impactStroke.Thickness, impactStroke.Color, impactStroke.Parent =
+	1, Color3.fromRGB(15, 20, 25), impactDot
 local targetHighlight = Instance.new("Highlight")
-targetHighlight.Name, targetHighlight.DepthMode = "SleepSelectedTarget", Enum.HighlightDepthMode.Occluded
+targetHighlight.Name, targetHighlight.DepthMode =
+	"SleepSelectedTarget", Enum.HighlightDepthMode.Occluded
 targetHighlight.FillTransparency, targetHighlight.OutlineTransparency = 1, 0.12
 targetHighlight.Enabled, targetHighlight.Parent = false, Workspace
 local targetLabel = Instance.new("TextLabel")
 targetLabel.Name, targetLabel.BackgroundTransparency = "TargetStatus", 1
 targetLabel.AnchorPoint, targetLabel.Position = Vector2.new(0.5, 0), UDim2.new(0.5, 0, 0.5, 22)
-targetLabel.Size, targetLabel.Font, targetLabel.TextSize = UDim2.fromOffset(250, 24), Enum.Font.GothamBold, 15
+targetLabel.Size, targetLabel.Font, targetLabel.TextSize =
+	UDim2.fromOffset(250, 24), Enum.Font.GothamBold, 15
 targetLabel.Text, targetLabel.Visible, targetLabel.Parent = "", false, reticleGui
 local targetStroke = Instance.new("UIStroke")
-targetStroke.Color, targetStroke.Thickness, targetStroke.Parent = Color3.fromRGB(8, 8, 10), 2, targetLabel
+targetStroke.Color, targetStroke.Thickness, targetStroke.Parent =
+	Color3.fromRGB(8, 8, 10), 2, targetLabel
 local refreshReticle: () -> ()
 local traceContext: (string) -> ()
 
@@ -185,7 +228,11 @@ local function labelLauncher(child: Instance)
 	end
 	local tool = child :: Tool
 	if not launcherLabels[tool] then
-		launcherLabels[tool] = { Name = tool.Name, Tip = tool.ToolTip, ManualActivationOnly = tool.ManualActivationOnly }
+		launcherLabels[tool] = {
+			Name = tool.Name,
+			Tip = tool.ToolTip,
+			ManualActivationOnly = tool.ManualActivationOnly,
+		}
 	end
 	-- Local hotbar label only. The server asset/authorization name remains
 	-- SleepLauncher; there is still exactly one native equip toggle.
@@ -233,14 +280,22 @@ local function getMountedCart(): Model?
 		return nil
 	end
 	local seat = humanoid.SeatPart
-	if not seat or not (seat:IsA("Seat") or seat:IsA("VehicleSeat")) or seat.Occupant ~= humanoid then
+	if
+		not seat
+		or not (seat:IsA("Seat") or seat:IsA("VehicleSeat"))
+		or seat.Occupant ~= humanoid
+	then
 		return nil
 	end
 	local runtime = Workspace:FindFirstChild("Runtime")
 	local carts = if runtime then runtime:FindFirstChild("Carts") else nil
 	local ancestor = seat.Parent
 	while ancestor and ancestor ~= carts do
-		if ancestor:IsA("Model") and ancestor.Parent == carts and ancestor:GetAttribute("RuntimeCart") == true then
+		if
+			ancestor:IsA("Model")
+			and ancestor.Parent == carts
+			and ancestor:GetAttribute("RuntimeCart") == true
+		then
 			if
 				seat == ancestor:FindFirstChild("DriverSeat")
 				and ancestor == LocalCartState.GetCart()
@@ -274,7 +329,7 @@ end
 local effects = Instance.new("Folder")
 effects.Name, effects.Parent = "SleepBoltEffects", Workspace
 local function clearMountedPreview()
-    impactDot.Visible = false
+	impactDot.Visible = false
 end
 -- The old anchored blue Handle copy at HarpoonOrigin was a cosmetic preview,
 -- not a mounted weapon. The real equipped art and impact preview own presentation.
@@ -282,6 +337,19 @@ local bolts: { [Model]: any } = {}
 local boltConnection: RBXScriptConnection? = nil
 
 local function destroySleepBolt(model: Model)
+	local bolt = bolts[model]
+	if bolt and bolt.Fx then
+		bolt.Fx.release()
+		if bolt.Arrived then
+			WeaponFx.Impact(
+				bolt.Origin + bolt.Direction * bolt.Length,
+				bolt.Direction,
+				bolt.WeaponId,
+				bolt.Quality,
+				bolt.Slept == true
+			)
+		end
+	end
 	bolts[model] = nil
 	model:Destroy() -- Only this controller's cosmetic model, never a target/cart.
 end
@@ -296,6 +364,13 @@ local function positionBolt(bolt: any)
 		local width = part:GetAttribute("BoltWidth")
 		part.Size = Vector3.new(width, width, length)
 		part.CFrame = frame -- Primitive's long Z axis follows the immutable shot.
+	end
+	if bolt.Fx then
+		bolt.Fx.move(
+			bolt.Origin + bolt.Direction * tail,
+			bolt.Origin + bolt.Direction * front,
+			bolt.Direction
+		)
 	end
 end
 
@@ -317,11 +392,13 @@ local function updateSleepBolts(dt: number)
 	end
 end
 
-local function renderShot(origin: any, endpoint: any, presentedProfile: any?)
+local function renderShot(origin: any, endpoint: any, presentedProfile: any?, slept: boolean?)
 	if destroyed or not finiteVector(origin) or not finiteVector(endpoint) then
 		return
 	end
-	local profile = if WeaponStats.IsReady(presentedProfile) then presentedProfile else DEFAULT_WEAPON_PROFILE
+	local profile = if WeaponStats.IsReady(presentedProfile)
+		then presentedProfile
+		else DEFAULT_WEAPON_PROFILE
 	local segment = endpoint - origin
 	local length = segment.Magnitude
 	if length <= 0.001 or length > profile.rangeStuds + 0.1 then
@@ -350,7 +427,8 @@ local function renderShot(origin: any, endpoint: any, presentedProfile: any?)
 		table.insert(parts, part)
 	end
 	local light = Instance.new("PointLight")
-	light.Color, light.Range, light.Brightness, light.Shadows = Color3.fromRGB(255, 0, 10), 4, 2, false
+	light.Color, light.Range, light.Brightness, light.Shadows =
+		Color3.fromRGB(255, 0, 10), 4, 2, false
 	light.Parent = parts[1]
 	local bolt = {
 		Origin = origin,
@@ -359,7 +437,20 @@ local function renderShot(origin: any, endpoint: any, presentedProfile: any?)
 		Speed = profile.projectileSpeedStudsPerSecond,
 		Elapsed = 0,
 		Parts = parts,
+		Fx = nil :: any,
+		WeaponId = profile.weaponId,
+		Quality = "High",
+		Slept = slept == true,
 	}
+	if PlaytestFlags.Part("WeaponFx") then
+		-- Tier colour on the existing halo, then the pooled muzzle flash and trail for this bolt.
+		local style = WeaponFx.Style(profile.weaponId)
+		local halo = style.halo or style.colour
+		parts[2].Color, parts[3].Color, light.Color = halo, halo, halo
+		bolt.Quality = PresentationQuality.GetTier(player:GetAttribute("VFXQuality"))
+		WeaponFx.Muzzle(origin, bolt.Direction, profile.weaponId, bolt.Quality)
+		bolt.Fx = WeaponFx.Bolt(profile.weaponId, bolt.Quality)
+	end
 	positionBolt(bolt)
 	bolts[model] = bolt
 	model.Parent = effects
@@ -420,7 +511,13 @@ local function canRequestFire(): boolean
 	then
 		return false
 	end
-	return getMountedCart() ~= nil or (getOnFootHuntingCharacter() ~= nil and aimController:IsActive())
+	-- With auto-lock, on-foot firing no longer needs the third-person aim view to be active.
+	return getMountedCart() ~= nil
+		or (
+			getOnFootHuntingCharacter() ~= nil and (
+				aimController:IsActive() or AutoLock.IsEnabled()
+			)
+		)
 end
 
 local function showWeaponCrosshair(): boolean
@@ -432,17 +529,19 @@ refreshReticle = function()
 	local character = player.Character
 	local humanoid = if character then character:FindFirstChildOfClass("Humanoid") else nil
 	suspendLauncherPresentation(
-		player:GetAttribute("CarriedItemId") ~= nil or (humanoid ~= nil and SeatState.IsSeated(humanoid))
+		player:GetAttribute("CarriedItemId") ~= nil
+			or (humanoid ~= nil and SeatState.IsSeated(humanoid))
 	)
 	reticleGui.Enabled = showWeaponCrosshair()
 	local cart = getMountedCart()
 	local touchPrimary = UserInputService.PreferredInput == Enum.PreferredInput.Touch
 	fireButton.Visible = touchPrimary and canRequestFire()
-	aimButton.Visible = fireButton.Visible and cart ~= nil
+	aimButton.Visible = fireButton.Visible and cart ~= nil and not AutoLock.IsEnabled()
 	if boundLauncher and launcherLabels[boundLauncher] then
 		-- The dedicated button owns touch firing; camera/joystick taps must not
 		-- also invoke the equipped Tool's native activation route.
-		boundLauncher.ManualActivationOnly = touchPrimary or launcherLabels[boundLauncher].ManualActivationOnly
+		boundLauncher.ManualActivationOnly = touchPrimary
+			or launcherLabels[boundLauncher].ManualActivationOnly
 	end
 	if cart == nil then
 		touchAimToggled = false
@@ -512,6 +611,12 @@ local function requestFire()
 	end
 	local cart = getMountedCart()
 	local snapshot = aimController:GetShotSnapshot(cart ~= nil)
+	-- Auto-lock: the shot goes through the locked brainrot from the real camera origin. The
+	-- server re-validates identity, range from the muzzle and line of sight (ASSIST_LOCK).
+	local lockSnapshot = AutoLock.GetShotSnapshot()
+	if not snapshot then
+		snapshot = lockSnapshot
+	end
 	if not snapshot or not canRequestFire() then
 		return
 	end
@@ -522,6 +627,10 @@ local function requestFire()
 	if selectedTarget then
 		ray = snapshot.CrosshairRay
 		snapshot = { Mode = "CROSSHAIR_FREE", CrosshairRay = ray }
+	elseif lockSnapshot then
+		snapshot, ray = lockSnapshot, lockSnapshot.ShotRay
+		AutoLock.NoteShot()
+		require(script.Parent.DriveAndHuntHints).MarkDone("Lock")
 	end
 	cooldownUntil = now + selectedProfile().fireIntervalSeconds
 	requestSequence += 1
@@ -570,91 +679,97 @@ local function requestFire()
 	})
 end
 
+local FOOT_TRIGGER_DEDUPE_SECONDS = 0.15
+local lastFootTriggerAt = -math.huge
 local function triggerStart()
 	triggerHeld = true
+	AutoLock.SetFireHeld(true)
 	requestFire()
 end
 local function triggerStop()
 	triggerHeld = false
+	AutoLock.SetFireHeld(false)
 	touchFireInput = nil
+end
+-- Protection opt-out consent: a Plate confirm dialog on the MenusV2 layer. Phase13ConsentDialogOpen
+-- is set only while the dialog is on screen; server replies are shown as Plate toasts.
+local CONSENT_TOAST = {
+	good = Color3.fromHex("#52FF6A"),
+	info = Color3.fromHex("#9AD2FF"),
+	alert = Color3.fromHex("#FFD447"),
+	stop = Color3.fromHex("#FF6B7A"),
+}
+local function consentNotice(message: any, kind: string)
+	if type(message) ~= "string" or message == "" then
+		return
+	end
+	if consentToast and consentToast.Parent then
+		consentToast:Destroy()
+	end
+	local gui = MenusV2.Gui()
+	local pill = Plate.Toast(gui, message, { color = CONSENT_TOAST[kind] })
+	consentToast = pill
+	-- full sentences: shrink (never below the 14 px floor) so the pill stays on screen
+	local label = pill:FindFirstChildWhichIsA("TextLabel")
+	if label then
+		local available = gui.AbsoluteSize.X - PlateTheme.px(56)
+		local needed = label.TextBounds.X
+		if available > 0 and needed > available then
+			label.TextSize = math.max(
+				PlateTheme.px(PlateTheme.Size.MinText),
+				math.floor(label.TextSize * available / needed)
+			)
+		end
+	end
 end
 local function closeConsent()
 	triggerHeld = false
-	if consentGui then
-		consentGui:Destroy()
-		consentGui = nil
-		consentStatus = nil
+	local dialog = consentDialog
+	consentDialog = nil
+	if dialog then
+		dialog.close()
 	end
 	player:SetAttribute("Phase13ConsentDialogOpen", nil)
 end
 local function openConsent()
-	if consentGui then
+	if consentDialog then
 		return
 	end
 	triggerHeld = false
-	player:SetAttribute("Phase13ConsentDialogOpen", true)
-	local screen = Instance.new("ScreenGui")
-	screen.Name = "ProtectionOptOut"
-	require(script.Parent.Parent.UI.StudPopUI).skin(screen)
-	screen.ResetOnSpawn = false
-	screen.DisplayOrder = 90
-	screen.Parent = player:WaitForChild("PlayerGui")
-	consentGui = screen
-	local panel = Instance.new("Frame")
-	panel.AnchorPoint = Vector2.new(0.5, 0.5)
-	panel.Position = UDim2.fromScale(0.5, 0.5)
-	panel.Size = UDim2.fromOffset(350, 190)
-	panel.BackgroundColor3 = Color3.fromRGB(30, 22, 48)
-	panel.Parent = screen
-	local constraint = Instance.new("UISizeConstraint")
-	constraint.MaxSize = Vector2.new(350, 190)
-	constraint.MinSize = Vector2.new(280, 170)
-	constraint.Parent = panel
-	local text = Instance.new("TextLabel")
-	text.Size = UDim2.new(1, -24, 0, 100)
-	text.Position = UDim2.fromOffset(12, 8)
-	text.BackgroundTransparency = 1
-	text.TextWrapped = true
-	text.TextSize = 20
-	text.Font = Enum.Font.GothamBold
-	text.TextColor3 = Color3.new(1, 1, 1)
-	text.Text = CombatStrings.ProtectionQuestion
-	text.Parent = panel
-	consentStatus = text
-	local function button(name, x)
-		local item = Instance.new("TextButton")
-		item.Name = name
-		item.Text = name
-		item.Size = UDim2.new(0.5, -18, 0, 48)
-		item.Position = UDim2.new(x, 12, 1, -60)
-		item.TextSize = 18
-		item.Font = Enum.Font.GothamBold
-		item.TextColor3 = Color3.new(1, 1, 1)
-		item.BackgroundColor3 = Color3.fromRGB(75, 56, 108)
-		item.Parent = panel
-		return item
+	if player:GetAttribute("Phase13ProtectionOptOutPending") == true then
+		-- the choice is already being saved (the legacy dialog stayed up in its saving state here)
+		consentNotice(CombatStrings.SavingChoice, "info")
+		return
 	end
-	local cancel = button(CombatStrings.Cancel, 0)
-	local confirm = button(CombatStrings.EndProtection, 0.5)
-	GuiService.SelectedObject = cancel
-	cancel.Activated:Connect(closeConsent)
-	confirm.Activated:Connect(function()
-		if not consentGui or player:GetAttribute("Phase13ProtectionOptOutPending") == true then
-			return
-		end
-		text.Text = CombatStrings.SavingChoice
-		confirm.Active = false
-		cancel.Visible = false
-		local remote = ReplicatedStorage:FindFirstChild("Remotes")
-			and ReplicatedStorage.Remotes:FindFirstChild("ProtectionOptOutRequest")
-		if remote and remote:IsA("RemoteEvent") then
-			remote:FireServer({ confirm = true, operationId = HttpService:GenerateGUID(false) })
-		else
-			text.Text = CombatStrings.ProtectionUnavailable
-			confirm.Visible = false
-			cancel.Visible = true
-		end
-	end)
+	player:SetAttribute("Phase13ConsentDialogOpen", true)
+	consentDialog = Plate.Confirm(MenusV2.Gui(), {
+		title = CombatStrings.EndProtection,
+		body = CombatStrings.ProtectionQuestion,
+		cancelText = CombatStrings.Cancel,
+		confirmText = CombatStrings.EndProtection,
+		confirmVariant = "stop",
+		onCancel = closeConsent,
+		onConfirm = function()
+			-- Plate.Confirm has already started closing itself
+			local wasOpen = consentDialog ~= nil
+			closeConsent()
+			if not wasOpen then
+				return
+			end
+			if player:GetAttribute("Phase13ProtectionOptOutPending") == true then
+				consentNotice(CombatStrings.SavingChoice, "info")
+				return
+			end
+			local remote = ReplicatedStorage:FindFirstChild("Remotes")
+				and ReplicatedStorage.Remotes:FindFirstChild("ProtectionOptOutRequest")
+			if remote and remote:IsA("RemoteEvent") then
+				consentNotice(CombatStrings.SavingChoice, "info")
+				remote:FireServer({ confirm = true, operationId = HttpService:GenerateGUID(false) })
+			else
+				consentNotice(CombatStrings.ProtectionUnavailable, "stop")
+			end
+		end,
+	})
 end
 local optOutConnection: RBXScriptConnection? = nil
 local function bindOptOut(remote)
@@ -668,12 +783,12 @@ local function bindOptOut(remote)
 		triggerHeld = false
 		if result.status == "Saved" then
 			closeConsent()
-			Feedback.Show(CombatStrings.ProtectionEnded)
+			consentNotice(CombatStrings.ProtectionEnded, "good")
 		elseif result.status == "Unavailable" or result.status == "Rejected" then
 			closeConsent()
-			Feedback.Show(result.message or "Your protection remains active.")
-		elseif consentStatus then
-			consentStatus.Text = result.message or CombatStrings.SavingChoice
+			consentNotice(result.message or "Your protection remains active.", "alert")
+		else
+			consentNotice(result.message or CombatStrings.SavingChoice, "info")
 		end
 	end)
 end
@@ -719,9 +834,15 @@ local function bindLauncher(tool: Tool)
 	local generation = bindingGeneration
 	labelLauncher(tool)
 	table.insert(launcherConnections, tool.Deactivated:Connect(triggerStop))
-	table.insert(launcherConnections, tool:GetAttributeChangedSignal("BrainrotSleepLauncher"):Connect(refreshReticle))
+	table.insert(
+		launcherConnections,
+		tool:GetAttributeChangedSignal("BrainrotSleepLauncher"):Connect(refreshReticle)
+	)
 	table.insert(launcherConnections, tool:GetPropertyChangedSignal("Name"):Connect(refreshReticle))
-	table.insert(launcherConnections, tool:GetPropertyChangedSignal("Enabled"):Connect(refreshReticle))
+	table.insert(
+		launcherConnections,
+		tool:GetPropertyChangedSignal("Enabled"):Connect(refreshReticle)
+	)
 	-- Native activation owns on-foot primary input; mounted contexts use the
 	-- single gated mounted action even with the handheld launcher stowed.
 	table.insert(
@@ -733,6 +854,13 @@ local function bindLauncher(tool: Tool)
 				and tool.Parent == player.Character
 				and getMountedCart() == nil
 			then
+				-- Drive-and-Hunt binds R2 on foot explicitly; never fire twice for one pull.
+				if AutoLock.IsEnabled() then
+					if os.clock() - lastFootTriggerAt < FOOT_TRIGGER_DEDUPE_SECONDS then
+						return
+					end
+					lastFootTriggerAt = os.clock()
+				end
 				triggerStart()
 			end
 		end)
@@ -740,7 +868,11 @@ local function bindLauncher(tool: Tool)
 	table.insert(
 		launcherConnections,
 		tool.Unequipped:Connect(function()
-			if boundLauncher == tool and bindingGeneration == generation and tool.Parent ~= player.Character then
+			if
+				boundLauncher == tool
+				and bindingGeneration == generation
+				and tool.Parent ~= player.Character
+			then
 				unbindLauncher()
 			end
 		end)
@@ -748,7 +880,11 @@ local function bindLauncher(tool: Tool)
 	table.insert(
 		launcherConnections,
 		tool.AncestryChanged:Connect(function()
-			if boundLauncher == tool and bindingGeneration == generation and tool.Parent ~= player.Character then
+			if
+				boundLauncher == tool
+				and bindingGeneration == generation
+				and tool.Parent ~= player.Character
+			then
 				unbindLauncher()
 			end
 		end)
@@ -792,8 +928,14 @@ local function bindCharacter(character: Model?)
 			observedHumanoid = humanoid
 			table.insert(characterConnections, humanoid.Seated:Connect(refreshReticle))
 			table.insert(characterConnections, humanoid.StateChanged:Connect(refreshReticle))
-			table.insert(characterConnections, humanoid:GetPropertyChangedSignal("SeatPart"):Connect(refreshReticle))
-			table.insert(characterConnections, humanoid:GetPropertyChangedSignal("Sit"):Connect(refreshReticle))
+			table.insert(
+				characterConnections,
+				humanoid:GetPropertyChangedSignal("SeatPart"):Connect(refreshReticle)
+			)
+			table.insert(
+				characterConnections,
+				humanoid:GetPropertyChangedSignal("Sit"):Connect(refreshReticle)
+			)
 			table.insert(characterConnections, humanoid.HealthChanged:Connect(refreshReticle))
 		end
 		for _, child in character:GetChildren() do
@@ -849,7 +991,7 @@ local function receiveSleepResult(origin, endpoint, result, presentedProfile)
 			)
 		)
 	end
-	renderShot(origin, endpoint, presentedProfile)
+	renderShot(origin, endpoint, presentedProfile, type(result) == "table" and result.Slept == true)
 	if finiteVector(origin) then
 		-- Camp Rework weapon feedback (drum snap, petal/piston kick, emitter burst). Presentation only.
 		pcall(WeaponArt.OnShot, origin)
@@ -876,13 +1018,15 @@ local carryConnection = player:GetAttributeChangedSignal("CarriedItemId"):Connec
 local cartConnection = LocalCartState.Changed:Connect(refreshReticle)
 local dazeConnection = player:GetAttributeChangedSignal("Phase10DazeEnd"):Connect(refreshReticle)
 local lastCorrection = player:GetAttribute("Phase10CartCorrectionAt")
-local correctionConnection = player:GetAttributeChangedSignal("Phase10CartCorrectionAt"):Connect(function()
-	local at = player:GetAttribute("Phase10CartCorrectionAt")
-	if type(at) == "number" and (type(lastCorrection) ~= "number" or at > lastCorrection) then
-		lastCorrection = at
-		Feedback.Show("Cart corrected.")
-	end
-end)
+local correctionConnection = player
+	:GetAttributeChangedSignal("Phase10CartCorrectionAt")
+	:Connect(function()
+		local at = player:GetAttribute("Phase10CartCorrectionAt")
+		if type(at) == "number" and (type(lastCorrection) ~= "number" or at > lastCorrection) then
+			lastCorrection = at
+			Feedback.Show("Cart corrected.")
+		end
+	end)
 local characterAddedConnection = player.CharacterAdded:Connect(bindCharacter)
 local characterRemovingConnection = player.CharacterRemoving:Connect(function(character)
 	if character == observedCharacter then
@@ -904,22 +1048,87 @@ ContextActionService:BindAction(ACTION_NAME, function(_: string, inputState: Enu
 	end
 	return Enum.ContextActionResult.Sink
 end, false, InputRegistry.Fire.Keyboard)
-ContextActionService:BindActionAtPriority(MOUNTED_ACTION, function(_: string, state: Enum.UserInputState)
-	if getMountedCart() == nil or not canRequestFire() then
-		return Enum.ContextActionResult.Pass
+ContextActionService:BindActionAtPriority(
+	MOUNTED_ACTION,
+	function(_: string, state: Enum.UserInputState)
+		if getMountedCart() == nil or not canRequestFire() then
+			return Enum.ContextActionResult.Pass
+		end
+		if state == Enum.UserInputState.Begin then
+			triggerStart()
+		elseif state == Enum.UserInputState.End or state == Enum.UserInputState.Cancel then
+			triggerStop()
+		end
+		return Enum.ContextActionResult.Sink
+	end,
+	false,
+	Enum.ContextActionPriority.High.Value + 1,
+	InputRegistry.Fire.Gamepad
+)
+-- Drive-and-Hunt (flag on only): Space also fires while driving. Jump is blocked in the cart
+-- there, so Space is free; G stays bound. On foot Space is still jump.
+local DRIVING_ALT_ACTION = "DriveAndHuntDrivingFire"
+-- R2 on foot was left to Roblox's default tool activation, which did not fire in Play.
+-- Bound explicitly below the mounted action, so R2 behaves the same on foot and in the cart.
+local FOOT_GAMEPAD_ACTION = "DriveAndHuntFootFire"
+if AutoLock.IsEnabled() then
+	ContextActionService:BindActionAtPriority(
+		FOOT_GAMEPAD_ACTION,
+		function(_: string, state: Enum.UserInputState)
+			if
+				getMountedCart() ~= nil
+				or getOnFootHuntingCharacter() == nil
+				or not canRequestFire()
+			then
+				return Enum.ContextActionResult.Pass
+			end
+			if state == Enum.UserInputState.Begin then
+				if os.clock() - lastFootTriggerAt >= FOOT_TRIGGER_DEDUPE_SECONDS then
+					lastFootTriggerAt = os.clock()
+					triggerStart()
+				end
+			elseif state == Enum.UserInputState.End or state == Enum.UserInputState.Cancel then
+				triggerStop()
+			end
+			return Enum.ContextActionResult.Sink
+		end,
+		false,
+		Enum.ContextActionPriority.High.Value,
+		InputRegistry.Fire.Gamepad
+	)
+	-- Playtest Fixes 2 B: with JumpHopOut on, Space is Jump (= HOP OUT) in the cart; G and left
+	-- click still fire.
+	if not require(ReplicatedStorage.Shared.Config.PlaytestFixes2Flags).Part("JumpHopOut") then
+		ContextActionService:BindActionAtPriority(
+			DRIVING_ALT_ACTION,
+			function(_: string, state: Enum.UserInputState)
+				if getMountedCart() == nil or not canRequestFire() then
+					return Enum.ContextActionResult.Pass
+				end
+				if state == Enum.UserInputState.Begin then
+					triggerStart()
+				elseif state == Enum.UserInputState.End or state == Enum.UserInputState.Cancel then
+					triggerStop()
+				end
+				return Enum.ContextActionResult.Sink
+			end,
+			false,
+			Enum.ContextActionPriority.High.Value + 60,
+			InputRegistry.FireWhileDriving.Keyboard
+		)
 	end
-	if state == Enum.UserInputState.Begin then
-		triggerStart()
-	elseif state == Enum.UserInputState.End or state == Enum.UserInputState.Cancel then
-		triggerStop()
-	end
-	return Enum.ContextActionResult.Sink
-end, false, Enum.ContextActionPriority.High.Value + 1, InputRegistry.Fire.Gamepad)
+end
 local mountedMouseConnection = UserInputService.InputBegan:Connect(function(input, processed)
-	if processed or input.UserInputType ~= Enum.UserInputType.MouseButton1 or getMountedCart() == nil then
+	if
+		processed
+		or input.UserInputType ~= Enum.UserInputType.MouseButton1
+		or getMountedCart() == nil
+	then
 		return
 	end
-	if InputPolicy.IsPointerInteraction(player, Vector2.new(input.Position.X, input.Position.Y)) then
+	if
+		InputPolicy.IsPointerInteraction(player, Vector2.new(input.Position.X, input.Position.Y))
+	then
 		return
 	end
 	requestFire()
@@ -931,7 +1140,10 @@ local touchFireConnection = fireButton.Activated:Connect(function()
 end)
 local touchHeldStart = fireButton.InputBegan:Connect(function(input)
 	if
-		(input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1)
+		(
+			input.UserInputType == Enum.UserInputType.Touch
+			or input.UserInputType == Enum.UserInputType.MouseButton1
+		)
 		and selectedProfile().family == "Gun"
 		and touchFireInput == nil
 	then
@@ -955,14 +1167,22 @@ local touchHeldEnd = fireButton.InputEnded:Connect(function(input)
 		triggerStop()
 	end
 end)
-local preferredInputConnection = UserInputService:GetPropertyChangedSignal("PreferredInput"):Connect(refreshReticle)
+local preferredInputConnection = UserInputService:GetPropertyChangedSignal("PreferredInput")
+	:Connect(refreshReticle)
 local function updateTouchAimPresentation()
 	aimButton.Text = if touchAimToggled then "Aim On" else "Aim"
-	aimButton.BackgroundColor3 = if touchAimToggled then Color3.fromRGB(35, 90, 110) else Color3.fromRGB(30, 36, 42)
+	aimButton.BackgroundColor3 = if touchAimToggled
+		then Color3.fromRGB(35, 90, 110)
+		else Color3.fromRGB(30, 36, 42)
 end
 local touchAimConnection = aimButton.Activated:Connect(function()
 	local cart = getMountedCart()
-	if not cart or MountedAimState.GetCart() ~= cart or not canRequestFire() then
+	if
+		not cart
+		or MountedAimState.GetCart() ~= cart
+		or not canRequestFire()
+		or AutoLock.IsEnabled()
+	then
 		return
 	end
 	touchAimToggled = not touchAimToggled
@@ -984,7 +1204,13 @@ end)
 RunService:BindToRenderStep(MOUNTED_PREVIEW_STEP, Enum.RenderPriority.Camera.Value + 2, function()
 	local cart = getMountedCart()
 	local camera = Workspace.CurrentCamera
-	if destroyed or not cart or not camera or not MountedAimState.IsActive(cart) or not canRequestFire() then
+	if
+		destroyed
+		or not cart
+		or not camera
+		or not MountedAimState.IsActive(cart)
+		or not canRequestFire()
+	then
 		clearMountedPreview()
 		return
 	end
@@ -1008,7 +1234,8 @@ RunService:BindToRenderStep(MOUNTED_PREVIEW_STEP, Enum.RenderPriority.Camera.Val
 	if ownCart and ownCart ~= cart and ownCart:GetAttribute("OwnerUserId") == player.UserId then
 		table.insert(excluded, ownCart)
 	end
-	params.FilterDescendantsInstances, params.IgnoreWater, params.RespectCanCollide = excluded, false, false
+	params.FilterDescendantsInstances, params.IgnoreWater, params.RespectCanCollide =
+		excluded, false, false
 	local preview = MountedShotPreview.Resolve(
 		origin,
 		snapshot.CrosshairRay,
@@ -1022,10 +1249,12 @@ RunService:BindToRenderStep(MOUNTED_PREVIEW_STEP, Enum.RenderPriority.Camera.Val
 		return
 	end
 	local screen, visible = camera:WorldToViewportPoint(preview.Endpoint)
-	impactDot.Position, impactDot.Visible = UDim2.fromOffset(screen.X, screen.Y), visible and screen.Z > 0
-	impactDot.BackgroundColor3 = if preview.Blocked then Color3.fromRGB(255, 70, 65) else Color3.fromRGB(130, 240, 255)
+	impactDot.Position, impactDot.Visible =
+		UDim2.fromOffset(screen.X, screen.Y), visible and screen.Z > 0
+	impactDot.BackgroundColor3 = if preview.Blocked
+		then Color3.fromRGB(255, 70, 65)
+		else Color3.fromRGB(130, 240, 255)
 	impactDot:SetAttribute("Blocked", preview.Blocked)
-
 end)
 
 local function protected(actor: Player?): boolean
@@ -1078,10 +1307,18 @@ local contextConnection = RunService.RenderStepped:Connect(function()
 	local theft = selected.Kind == "Cargo"
 		or selected.Kind == "Held"
 		or (victim and type(victim:GetAttribute("CarriedItemId")) == "string")
-	local full = theft and cart ~= nil and type(capacity) == "number" and type(count) == "number" and count >= capacity
-	local color = if unavailable or full then Color3.fromRGB(255, 216, 77) else Color3.fromRGB(110, 255, 84)
+	local full = theft
+		and cart ~= nil
+		and type(capacity) == "number"
+		and type(count) == "number"
+		and count >= capacity
+	local color = if unavailable or full
+		then Color3.fromRGB(255, 216, 77)
+		else Color3.fromRGB(110, 255, 84)
 	targetHighlight.Adornee, targetHighlight.OutlineColor, targetHighlight.Enabled =
-		require(script.Parent.CreaturePresentationController).ResolveVisual(selected.Model), color, true
+		require(script.Parent.CreaturePresentationController).ResolveVisual(selected.Model),
+		color,
+		true
 	targetLabel.Text, targetLabel.TextColor3, targetLabel.Visible =
 		if full
 			then "Cargo full"
@@ -1156,4 +1393,6 @@ script.Destroying:Connect(function()
 	targetHighlight:Destroy()
 	ContextActionService:UnbindAction(ACTION_NAME)
 	ContextActionService:UnbindAction(MOUNTED_ACTION)
+	ContextActionService:UnbindAction(DRIVING_ALT_ACTION)
+	ContextActionService:UnbindAction(FOOT_GAMEPAD_ACTION)
 end)

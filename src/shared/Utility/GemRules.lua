@@ -372,6 +372,20 @@ function Rules.ApplyShopItem(data: any, itemId: any, at: number): (boolean, any)
 		end
 		p.OwnedWeaponIds[item.weaponId] = true
 		result.weaponId = item.weaponId
+	elseif item.kind == "Trail" then
+		-- Playtest Fixes 2 Part G: permanent player trail (Phase13.OwnedTrails, see MigrateLegs).
+		if not require(script.Parent.Parent.Config.LegsTrainingFlags).Enabled() then
+			return false, { code = "UNAVAILABLE" }
+		end
+		local p = data.Phase13
+		if type(p) ~= "table" or type(p.OwnedTrails) ~= "table" then
+			return false, { code = "PROFILE_NOT_READY" }
+		end
+		if p.OwnedTrails[item.trailId] == true then
+			return false, { code = "ALREADY_OWNED" }
+		end
+		p.OwnedTrails[item.trailId] = true
+		result.trailId = item.trailId
 	else
 		return false, { code = "UNKNOWN_ITEM" }
 	end
@@ -394,15 +408,27 @@ function Rules.Snapshot(data: any, at: number?): any
 	local breakdown = Rules.IncomeBreakdown(data, now)
 	local shop = {}
 	local campRework = CampFlags.CampRework()
+	local legs = require(script.Parent.Parent.Config.LegsTrainingFlags).Enabled()
 	for _, item in Economy.GemShop do
 		if item.kind == "Weapon" and not campRework then
 			continue
 		end
-		local owned = item.kind == "Weapon"
-			and type(data) == "table"
-			and type(data.Phase13) == "table"
-			and type(data.Phase13.OwnedWeaponIds) == "table"
-			and data.Phase13.OwnedWeaponIds[item.weaponId] == true
+		if item.kind == "Trail" and not legs then
+			continue
+		end
+		local p13 = type(data) == "table" and type(data.Phase13) == "table" and data.Phase13 or nil
+		local owned = (
+			item.kind == "Weapon"
+			and p13 ~= nil
+			and type(p13.OwnedWeaponIds) == "table"
+			and p13.OwnedWeaponIds[item.weaponId] == true
+		)
+			or (
+				item.kind == "Trail"
+				and p13 ~= nil
+				and type(p13.OwnedTrails) == "table"
+				and p13.OwnedTrails[item.trailId] == true
+			)
 		table.insert(shop, {
 			id = item.id,
 			kind = item.kind,
@@ -414,6 +440,7 @@ function Rules.Snapshot(data: any, at: number?): any
 			affordable = Rules.Balance(data) >= item.priceGems,
 			order = item.order,
 			weaponId = item.weaponId,
+			trailId = item.trailId,
 			owned = owned or nil,
 		})
 	end

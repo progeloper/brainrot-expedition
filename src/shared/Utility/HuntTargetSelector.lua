@@ -11,12 +11,13 @@ export type Candidate = {
 	alreadyHit: boolean, -- this player has hit it and it is still awake
 	rarityRank: number, -- 1 = Common ... maxRank
 	lineOfSight: boolean,
+	star: boolean?, -- Core Loop V2 (B5): a Star; scored 1.0, others 0.85 when Weights.star is set
 	-- Optional presentation inputs for the pickers below.
 	screen: Vector2?,
 	pointerAngle: number?, -- radians from the mouse ray
 }
 
-export type Weights = { distance: number, facing: number, alreadyHit: number, rarity: number }
+export type Weights = { distance: number, facing: number, alreadyHit: number, rarity: number, star: number? }
 
 export type Config = {
 	Weights: Weights,
@@ -69,10 +70,13 @@ function Selector.Score(candidate: Candidate, context: Context, config: Config):
 	local span = math.max(config.MaxRarityRank - 1, 1)
 	local rarity = config.RarityFloor
 		+ (1 - config.RarityFloor) * math.clamp((candidate.rarityRank - 1) / span, 0, 1)
+	-- Weight 0 (or absent) leaves the score exactly as before Core Loop V2.
+	local star = if candidate.star then 1 else 0.85
 	return term(distance, weights.distance)
 		* term(facing, weights.facing)
 		* term(hit, weights.alreadyHit)
 		* term(rarity, weights.rarity)
+		* term(star, weights.star or 0)
 end
 
 -- In range, and inside the mounted firing arc. Line of sight is handled separately so the

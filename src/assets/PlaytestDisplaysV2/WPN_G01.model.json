@@ -1,0 +1,1845 @@
+{
+ "className": "Model",
+ "attributes": {
+  "Family": "Gun",
+  "Tier": 1,
+  "WeaponId": "WPN_G01",
+  "Special": false,
+  "ArtVersion": 2
+ },
+ "properties": {
+  "WorldPivotData": {
+   "OptionalCFrame": {
+    "position": [
+     0,
+     0,
+     0
+    ],
+    "orientation": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  }
+ },
+ "children": [
+  {
+   "className": "Part",
+   "name": "Riser",
+   "properties": {
+    "Size": [
+     0.8400000000000001,
+     1.0499999999999998,
+     2.4000000000000004
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       0.375,
+       -0.15000000000000002
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.47843137254901963,
+     0.2901960784313726,
+     0.13333333333333333
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": true,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "Texture",
+     "name": "Studs_Left",
+     "properties": {
+      "Texture": "rbxassetid://126387978066468",
+      "Face": "Left",
+      "StudsPerTileU": 0.5249999999999999,
+      "StudsPerTileV": 0.5249999999999999,
+      "Color3": [
+       0.47843137254901963,
+       0.2901960784313726,
+       0.13333333333333333
+      ],
+      "Transparency": 0.35
+     },
+     "children": []
+    },
+    {
+     "className": "Texture",
+     "name": "Studs_Right",
+     "properties": {
+      "Texture": "rbxassetid://126387978066468",
+      "Face": "Right",
+      "StudsPerTileU": 0.5249999999999999,
+      "StudsPerTileV": 0.5249999999999999,
+      "Color3": [
+       0.47843137254901963,
+       0.2901960784313726,
+       0.13333333333333333
+      ],
+      "Transparency": 0.35
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "className": "Part",
+   "name": "RiserCap",
+   "properties": {
+    "Size": [
+     0.8999999999999999,
+     0.15000000000000002,
+     2.4000000000000004
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       0.9450000000000001,
+       -0.15000000000000002
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.8156862745098039,
+     0.5411764705882353,
+     0.27058823529411763
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": true,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "Texture",
+     "name": "Studs_Top",
+     "properties": {
+      "Texture": "rbxassetid://126387978066468",
+      "Face": "Top",
+      "StudsPerTileU": 0.5249999999999999,
+      "StudsPerTileV": 0.5249999999999999,
+      "Color3": [
+       0.8156862745098039,
+       0.5411764705882353,
+       0.27058823529411763
+      ],
+      "Transparency": 0.35
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "className": "Part",
+   "name": "Belly",
+   "properties": {
+    "Size": [
+     0.75,
+     0.15000000000000002,
+     2.25
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       -0.195,
+       -0.15000000000000002
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.3058823529411765,
+     0.1803921568627451,
+     0.0784313725490196
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": true,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Limb",
+   "properties": {
+    "Size": [
+     0.6000000000000001,
+     0.6000000000000001,
+     3.0
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       0.54,
+       -2.7750000000000004
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.6274509803921569,
+     0.396078431372549,
+     0.17254901960784313
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": true,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "Texture",
+     "name": "Studs_Left",
+     "properties": {
+      "Texture": "rbxassetid://126387978066468",
+      "Face": "Left",
+      "StudsPerTileU": 0.5249999999999999,
+      "StudsPerTileV": 0.5249999999999999,
+      "Color3": [
+       0.6274509803921569,
+       0.396078431372549,
+       0.17254901960784313
+      ],
+      "Transparency": 0.35
+     },
+     "children": []
+    },
+    {
+     "className": "Texture",
+     "name": "Studs_Right",
+     "properties": {
+      "Texture": "rbxassetid://126387978066468",
+      "Face": "Right",
+      "StudsPerTileU": 0.5249999999999999,
+      "StudsPerTileV": 0.5249999999999999,
+      "Color3": [
+       0.6274509803921569,
+       0.396078431372549,
+       0.17254901960784313
+      ],
+      "Transparency": 0.35
+     },
+     "children": []
+    },
+    {
+     "className": "Texture",
+     "name": "Studs_Top",
+     "properties": {
+      "Texture": "rbxassetid://126387978066468",
+      "Face": "Top",
+      "StudsPerTileU": 0.5249999999999999,
+      "StudsPerTileV": 0.5249999999999999,
+      "Color3": [
+       0.6274509803921569,
+       0.396078431372549,
+       0.17254901960784313
+      ],
+      "Transparency": 0.35
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "className": "Part",
+   "name": "Collar",
+   "properties": {
+    "Size": [
+     0.6900000000000001,
+     0.6900000000000001,
+     0.15000000000000002
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       0.54,
+       -1.7999999999999998
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.11372549019607843,
+     0.12941176470588237,
+     0.2
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Collar",
+   "properties": {
+    "Size": [
+     0.6900000000000001,
+     0.6900000000000001,
+     0.15000000000000002
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       0.54,
+       -3.4499999999999997
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.11372549019607843,
+     0.12941176470588237,
+     0.2
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "HeadBase",
+   "properties": {
+    "Size": [
+     0.75,
+     0.75,
+     0.39
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       0.54,
+       -4.38
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.8156862745098039,
+     0.5411764705882353,
+     0.27058823529411763
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Head2",
+   "properties": {
+    "Size": [
+     0.44999999999999996,
+     0.44999999999999996,
+     0.09
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       0.54,
+       -4.6049999999999995
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.5529411764705883,
+     1.0,
+     0.22745098039215686
+    ],
+    "Material": "Neon",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Vine",
+   "properties": {
+    "Size": [
+     0.07500000000000001,
+     0.07500000000000001,
+     2.7
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.33,
+       0.63,
+       -2.7750000000000004
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.23137254901960785,
+     0.8196078431372549,
+     0.43529411764705883
+    ],
+    "Material": "Neon",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": true,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Vine",
+   "properties": {
+    "Size": [
+     0.07500000000000001,
+     0.07500000000000001,
+     2.7
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.33,
+       0.44999999999999996,
+       -2.7750000000000004
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.23137254901960785,
+     0.8196078431372549,
+     0.43529411764705883
+    ],
+    "Material": "Neon",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": true,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "VineLeafA",
+   "properties": {
+    "Size": [
+     0.07500000000000001,
+     0.24,
+     0.36
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.36,
+       0.75,
+       -2.0999999999999996
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.5529411764705883,
+     1.0,
+     0.22745098039215686
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "VineLeafB",
+   "properties": {
+    "Size": [
+     0.07500000000000001,
+     0.24,
+     0.36
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.36,
+       0.33,
+       -3.3000000000000003
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.23137254901960785,
+     0.8196078431372549,
+     0.43529411764705883
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Butt",
+   "properties": {
+    "Size": [
+     0.6900000000000001,
+     0.8400000000000001,
+     1.2000000000000002
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       0.30000000000000004,
+       1.5750000000000002
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.6274509803921569,
+     0.396078431372549,
+     0.17254901960784313
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": true,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "Texture",
+     "name": "Studs_Left",
+     "properties": {
+      "Texture": "rbxassetid://126387978066468",
+      "Face": "Left",
+      "StudsPerTileU": 0.5249999999999999,
+      "StudsPerTileV": 0.5249999999999999,
+      "Color3": [
+       0.6274509803921569,
+       0.396078431372549,
+       0.17254901960784313
+      ],
+      "Transparency": 0.35
+     },
+     "children": []
+    },
+    {
+     "className": "Texture",
+     "name": "Studs_Right",
+     "properties": {
+      "Texture": "rbxassetid://126387978066468",
+      "Face": "Right",
+      "StudsPerTileU": 0.5249999999999999,
+      "StudsPerTileV": 0.5249999999999999,
+      "Color3": [
+       0.6274509803921569,
+       0.396078431372549,
+       0.17254901960784313
+      ],
+      "Transparency": 0.35
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "className": "Part",
+   "name": "RiserCap",
+   "properties": {
+    "Size": [
+     0.72,
+     0.8699999999999999,
+     0.15000000000000002
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       0.30000000000000004,
+       2.25
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.8156862745098039,
+     0.5411764705882353,
+     0.27058823529411763
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "ShelfMoss",
+   "properties": {
+    "Size": [
+     0.6000000000000001,
+     0.07500000000000001,
+     0.8999999999999999
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       0.75,
+       1.5750000000000002
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.5529411764705883,
+     1.0,
+     0.22745098039215686
+    ],
+    "Material": "Neon",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Trigger",
+   "properties": {
+    "Size": [
+     0.12,
+     0.36,
+     0.18
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       -0.375,
+       0.15000000000000002
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.11372549019607843,
+     0.12941176470588237,
+     0.2
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "TriggerGuard",
+   "properties": {
+    "Size": [
+     0.15000000000000002,
+     0.15000000000000002,
+     0.75
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       -0.675,
+       0.22499999999999998
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.11372549019607843,
+     0.12941176470588237,
+     0.2
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "LeafEmblem",
+   "properties": {
+    "Size": [
+     0.06,
+     0.51,
+     0.75
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.43499999999999994,
+       0.375,
+       -0.15000000000000002
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.23137254901960785,
+     0.8196078431372549,
+     0.43529411764705883
+    ],
+    "Material": "Neon",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "LeafEmblem",
+   "properties": {
+    "Size": [
+     0.06,
+     0.51,
+     0.75
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       -0.43499999999999994,
+       0.375,
+       -0.15000000000000002
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.23137254901960785,
+     0.8196078431372549,
+     0.43529411764705883
+    ],
+    "Material": "Neon",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Crest1",
+   "properties": {
+    "Size": [
+     0.21000000000000002,
+     0.21000000000000002,
+     0.44999999999999996
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       1.08,
+       -1.125
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.23137254901960785,
+     0.8196078431372549,
+     0.43529411764705883
+    ],
+    "Material": "Neon",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "WrapBandT",
+   "properties": {
+    "Size": [
+     0.8999999999999999,
+     0.09,
+     0.18
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       0.99,
+       0.8999999999999999
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.23137254901960785,
+     0.8196078431372549,
+     0.43529411764705883
+    ],
+    "Material": "Neon",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Stem",
+   "properties": {
+    "Size": [
+     0.36,
+     0.51,
+     0.36
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       1.2750000000000001,
+       0.30000000000000004
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.9686274509803922,
+     0.9607843137254902,
+     0.9882352941176471
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Gill",
+   "properties": {
+    "Size": [
+     0.78,
+     0.09,
+     0.78
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       1.5750000000000002,
+       0.30000000000000004
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.9058823529411765,
+     0.8941176470588236,
+     0.8117647058823529
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Cap1",
+   "properties": {
+    "Size": [
+     0.8999999999999999,
+     0.27,
+     0.8999999999999999
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       1.755,
+       0.30000000000000004
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.9411764705882353,
+     0.1568627450980392,
+     0.23529411764705882
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "Texture",
+     "name": "Studs_Top",
+     "properties": {
+      "Texture": "rbxassetid://126387978066468",
+      "Face": "Top",
+      "StudsPerTileU": 0.5249999999999999,
+      "StudsPerTileV": 0.5249999999999999,
+      "Color3": [
+       0.9411764705882353,
+       0.1568627450980392,
+       0.23529411764705882
+      ],
+      "Transparency": 0.35
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "className": "Part",
+   "name": "Cap2",
+   "properties": {
+    "Size": [
+     0.6000000000000001,
+     0.21000000000000002,
+     0.6000000000000001
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       1.995,
+       0.30000000000000004
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.9411764705882353,
+     0.1568627450980392,
+     0.23529411764705882
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Cap3",
+   "properties": {
+    "Size": [
+     0.30000000000000004,
+     0.15000000000000002,
+     0.30000000000000004
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       2.1750000000000003,
+       0.30000000000000004
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.9411764705882353,
+     0.1568627450980392,
+     0.23529411764705882
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "GripCore",
+   "properties": {
+    "Size": [
+     0.51,
+     1.4249999999999998,
+     0.6000000000000001
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       -0.9299999999999999,
+       0.75
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.9781476007338057,
+        -0.20791169081775934
+       ],
+       [
+        0.0,
+        0.20791169081775934,
+        0.9781476007338057
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.47843137254901963,
+     0.2901960784313726,
+     0.13333333333333333
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": true,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": [
+    {
+     "className": "Texture",
+     "name": "Studs_Left",
+     "properties": {
+      "Texture": "rbxassetid://126387978066468",
+      "Face": "Left",
+      "StudsPerTileU": 0.5249999999999999,
+      "StudsPerTileV": 0.5249999999999999,
+      "Color3": [
+       0.47843137254901963,
+       0.2901960784313726,
+       0.13333333333333333
+      ],
+      "Transparency": 0.35
+     },
+     "children": []
+    },
+    {
+     "className": "Texture",
+     "name": "Studs_Right",
+     "properties": {
+      "Texture": "rbxassetid://126387978066468",
+      "Face": "Right",
+      "StudsPerTileU": 0.5249999999999999,
+      "StudsPerTileV": 0.5249999999999999,
+      "Color3": [
+       0.47843137254901963,
+       0.2901960784313726,
+       0.13333333333333333
+      ],
+      "Transparency": 0.35
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "className": "Part",
+   "name": "Wrap",
+   "properties": {
+    "Size": [
+     0.6000000000000001,
+     0.18,
+     0.6900000000000001
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       -0.5191780076918016,
+       0.8373229101434589
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.9781476007338057,
+        -0.20791169081775934
+       ],
+       [
+        0.0,
+        0.20791169081775934,
+        0.9781476007338057
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.9058823529411765,
+     0.8941176470588236,
+     0.8117647058823529
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Wrap",
+   "properties": {
+    "Size": [
+     0.6000000000000001,
+     0.18,
+     0.6900000000000001
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       -0.8419667159339576,
+       0.7687120521735984
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.9781476007338057,
+        -0.20791169081775934
+       ],
+       [
+        0.0,
+        0.20791169081775934,
+        0.9781476007338057
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.8117647058823529,
+     0.788235294117647,
+     0.6588235294117647
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "Wrap",
+   "properties": {
+    "Size": [
+     0.6000000000000001,
+     0.18,
+     0.6900000000000001
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       -1.1647554241761133,
+       0.7001011942037377
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.9781476007338057,
+        -0.20791169081775934
+       ],
+       [
+        0.0,
+        0.20791169081775934,
+        0.9781476007338057
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.9058823529411765,
+     0.8941176470588236,
+     0.8117647058823529
+    ],
+    "Material": "SmoothPlastic",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  },
+  {
+   "className": "Part",
+   "name": "WrapBandB",
+   "properties": {
+    "Size": [
+     0.63,
+     0.09,
+     0.72
+    ],
+    "CFrame": {
+     "CFrame": {
+      "position": [
+       0.0,
+       -1.5462329884622974,
+       0.6190156347848116
+      ],
+      "orientation": [
+       [
+        1.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.9781476007338057,
+        -0.20791169081775934
+       ],
+       [
+        0.0,
+        0.20791169081775934,
+        0.9781476007338057
+       ]
+      ]
+     }
+    },
+    "Color": [
+     0.23137254901960785,
+     0.8196078431372549,
+     0.43529411764705883
+    ],
+    "Material": "Neon",
+    "Anchored": true,
+    "CanCollide": false,
+    "CanQuery": false,
+    "CanTouch": false,
+    "Massless": true,
+    "CastShadow": false,
+    "TopSurface": "Smooth",
+    "BottomSurface": "Smooth"
+   },
+   "children": []
+  }
+ ]
+}

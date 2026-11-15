@@ -124,6 +124,35 @@ local Economy = {
 			priceGems = 900,
 			order = 7,
 		},
+		-- Playtest Fixes 2 Part G (LegsTrainingV1Enabled): player trails. Permanent; one equipped at a time
+		-- (Inventory > Trails). trailId matches Config/LegsTraining.
+		{
+			id = "TRAIL_RAINBOW",
+			kind = "Trail",
+			trailId = "TRAIL_RAINBOW",
+			name = "Rainbow Trail",
+			description = "A rainbow streak behind you on foot. Yours forever.",
+			priceGems = 150,
+			order = 8,
+		},
+		{
+			id = "TRAIL_GLITCH",
+			kind = "Trail",
+			trailId = "TRAIL_GLITCH",
+			name = "Glitch Trail",
+			description = "A flickering glitch streak behind you on foot. Yours forever.",
+			priceGems = 300,
+			order = 9,
+		},
+		{
+			id = "TRAIL_FIRE",
+			kind = "Trail",
+			trailId = "TRAIL_FIRE",
+			name = "Fire Trail",
+			description = "A blazing streak behind you on foot. Yours forever.",
+			priceGems = 600,
+			order = 10,
+		},
 	},
 
 	-- Server-wide mutation luck (bought with Gems or Robux). Applies to new spawns

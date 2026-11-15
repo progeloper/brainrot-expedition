@@ -27,6 +27,12 @@ local AudioCue = require(script.Parent.Parent.Utility.AudioCue)
 local AutoLock = require(script.Parent.AutoLockController)
 local Hints = require(script.Parent.DriveAndHuntHints)
 local ScoopFx = require(script.Parent.ScoopFxController)
+-- Playtest Fixes Part D (flag-gated): STOP while training, TrainPlace pop + camera ease.
+local PlaytestFlags = require(Shared.Config.PlaytestFixesFlags)
+local TrainConfig = require(Shared.Config.PlaytestFixes).TrainPlace
+-- Playtest Fixes 2 Part B (flag-gated): Jump in your own cart sends the existing HOP OUT request.
+local Fixes2Flags = require(Shared.Config.PlaytestFixes2Flags)
+local JumpConfig = require(Shared.Config.PlaytestFixes2).JumpHopOut
 
 local SWITCH_ACTION = "DriveAndHuntSwitch"
 local JUMP_SINK = "DriveAndHuntJumpSink"
@@ -62,6 +68,8 @@ local pulseToken = 0
 local carryPulse: (() -> ())? = nil
 local keyCap: TextLabel? = nil
 local lastBystanderPuffAt = -math.huge
+local lastJumpHopAt = -math.huge
+local request: () -> ()
 
 --------------------------------------------------------------------------------
 -- State
@@ -139,9 +147,36 @@ local function touchJumpButton(): GuiObject?
 	return if jump and jump:IsA("GuiObject") then jump else nil
 end
 
+-- B: Jump (Space, Cross/A, the touch Jump button) while driving = the HOP OUT button. Ignored for
+-- the seated grace, and at most one request per MinIntervalSeconds.
+local function jumpHopOut()
+	if not Fixes2Flags.Part("JumpHopOut") or not isDriving() then
+		return
+	end
+	local now = os.clock()
+	if
+		not Rules.JumpHopAllowed(
+			now,
+			seatedAt,
+			lastJumpHopAt,
+			Config.HopOut.SeatedGraceSeconds,
+			JumpConfig.MinIntervalSeconds
+		)
+	then
+		return
+	end
+	local state = current
+	if not state or state.action ~= "HopOut" then
+		return
+	end
+	lastJumpHopAt = now
+	request()
+end
+
 local function setJumpBlocked(blocked: boolean)
+	local hopOnJump = Fixes2Flags.Part("JumpHopOut")
 	if jumpBlocked == blocked then
-		if blocked then
+		if blocked and not hopOnJump then
 			-- The default touch controls re-show their jump button; keep it hidden while driving.
 			local jump = touchJumpButton()
 			if jump and jump.Visible then
@@ -154,7 +189,12 @@ local function setJumpBlocked(blocked: boolean)
 	local humanoid = humanoidOf()
 	if blocked then
 		-- CartInputController binds nothing to Space/jump, so sinking it removes no cart control.
-		ContextActionService:BindActionAtPriority(JUMP_SINK, function()
+		-- With JumpHopOut the sink becomes the HOP OUT key (Jumping stays disabled, so the seat never
+		-- throws the player out by itself: the server places them beside the cart).
+		ContextActionService:BindActionAtPriority(JUMP_SINK, function(_, inputState)
+			if hopOnJump and inputState == Enum.UserInputState.Begin then
+				jumpHopOut()
+			end
 			return Enum.ContextActionResult.Sink
 		end, false, Enum.ContextActionPriority.High.Value + 50, Enum.PlayerActions.CharacterJump)
 		if humanoid then
@@ -211,7 +251,7 @@ local function pulse(times: number?)
 	end)
 end
 
-local function request()
+request = function()
 	local remote, state = requestRemote, current
 	if not remote or not state or not state.enabled or not state.action then
 		if state and not state.enabled and holder then
@@ -222,6 +262,10 @@ local function request()
 	if state.action == "HopOut" then
 		-- A double tap must not bounce the player out the moment they are seated.
 		if os.clock() - seatedAt < Config.HopOut.SeatedGraceSeconds then
+			return
+		end
+		if PlaytestFlags.Part("TrainPlace") and player:GetAttribute("TrainingActive") == true then
+			remote:FireServer("TrainStop") -- STOP: off the rollers onto clear deck
 			return
 		end
 		-- The server lands the player on the side of the cart nearest the locked brainrot.
@@ -342,9 +386,13 @@ local function render(state: Rules.SwitchState)
 	if keyCap then
 		keyCap.Visible = UserInputService.PreferredInput == Enum.PreferredInput.KeyboardAndMouse
 	end
-	if shownState ~= state.state or shownEnabled ~= state.enabled then
-		shownState, shownEnabled = state.state, state.enabled
-		button.setText(LABELS[state.state] or state.state)
+	local training = state.state == "HopOut"
+		and PlaytestFlags.Part("TrainPlace")
+		and player:GetAttribute("TrainingActive") == true
+	local shownKey = if training then "Stop" else state.state
+	if shownState ~= shownKey or shownEnabled ~= state.enabled then
+		shownState, shownEnabled = shownKey, state.enabled
+		button.setText(if training then "STOP" else (LABELS[state.state] or state.state))
 		button.setVariant(if state.enabled then VARIANTS[state.state] else "locked")
 		if carryPulse then
 			carryPulse()
@@ -493,17 +541,47 @@ local function pop(cart: Model)
 	end
 end
 
+-- Playtest Fixes D3: after the TrainPlace pop, ease to a 3/4 view of the cart and the stall's
+-- speedometer, hold briefly, then hand the camera back.
+local function easeToTraining(cart: Model)
+	local camera = Workspace.CurrentCamera
+	if not camera or Juice.reduced() then
+		return
+	end
+	local pivot = cart:GetPivot()
+	local eye = pivot:PointToWorldSpace(TrainConfig.CameraOffset)
+	local target = pivot.Position + Vector3.new(0, 2.5, 0)
+	camera.CameraType = Enum.CameraType.Scriptable
+	TweenService:Create(
+		camera,
+		TweenInfo.new(
+			TrainConfig.CameraEaseSeconds,
+			Enum.EasingStyle.Quad,
+			Enum.EasingDirection.Out
+		),
+		{ CFrame = CFrame.lookAt(eye, target) }
+	):Play()
+	task.delay(TrainConfig.CameraEaseSeconds + TrainConfig.CameraHoldSeconds, function()
+		if camera.CameraType == Enum.CameraType.Scriptable then
+			camera.CameraType = Enum.CameraType.Custom
+		end
+	end)
+end
+
 local function onFx(payload: any)
 	if type(payload) ~= "table" then
 		return
 	end
 	local kind = payload.kind
-	if kind == "Launch" or kind == "Call" or kind == "LoadAndGo" then
+	if kind == "Launch" or kind == "Call" or kind == "LoadAndGo" or kind == "TrainPlace" then
 		local cart = payload.cart
 		if typeof(cart) == "Instance" and cart:IsA("Model") then
 			seatedAt = os.clock()
 			pop(cart)
 			AudioCue.Play("S8_" .. math.random(1, 2), { volume = 0.9 })
+			if kind == "TrainPlace" then
+				easeToTraining(cart)
+			end
 		end
 	elseif kind == "Puff" then
 		if typeof(payload.at) == "Vector3" then
@@ -612,6 +690,10 @@ function Controller.Start()
 		)
 	end
 	table.insert(connections, RunService.Heartbeat:Connect(step))
+	if Fixes2Flags.Part("JumpHopOut") then
+		-- The touch Jump button never reaches the CAS sink; JumpRequest covers it (debounced above).
+		table.insert(connections, UserInputService.JumpRequest:Connect(jumpHopOut))
+	end
 	table.insert(
 		connections,
 		player.CharacterAdded:Connect(function()

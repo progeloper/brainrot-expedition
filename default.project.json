@@ -88,10 +88,6 @@
         "ModelStreamingBehavior": "Improved",
         "StreamOutBehavior": "Opportunistic"
       },
-      "MapBlockout": {
-        "$path": "assets/native/phase14_20261023/MapBlockout.rbxm",
-        "$ignoreUnknownInstances": true
-      },
       "Phase12Burrows": {
         "$path": "assets/native/phase14_20261023/Phase12Burrows.rbxm"
       },

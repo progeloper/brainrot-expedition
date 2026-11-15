@@ -312,4 +312,16 @@ function Rules.InScoopReach(shape: ScoopShape, localX: number, localZ: number): 
 	return localX * localX + along * along <= shape.Lateral * shape.Lateral
 end
 
+-- Playtest Fixes 2 Part B: may a Jump at `now` send HOP OUT? Ignored for `grace` seconds after
+-- sitting down, and at most one request per `minInterval`.
+function Rules.JumpHopAllowed(
+	now: number,
+	seatedSince: number,
+	lastSent: number,
+	grace: number,
+	minInterval: number
+): boolean
+	return now - seatedSince >= grace and now - lastSent >= minInterval
+end
+
 return table.freeze(Rules)

@@ -1,0 +1,66 @@
+--!strict
+-- The shared arcade contract. Walk reference is the authored unbuffed setting,
+-- never a transient humanoid velocity or buff. Existing economy modifiers remain
+-- in CartPerformanceResolver/CartTeamPerformance and are applied exactly once.
+local walkSpeed = game:GetService("StarterPlayer").CharacterWalkSpeed
+assert(walkSpeed == walkSpeed and walkSpeed > 0 and walkSpeed <= 100, "Invalid ordinary walking configuration")
+local Config = {
+    Version = 1,
+    OrdinaryWalkSpeed = walkSpeed,
+    StarterSpeed = math.max(48, walkSpeed * 2.5),
+    ForwardAcceleration = 80,
+    Braking = 140,
+    Deadzone = 0.10,
+    SpeedExponent = 1.25,
+    LowTurnDegrees = 300,
+    CruiseTurnDegrees = 170,
+    LongitudinalTau = 0.10,
+    LateralTau = 0.07,
+    NormalTau = 0.06,
+    MinimumLateralAcceleration = 160,
+    MaximumLateralAcceleration = 1800,
+    ReversalEnter = math.rad(110),
+    ReversalLeave = math.rad(75),
+    AlignmentAtRightAngle = 0.70,
+    SettleSpeed = 0.5,
+    MaximumFrameGap = 0.20,
+    SupportHz = 30,
+    MaximumSupportSlope = 40,
+    SupportOriginLift = 0.30,
+    SupportGap = 0.38,
+    HullHeight = 0.60,
+    HullInset = 0.12,
+    CollisionSkin = 0.12,
+    MaximumSweepDistance = 48,
+    MinimumWallUpDot = 0.55,
+    RootMass = 42,
+    ContactFriction = 0.08,
+    OrientationResponsiveness = 55,
+    AngularAcceleration = 100,
+    MaximumTorque = 50000000,
+    IntentHz = 10,
+    LeaseSeconds = 3, -- must outlast an ordinary client frame hitch; 1 s dropped drivers mid-drive
+    NeutralCameraDelay = 0.30,
+    ManualCameraGrace = 1,
+    CameraPositionTau = 0.09,
+    CameraYawTau = 0.12,
+    CameraFovAddition = 8,
+    BurstFovAddition = 2,
+    CameraDistanceAdd = 6,
+    CameraMinimumDistance = 12,
+    CameraMaximumDistance = 24,
+    CameraHeightAdd = 4,
+    CameraMinimumHeight = 5,
+    CameraMaximumHeight = 9,
+    CameraLookAheadSeconds = 0.12,
+    CameraMinimumLookAhead = 3,
+    CameraMaximumLookAhead = 10,
+    -- The look-ahead point and framing distance follow the chassis heading, which
+    -- turns at up to LowTurnDegrees; both are eased so a turn does not swing the view.
+    CameraLookAheadTau = 0.35,
+    CameraFitDistanceTau = 0.40,
+    ReadinessLatency = 2, -- conservative assumption, not a measurement
+    StreamingRequestSeconds = 1,
+    StreamingRequestTimeout = 2,
+}
+return table.freeze(Config)

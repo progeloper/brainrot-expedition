@@ -39,7 +39,10 @@ function Logger:Error(message: string, ...: any)
 end
 
 function Logger:Debug(message: string, ...: any)
-	if not Environment.EnableVerboseLogging then
+	if
+		not Environment.EnableVerboseLogging
+		or game:GetAttribute("BrainrotTestDiagnosticsDisabled") == true
+	then
 		return
 	end
 

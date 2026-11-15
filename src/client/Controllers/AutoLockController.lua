@@ -13,6 +13,15 @@ local Workspace = game:GetService("Workspace")
 
 local Shared = ReplicatedStorage.Shared
 local Config = require(Shared.Config.DriveAndHunt).Lock
+-- Core Loop V2 (B5): add a star term (Star 1.0, others 0.85, weight 1.0); every other term unchanged.
+local selectorConfig: any = nil
+if require(Shared.Config.CoreLoopFlags).Part("Stars") then
+	selectorConfig = table.clone(Config)
+	local weights = table.clone(Config.Weights)
+	weights.star = 1.0
+	selectorConfig.Weights = table.freeze(weights)
+	table.freeze(selectorConfig)
+end
 local Flags = require(Shared.Config.DriveAndHuntFlags)
 local BrainrotCatalog = require(Shared.Config.BrainrotCatalog)
 local Rarities = require(Shared.Config.Rarities)
@@ -458,6 +467,7 @@ local function scan()
 		candidate.alreadyHit = expiry ~= nil and expiry > now
 		local rarity = BrainrotCatalog.GetRarity(model:GetAttribute("BrainrotId"))
 		candidate.rarityRank = (if rarity then Rarities.GetDisplayRank(rarity) else nil) or 1
+		candidate.star = model:GetAttribute("CoreLoopStar") == true
 		local sight = fromCamera.Magnitude > 0.01
 			and fromMuzzle.Unit:Dot(fromCamera.Unit) >= Config.MinimumParallaxDot
 		if sight then
@@ -495,7 +505,7 @@ local function scan()
 			state.manualId = pointed.id
 		end
 	end
-	local chosen = Selector.Select(active, state, context, Config :: any)
+	local chosen = Selector.Select(active, state, context, (selectorConfig or Config) :: any)
 	local entry = if chosen then entryById[chosen.id] else nil
 	local nextModel = if entry then entry.model else nil
 	if nextModel ~= lockModel then

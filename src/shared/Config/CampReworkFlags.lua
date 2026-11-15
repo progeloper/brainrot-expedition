@@ -3,9 +3,10 @@
 --   CampReworkV1Enabled  stalls, camp layout, floor, special weapons, weapon/cart sell-back
 --   TrainingV1Enabled    Training stall + levels; removes the cart Speed upgrades
 --   RebirthUiV2Enabled   "Rebirth" naming, YOU LOSE / YOU GET window, payback line, READY glow
--- Live servers read FeatureFlags only (all false until the owner flips them). In Studio each gate
--- defaults ON for preview (same pattern as WeaponTiersV2Preview): the ReplicatedStorage attribute
--- <Name>Preview = false turns a preview off. Values latch once per session so server and client
+-- Live servers read FeatureFlags only (all false until the owner flips them). In Studio a gate
+-- previews only when the ReplicatedStorage attribute <Name>Preview is explicitly true (opt-in, the
+-- same rule as DriveAndHuntFlags and WeaponTiersV2Preview; Playtest Fixes 2 Part E, 14 Nov 2026), so
+-- an ordinary Studio Play matches a device. Values latch once per session so server and client
 -- never disagree mid-session.
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
@@ -23,7 +24,7 @@ local function resolve(name: Gate): boolean
 		return false
 	end
 	local preview = ReplicatedStorage:GetAttribute((string.gsub(name, "Enabled$", "Preview")))
-	return preview ~= false
+	return preview == true
 end
 
 local latched: { [string]: boolean } = {}
@@ -60,7 +61,7 @@ function Flags.Resolve(flagValue: boolean, isStudio: boolean, previewAttribute: 
 	if flagValue then
 		return true
 	end
-	return isStudio and previewAttribute ~= false
+	return isStudio and previewAttribute == true
 end
 
 return table.freeze(Flags)

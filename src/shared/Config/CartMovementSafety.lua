@@ -1,0 +1,72 @@
+--!strict
+
+-- These values are hard runtime safety envelopes, not Scrap Chariot balance targets.
+-- Intended cart tuning belongs in Carts.lua and must remain inside these limits.
+local CartMovementSafety = {
+	MinimumHuntingSpeed = 1,
+	MaximumHuntingSpeed = 100,
+	MinimumTravelSpeed = 1,
+	MaximumTravelSpeed = 150,
+	MinimumRecoveryBackupSpeed = 0.1,
+	MaximumRecoveryBackupSpeed = 10,
+	MaximumRecoveryToHuntingSpeedRatio = 0.25,
+
+	MinimumAcceleration = 1,
+	MaximumAcceleration = 500,
+	MinimumAccelerationMultiplier = 0.05,
+	MaximumAccelerationMultiplier = 1,
+	MinimumCurveExponent = 0.1,
+	MaximumCurveExponent = 4,
+	MinimumBraking = 1,
+	MaximumBraking = 700,
+	MinimumCoastDeceleration = 0.1,
+	MaximumCoastDeceleration = 700,
+	MinimumDecelerationMultiplier = 0.1,
+	MaximumDecelerationMultiplier = 1,
+	MinimumBrakingMultiplier = 1,
+	MaximumBrakingMultiplier = 2,
+	MinimumRecoveryBackupAcceleration = 0.1,
+	MaximumRecoveryBackupAcceleration = 50,
+	MinimumRecoveryBackupDeceleration = 0.1,
+	MaximumRecoveryBackupDeceleration = 150,
+	MinimumRecoveryInputDelay = 0.05,
+	MaximumRecoveryInputDelay = 3,
+
+	MinimumTurnRate = 1,
+	MaximumTurnRate = 360,
+	MinimumNearZeroSpeedThreshold = 0.01,
+	MaximumNearZeroSpeedThreshold = 5,
+	MinimumLongitudinalInputDeadzone = 0,
+	MaximumLongitudinalInputDeadzone = 0.5,
+	MinimumLongitudinalTransitionRetryInterval = 0.05,
+	MaximumLongitudinalTransitionRetryInterval = 1,
+	MinimumLongitudinalTransitionMaximumRetryInterval = 0.1,
+	MaximumLongitudinalTransitionMaximumRetryInterval = 5,
+	MinimumSteeringSpeedThreshold = 0.01,
+	MaximumSteeringSpeedThreshold = 25,
+	MinimumSteeringMultiplier = 0.1,
+	MaximumSteeringMultiplier = 2,
+	MinimumSteeringInterpolationExponent = 0.1,
+	MaximumSteeringInterpolationExponent = 4,
+
+	MinimumLateralGrip = 0.1,
+	MaximumLateralGrip = 50,
+	MinimumLateralGripMultiplier = 1,
+	MaximumLateralGripMultiplier = 3,
+	MinimumDriveForceLimit = 1,
+	MaximumDriveForceLimit = 1000,
+
+	MinimumUprightResponsiveness = 5,
+	MaximumUprightResponsiveness = 200,
+	MinimumUprightTorque = 1,
+	MaximumUprightTorque = 10000000,
+	MinimumAngularSpeed = 1,
+	MaximumAngularSpeed = 360,
+
+	MinimumGroundFriction = 0.01,
+	MaximumGroundFriction = 2,
+	MinimumGroundFrictionWeight = 1,
+	MaximumGroundFrictionWeight = 100,
+}
+
+return table.freeze(CartMovementSafety)

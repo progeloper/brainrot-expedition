@@ -10,6 +10,7 @@ local Workspace = game:GetService("Workspace")
 
 local Shared = ReplicatedStorage.Shared
 local Config = require(Shared.Config.DriveAndHunt).HintToast
+local Fixes2Flags = require(Shared.Config.PlaytestFixes2Flags)
 local Flags = require(Shared.Config.DriveAndHuntFlags)
 local StudPop = require(Shared.UI.StudPop)
 local Theme = require(Shared.UI.Theme)
@@ -161,7 +162,11 @@ local function run()
 			local entry = table.remove(queue, 1) :: { key: string, target: Target? }
 			build()
 			local frame, text, pointer = toast :: Frame, label :: TextLabel, arrow :: TextLabel
-			text.Text = (Config.Text :: any)[entry.key] or entry.key
+			local key = entry.key
+			if key == "HopOut" and Fixes2Flags.Part("JumpHopOut") then
+				key = "HopOutJump" -- Playtest Fixes 2 B: Jump hops out too
+			end
+			text.Text = (Config.Text :: any)[key] or (Config.Text :: any)[entry.key] or entry.key
 			place(entry.target)
 			frame.Visible = true
 			shownCount += 1

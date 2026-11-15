@@ -15,7 +15,6 @@ export type TeamStats = {
 	SpeedBonus: number,
 	AccelerationBonus: number,
 	HandlingBonus: number,
-	TetherStabilityBonus: number,
 	DetectionBonus: number,
 	GadgetCooldownReduction: number,
 	CargoValueBonus: number,

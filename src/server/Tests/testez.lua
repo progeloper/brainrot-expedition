@@ -1,0 +1,24 @@
+return {
+	base = "roblox",
+	globals = {
+		describe = {
+			args = {{
+				type = "string",
+			}, {
+				type = "function",
+			}},
+		},
+		it = {
+			args = {{
+				type = "string",
+			}, {
+				type = "function",
+			}},
+		},
+		expect = {
+			args = {{
+				type = "any",
+			}},
+		},
+	},
+}

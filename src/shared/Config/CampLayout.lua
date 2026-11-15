@@ -35,6 +35,24 @@ local CampLayout = {
 		Sell = "Kiosk_SellStall",
 		Training = "Kiosk_TrainingStall",
 		Announcements = "Kiosk_AnnouncementStall",
+		Gems = "Kiosk_GemsStall", -- Playtest Fixes F4 (flag-gated at runtime)
+	},
+	-- The LIVE camp (owner, 12 Nov 2026): a main street on the centre line z = -46 with 8 bases either
+	-- side. The ring layouts below are kept for history; the main street superseded them. Gems sits
+	-- between Sell and Training (Playtest Fixes F4; measured footprint gaps 12.0 / 13.0 >= the 12-stud
+	-- spacing rule; Weapons-Carts has only 23 free studs). Players at the centre and east bases pass
+	-- Weapons and Training before it on the walk to the north-west Forest/Beach exit; the west-end bases
+	-- pass Sell and Gems first, as they pass Sell today.
+	MainStreet = {
+		stalls = {
+			Sell = { x = -150, z = -46, yawDegrees = 180 },
+			Training = { x = -92, z = -46, yawDegrees = 0 },
+			Weapons = { x = 42, z = -46, yawDegrees = 0 },
+			Carts = { x = 108, z = -46, yawDegrees = 180 },
+			Gems = { x = -121.4, z = -46, yawDegrees = 0 },
+		},
+		announcements = { x = -52, z = -46, yawDegrees = 180 }, -- NEWS board (no prompt with the flag on)
+		landmark = { x = -19, z = -46 },
 	},
 	Layouts = {
 		{ -- winner
@@ -51,13 +69,27 @@ local CampLayout = {
 				Training = { x = 0.61, z = -71.31, yawDegrees = -30.50 },
 			},
 			announcements = { x = -44.46, z = -34.35, yawDegrees = 114.59 },
+			-- superseded ring layout: Gems opposite the kiosk through the landmark (not rule-checked)
+			gems = { x = 6.46, z = -57.65, yawDegrees = -65.41 },
 			sightlines = {
 				{ base = "Base_01", landmark = true, signs = { "Sell", "Training", "Weapons" } },
-				{ base = "Base_02", landmark = true, signs = { "Carts", "Sell", "Training", "Weapons" } },
-				{ base = "Base_03", landmark = true, signs = { "Carts", "Sell", "Training", "Weapons" } },
+				{
+					base = "Base_02",
+					landmark = true,
+					signs = { "Carts", "Sell", "Training", "Weapons" },
+				},
+				{
+					base = "Base_03",
+					landmark = true,
+					signs = { "Carts", "Sell", "Training", "Weapons" },
+				},
 				{ base = "Base_04", landmark = false, signs = { "Sell", "Training", "Weapons" } },
 				{ base = "Base_05", landmark = true, signs = { "Carts", "Weapons" } },
-				{ base = "Base_06", landmark = true, signs = { "Carts", "Sell", "Training", "Weapons" } },
+				{
+					base = "Base_06",
+					landmark = true,
+					signs = { "Carts", "Sell", "Training", "Weapons" },
+				},
 				{ base = "Base_07", landmark = false, signs = { "Carts", "Training", "Weapons" } },
 				{ base = "Base_08", landmark = false, signs = { "Carts", "Weapons" } },
 				{ base = "Base_09", landmark = true, signs = { "Carts", "Sell" } },
@@ -88,6 +120,8 @@ local CampLayout = {
 				Training = { x = 0.58, z = -77.39, yawDegrees = -40.54 },
 			},
 			announcements = { x = -43.77, z = -32.94, yawDegrees = 117.81 },
+			-- superseded ring layout: Gems opposite the kiosk through the landmark (not rule-checked)
+			gems = { x = 5.77, z = -59.06, yawDegrees = -62.19 },
 			landmarkVisibleFrom = 7,
 		},
 		{ -- alternative 2
@@ -104,6 +138,8 @@ local CampLayout = {
 				Training = { x = 3.53, z = -75.89, yawDegrees = -42.01 },
 			},
 			announcements = { x = -45.91, z = -38.26, yawDegrees = 106.05 },
+			-- superseded ring layout: Gems opposite the kiosk through the landmark (not rule-checked)
+			gems = { x = 7.91, z = -53.74, yawDegrees = -73.95 },
 			landmarkVisibleFrom = 5,
 		},
 	},
@@ -117,7 +153,8 @@ end
 
 -- World CFrame for a stall root from a placement row.
 function CampLayout.CFrameFor(row: Placement): CFrame
-	return CFrame.new(row.x, CampLayout.GroundY, row.z) * CFrame.Angles(0, math.rad(row.yawDegrees), 0)
+	return CFrame.new(row.x, CampLayout.GroundY, row.z)
+		* CFrame.Angles(0, math.rad(row.yawDegrees), 0)
 end
 
 return CampLayout

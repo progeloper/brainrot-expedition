@@ -58,6 +58,8 @@ function CollisionService:Start()
 	registerGroup(CollisionGroups.CargoVisuals)
 	registerGroup(CollisionGroups.FormationVisuals)
 	registerGroup(CollisionGroups.Projectiles)
+	-- Playtest Fixes 2 Part D: base wall colliders (collide with every group, like Default).
+	registerGroup(CollisionGroups.BaseWalls)
 
 	PhysicsService:CollisionGroupSetCollidable(CollisionGroups.Carts, CollisionGroups.Players, true)
 
