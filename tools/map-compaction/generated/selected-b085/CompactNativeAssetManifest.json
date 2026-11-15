@@ -1,0 +1,1122 @@
+{
+  "candidate": {
+    "b": 0.85,
+    "h": 248,
+    "origin": [
+      -19,
+      0.04999995231628418,
+      -46
+    ],
+    "outer": 0.75,
+    "r": 188,
+    "t": 89.6
+  },
+  "candidateSelectedForNativeGeometryImport": true,
+  "canonicalFile": "CompactAssetsCanonical.glb",
+  "canonicalSourceSHA256": "078a93ed83234709bec5799997d7ee41a8dd28cb39bc5fdd8ef18992d3353005",
+  "corners": 7977,
+  "embeddedImages": 0,
+  "finalCandidateApproved": false,
+  "geometryBatchReadyForNativeImport": true,
+  "geometryPolicy": "Hard normals/UV/winding retained per object. Native measured Y180 import compensation in XZ positions/normals/translations only. Source shell ground root remains0; per-group bbox centres are nodes, not root shifts.",
+  "groupRecords": [
+    {
+      "centre": [
+        385.0,
+        0.07999995164573193,
+        -474.0
+      ],
+      "groupId": "Path_Arctic_2_0",
+      "id": "Path_Arctic_2_0",
+      "localBounds": [
+        [
+          -156.0,
+          0.0,
+          -122.0
+        ],
+        [
+          156.0,
+          0.0,
+          122.0
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        215,
+        235,
+        250
+      ],
+      "role": "Road",
+      "size": [
+        312.0,
+        0.0,
+        244.0
+      ],
+      "triangles": 33
+    },
+    {
+      "centre": [
+        581.0,
+        0.07999995164573193,
+        -535.0
+      ],
+      "groupId": "Path_Arctic_3_0",
+      "id": "Path_Arctic_3_0",
+      "localBounds": [
+        [
+          -40.0,
+          0.0,
+          -61.0
+        ],
+        [
+          40.0,
+          0.0,
+          61.0
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        215,
+        235,
+        250
+      ],
+      "role": "Road",
+      "size": [
+        80.0,
+        0.0,
+        122.0
+      ],
+      "triangles": 10
+    },
+    {
+      "centre": [
+        -609.0,
+        0.07999995164573193,
+        -308.60339
+      ],
+      "groupId": "Path_Beach_0_0",
+      "id": "Path_Beach_0_0",
+      "localBounds": [
+        [
+          -102.0,
+          0.0,
+          -97.3966064453125
+        ],
+        [
+          102.0,
+          0.0,
+          97.3966064453125
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        224,
+        172,
+        83
+      ],
+      "role": "Road",
+      "size": [
+        204.0,
+        0.0,
+        194.793212890625
+      ],
+      "triangles": 36
+    },
+    {
+      "centre": [
+        -653.0,
+        0.07999995164573193,
+        -22.2669415
+      ],
+      "groupId": "Path_Beach_0_1",
+      "id": "Path_Beach_0_1",
+      "localBounds": [
+        [
+          -58.0,
+          0.0,
+          -188.93983459472656
+        ],
+        [
+          58.0,
+          0.0,
+          188.93983459472656
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        224,
+        172,
+        83
+      ],
+      "role": "Road",
+      "size": [
+        116.0,
+        0.0,
+        377.8796691894531
+      ],
+      "triangles": 50
+    },
+    {
+      "centre": [
+        -627.0,
+        0.07999995164573193,
+        184.33644850000002
+      ],
+      "groupId": "Path_Beach_0_2",
+      "id": "Path_Beach_0_2",
+      "localBounds": [
+        [
+          -14.0,
+          0.0,
+          -17.663551330566406
+        ],
+        [
+          14.0,
+          0.0,
+          17.663551330566406
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        224,
+        172,
+        83
+      ],
+      "role": "Road",
+      "size": [
+        28.0,
+        0.0,
+        35.32710266113281
+      ],
+      "triangles": 8
+    },
+    {
+      "centre": [
+        -86.5288135,
+        0.07999995164573193,
+        -250.2202125
+      ],
+      "groupId": "Path_Camp_1_0",
+      "id": "Path_Camp_1_0",
+      "localBounds": [
+        [
+          -180.47119140625,
+          0.0,
+          -39.013431549072266
+        ],
+        [
+          180.47119140625,
+          0.0,
+          39.013431549072266
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        232,
+        201,
+        138
+      ],
+      "role": "Road",
+      "size": [
+        360.9423828125,
+        0.0,
+        78.02686309814453
+      ],
+      "triangles": 49
+    },
+    {
+      "centre": [
+        -75.80326300000002,
+        0.07999995164573193,
+        -22.2669415
+      ],
+      "groupId": "Path_Camp_1_1",
+      "id": "Path_Camp_1_1",
+      "localBounds": [
+        [
+          -186.43038940429688,
+          0.0,
+          -188.93983459472656
+        ],
+        [
+          186.43038940429688,
+          0.0,
+          188.93983459472656
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        232,
+        201,
+        138
+      ],
+      "role": "Road",
+      "size": [
+        372.86077880859375,
+        0.0,
+        377.8796691894531
+      ],
+      "triangles": 203
+    },
+    {
+      "centre": [
+        -231.849181,
+        0.07999995164573193,
+        184.33644850000002
+      ],
+      "groupId": "Path_Camp_1_2",
+      "id": "Path_Camp_1_2",
+      "localBounds": [
+        [
+          -25.63212776184082,
+          0.0,
+          -17.663551330566406
+        ],
+        [
+          25.63212776184082,
+          0.0,
+          17.663551330566406
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        232,
+        201,
+        138
+      ],
+      "role": "Road",
+      "size": [
+        51.26425552368164,
+        0.0,
+        35.32710266113281
+      ],
+      "triangles": 12
+    },
+    {
+      "centre": [
+        174.875468,
+        0.07999995164573193,
+        -251.70619349999998
+      ],
+      "groupId": "Path_Camp_2_0",
+      "id": "Path_Camp_2_0",
+      "localBounds": [
+        [
+          -54.12453079223633,
+          0.0,
+          -40.499412536621094
+        ],
+        [
+          54.12453079223633,
+          0.0,
+          40.499412536621094
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        232,
+        201,
+        138
+      ],
+      "role": "Road",
+      "size": [
+        108.24906158447266,
+        0.0,
+        80.99882507324219
+      ],
+      "triangles": 35
+    },
+    {
+      "centre": [
+        169.8135595,
+        0.07999995164573193,
+        -22.2669415
+      ],
+      "groupId": "Path_Camp_2_1",
+      "id": "Path_Camp_2_1",
+      "localBounds": [
+        [
+          -59.186439514160156,
+          0.0,
+          -188.93983459472656
+        ],
+        [
+          59.186439514160156,
+          0.0,
+          188.93983459472656
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        232,
+        201,
+        138
+      ],
+      "role": "Road",
+      "size": [
+        118.37287902832031,
+        0.0,
+        377.8796691894531
+      ],
+      "triangles": 87
+    },
+    {
+      "centre": [
+        198.60852649999998,
+        0.07999995164573193,
+        181.953271
+      ],
+      "groupId": "Path_Camp_2_2",
+      "id": "Path_Camp_2_2",
+      "localBounds": [
+        [
+          -30.3914737701416,
+          0.0,
+          -15.280373573303223
+        ],
+        [
+          30.3914737701416,
+          0.0,
+          15.280373573303223
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        232,
+        201,
+        138
+      ],
+      "role": "Road",
+      "size": [
+        60.7829475402832,
+        0.0,
+        30.560747146606445
+      ],
+      "triangles": 14
+    },
+    {
+      "centre": [
+        -387.0,
+        0.07999995164573193,
+        -308.60339
+      ],
+      "groupId": "Path_Forest_0_0",
+      "id": "Path_Forest_0_0",
+      "localBounds": [
+        [
+          -120.0,
+          0.0,
+          -97.3966064453125
+        ],
+        [
+          120.0,
+          0.0,
+          97.3966064453125
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        179,
+        119,
+        69
+      ],
+      "role": "Road",
+      "size": [
+        240.0,
+        0.0,
+        194.793212890625
+      ],
+      "triangles": 62
+    },
+    {
+      "centre": [
+        -413.0,
+        0.07999995164573193,
+        -22.2669415
+      ],
+      "groupId": "Path_Forest_0_1",
+      "id": "Path_Forest_0_1",
+      "localBounds": [
+        [
+          -58.0,
+          0.0,
+          -188.93983459472656
+        ],
+        [
+          58.0,
+          0.0,
+          188.93983459472656
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        179,
+        119,
+        69
+      ],
+      "role": "Road",
+      "size": [
+        116.0,
+        0.0,
+        377.8796691894531
+      ],
+      "triangles": 43
+    },
+    {
+      "centre": [
+        -387.0,
+        0.07999995164573193,
+        184.33644850000002
+      ],
+      "groupId": "Path_Forest_0_2",
+      "id": "Path_Forest_0_2",
+      "localBounds": [
+        [
+          -12.415887832641602,
+          0.0,
+          -17.663551330566406
+        ],
+        [
+          12.415887832641602,
+          0.0,
+          17.663551330566406
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        179,
+        119,
+        69
+      ],
+      "role": "Road",
+      "size": [
+        24.831775665283203,
+        0.0,
+        35.32710266113281
+      ],
+      "triangles": 4
+    },
+    {
+      "centre": [
+        -78.1864405,
+        0.07999995164573193,
+        -474.0
+      ],
+      "groupId": "Path_Forest_1_0",
+      "id": "Path_Forest_1_0",
+      "localBounds": [
+        [
+          -188.8135528564453,
+          0.0,
+          -122.0
+        ],
+        [
+          188.8135528564453,
+          0.0,
+          122.0
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        179,
+        119,
+        69
+      ],
+      "role": "Road",
+      "size": [
+        377.6271057128906,
+        0.0,
+        244.0
+      ],
+      "triangles": 59
+    },
+    {
+      "centre": [
+        169.8135595,
+        0.07999995164573193,
+        -564.0
+      ],
+      "groupId": "Path_Forest_2_0",
+      "id": "Path_Forest_2_0",
+      "localBounds": [
+        [
+          -59.186439514160156,
+          0.0,
+          -32.0
+        ],
+        [
+          59.186439514160156,
+          0.0,
+          32.0
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        179,
+        119,
+        69
+      ],
+      "role": "Road",
+      "size": [
+        118.37287902832031,
+        0.0,
+        64.0
+      ],
+      "triangles": 14
+    },
+    {
+      "centre": [
+        385.0,
+        0.07999995164573193,
+        350.0
+      ],
+      "groupId": "Path_GlitchZone_2_2",
+      "id": "Path_GlitchZone_2_2",
+      "localBounds": [
+        [
+          -156.0,
+          0.0,
+          -148.0
+        ],
+        [
+          156.0,
+          0.0,
+          148.0
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        55,
+        43,
+        68
+      ],
+      "role": "Road",
+      "size": [
+        312.0,
+        0.0,
+        296.0
+      ],
+      "triangles": 43
+    },
+    {
+      "centre": [
+        587.0,
+        0.07999995164573193,
+        369.0
+      ],
+      "groupId": "Path_GlitchZone_3_2",
+      "id": "Path_GlitchZone_3_2",
+      "localBounds": [
+        [
+          -46.0,
+          0.0,
+          -109.0
+        ],
+        [
+          46.0,
+          0.0,
+          109.0
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        55,
+        43,
+        68
+      ],
+      "role": "Road",
+      "size": [
+        92.0,
+        0.0,
+        218.0
+      ],
+      "triangles": 16
+    },
+    {
+      "centre": [
+        -343.0,
+        0.07999995164573193,
+        443.0
+      ],
+      "groupId": "Path_Jungle_0_2",
+      "id": "Path_Jungle_0_2",
+      "localBounds": [
+        [
+          -76.0,
+          0.0,
+          -61.0
+        ],
+        [
+          76.0,
+          0.0,
+          61.0
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        194,
+        146,
+        71
+      ],
+      "role": "Road",
+      "size": [
+        152.0,
+        0.0,
+        122.0
+      ],
+      "triangles": 14
+    },
+    {
+      "centre": [
+        -78.1864405,
+        0.07999995164573193,
+        353.0
+      ],
+      "groupId": "Path_Jungle_1_2",
+      "id": "Path_Jungle_1_2",
+      "localBounds": [
+        [
+          -188.8135528564453,
+          0.0,
+          -151.0
+        ],
+        [
+          188.8135528564453,
+          0.0,
+          151.0
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        194,
+        146,
+        71
+      ],
+      "role": "Road",
+      "size": [
+        377.6271057128906,
+        0.0,
+        302.0
+      ],
+      "triangles": 69
+    },
+    {
+      "centre": [
+        169.8135595,
+        0.07999995164573193,
+        292.0
+      ],
+      "groupId": "Path_Jungle_2_2",
+      "id": "Path_Jungle_2_2",
+      "localBounds": [
+        [
+          -59.186439514160156,
+          0.0,
+          -14.0
+        ],
+        [
+          59.186439514160156,
+          0.0,
+          14.0
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        194,
+        146,
+        71
+      ],
+      "role": "Road",
+      "size": [
+        118.37287902832031,
+        0.0,
+        28.0
+      ],
+      "triangles": 10
+    },
+    {
+      "centre": [
+        -507.0,
+        0.07999995164573193,
+        343.0
+      ],
+      "groupId": "Path_Swamp_0_2",
+      "id": "Path_Swamp_0_2",
+      "localBounds": [
+        [
+          -152.0,
+          0.0,
+          -141.0
+        ],
+        [
+          152.0,
+          0.0,
+          141.0
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        151,
+        112,
+        76
+      ],
+      "role": "Road",
+      "size": [
+        304.0,
+        0.0,
+        282.0
+      ],
+      "triangles": 54
+    },
+    {
+      "centre": [
+        385.0,
+        0.07999995164573193,
+        -272.719626
+      ],
+      "groupId": "Path_Volcano_2_0",
+      "id": "Path_Volcano_2_0",
+      "localBounds": [
+        [
+          -156.0,
+          0.0,
+          -19.485980987548828
+        ],
+        [
+          156.0,
+          0.0,
+          19.485980987548828
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        157,
+        127,
+        143
+      ],
+      "role": "Road",
+      "size": [
+        312.0,
+        0.0,
+        38.971961975097656
+      ],
+      "triangles": 6
+    },
+    {
+      "centre": [
+        385.0,
+        0.07999995164573193,
+        44.3364485
+      ],
+      "groupId": "Path_Volcano_2_1",
+      "id": "Path_Volcano_2_1",
+      "localBounds": [
+        [
+          -156.0,
+          0.0,
+          -122.3364486694336
+        ],
+        [
+          156.0,
+          0.0,
+          122.3364486694336
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        157,
+        127,
+        143
+      ],
+      "role": "Road",
+      "size": [
+        312.0,
+        0.0,
+        244.6728973388672
+      ],
+      "triangles": 35
+    },
+    {
+      "centre": [
+        358.0,
+        0.07999995164573193,
+        184.33644850000002
+      ],
+      "groupId": "Path_Volcano_2_2",
+      "id": "Path_Volcano_2_2",
+      "localBounds": [
+        [
+          -129.0,
+          0.0,
+          -17.663551330566406
+        ],
+        [
+          129.0,
+          0.0,
+          17.663551330566406
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        157,
+        127,
+        143
+      ],
+      "role": "Road",
+      "size": [
+        258.0,
+        0.0,
+        35.32710266113281
+      ],
+      "triangles": 10
+    },
+    {
+      "centre": [
+        607.0,
+        0.07999995164573193,
+        -342.60339
+      ],
+      "groupId": "Path_Volcano_3_0",
+      "id": "Path_Volcano_3_0",
+      "localBounds": [
+        [
+          -66.0,
+          0.0,
+          -131.3966064453125
+        ],
+        [
+          66.0,
+          0.0,
+          131.3966064453125
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        157,
+        127,
+        143
+      ],
+      "role": "Road",
+      "size": [
+        132.0,
+        0.0,
+        262.793212890625
+      ],
+      "triangles": 31
+    },
+    {
+      "centre": [
+        607.0,
+        0.07999995164573193,
+        -35.5525425
+      ],
+      "groupId": "Path_Volcano_3_1",
+      "id": "Path_Volcano_3_1",
+      "localBounds": [
+        [
+          -66.0,
+          0.0,
+          -175.65423583984375
+        ],
+        [
+          66.0,
+          0.0,
+          175.65423583984375
+        ]
+      ],
+      "prototypeId": "CompactMapRoads",
+      "rgb": [
+        157,
+        127,
+        143
+      ],
+      "role": "Road",
+      "size": [
+        132.0,
+        0.0,
+        351.3084716796875
+      ],
+      "triangles": 40
+    },
+    {
+      "centre": [
+        0.0,
+        10.985,
+        0.0
+      ],
+      "groupId": "Support",
+      "id": "CompactShowhouseShell_A_Support",
+      "localBounds": [
+        [
+          -23.229999999999997,
+          -10.985,
+          -39.63124999998061
+        ],
+        [
+          23.229999999999997,
+          10.985,
+          39.63124999998061
+        ]
+      ],
+      "prototypeId": "CompactShowhouseShell_A",
+      "rgb": [
+        92,
+        55,
+        34
+      ],
+      "role": "FittedShell",
+      "size": [
+        46.459999999999994,
+        21.97,
+        79.26249999996122
+      ],
+      "triangles": 456
+    },
+    {
+      "centre": [
+        0.0,
+        10.1,
+        0.0
+      ],
+      "groupId": "Primary",
+      "id": "CompactShowhouseShell_A_Primary",
+      "localBounds": [
+        [
+          -23.229999999990447,
+          -10.1,
+          -39.63125
+        ],
+        [
+          23.229999999990447,
+          10.1,
+          39.63125
+        ]
+      ],
+      "prototypeId": "CompactShowhouseShell_A",
+      "rgb": [
+        230,
+        243,
+        250
+      ],
+      "role": "FittedShell",
+      "size": [
+        46.459999999980894,
+        20.2,
+        79.2625
+      ],
+      "triangles": 924
+    },
+    {
+      "centre": [
+        0.0,
+        18.35,
+        0.0
+      ],
+      "groupId": "Accent",
+      "id": "CompactShowhouseShell_A_Accent",
+      "localBounds": [
+        [
+          -23.229999999990447,
+          -3.650000000000002,
+          -39.63125
+        ],
+        [
+          23.229999999990447,
+          3.6499999999999986,
+          39.63125
+        ]
+      ],
+      "prototypeId": "CompactShowhouseShell_A",
+      "rgb": [
+        99,
+        169,
+        220
+      ],
+      "role": "FittedShell",
+      "size": [
+        46.459999999980894,
+        7.300000000000001,
+        79.2625
+      ],
+      "triangles": 220
+    },
+    {
+      "centre": [
+        0,
+        0,
+        0
+      ],
+      "groupId": "Unit",
+      "id": "CompactWallCube_Unit",
+      "localBounds": [
+        [
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "prototypeId": "CompactWallCube",
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "role": "WallUnit",
+      "size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "triangles": 12
+    }
+  ],
+  "groups": 31,
+  "interiorFitEvidence": {
+    "fullAcceptancePassed": false,
+    "nativeProposalFitPassed": true,
+    "path": "docs/map-compaction/CompactBaseLayoutNativeFit_085.json",
+    "sha256": "55cb6543baa13c1557319a0882fd7e34d4b092ba0da4d7e291e86be5413f382e"
+  },
+  "migrationId": "CompactMap_V1",
+  "nativeGeometryOnly": true,
+  "nativeIDsInvented": 0,
+  "requiredNativeRoot": "ServerStorage.CompactMap_ImportedAssets",
+  "roadCanonicalSourceSHA256": "73c1deb0ee7abe3b758ed67ea68f57f4e4dcc42137de3e692939040961c24bdf",
+  "roadGeometryHash": "696d1821c5ebc3a595f9437366c1c777f31d6ea5f2b0f303fd8a2a895a32dbb0",
+  "roadStandaloneImportSHA256": "f087fa80965767510d69c0980542c92e429414d66d3b61bdc9c1b8c3d07ff873",
+  "roots": [
+    "CompactMapRoads",
+    "CompactShowhouseShell_A",
+    "CompactWallCube"
+  ],
+  "schemaVersion": 1,
+  "selectedCandidate": {
+    "b": 0.85,
+    "h": 248,
+    "origin": [
+      -19,
+      0.04999995231628418,
+      -46
+    ],
+    "outer": 0.75,
+    "r": 188,
+    "t": 89.6
+  },
+  "shellCornersFileSHA256": "5a221edcbaeb9db63e378b82706526541902119c7a421f63f12a7b9842a5303c",
+  "shellOriginalSourceSHA256": "a74be8e35bc6545bec1134f7fd5e04ba75a253648c3b39810810781af3cb8ee2",
+  "sourceShellSHA256": "79939a7a01a7bc2d6099dc34d83d2a01c0cafbb96f4ef26cb7080116ff0764e1",
+  "status": "SelectedNativeImportBatchFinalized; actual native corner readback NotRun",
+  "studioImportFile": "CompactAssetsStudioImport.glb",
+  "studioImportSHA256": "bdd81be39782c1649694deecaf3264e5e82db25d9bb7ed7f783f05c1ab6fbd4e",
+  "surfaceStyle": "SavedGlacier/BingusStuds .25; native template prep separate",
+  "triangles": 2659,
+  "verifier": "CompactVerifyNativeAssets.luau",
+  "wholeMapApplicationAcceptance": "Pending cart turns/full sites; source export cannot bypass parent Apply/Verify/Rollback",
+  "worldInstalled": false,
+  "worldMutations": 0
+}

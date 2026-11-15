@@ -1,0 +1,65 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;width:1800px;height:1040px;font-family:"Arial Black",Arial,sans-serif;overflow:hidden;position:relative;background:#1a1440}
+.hero{position:absolute;left:0;top:0;width:980px;height:1040px;overflow:hidden;background:radial-gradient(circle at 50% 48%,#fff6a8 0%,#7ff0ff 30%,#3aa0ff 62%,#6a3dff 100%)}
+.rays{position:absolute;left:-310px;top:-280px;width:1600px;height:1600px;opacity:.28;background:repeating-conic-gradient(from 0deg at 50% 50%,#ffffff 0deg 9deg,transparent 9deg 22deg)}
+.stage{position:absolute;left:0;top:0;width:980px;height:1040px}
+.stage canvas{position:absolute;left:-10px;top:95px;width:1000px;height:1000px}
+.g{filter:blur(12px) brightness(2.2);mix-blend-mode:screen}
+.shadow{position:absolute;left:130px;top:860px;width:720px;height:110px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(30,10,80,.45),rgba(30,10,80,0) 70%)}
+.tag{position:absolute;left:0;width:980px;top:26px;text-align:center;line-height:1.05;z-index:5}
+.n{font-size:58px;color:#fff}.r{font-size:36px;color:#46a7ff}.c{font-size:42px;color:#52ff6a}
+.conf{position:absolute;width:16px;height:16px;border-radius:2px}
+.speed{position:absolute;height:9px;border-radius:5px;background:#fff;opacity:.85}
+.grid{position:absolute;left:1000px;top:20px;width:780px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{position:relative;height:490px;border-radius:24px;overflow:hidden;box-shadow:0 6px 0 rgba(0,0,0,.35)}
+.card canvas{position:absolute;left:-14px;top:80px;width:270px;height:270px}
+.card .lbl{position:absolute;top:14px;left:0;right:0;text-align:center;font-size:30px}
+.card .mult{position:absolute;top:58px;left:50%;transform:translateX(-50%);font-size:20px;color:#fff;padding:3px 14px;border-radius:14px;border:3px solid #fff}
+.card .inc{position:absolute;bottom:62px;left:0;right:0;text-align:center;font-size:28px;color:#52ff6a}
+.card .fx{position:absolute;bottom:14px;left:10px;right:10px;text-align:center;font-family:Arial;font-weight:800;font-size:15px;color:#fff;line-height:1.2}
+.sp{position:absolute}
+.legend{background:linear-gradient(160deg,#ff3d9e,#14c79f);padding:20px;box-sizing:border-box}
+.legend h3{margin:0 0 10px;font-size:26px;color:#fff}
+.legend p{margin:0 0 8px;font-family:Arial;font-weight:800;font-size:16px;color:#fff;line-height:1.3}
+</style></head><body><!-- design sanity render only; not a Studio capture -->
+<div class="hero"><div class="rays"></div>
+<div class="speed" style="left:30px;top:520px;width:170px"></div><div class="speed" style="left:10px;top:580px;width:120px"></div><div class="speed" style="left:50px;top:640px;width:200px"></div><div class="speed" style="left:20px;top:700px;width:140px"></div>
+<div id="conf"></div>
+<div class="shadow"></div>
+<div class="stage"><canvas id="h" width="2000" height="2000"></canvas><canvas id="hg" class="g" width="700" height="700"></canvas></div>
+<div class="tag"><div class="o n">Cacto Hipopotamo</div><div class="o r" style="color:#4DA3FF">RARE</div><div class="o c">$13.2/s</div></div>
+</div>
+<div class="grid" id="grid"></div>
+<script src="../kit.js"></script><script src="../builds/BRT_021.js"></script><script src="../../../design_reference/voxel_v4/preview_renderer.js"></script>
+<script>
+function ring(r,c='#111'){let a=[];for(let i=0;i<16;i++){a.push((r*Math.cos(i*Math.PI/8)).toFixed(1)+'px '+(r*Math.sin(i*Math.PI/8)).toFixed(1)+'px 0 '+c);}return a.join(',');}
+document.querySelectorAll('.o').forEach(e=>e.style.textShadow=ring(5));
+const conf=document.getElementById('conf');const cc=['#ff3d9e','#14c79f','#ffd447','#2ee9ff','#b86cff','#fff'];
+for(let i=0;i<46;i++){const d=document.createElement('div');d.className='conf';let x=Math.random()*940,y=170+Math.random()*820;if(x>200&&x<820&&y>300&&y<900){i--;continue;}d.style.left=x+'px';d.style.top=y+'px';d.style.background=cc[i%cc.length];d.style.transform='rotate('+(Math.random()*90)+'deg)';const s=10+Math.random()*12;d.style.width=d.style.height=s+'px';conf.appendChild(d);}
+function star(x,y,s,c){return `<svg class="sp" style="left:${x}px;top:${y}px;width:${s}px;height:${s}px" viewBox="-20 -20 40 40"><path d="M0,-20 L5,-5 L20,0 L5,5 L0,20 L-5,5 L-20,0 L-5,-5Z" fill="${c}"/></svg>`;}
+const M=[
+ {k:'shiny',name:'SHINY',mult:'×1.5',inc:'$19.8/s',col:'#ff87b7',bg:'radial-gradient(circle at 50% 45%,#fff4cd 0%,#ffc2dc 45%,#ff87b7 100%)',glow:'drop-shadow(0 0 14px #fff4cd)',fx:'Rose + pearl body, white stripe glow, pink star twinkles',spark:['#fff','#ff87b7']},
+ {k:'golden',name:'GOLDEN',mult:'×2.5',inc:'$33/s',col:'#ffd447',bg:'radial-gradient(circle at 50% 45%,#fff0a3 0%,#ffbf2e 45%,#8c4a08 100%)',glow:'drop-shadow(0 0 16px #ffd447)',fx:'Metallic gold ramp, hot specular glints, gold sparkle burst',spark:['#fff0a3','#fff']},
+ {k:'glitched',name:'GLITCHED',mult:'×4',inc:'$52.8/s',col:'#ff49e1',bg:'repeating-linear-gradient(0deg,rgba(255,255,255,.06) 0 3px,transparent 3px 7px),radial-gradient(circle at 50% 45%,#5a1f9a 0%,#2b0f52 60%,#120526 100%)',glow:'drop-shadow(5px 0 0 #3efff0) drop-shadow(-5px 0 0 #ff49e1)',fx:'Magenta/cyan tile scramble, RGB-split jitter, pixel bits',spark:'px'},
+ {k:'radioactive',name:'RADIOACTIVE',mult:'×7',inc:'$92.4/s',col:'#dcff2b',bg:'radial-gradient(circle at 50% 50%,#6bff2b 0%,#2a5a10 42%,#101810 100%)',glow:'drop-shadow(0 0 18px #dcff2b)',fx:'Lime body on charcoal, pulsing glow, rising bubbles',spark:'bub'},
+ {k:'astral',name:'ASTRAL',mult:'×15',inc:'$198/s',col:'#b9a6ff',bg:'radial-gradient(circle at 50% 45%,#6d74ff 0%,#2a1f6e 45%,#07051a 100%)',glow:'drop-shadow(0 0 16px #ede0ff) drop-shadow(0 0 30px #6d74ff)',fx:'Indigo + pearl, star-speckled tiles, halo ring',spark:'stars'}];
+const grid=document.getElementById('grid');let html='';
+for(const m of M){
+ let sp='';
+ if(Array.isArray(m.spark)){for(let i=0;i<9;i++)sp+=star(10+Math.random()*220,90+Math.random()*250,14+Math.random()*22,m.spark[i%2]);}
+ else if(m.spark==='px'){for(let i=0;i<16;i++)sp+=`<div class="sp" style="left:${Math.random()*235}px;top:${90+Math.random()*260}px;width:${6+Math.random()*14}px;height:${4+Math.random()*8}px;background:${i%2?'#3efff0':'#ff49e1'}"></div>`;}
+ else if(m.spark==='bub'){for(let i=0;i<12;i++){const s=8+Math.random()*16;sp+=`<div class="sp" style="left:${Math.random()*235}px;top:${90+Math.random()*260}px;width:${s}px;height:${s}px;border-radius:50%;border:3px solid #dcff2b;box-shadow:0 0 8px #dcff2b"></div>`;}}
+ else {for(let i=0;i<40;i++){const s=2+Math.random()*3;sp+=`<div class="sp" style="left:${Math.random()*250}px;top:${Math.random()*480}px;width:${s}px;height:${s}px;border-radius:50%;background:#fff"></div>`;}sp+=`<div class="sp" style="left:30px;top:150px;width:190px;height:70px;border-radius:50%;border:4px solid #ede0ff;box-shadow:0 0 18px #ede0ff;transform:rotate(-12deg)"></div>`;}
+ html+=`<div class="card" style="background:${m.bg}">${sp}<canvas id="c_${m.k}" width="540" height="540" style="filter:${m.glow}"></canvas><canvas id="g_${m.k}" class="g" width="200" height="200" style="left:-14px;top:80px;width:270px;height:270px;position:absolute"></canvas>
+ <div class="lbl o" style="color:${m.col}">${m.name}</div><div class="mult" style="background:${m.col};color:#111;border-color:#111">${m.mult}</div><div class="inc o">${m.inc}</div><div class="fx">${m.fx}</div></div>`;
+}
+html+=`<div class="card legend"><h3>Reference → V4</h3><p><b>The meme:</b> a tall cactus that wears yellow slippers and sports a hippo face (Steal a Brainrot model)</p><p><b>Revision 4:</b> riggable short legs with hip/ankle collars, slippers straight ahead on flat soles ·  from the in-game model: slim ribbed cactus with a grid of glowing spine dots · chunky hippo face with buck teeth, pink ears and cool amber eyes · giant splayed yellow slippers with cactus toes and glowing soles</p><p><b>Not copied:</b> no mesh, texture or logo</p></div>`;
+grid.innerHTML=html;
+document.querySelectorAll('.o').forEach(e=>e.style.textShadow=ring(e.classList.contains('n')?5:4));
+try{
+const cam={eye:[12,6,-8],target:[0.3,2.2,0],fov:0.6};
+const bx=skin('normal');render(document.getElementById('h'),bx,Object.assign({mode:0},cam));render(document.getElementById('hg'),bx,Object.assign({mode:0,glow:1},cam));
+const cam2={eye:[12,6,-8],target:[0.3,2.2,0],fov:0.6};
+for(const m of M){const b=skin(m.k),md=PALETTES[m.k].mode;render(document.getElementById('c_'+m.k),b,Object.assign({mode:md},cam2));render(document.getElementById('g_'+m.k),b,Object.assign({mode:md,glow:1},cam2));}
+document.title='ok';}catch(e){document.title='ERR '+e;}
+</script></body></html>

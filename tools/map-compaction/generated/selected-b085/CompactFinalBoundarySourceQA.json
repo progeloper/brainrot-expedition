@@ -1,0 +1,23 @@
+{
+  "status": "IndependentSourceVolumesPassed; native wall readback NotRun",
+  "candidate": {
+    "b": 0.85,
+    "h": 248,
+    "origin": [
+      -19,
+      0.04999995231628418,
+      -46
+    ],
+    "outer": 0.75,
+    "r": 188,
+    "t": 89.6
+  },
+  "sourcePlanSHA256": "9d935792cae5095c4e32a5f93794c6e291c85aaba11c0ee5b9778189a4b72a20",
+  "wallCount": 54,
+  "checkedUnorderedPairs": 1431,
+  "positiveVolumeWallOverlaps": [],
+  "openingPolygonCount": 7,
+  "fullThicknessApertureIntersections": [],
+  "nativeCollisionStatus": "NotRun",
+  "worldMutations": 0
+}

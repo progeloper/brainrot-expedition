@@ -1,0 +1,966 @@
+{
+  "canonical": {
+    "bytes": 321268,
+    "checkedCorners": 7977,
+    "checkedGroups": 31,
+    "compensationXZApplied": false,
+    "embeddedImages": 0,
+    "file": "tools/map-compaction/generated/selected-b085/CompactAssetsCanonical.glb",
+    "groups": [
+      {
+        "canonicalCentre": [
+          385.0,
+          0.07999995164573193,
+          -474.0
+        ],
+        "checkedCorners": 99,
+        "id": "Path_Arctic_2_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 144.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 33
+      },
+      {
+        "canonicalCentre": [
+          581.0,
+          0.07999995164573193,
+          -535.0
+        ],
+        "checkedCorners": 30,
+        "id": "Path_Arctic_3_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 324.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 10
+      },
+      {
+        "canonicalCentre": [
+          -609.0,
+          0.07999995164573193,
+          -308.60339
+        ],
+        "checkedCorners": 108,
+        "id": "Path_Beach_0_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 37.260955810546875,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 36
+      },
+      {
+        "canonicalCentre": [
+          -653.0,
+          0.07999995164573193,
+          -22.2669415
+        ],
+        "checkedCorners": 150,
+        "id": "Path_Beach_0_1",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 53.369476318359375,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 50
+      },
+      {
+        "canonicalCentre": [
+          -627.0,
+          0.07999995164573193,
+          184.33644850000002
+        ],
+        "checkedCorners": 24,
+        "id": "Path_Beach_0_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 55.999993324279785,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 8
+      },
+      {
+        "canonicalCentre": [
+          -86.5288135,
+          0.07999995164573193,
+          -250.2202125
+        ],
+        "checkedCorners": 147,
+        "id": "Path_Camp_1_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 5.656249750052666,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 49
+      },
+      {
+        "canonicalCentre": [
+          -75.80326300000002,
+          0.07999995164573193,
+          -22.2669415
+        ],
+        "checkedCorners": 609,
+        "id": "Path_Camp_1_1",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 2.8015175426844507,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 203
+      },
+      {
+        "canonicalCentre": [
+          -231.849181,
+          0.07999995164573193,
+          184.33644850000002
+        ],
+        "checkedCorners": 36,
+        "id": "Path_Camp_1_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 2.612357105813132,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 12
+      },
+      {
+        "canonicalCentre": [
+          174.875468,
+          0.07999995164573193,
+          -251.70619349999998
+        ],
+        "checkedCorners": 105,
+        "id": "Path_Camp_2_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 2.8014207512133,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 35
+      },
+      {
+        "canonicalCentre": [
+          169.8135595,
+          0.07999995164573193,
+          -22.2669415
+        ],
+        "checkedCorners": 261,
+        "id": "Path_Camp_2_1",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 3.040955610573292,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 87
+      },
+      {
+        "canonicalCentre": [
+          198.60852649999998,
+          0.07999995164573193,
+          181.953271
+        ],
+        "checkedCorners": 42,
+        "id": "Path_Camp_2_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 6.752997383165621,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 14
+      },
+      {
+        "canonicalCentre": [
+          -387.0,
+          0.07999995164573193,
+          -308.60339
+        ],
+        "checkedCorners": 186,
+        "id": "Path_Forest_0_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 24.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 62
+      },
+      {
+        "canonicalCentre": [
+          -413.0,
+          0.07999995164573193,
+          -22.2669415
+        ],
+        "checkedCorners": 129,
+        "id": "Path_Forest_0_1",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 16.108428955078125,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 43
+      },
+      {
+        "canonicalCentre": [
+          -387.0,
+          0.07999995164573193,
+          184.33644850000002
+        ],
+        "checkedCorners": 12,
+        "id": "Path_Forest_0_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 79.8504638671875,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 4
+      },
+      {
+        "canonicalCentre": [
+          -78.1864405,
+          0.07999995164573193,
+          -474.0
+        ],
+        "checkedCorners": 177,
+        "id": "Path_Forest_1_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 16.108474731445312,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 59
+      },
+      {
+        "canonicalCentre": [
+          169.8135595,
+          0.07999995164573193,
+          -564.0
+        ],
+        "checkedCorners": 42,
+        "id": "Path_Forest_2_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 95.67457580566406,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 14
+      },
+      {
+        "canonicalCentre": [
+          385.0,
+          0.07999995164573193,
+          350.0
+        ],
+        "checkedCorners": 129,
+        "id": "Path_GlitchZone_2_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 28.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 43
+      },
+      {
+        "canonicalCentre": [
+          587.0,
+          0.07999995164573193,
+          369.0
+        ],
+        "checkedCorners": 48,
+        "id": "Path_GlitchZone_3_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 144.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 16
+      },
+      {
+        "canonicalCentre": [
+          -343.0,
+          0.07999995164573193,
+          443.0
+        ],
+        "checkedCorners": 42,
+        "id": "Path_Jungle_0_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 56.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 14
+      },
+      {
+        "canonicalCentre": [
+          -78.1864405,
+          0.07999995164573193,
+          353.0
+        ],
+        "checkedCorners": 207,
+        "id": "Path_Jungle_1_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 44.41168212890625,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 69
+      },
+      {
+        "canonicalCentre": [
+          169.8135595,
+          0.07999995164573193,
+          292.0
+        ],
+        "checkedCorners": 30,
+        "id": "Path_Jungle_2_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 335.99999833106995,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 10
+      },
+      {
+        "canonicalCentre": [
+          -507.0,
+          0.07999995164573193,
+          343.0
+        ],
+        "checkedCorners": 162,
+        "id": "Path_Swamp_0_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 56.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 54
+      },
+      {
+        "canonicalCentre": [
+          385.0,
+          0.07999995164573193,
+          -272.719626
+        ],
+        "checkedCorners": 18,
+        "id": "Path_Volcano_2_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 576.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 6
+      },
+      {
+        "canonicalCentre": [
+          385.0,
+          0.07999995164573193,
+          44.3364485
+        ],
+        "checkedCorners": 105,
+        "id": "Path_Volcano_2_1",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 21.75701904296875,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 35
+      },
+      {
+        "canonicalCentre": [
+          358.0,
+          0.07999995164573193,
+          184.33644850000002
+        ],
+        "checkedCorners": 30,
+        "id": "Path_Volcano_2_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 66.72896385192871,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 10
+      },
+      {
+        "canonicalCentre": [
+          607.0,
+          0.07999995164573193,
+          -342.60339
+        ],
+        "checkedCorners": 93,
+        "id": "Path_Volcano_3_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 37.682281494140625,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 31
+      },
+      {
+        "canonicalCentre": [
+          607.0,
+          0.07999995164573193,
+          -35.5525425
+        ],
+        "checkedCorners": 120,
+        "id": "Path_Volcano_3_1",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 63.99998474121094,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 40
+      },
+      {
+        "canonicalCentre": [
+          0.0,
+          10.985,
+          0.0
+        ],
+        "checkedCorners": 1368,
+        "id": "CompactShowhouseShell_A_Support",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 1.3617664467165014,
+        "role": "FittedShell",
+        "rootId": "CompactShowhouseShell_A",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 456
+      },
+      {
+        "canonicalCentre": [
+          0.0,
+          10.1,
+          0.0
+        ],
+        "checkedCorners": 2772,
+        "id": "CompactShowhouseShell_A_Primary",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 0.013392597353231395,
+        "role": "FittedShell",
+        "rootId": "CompactShowhouseShell_A",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 924
+      },
+      {
+        "canonicalCentre": [
+          0.0,
+          18.35,
+          0.0
+        ],
+        "checkedCorners": 660,
+        "id": "CompactShowhouseShell_A_Accent",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 0.02908247703606552,
+        "role": "FittedShell",
+        "rootId": "CompactShowhouseShell_A",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 220
+      },
+      {
+        "canonicalCentre": [
+          0,
+          0,
+          0
+        ],
+        "checkedCorners": 36,
+        "id": "CompactWallCube_Unit",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 1.0,
+        "role": "WallUnit",
+        "rootId": "CompactWallCube",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 12
+      }
+    ],
+    "nativeAssetIdsInvented": 0,
+    "sha256": "078a93ed83234709bec5799997d7ee41a8dd28cb39bc5fdd8ef18992d3353005",
+    "status": "SourceBinaryPassed; actual native readback NotRun",
+    "triangles": 2659,
+    "worldMutations": 0
+  },
+  "nativeReadbackStatus": "NotRun",
+  "roadGeometryHash": "696d1821c5ebc3a595f9437366c1c777f31d6ea5f2b0f303fd8a2a895a32dbb0",
+  "shellCornersFileSHA256": "5a221edcbaeb9db63e378b82706526541902119c7a421f63f12a7b9842a5303c",
+  "sourceShellSHA256": "79939a7a01a7bc2d6099dc34d83d2a01c0cafbb96f4ef26cb7080116ff0764e1",
+  "studioImport": {
+    "bytes": 321280,
+    "checkedCorners": 7977,
+    "checkedGroups": 31,
+    "compensationXZApplied": true,
+    "embeddedImages": 0,
+    "file": "tools/map-compaction/generated/selected-b085/CompactAssetsStudioImport.glb",
+    "groups": [
+      {
+        "canonicalCentre": [
+          385.0,
+          0.07999995164573193,
+          -474.0
+        ],
+        "checkedCorners": 99,
+        "id": "Path_Arctic_2_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 144.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 33
+      },
+      {
+        "canonicalCentre": [
+          581.0,
+          0.07999995164573193,
+          -535.0
+        ],
+        "checkedCorners": 30,
+        "id": "Path_Arctic_3_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 324.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 10
+      },
+      {
+        "canonicalCentre": [
+          -609.0,
+          0.07999995164573193,
+          -308.60339
+        ],
+        "checkedCorners": 108,
+        "id": "Path_Beach_0_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 37.260955810546875,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 36
+      },
+      {
+        "canonicalCentre": [
+          -653.0,
+          0.07999995164573193,
+          -22.2669415
+        ],
+        "checkedCorners": 150,
+        "id": "Path_Beach_0_1",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 53.369476318359375,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 50
+      },
+      {
+        "canonicalCentre": [
+          -627.0,
+          0.07999995164573193,
+          184.33644850000002
+        ],
+        "checkedCorners": 24,
+        "id": "Path_Beach_0_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 55.999993324279785,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 8
+      },
+      {
+        "canonicalCentre": [
+          -86.5288135,
+          0.07999995164573193,
+          -250.2202125
+        ],
+        "checkedCorners": 147,
+        "id": "Path_Camp_1_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 5.656249750052666,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 49
+      },
+      {
+        "canonicalCentre": [
+          -75.80326300000002,
+          0.07999995164573193,
+          -22.2669415
+        ],
+        "checkedCorners": 609,
+        "id": "Path_Camp_1_1",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 2.8015175426844507,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 203
+      },
+      {
+        "canonicalCentre": [
+          -231.849181,
+          0.07999995164573193,
+          184.33644850000002
+        ],
+        "checkedCorners": 36,
+        "id": "Path_Camp_1_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 2.612357105813132,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 12
+      },
+      {
+        "canonicalCentre": [
+          174.875468,
+          0.07999995164573193,
+          -251.70619349999998
+        ],
+        "checkedCorners": 105,
+        "id": "Path_Camp_2_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 2.8014207512133,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 35
+      },
+      {
+        "canonicalCentre": [
+          169.8135595,
+          0.07999995164573193,
+          -22.2669415
+        ],
+        "checkedCorners": 261,
+        "id": "Path_Camp_2_1",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 3.040955610573292,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 87
+      },
+      {
+        "canonicalCentre": [
+          198.60852649999998,
+          0.07999995164573193,
+          181.953271
+        ],
+        "checkedCorners": 42,
+        "id": "Path_Camp_2_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 6.752997383165621,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 14
+      },
+      {
+        "canonicalCentre": [
+          -387.0,
+          0.07999995164573193,
+          -308.60339
+        ],
+        "checkedCorners": 186,
+        "id": "Path_Forest_0_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 24.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 62
+      },
+      {
+        "canonicalCentre": [
+          -413.0,
+          0.07999995164573193,
+          -22.2669415
+        ],
+        "checkedCorners": 129,
+        "id": "Path_Forest_0_1",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 16.108428955078125,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 43
+      },
+      {
+        "canonicalCentre": [
+          -387.0,
+          0.07999995164573193,
+          184.33644850000002
+        ],
+        "checkedCorners": 12,
+        "id": "Path_Forest_0_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 79.8504638671875,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 4
+      },
+      {
+        "canonicalCentre": [
+          -78.1864405,
+          0.07999995164573193,
+          -474.0
+        ],
+        "checkedCorners": 177,
+        "id": "Path_Forest_1_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 16.108474731445312,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 59
+      },
+      {
+        "canonicalCentre": [
+          169.8135595,
+          0.07999995164573193,
+          -564.0
+        ],
+        "checkedCorners": 42,
+        "id": "Path_Forest_2_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 95.67457580566406,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 14
+      },
+      {
+        "canonicalCentre": [
+          385.0,
+          0.07999995164573193,
+          350.0
+        ],
+        "checkedCorners": 129,
+        "id": "Path_GlitchZone_2_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 28.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 43
+      },
+      {
+        "canonicalCentre": [
+          587.0,
+          0.07999995164573193,
+          369.0
+        ],
+        "checkedCorners": 48,
+        "id": "Path_GlitchZone_3_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 144.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 16
+      },
+      {
+        "canonicalCentre": [
+          -343.0,
+          0.07999995164573193,
+          443.0
+        ],
+        "checkedCorners": 42,
+        "id": "Path_Jungle_0_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 56.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 14
+      },
+      {
+        "canonicalCentre": [
+          -78.1864405,
+          0.07999995164573193,
+          353.0
+        ],
+        "checkedCorners": 207,
+        "id": "Path_Jungle_1_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 44.41168212890625,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 69
+      },
+      {
+        "canonicalCentre": [
+          169.8135595,
+          0.07999995164573193,
+          292.0
+        ],
+        "checkedCorners": 30,
+        "id": "Path_Jungle_2_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 335.99999833106995,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 10
+      },
+      {
+        "canonicalCentre": [
+          -507.0,
+          0.07999995164573193,
+          343.0
+        ],
+        "checkedCorners": 162,
+        "id": "Path_Swamp_0_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 56.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 54
+      },
+      {
+        "canonicalCentre": [
+          385.0,
+          0.07999995164573193,
+          -272.719626
+        ],
+        "checkedCorners": 18,
+        "id": "Path_Volcano_2_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 576.0,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 6
+      },
+      {
+        "canonicalCentre": [
+          385.0,
+          0.07999995164573193,
+          44.3364485
+        ],
+        "checkedCorners": 105,
+        "id": "Path_Volcano_2_1",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 21.75701904296875,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 35
+      },
+      {
+        "canonicalCentre": [
+          358.0,
+          0.07999995164573193,
+          184.33644850000002
+        ],
+        "checkedCorners": 30,
+        "id": "Path_Volcano_2_2",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 66.72896385192871,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 10
+      },
+      {
+        "canonicalCentre": [
+          607.0,
+          0.07999995164573193,
+          -342.60339
+        ],
+        "checkedCorners": 93,
+        "id": "Path_Volcano_3_0",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 37.682281494140625,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 31
+      },
+      {
+        "canonicalCentre": [
+          607.0,
+          0.07999995164573193,
+          -35.5525425
+        ],
+        "checkedCorners": 120,
+        "id": "Path_Volcano_3_1",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 63.99998474121094,
+        "role": "Road",
+        "rootId": "CompactMapRoads",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 40
+      },
+      {
+        "canonicalCentre": [
+          0.0,
+          10.985,
+          0.0
+        ],
+        "checkedCorners": 1368,
+        "id": "CompactShowhouseShell_A_Support",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 1.3617664467165014,
+        "role": "FittedShell",
+        "rootId": "CompactShowhouseShell_A",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 456
+      },
+      {
+        "canonicalCentre": [
+          0.0,
+          10.1,
+          0.0
+        ],
+        "checkedCorners": 2772,
+        "id": "CompactShowhouseShell_A_Primary",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 0.013392597353231395,
+        "role": "FittedShell",
+        "rootId": "CompactShowhouseShell_A",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 924
+      },
+      {
+        "canonicalCentre": [
+          0.0,
+          18.35,
+          0.0
+        ],
+        "checkedCorners": 660,
+        "id": "CompactShowhouseShell_A_Accent",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 0.02908247703606552,
+        "role": "FittedShell",
+        "rootId": "CompactShowhouseShell_A",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 220
+      },
+      {
+        "canonicalCentre": [
+          0,
+          0,
+          0
+        ],
+        "checkedCorners": 36,
+        "id": "CompactWallCube_Unit",
+        "maximumWithinFaceNormalSpread": 0,
+        "minimumWindingDotNormal": 1.0,
+        "role": "WallUnit",
+        "rootId": "CompactWallCube",
+        "sourceFloat32CornerErrors": 0,
+        "triangles": 12
+      }
+    ],
+    "nativeAssetIdsInvented": 0,
+    "sha256": "bdd81be39782c1649694deecaf3264e5e82db25d9bb7ed7f783f05c1ab6fbd4e",
+    "status": "SourceBinaryPassed; actual native readback NotRun",
+    "triangles": 2659,
+    "worldMutations": 0
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "status": "SourcePythonTestsPassed; actual native QA NotRun",
+  "recordedAtUTC": "2026-10-11T15:28:31.243823+00:00",
+  "testsRun": 9,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "actualTestIdentifiers": [
+    "CompactNativeGeometryTests.NativePackingTests.test_both_coordinate_exports_preserve_all36_corners",
+    "CompactNativeGeometryTests.NativePackingTests.test_closed_cube_edges_and_unit_volume",
+    "CompactNativeGeometryTests.NativePackingTests.test_damaged_hardnormal_is_rejected",
+    "CompactNativeGeometryTests.NativePackingTests.test_damaged_position_is_rejected",
+    "CompactNativeGeometryTests.NativePackingTests.test_damaged_uv_is_rejected",
+    "CompactNativeGeometryTests.NativePackingTests.test_invalid_glb_length_is_rejected",
+    "CompactNativeGeometryTests.NativePackingTests.test_native_compensation_flips_positions_normals_and_translation",
+    "CompactNativeGeometryTests.NativePackingTests.test_writer_preserves_source_values",
+    "CompactNativeGeometryTests.NativePackingTests.test_wrong_compensation_is_rejected"
+  ],
+  "actualOutput": "test_both_coordinate_exports_preserve_all36_corners (CompactNativeGeometryTests.NativePackingTests.test_both_coordinate_exports_preserve_all36_corners) ... ok\ntest_closed_cube_edges_and_unit_volume (CompactNativeGeometryTests.NativePackingTests.test_closed_cube_edges_and_unit_volume) ... ok\ntest_damaged_hardnormal_is_rejected (CompactNativeGeometryTests.NativePackingTests.test_damaged_hardnormal_is_rejected) ... ok\ntest_damaged_position_is_rejected (CompactNativeGeometryTests.NativePackingTests.test_damaged_position_is_rejected) ... ok\ntest_damaged_uv_is_rejected (CompactNativeGeometryTests.NativePackingTests.test_damaged_uv_is_rejected) ... ok\ntest_invalid_glb_length_is_rejected (CompactNativeGeometryTests.NativePackingTests.test_invalid_glb_length_is_rejected) ... ok\ntest_native_compensation_flips_positions_normals_and_translation (CompactNativeGeometryTests.NativePackingTests.test_native_compensation_flips_positions_normals_and_translation) ... ok\ntest_writer_preserves_source_values (CompactNativeGeometryTests.NativePackingTests.test_writer_preserves_source_values) ... ok\ntest_wrong_compensation_is_rejected (CompactNativeGeometryTests.NativePackingTests.test_wrong_compensation_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.015s\n\nOK\n",
+  "nativeStudioCalls": 0,
+  "inputAndToolSHA256": {
+    "tools/map-compaction/CompactNativeGeometry.py": "28b5b6ac651e7580804dcbd715d8b80056f743f679b6e4c11a363f264ca87dc1",
+    "tools/map-compaction/CompactBuildNativeAssets.py": "ec4f035cfb7f0d1b3474d79cdbfe47e4ef2cb83979ae4031cde890d7fed9d2a0",
+    "tools/map-compaction/CompactNativeGeometryTests.py": "359b95f9129e21f30a82d794c74e73e0ff5db0b4b28d0ef9dda7bcad5a0183d2",
+    "tools/map-compaction/CompactBuildRoadMeshes.py": "a0a9e31df2bb722aa1f2d7456429ad0c1a6f58e199c3784fe17f29211cbadd81",
+    "tools/map-compaction/CompactBuildRoadNativeHelpers.py": "52b352aba899574f3a89207d454dbf8d62167fc6ed9442d4b388c5004a913fb6",
+    "tools/map-compaction/CompactPrepareRoads.template.luau": "6eb4dc2316f4715c5a92998f18fcc8cd0f788855c16d3e7ac785c6cd85ea6307",
+    "tools/map-compaction/CompactCheckSiteGeometry.py": "01966cd0f6a1d52eda0cc95fd33f6a005844deff0405de906969ed28c2cf795a",
+    "tools/map-compaction/CompactReviewArtSolidContacts.py": "e6053dc53b08af434a063139824244cb5e3df8bf9d66e94cd4e96ed9e8fa47df",
+    "tools/map-compaction/CompactCheckFinalBoundary.py": "e5216f8710eab0c668f3e30aba70886d85397304d58dfc1fd6255b97ff3cb4e4",
+    "tools/map-compaction/CompactNativeRoadReadiness.md": "4a77b8fa590650cd3e70c9338f19573ff98b02db6d2aa3f6426ed41b385c5a02"
+  }
+}

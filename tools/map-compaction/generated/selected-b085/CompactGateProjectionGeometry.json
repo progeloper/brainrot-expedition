@@ -1,0 +1,283 @@
+{
+  "candidate": {
+    "b": 0.85,
+    "h": 248,
+    "origin": [
+      -19,
+      0.04999995231628418,
+      -46
+    ],
+    "outer": 0.75,
+    "r": 188,
+    "t": 89.6
+  },
+  "gates": [
+    {
+      "apertureClearWidth": 24,
+      "drivingAndNeighborAccess": "NotRun",
+      "floorOutsideArea": 0.0,
+      "fullProjectionPolygon": [
+        [
+          -489.0,
+          -394.0
+        ],
+        [
+          -489.0,
+          -374.0
+        ],
+        [
+          -525.0,
+          -374.0
+        ],
+        [
+          -525.0,
+          -394.0
+        ],
+        [
+          -489.0,
+          -394.0
+        ]
+      ],
+      "ground": [
+        -507,
+        0.04999995231628418,
+        -384
+      ],
+      "id": "Gate_Beach",
+      "loadedProjectionLength": 36,
+      "loadedProjectionWidth": 20,
+      "newWallIntersections": [],
+      "nominalSideMargin": 2,
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "roadOutsideArea": 0.0,
+      "routeId": "Main_RegionalLoop"
+    },
+    {
+      "apertureClearWidth": 24,
+      "drivingAndNeighborAccess": "NotRun",
+      "floorOutsideArea": 0.0,
+      "fullProjectionPolygon": [
+        [
+          -397.0,
+          184.0
+        ],
+        [
+          -377.0,
+          184.0
+        ],
+        [
+          -377.0,
+          220.0
+        ],
+        [
+          -397.0,
+          220.0
+        ],
+        [
+          -397.0,
+          184.0
+        ]
+      ],
+      "ground": [
+        -387,
+        0.04999995231628418,
+        202
+      ],
+      "id": "Gate_Swamp",
+      "loadedProjectionLength": 36,
+      "loadedProjectionWidth": 20,
+      "newWallIntersections": [],
+      "nominalSideMargin": 2,
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "roadOutsideArea": 0.0,
+      "routeId": "Main_Branch_01"
+    },
+    {
+      "apertureClearWidth": 24,
+      "drivingAndNeighborAccess": "NotRun",
+      "floorOutsideArea": 0.0,
+      "fullProjectionPolygon": [
+        [
+          -254.23364485981307,
+          184.0
+        ],
+        [
+          -234.23364485981307,
+          184.0
+        ],
+        [
+          -234.23364485981307,
+          220.0
+        ],
+        [
+          -254.23364485981307,
+          220.0
+        ],
+        [
+          -254.23364485981307,
+          184.0
+        ]
+      ],
+      "ground": [
+        -244.23364485981307,
+        0.04999995231628418,
+        202
+      ],
+      "id": "Gate_Jungle",
+      "loadedProjectionLength": 36,
+      "loadedProjectionWidth": 20,
+      "newWallIntersections": [],
+      "nominalSideMargin": 2,
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "roadOutsideArea": 0.0,
+      "routeId": "Camp_Exterior_WS"
+    },
+    {
+      "apertureClearWidth": 24,
+      "drivingAndNeighborAccess": "NotRun",
+      "floorOutsideArea": 0.0,
+      "fullProjectionPolygon": [
+        [
+          211.0,
+          -554.0
+        ],
+        [
+          211.0,
+          -574.0
+        ],
+        [
+          247.0,
+          -574.0
+        ],
+        [
+          247.0,
+          -554.0
+        ],
+        [
+          211.0,
+          -554.0
+        ]
+      ],
+      "ground": [
+        229,
+        0.04999995231628418,
+        -564
+      ],
+      "id": "Gate_Arctic",
+      "loadedProjectionLength": 36,
+      "loadedProjectionWidth": 20,
+      "newWallIntersections": [],
+      "nominalSideMargin": 2,
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "roadOutsideArea": 0.0,
+      "routeId": "Main_RegionalLoop"
+    },
+    {
+      "apertureClearWidth": 24,
+      "drivingAndNeighborAccess": "NotRun",
+      "floorOutsideArea": 0.0,
+      "fullProjectionPolygon": [
+        [
+          211.0,
+          -270.2056074766355
+        ],
+        [
+          211.0,
+          -290.2056074766355
+        ],
+        [
+          247.0,
+          -290.2056074766355
+        ],
+        [
+          247.0,
+          -270.2056074766355
+        ],
+        [
+          211.0,
+          -270.2056074766355
+        ]
+      ],
+      "ground": [
+        229,
+        0.04999995231628418,
+        -280.2056074766355
+      ],
+      "id": "Gate_Volcano",
+      "loadedProjectionLength": 36,
+      "loadedProjectionWidth": 20,
+      "newWallIntersections": [],
+      "nominalSideMargin": 2,
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "roadOutsideArea": 0.0,
+      "routeId": "Camp_Exterior_EN"
+    },
+    {
+      "apertureClearWidth": 24,
+      "drivingAndNeighborAccess": "NotRun",
+      "floorOutsideArea": 0.0,
+      "fullProjectionPolygon": [
+        [
+          211.0,
+          302.0
+        ],
+        [
+          211.0,
+          282.0
+        ],
+        [
+          247.0,
+          282.0
+        ],
+        [
+          247.0,
+          302.0
+        ],
+        [
+          211.0,
+          302.0
+        ]
+      ],
+      "ground": [
+        229,
+        0.04999995231628418,
+        292
+      ],
+      "id": "Gate_GlitchZone",
+      "loadedProjectionLength": 36,
+      "loadedProjectionWidth": 20,
+      "newWallIntersections": [],
+      "nominalSideMargin": 2,
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "roadOutsideArea": 0.0,
+      "routeId": "Main_RegionalLoop"
+    }
+  ],
+  "routeGeometryHash": "696d1821c5ebc3a595f9437366c1c777f31d6ea5f2b0f303fd8a2a895a32dbb0",
+  "status": "Source planar full20x36 gate footprint review; actual native driving NotRun",
+  "worldMutations": 0
+}

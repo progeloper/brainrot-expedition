@@ -1,0 +1,77 @@
+[
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/tools/map-compaction/CompactTransform.luau",
+    "sha256": "674cf766290633b579bf7d57a0d3da318ea1d447fd6c4466d8ef2219d686eda5",
+    "bytes": 5843
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/tools/map-compaction/CompactBoundary.luau",
+    "sha256": "77d4b0506bfbef08e0c13d389af8e088bc64b62c86f759ec1a6774b1a452207c",
+    "bytes": 13575
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/tools/map-compaction/CompactRoute.luau",
+    "sha256": "c8fd3f69e17432f1aeda00f672592374ebd1872487f3de686daa2acf845f5922",
+    "bytes": 16781
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/tools/map-compaction/CompactRouteTests.luau",
+    "sha256": "cf260b662cec6a3e621c1cc03e9c1175a1eff7f775a0fff0c57aa11c4dc15695",
+    "bytes": 19475
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/tools/map-compaction/CompactRunTests.luau",
+    "sha256": "3914fdeac45aae08ba9db98a869889d2e4af5fcf24e7407417e6494143e0a7d1",
+    "bytes": 1063
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/tools/map-compaction/CompactBuildPlan.luau",
+    "sha256": "d6e9c25ec9322f6e74b757a096670bfa1fcf8255590ef8201964a45b99bec6b8",
+    "bytes": 6809
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/tools/map-compaction/CompactCaptureInput.py",
+    "sha256": "025c371229521e4508d618f1ccc3dfe6132404003e4b1be556e199779a8c05fa",
+    "bytes": 5248
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/tools/map-compaction/CompactExportDraft.py",
+    "sha256": "3e1c81c2ca8bfef50d208050cf046743bfe0e4873ca6b87613968b28b022405e",
+    "bytes": 4912
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/tools/map-compaction/CompactBaselineInput.json",
+    "sha256": "54683905b2d43c335b1e699e70962aba8b9e9d22b2e0ce840c6610472673ab06",
+    "bytes": 183791
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/tools/map-compaction/CompactDraftPlan.json",
+    "sha256": "d60dd978c36eb2c589b053cebdc85b3ee2616211167d6f2f8f9cb29020e2ad9c",
+    "bytes": 668227
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/tools/map-compaction/CompactTestResults.json",
+    "sha256": "cd1714e2e1ce6c2e11a32dd1f24a8567b2e649c83a306d284321d1a4e6fa7701",
+    "bytes": 4053
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/tools/map-compaction/CompactPlannerReadme.md",
+    "sha256": "d739b8576fdc779afcf5da7c709ca052858b4e44d10777158bbb4850ef5a8314",
+    "bytes": 5875
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/docs/map-compaction/RouteBoundaryDraft.json",
+    "sha256": "40b11896350d56e78de5cf5edcad0f0418357422803057a8c54ba738cd656041",
+    "bytes": 715644
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/docs/map-compaction/CrossingManifest.json",
+    "sha256": "eea4c5b41c09157640beb5b2e7bac575b4d6199c7f9013ff24c50b82108da971",
+    "bytes": 56189
+  },
+  {
+    "file": "/Users/noahodukoya/development/Roblox/BrainrotExpedition/docs/map-compaction/WallManifest.json",
+    "sha256": "553bd080f88e2133c0a375c8a5c1752a718d7576eede52dc355c05f99e2c1afc",
+    "bytes": 134269
+  }
+]

@@ -1,0 +1,1749 @@
+{
+  "archiveSharedOnlyCount": 31,
+  "archiveSharedRows": [
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_02",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        893,
+        13.050000190734863,
+        -720,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_03[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_03",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        573,
+        13.050000190734863,
+        -480,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_04",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        415,
+        13.050000190734863,
+        -904,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        108
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_05",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        415,
+        13.050000190734863,
+        -652,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        348
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_06[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_06",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        731,
+        13.050000190734863,
+        -598,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_02",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -611,
+        13.050000190734863,
+        -720,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_03[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_03",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -931,
+        13.050000190734863,
+        384,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_05",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -773,
+        13.050000190734863,
+        -664,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        108
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_06[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_06",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -773,
+        13.050000190734863,
+        -100,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        972
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_07",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -453,
+        13.050000190734863,
+        -838,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.BoundarySeparators.BoulderWall_01",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        733,
+        13.050000190734863,
+        388,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        640,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_03[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.BoundarySeparators.BoulderWall_03",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        415,
+        13.050000190734863,
+        440,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        108
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.BoundarySeparators.BoulderWall_04",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        415,
+        13.050000190734863,
+        692,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        348
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_01",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -439,
+        13.050000190734863,
+        388,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        24,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_02",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        5,
+        13.050000190734863,
+        388,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        816,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_03[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_03",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -611,
+        13.050000190734863,
+        628,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_05",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -769,
+        13.050000190734863,
+        746,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_06[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_06",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -449,
+        13.050000190734863,
+        506,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_07",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        411,
+        13.050000190734863,
+        440,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        108
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_08[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_08",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        411,
+        13.050000190734863,
+        692,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        348
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_01",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -857,
+        13.050000190734863,
+        388,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        468,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_02",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -525,
+        13.050000190734863,
+        388,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        148,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_03[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_03",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -611,
+        13.050000190734863,
+        624,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_06[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_06",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -773,
+        13.050000190734863,
+        746,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_07",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        -453,
+        13.050000190734863,
+        506,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_01",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        893,
+        13.050000190734863,
+        -716,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_02",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        573,
+        13.050000190734863,
+        -476,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_03[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_03",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        733,
+        13.050000190734863,
+        384,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        640,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_04",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        415,
+        13.050000190734863,
+        -476,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        4
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_05",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        415,
+        13.050000190734863,
+        -32,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        836
+      ]
+    },
+    {
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_06[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_06",
+      "policy": "Move this exact original instance to owned rollback archive before new shared walls become collidable; do not leave duplicate old separator collisions",
+      "sourceCFrame": [
+        735,
+        13.050000190734863,
+        -598,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourceSize": [
+        4,
+        26,
+        240
+      ]
+    }
+  ],
+  "baselineManagedContentSHA256": "3fb9d9e8a543cb80a034cf3fb96fbd118136a003ba829b14a13b2c3720894310",
+  "candidate": {
+    "b": 0.85,
+    "h": 248,
+    "origin": [
+      -19,
+      0.04999995231628418,
+      -46
+    ],
+    "outer": 0.75,
+    "r": 188,
+    "t": 89.6
+  },
+  "capturedSeparatorCount": 41,
+  "newSharedWallCount": 54,
+  "preserveRetainedInstanceIdentity": true,
+  "retainedOuterCount": 10,
+  "retainedOuterRows": [
+    {
+      "cframe": [
+        469,
+        13.050000190734863,
+        -652,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_01",
+      "policy": "Preserve captured outer physical containment only; exact inward side offset/thickness/height retained",
+      "regionId": "REGION_ARCTIC",
+      "size": [
+        480,
+        26,
+        4
+      ],
+      "sourceCFrame": [
+        733,
+        13.050000190734863,
+        -956,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourcePortion": {
+        "first": 413,
+        "kind": "OuterContainment",
+        "last": 1053,
+        "regionId": "REGION_ARCTIC",
+        "runId": "O01"
+      },
+      "sourceSize": [
+        640,
+        26,
+        4
+      ],
+      "targetSemanticSpan": {
+        "axis": "X",
+        "first": 229,
+        "fixed": -654,
+        "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+        "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+        "last": 709,
+        "regionId": "REGION_ARCTIC",
+        "source": {
+          "first": 413,
+          "fixed": -958,
+          "last": 1053
+        }
+      }
+    },
+    {
+      "cframe": [
+        707,
+        13.050000190734863,
+        -564,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_07",
+      "policy": "Preserve captured outer physical containment only; exact inward side offset/thickness/height retained",
+      "regionId": "REGION_ARCTIC",
+      "size": [
+        4,
+        26,
+        180
+      ],
+      "sourceCFrame": [
+        1051,
+        13.050000190734863,
+        -838,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourcePortion": {
+        "first": -958,
+        "kind": "OuterContainment",
+        "last": -718,
+        "regionId": "REGION_ARCTIC",
+        "runId": "O02"
+      },
+      "sourceSize": [
+        4,
+        26,
+        240
+      ],
+      "targetSemanticSpan": {
+        "axis": "Z",
+        "first": -654,
+        "fixed": 709,
+        "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+        "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+        "last": -474,
+        "regionId": "REGION_ARCTIC",
+        "source": {
+          "first": -958,
+          "fixed": 1053,
+          "last": -718
+        }
+      }
+    },
+    {
+      "cframe": [
+        -507,
+        13.050000190734863,
+        -652,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_01",
+      "policy": "Preserve captured outer physical containment only; exact inward side offset/thickness/height retained",
+      "regionId": "REGION_BEACH",
+      "size": [
+        480,
+        26,
+        4
+      ],
+      "sourceCFrame": [
+        -771,
+        13.050000190734863,
+        -956,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourcePortion": {
+        "first": -1091,
+        "kind": "OuterContainment",
+        "last": -451,
+        "regionId": "REGION_BEACH",
+        "runId": "O03"
+      },
+      "sourceSize": [
+        640,
+        26,
+        4
+      ],
+      "targetSemanticSpan": {
+        "axis": "X",
+        "first": -747,
+        "fixed": -654,
+        "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+        "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+        "last": -267,
+        "regionId": "REGION_BEACH",
+        "source": {
+          "first": -1091,
+          "fixed": -958,
+          "last": -451
+        }
+      }
+    },
+    {
+      "cframe": [
+        -745,
+        13.050000190734863,
+        -226,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_04",
+      "policy": "Preserve captured outer physical containment only; exact inward side offset/thickness/height retained",
+      "regionId": "REGION_BEACH",
+      "size": [
+        4,
+        26,
+        856
+      ],
+      "sourceCFrame": [
+        -1089,
+        13.050000190734863,
+        -286,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourcePortion": {
+        "first": -958,
+        "kind": "OuterContainment",
+        "last": 386,
+        "regionId": "REGION_BEACH",
+        "runId": "O04"
+      },
+      "sourceSize": [
+        4,
+        26,
+        1344
+      ],
+      "targetSemanticSpan": {
+        "axis": "Z",
+        "first": -654,
+        "fixed": -747,
+        "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+        "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+        "last": 202,
+        "regionId": "REGION_BEACH",
+        "source": {
+          "first": -958,
+          "fixed": -1091,
+          "last": 386
+        }
+      }
+    },
+    {
+      "cframe": [
+        469,
+        13.050000190734863,
+        560,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.BoundarySeparators.BoulderWall_02",
+      "policy": "Preserve captured outer physical containment only; exact inward side offset/thickness/height retained",
+      "regionId": "REGION_GLITCH",
+      "size": [
+        480,
+        26,
+        4
+      ],
+      "sourceCFrame": [
+        733,
+        13.050000190734863,
+        864,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourcePortion": {
+        "first": 413,
+        "kind": "OuterContainment",
+        "last": 1053,
+        "regionId": "REGION_GLITCH",
+        "runId": "O06"
+      },
+      "sourceSize": [
+        640,
+        26,
+        4
+      ],
+      "targetSemanticSpan": {
+        "axis": "X",
+        "first": 229,
+        "fixed": 562,
+        "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+        "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+        "last": 709,
+        "regionId": "REGION_GLITCH",
+        "source": {
+          "first": 413,
+          "fixed": 866,
+          "last": 1053
+        }
+      }
+    },
+    {
+      "cframe": [
+        707,
+        13.050000190734863,
+        382,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.BoundarySeparators.BoulderWall_05",
+      "policy": "Preserve captured outer physical containment only; exact inward side offset/thickness/height retained",
+      "regionId": "REGION_GLITCH",
+      "size": [
+        4,
+        26,
+        360
+      ],
+      "sourceCFrame": [
+        1051,
+        13.050000190734863,
+        626,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourcePortion": {
+        "first": 386,
+        "kind": "OuterContainment",
+        "last": 866,
+        "regionId": "REGION_GLITCH",
+        "runId": "O07"
+      },
+      "sourceSize": [
+        4,
+        26,
+        480
+      ],
+      "targetSemanticSpan": {
+        "axis": "Z",
+        "first": 202,
+        "fixed": 709,
+        "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+        "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+        "last": 562,
+        "regionId": "REGION_GLITCH",
+        "source": {
+          "first": 386,
+          "fixed": 1053,
+          "last": 866
+        }
+      }
+    },
+    {
+      "cframe": [
+        -139,
+        13.050000190734863,
+        560,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_04",
+      "policy": "Preserve captured outer physical containment only; exact inward side offset/thickness/height retained",
+      "regionId": "REGION_JUNGLE",
+      "size": [
+        736,
+        26,
+        4
+      ],
+      "sourceCFrame": [
+        -179,
+        13.050000190734863,
+        864,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourcePortion": {
+        "first": -771,
+        "kind": "OuterContainment",
+        "last": 413,
+        "regionId": "REGION_JUNGLE",
+        "runId": "O08"
+      },
+      "sourceSize": [
+        1184,
+        26,
+        4
+      ],
+      "targetSemanticSpan": {
+        "axis": "X",
+        "first": -507,
+        "fixed": 562,
+        "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+        "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+        "last": 229,
+        "regionId": "REGION_JUNGLE",
+        "source": {
+          "first": -771,
+          "fixed": 866,
+          "last": 413
+        }
+      }
+    },
+    {
+      "cframe": [
+        -627,
+        13.050000190734863,
+        560,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_04",
+      "policy": "Preserve captured outer physical containment only; exact inward side offset/thickness/height retained",
+      "regionId": "REGION_SWAMP",
+      "size": [
+        240,
+        26,
+        4
+      ],
+      "sourceCFrame": [
+        -931,
+        13.050000190734863,
+        864,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourcePortion": {
+        "first": -1091,
+        "kind": "OuterContainment",
+        "last": -771,
+        "regionId": "REGION_SWAMP",
+        "runId": "O09"
+      },
+      "sourceSize": [
+        320,
+        26,
+        4
+      ],
+      "targetSemanticSpan": {
+        "axis": "X",
+        "first": -747,
+        "fixed": 562,
+        "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+        "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+        "last": -507,
+        "regionId": "REGION_SWAMP",
+        "source": {
+          "first": -1091,
+          "fixed": 866,
+          "last": -771
+        }
+      }
+    },
+    {
+      "cframe": [
+        -745,
+        13.050000190734863,
+        382,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_05",
+      "policy": "Preserve captured outer physical containment only; exact inward side offset/thickness/height retained",
+      "regionId": "REGION_SWAMP",
+      "size": [
+        4,
+        26,
+        360
+      ],
+      "sourceCFrame": [
+        -1089,
+        13.050000190734863,
+        626,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourcePortion": {
+        "first": 386,
+        "kind": "OuterContainment",
+        "last": 866,
+        "regionId": "REGION_SWAMP",
+        "runId": "O10"
+      },
+      "sourceSize": [
+        4,
+        26,
+        480
+      ],
+      "targetSemanticSpan": {
+        "axis": "Z",
+        "first": 202,
+        "fixed": -747,
+        "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+        "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+        "last": 562,
+        "regionId": "REGION_SWAMP",
+        "source": {
+          "first": 386,
+          "fixed": -1091,
+          "last": 866
+        }
+      }
+    },
+    {
+      "cframe": [
+        707,
+        13.050000190734863,
+        -136,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_07",
+      "policy": "Preserve captured outer physical containment only; exact inward side offset/thickness/height retained",
+      "regionId": "REGION_VOLCANO",
+      "size": [
+        4,
+        26,
+        676
+      ],
+      "sourceCFrame": [
+        1051,
+        13.050000190734863,
+        -166,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sourceFlags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "sourcePortion": {
+        "first": -718,
+        "kind": "OuterContainment",
+        "last": 386,
+        "regionId": "REGION_VOLCANO",
+        "runId": "O11"
+      },
+      "sourceSize": [
+        4,
+        26,
+        1104
+      ],
+      "targetSemanticSpan": {
+        "axis": "Z",
+        "first": -474,
+        "fixed": 709,
+        "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+        "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+        "last": 202,
+        "regionId": "REGION_VOLCANO",
+        "source": {
+          "first": -718,
+          "fixed": 1053,
+          "last": 386
+        }
+      }
+    }
+  ],
+  "sourcePlanSHA256": "9d935792cae5095c4e32a5f93794c6e291c85aaba11c0ee5b9778189a4b72a20",
+  "status": "Provisional numerical migration plan; not applied",
+  "worldMutations": 0
+}

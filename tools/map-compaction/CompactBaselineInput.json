@@ -1,0 +1,8363 @@
+{
+  "actualRoadBindingsSHA256": "7a3a2be4d40ffb25b7269e1fa7923122ac1ef0a86f1c4d4a2faefd01d9ea16a0",
+  "actualRoads": [
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Arctic_2_0",
+        "PlacementId": "Path_Arctic_2_0",
+        "Region": "Arctic",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 173,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        621,
+        0.07999995350837708,
+        -718,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Arctic_2_0[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://85602925289789",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://85602925289789",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Arctic_2_0",
+      "size": [
+        416,
+        0.05000000074505806,
+        304
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Arctic_3_0",
+        "PlacementId": "Path_Arctic_3_0",
+        "Region": "Arctic",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 50,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        877,
+        0.07999995350837708,
+        -794,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Arctic_3_0[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://88108882800445",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://88108882800445",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Arctic_3_0",
+      "size": [
+        96,
+        0.05000000074505806,
+        152
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Beach_0_0",
+        "PlacementId": "Path_Beach_0_0",
+        "Region": "Beach",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 50,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -867,
+        0.07999995350837708,
+        -469,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Beach_0_0[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://89701123136279",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://89701123136279",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Beach_0_0",
+      "size": [
+        192,
+        0.05000000074505806,
+        302
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Beach_0_1",
+        "PlacementId": "Path_Beach_0_1",
+        "Region": "Beach",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 125,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -969,
+        0.07999995350837708,
+        2,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Beach_0_1[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://136935867297415",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://136935867297415",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Beach_0_1",
+      "size": [
+        140,
+        0.05000000074505806,
+        640
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Beach_0_2",
+        "PlacementId": "Path_Beach_0_2",
+        "Region": "Beach",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 8,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -931,
+        0.07999995350837708,
+        354,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Beach_0_2[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://90913313718642",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://90913313718642",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Beach_0_2",
+      "size": [
+        28,
+        0.05000000074505806,
+        64
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Camp_1_0",
+        "PlacementId": "Path_Camp_1_0",
+        "Region": "Camp",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 137,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -150,
+        0.07999995350837708,
+        -389,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Camp_1_0[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://117579534009101",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://117579534009101",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Camp_1_0",
+      "size": [
+        602,
+        0.05000000074505806,
+        142
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Camp_1_1",
+        "PlacementId": "Path_Camp_1_1",
+        "Region": "Camp",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 976,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -115.36396026611328,
+        0.07999995350837708,
+        2,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Camp_1_1[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://132845393737655",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://132845393737655",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Camp_1_1",
+      "size": [
+        608.7279052734375,
+        0.05000000074505806,
+        640
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Camp_1_2",
+        "PlacementId": "Path_Camp_1_2",
+        "Region": "Camp",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 58,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -393.63604736328125,
+        0.07999995350837708,
+        354,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Camp_1_2[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://85922684233740",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://85922684233740",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Camp_1_2",
+      "size": [
+        78.72792053222656,
+        0.05000000074505806,
+        64
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Camp_2_0",
+        "PlacementId": "Path_Camp_2_0",
+        "Region": "Camp",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 136,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        316.63604736328125,
+        0.07999995350837708,
+        -396,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Camp_2_0[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://103652252276883",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://103652252276883",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Camp_2_0",
+      "size": [
+        192.72792053222656,
+        0.05000000074505806,
+        156
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Camp_2_1",
+        "PlacementId": "Path_Camp_2_1",
+        "Region": "Camp",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 352,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        285.36395263671875,
+        0.07999995350837708,
+        2,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Camp_2_1[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://109051281098561",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://109051281098561",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Camp_2_1",
+      "size": [
+        192.72792053222656,
+        0.05000000074505806,
+        640
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Camp_2_2",
+        "PlacementId": "Path_Camp_2_2",
+        "Region": "Camp",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 55,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        364.63604736328125,
+        0.07999995350837708,
+        345,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Camp_2_2[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://108347084104647",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://108347084104647",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Camp_2_2",
+      "size": [
+        96.72792053222656,
+        0.05000000074505806,
+        46
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Forest_0_0",
+        "PlacementId": "Path_Forest_0_0",
+        "Region": "Forest",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 85,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -611,
+        0.07999995350837708,
+        -469,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Forest_0_0[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://89011866736414",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://89011866736414",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Forest_0_0",
+      "size": [
+        320,
+        0.05000000074505806,
+        302
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Forest_0_1",
+        "PlacementId": "Path_Forest_0_1",
+        "Region": "Forest",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 80,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -649,
+        0.07999995350837708,
+        2,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Forest_0_1[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://92104251467042",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://92104251467042",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Forest_0_1",
+      "size": [
+        140,
+        0.05000000074505806,
+        640
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Forest_0_2",
+        "PlacementId": "Path_Forest_0_2",
+        "Region": "Forest",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 10,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -611,
+        0.07999995350837708,
+        354,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Forest_0_2[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://86527050981149",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://86527050981149",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Forest_0_2",
+      "size": [
+        28,
+        0.05000000074505806,
+        64
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Forest_1_0",
+        "PlacementId": "Path_Forest_1_0",
+        "Region": "Forest",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 105,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -131,
+        0.07999995350837708,
+        -718,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Forest_1_0[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://103980081149232",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://103980081149232",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Forest_1_0",
+      "size": [
+        640,
+        0.05000000074505806,
+        304
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Forest_2_0",
+        "PlacementId": "Path_Forest_2_0",
+        "Region": "Forest",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 18,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        301,
+        0.07999995350837708,
+        -838,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Forest_2_0[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://88953101293711",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://88953101293711",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Forest_2_0",
+      "size": [
+        224,
+        0.05000000074505806,
+        28
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_GlitchZone_2_2",
+        "PlacementId": "Path_GlitchZone_2_2",
+        "Region": "Glitch Zone",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 85,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        621,
+        0.07999995350837708,
+        578,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_GlitchZone_2_2[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://123389368670955",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://123389368670955",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_GlitchZone_2_2",
+      "size": [
+        416,
+        0.05000000074505806,
+        384
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_GlitchZone_3_2",
+        "PlacementId": "Path_GlitchZone_3_2",
+        "Region": "Glitch Zone",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 42,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        885,
+        0.07999995350837708,
+        612,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_GlitchZone_3_2[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://125376151524413",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://125376151524413",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_GlitchZone_3_2",
+      "size": [
+        112,
+        0.05000000074505806,
+        276
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Jungle_0_2",
+        "PlacementId": "Path_Jungle_0_2",
+        "Region": "Jungle",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 32,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -547,
+        0.07999995350837708,
+        702,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Jungle_0_2[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://77818402919166",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://77818402919166",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Jungle_0_2",
+      "size": [
+        192,
+        0.05000000074505806,
+        152
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Jungle_1_2",
+        "PlacementId": "Path_Jungle_1_2",
+        "Region": "Jungle",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 120,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -131,
+        0.07999995350837708,
+        582,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Jungle_1_2[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://91459270881770",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://91459270881770",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Jungle_1_2",
+      "size": [
+        640,
+        0.05000000074505806,
+        392
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Jungle_2_2",
+        "PlacementId": "Path_Jungle_2_2",
+        "Region": "Jungle",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 14,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        301,
+        0.07999995350837708,
+        506,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Jungle_2_2[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://133253527474924",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://133253527474924",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Jungle_2_2",
+      "size": [
+        224,
+        0.05000000074505806,
+        28
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Swamp_0_2",
+        "PlacementId": "Path_Swamp_0_2",
+        "Region": "Swamp",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 1121,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        -771,
+        0.07999995350837708,
+        572,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Swamp_0_2[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://88356195656003",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://88356195656003",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Swamp_0_2",
+      "size": [
+        384,
+        0.05000000074505806,
+        372
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Volcano_2_0",
+        "PlacementId": "Path_Volcano_2_0",
+        "Region": "Volcano",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 27,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        621,
+        0.07999995350837708,
+        -449,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Volcano_2_0[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://118903091391527",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://118903091391527",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Volcano_2_0",
+      "size": [
+        416,
+        0.05000000074505806,
+        50
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Volcano_2_1",
+        "PlacementId": "Path_Volcano_2_1",
+        "Region": "Volcano",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 58,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        765,
+        0.07999995350837708,
+        122,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Volcano_2_1[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://98047925966101",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://98047925966101",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Volcano_2_1",
+      "size": [
+        128,
+        0.05000000074505806,
+        400
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Volcano_2_2",
+        "PlacementId": "Path_Volcano_2_2",
+        "Region": "Volcano",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 33,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        582,
+        0.07999995350837708,
+        354,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Volcano_2_2[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://123087987962671",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://123087987962671",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Volcano_2_2",
+      "size": [
+        338,
+        0.05000000074505806,
+        64
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Volcano_3_0",
+        "PlacementId": "Path_Volcano_3_0",
+        "Region": "Volcano",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 66,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        915,
+        0.07999995350837708,
+        -518,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Volcano_3_0[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://85369658835613",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://85369658835613",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Volcano_3_0",
+      "size": [
+        172,
+        0.05000000074505806,
+        400
+      ]
+    },
+    {
+      "attributes": {
+        "ArtOwner": "BrainrotExpedition_MapArt",
+        "ArtRole": "Path",
+        "ArtVersion": 2,
+        "ExportGroup": "Path_Volcano_3_1",
+        "PlacementId": "Path_Volcano_3_1",
+        "Region": "Volcano",
+        "RouteHash": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        "SourceTriangles": 51,
+        "StudMaterialAssetId": 13719188279,
+        "StudsPerTile": 0.25,
+        "SurfaceStyle": "SavedBingusStuds"
+      },
+      "cframe": [
+        915,
+        0.07999995350837708,
+        -32,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Paths[1]/Folder:StyledSurfaces[1]/MeshPart:Path_Volcano_3_1[1]",
+      "mesh": {
+        "CollisionFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.CollisionFidelity.Default"
+        },
+        "DoubleSided": false,
+        "MeshId": "rbxassetid://133430745917445",
+        "RenderFidelity": {
+          "type": "EnumItem",
+          "value": "Enum.RenderFidelity.Automatic"
+        },
+        "TextureID": ""
+      },
+      "meshId": "rbxassetid://133430745917445",
+      "path": "Workspace.MapBlockout.Paths.StyledSurfaces.Path_Volcano_3_1",
+      "size": [
+        172,
+        0.05000000074505806,
+        572
+      ]
+    }
+  ],
+  "applyEligible": false,
+  "baselineManagedContentSHA256": "3fb9d9e8a543cb80a034cf3fb96fbd118136a003ba829b14a13b2c3720894310",
+  "beforeManifestSHA256": "f3c4cf90a871c04f95c243e9d2341b446522929d23c7dfa9c573c9f755901053",
+  "capturedAtUTC": "2026-10-09T10:17:02Z",
+  "collisionMatrix": [
+    {
+      "mask": {
+        "Default": true
+      },
+      "name": "Default"
+    }
+  ],
+  "connectivityCaps": [
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 336.0,
+      "frozenSourceEndpoint": [
+        -183.0,
+        0.04999995231628418,
+        -270.0
+      ],
+      "id": "Base_01_CartSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -171.0,
+              -270.0
+            ],
+            [
+              -171.0,
+              -256.0
+            ],
+            [
+              -195.0,
+              -256.0
+            ],
+            [
+              -195.0,
+              -270.0
+            ],
+            [
+              -171.0,
+              -270.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_01_CartSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -183.0,
+        -256.0
+      ],
+      "widthStuds": 24
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 280.0,
+      "frozenSourceEndpoint": [
+        -131.0,
+        0.04999995231628418,
+        -270.0
+      ],
+      "id": "Base_01_HouseSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -121.0,
+              -270.0
+            ],
+            [
+              -121.0,
+              -256.0
+            ],
+            [
+              -141.0,
+              -256.0
+            ],
+            [
+              -141.0,
+              -270.0
+            ],
+            [
+              -121.0,
+              -270.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_01_HouseSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -131.0,
+        -256.0
+      ],
+      "widthStuds": 20
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 336.0,
+      "frozenSourceEndpoint": [
+        -47.0,
+        0.04999995231628418,
+        -270.0
+      ],
+      "id": "Base_02_CartSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -35.0,
+              -270.0
+            ],
+            [
+              -35.0,
+              -256.0
+            ],
+            [
+              -59.0,
+              -256.0
+            ],
+            [
+              -59.0,
+              -270.0
+            ],
+            [
+              -35.0,
+              -270.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_02_CartSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -47.0,
+        -256.0
+      ],
+      "widthStuds": 24
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 280.0,
+      "frozenSourceEndpoint": [
+        5.0,
+        0.04999995231628418,
+        -270.0
+      ],
+      "id": "Base_02_HouseSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              15.0,
+              -270.0
+            ],
+            [
+              15.0,
+              -256.0
+            ],
+            [
+              -5.0,
+              -256.0
+            ],
+            [
+              -5.0,
+              -270.0
+            ],
+            [
+              15.0,
+              -270.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_02_HouseSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        5.0,
+        -256.0
+      ],
+      "widthStuds": 20
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 336.0,
+      "frozenSourceEndpoint": [
+        89.0,
+        0.04999995231628418,
+        -270.0
+      ],
+      "id": "Base_03_CartSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              101.0,
+              -270.0
+            ],
+            [
+              101.0,
+              -256.0
+            ],
+            [
+              77.0,
+              -256.0
+            ],
+            [
+              77.0,
+              -270.0
+            ],
+            [
+              101.0,
+              -270.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_03_CartSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        89.0,
+        -256.0
+      ],
+      "widthStuds": 24
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 280.0,
+      "frozenSourceEndpoint": [
+        141.0,
+        0.04999995231628418,
+        -270.0
+      ],
+      "id": "Base_03_HouseSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              151.0,
+              -270.0
+            ],
+            [
+              151.0,
+              -256.0
+            ],
+            [
+              131.0,
+              -256.0
+            ],
+            [
+              131.0,
+              -270.0
+            ],
+            [
+              151.0,
+              -270.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_03_HouseSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        141.0,
+        -256.0
+      ],
+      "widthStuds": 20
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 336.0,
+      "frozenSourceEndpoint": [
+        205.0,
+        0.04999995231628418,
+        -210.0
+      ],
+      "id": "Base_04_CartSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              205.0,
+              -222.0
+            ],
+            [
+              205.0,
+              -198.0
+            ],
+            [
+              191.0,
+              -198.0
+            ],
+            [
+              191.0,
+              -222.0
+            ],
+            [
+              205.0,
+              -222.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_04_CartSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        191.0,
+        -210.0
+      ],
+      "widthStuds": 24
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 280.0,
+      "frozenSourceEndpoint": [
+        205.0,
+        0.04999995231628418,
+        -158.0
+      ],
+      "id": "Base_04_HouseSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              205.0,
+              -168.0
+            ],
+            [
+              205.0,
+              -148.0
+            ],
+            [
+              191.0,
+              -148.0
+            ],
+            [
+              191.0,
+              -168.0
+            ],
+            [
+              205.0,
+              -168.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_04_HouseSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        191.0,
+        -158.0
+      ],
+      "widthStuds": 20
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 336.0,
+      "frozenSourceEndpoint": [
+        205.0,
+        0.04999995231628418,
+        -74.0
+      ],
+      "id": "Base_05_CartSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              205.0,
+              -86.0
+            ],
+            [
+              205.0,
+              -62.0
+            ],
+            [
+              191.0,
+              -62.0
+            ],
+            [
+              191.0,
+              -86.0
+            ],
+            [
+              205.0,
+              -86.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_05_CartSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        191.0,
+        -74.0
+      ],
+      "widthStuds": 24
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 280.0,
+      "frozenSourceEndpoint": [
+        205.0,
+        0.04999995231628418,
+        -22.0
+      ],
+      "id": "Base_05_HouseSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              205.0,
+              -32.0
+            ],
+            [
+              205.0,
+              -12.0
+            ],
+            [
+              191.0,
+              -12.0
+            ],
+            [
+              191.0,
+              -32.0
+            ],
+            [
+              205.0,
+              -32.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_05_HouseSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        191.0,
+        -22.0
+      ],
+      "widthStuds": 20
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 336.0,
+      "frozenSourceEndpoint": [
+        205.0,
+        0.04999995231628418,
+        62.0
+      ],
+      "id": "Base_06_CartSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              205.0,
+              50.0
+            ],
+            [
+              205.0,
+              74.0
+            ],
+            [
+              191.0,
+              74.0
+            ],
+            [
+              191.0,
+              50.0
+            ],
+            [
+              205.0,
+              50.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_06_CartSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        191.0,
+        62.0
+      ],
+      "widthStuds": 24
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 280.0,
+      "frozenSourceEndpoint": [
+        205.0,
+        0.04999995231628418,
+        114.0
+      ],
+      "id": "Base_06_HouseSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              205.0,
+              104.0
+            ],
+            [
+              205.0,
+              124.0
+            ],
+            [
+              191.0,
+              124.0
+            ],
+            [
+              191.0,
+              104.0
+            ],
+            [
+              205.0,
+              104.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_06_HouseSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        191.0,
+        114.0
+      ],
+      "widthStuds": 20
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 336.0,
+      "frozenSourceEndpoint": [
+        145.0,
+        0.04999995231628418,
+        178.0
+      ],
+      "id": "Base_07_CartSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              157.0,
+              164.0
+            ],
+            [
+              157.0,
+              178.0
+            ],
+            [
+              133.0,
+              178.0
+            ],
+            [
+              133.0,
+              164.0
+            ],
+            [
+              157.0,
+              164.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_07_CartSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        145.0,
+        164.0
+      ],
+      "widthStuds": 24
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 280.0,
+      "frozenSourceEndpoint": [
+        93.0,
+        0.04999995231628418,
+        178.0
+      ],
+      "id": "Base_07_HouseSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              103.0,
+              164.0
+            ],
+            [
+              103.0,
+              178.0
+            ],
+            [
+              83.0,
+              178.0
+            ],
+            [
+              83.0,
+              164.0
+            ],
+            [
+              103.0,
+              164.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_07_HouseSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        93.0,
+        164.0
+      ],
+      "widthStuds": 20
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 336.0,
+      "frozenSourceEndpoint": [
+        9.0,
+        0.04999995231628418,
+        178.0
+      ],
+      "id": "Base_08_CartSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              21.0,
+              164.0
+            ],
+            [
+              21.0,
+              178.0
+            ],
+            [
+              -3.0,
+              178.0
+            ],
+            [
+              -3.0,
+              164.0
+            ],
+            [
+              21.0,
+              164.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_08_CartSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        9.0,
+        164.0
+      ],
+      "widthStuds": 24
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 280.0,
+      "frozenSourceEndpoint": [
+        -43.0,
+        0.04999995231628418,
+        178.0
+      ],
+      "id": "Base_08_HouseSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -33.0,
+              164.0
+            ],
+            [
+              -33.0,
+              178.0
+            ],
+            [
+              -53.0,
+              178.0
+            ],
+            [
+              -53.0,
+              164.0
+            ],
+            [
+              -33.0,
+              164.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_08_HouseSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -43.0,
+        164.0
+      ],
+      "widthStuds": 20
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 336.0,
+      "frozenSourceEndpoint": [
+        -127.0,
+        0.04999995231628418,
+        178.0
+      ],
+      "id": "Base_09_CartSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -115.0,
+              164.0
+            ],
+            [
+              -115.0,
+              178.0
+            ],
+            [
+              -139.0,
+              178.0
+            ],
+            [
+              -139.0,
+              164.0
+            ],
+            [
+              -115.0,
+              164.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_09_CartSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -127.0,
+        164.0
+      ],
+      "widthStuds": 24
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 280.0,
+      "frozenSourceEndpoint": [
+        -179.0,
+        0.04999995231628418,
+        178.0
+      ],
+      "id": "Base_09_HouseSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -169.0,
+              164.0
+            ],
+            [
+              -169.0,
+              178.0
+            ],
+            [
+              -189.0,
+              178.0
+            ],
+            [
+              -189.0,
+              164.0
+            ],
+            [
+              -169.0,
+              164.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_09_HouseSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -179.0,
+        164.0
+      ],
+      "widthStuds": 20
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 336.0,
+      "frozenSourceEndpoint": [
+        -243.0,
+        0.04999995231628418,
+        118.0
+      ],
+      "id": "Base_10_CartSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -229.0,
+              106.0
+            ],
+            [
+              -229.0,
+              130.0
+            ],
+            [
+              -243.0,
+              130.0
+            ],
+            [
+              -243.0,
+              106.0
+            ],
+            [
+              -229.0,
+              106.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_10_CartSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -229.0,
+        118.0
+      ],
+      "widthStuds": 24
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 280.0,
+      "frozenSourceEndpoint": [
+        -243.0,
+        0.04999995231628418,
+        66.0
+      ],
+      "id": "Base_10_HouseSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -229.0,
+              56.0
+            ],
+            [
+              -229.0,
+              76.0
+            ],
+            [
+              -243.0,
+              76.0
+            ],
+            [
+              -243.0,
+              56.0
+            ],
+            [
+              -229.0,
+              56.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_10_HouseSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -229.0,
+        66.0
+      ],
+      "widthStuds": 20
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 336.0,
+      "frozenSourceEndpoint": [
+        -243.0,
+        0.04999995231628418,
+        -18.0
+      ],
+      "id": "Base_11_CartSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -229.0,
+              -30.0
+            ],
+            [
+              -229.0,
+              -6.0
+            ],
+            [
+              -243.0,
+              -6.0
+            ],
+            [
+              -243.0,
+              -30.0
+            ],
+            [
+              -229.0,
+              -30.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_11_CartSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -229.0,
+        -18.0
+      ],
+      "widthStuds": 24
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 280.0,
+      "frozenSourceEndpoint": [
+        -243.0,
+        0.04999995231628418,
+        -70.0
+      ],
+      "id": "Base_11_HouseSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -229.0,
+              -80.0
+            ],
+            [
+              -229.0,
+              -60.0
+            ],
+            [
+              -243.0,
+              -60.0
+            ],
+            [
+              -243.0,
+              -80.0
+            ],
+            [
+              -229.0,
+              -80.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_11_HouseSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -229.0,
+        -70.0
+      ],
+      "widthStuds": 20
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 336.0,
+      "frozenSourceEndpoint": [
+        -243.0,
+        0.04999995231628418,
+        -154.0
+      ],
+      "id": "Base_12_CartSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -229.0,
+              -166.0
+            ],
+            [
+              -229.0,
+              -142.0
+            ],
+            [
+              -243.0,
+              -142.0
+            ],
+            [
+              -243.0,
+              -166.0
+            ],
+            [
+              -229.0,
+              -166.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_12_CartSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -229.0,
+        -154.0
+      ],
+      "widthStuds": 24
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 280.0,
+      "frozenSourceEndpoint": [
+        -243.0,
+        0.04999995231628418,
+        -206.0
+      ],
+      "id": "Base_12_HouseSpur/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -229.0,
+              -216.0
+            ],
+            [
+              -229.0,
+              -196.0
+            ],
+            [
+              -243.0,
+              -196.0
+            ],
+            [
+              -243.0,
+              -216.0
+            ],
+            [
+              -229.0,
+              -216.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Base_12_HouseSpur",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -229.0,
+        -206.0
+      ],
+      "widthStuds": 20
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 392.0,
+      "frozenSourceEndpoint": [
+        -19.0,
+        0.04999995231628418,
+        -206.0
+      ],
+      "id": "Camp_ServiceSpine/CampContact0",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -5.0,
+              -220.0
+            ],
+            [
+              -5.0,
+              -206.0
+            ],
+            [
+              -33.0,
+              -206.0
+            ],
+            [
+              -33.0,
+              -220.0
+            ],
+            [
+              -5.0,
+              -220.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Camp_ServiceSpine",
+      "sourcePointIndex": 0,
+      "visualContactXZ": [
+        -19.0,
+        -220.0
+      ],
+      "widthStuds": 28
+    },
+    {
+      "addedOutsideOriginalFootprintArea": 0,
+      "area": 392.0,
+      "frozenSourceEndpoint": [
+        -19.0,
+        0.04999995231628418,
+        114.0
+      ],
+      "id": "Camp_ServiceSpine/CampContact1",
+      "lengthStuds": 14,
+      "polygons": [
+        {
+          "exterior": [
+            [
+              -5.0,
+              114.0
+            ],
+            [
+              -5.0,
+              128.0
+            ],
+            [
+              -33.0,
+              128.0
+            ],
+            [
+              -33.0,
+              114.0
+            ],
+            [
+              -5.0,
+              114.0
+            ]
+          ],
+          "holes": []
+        }
+      ],
+      "reason": "Frozen endpoint at old Camp loop edge; preserve branch contact after loop64-to36 narrowing",
+      "routeId": "Camp_ServiceSpine",
+      "sourcePointIndex": 1,
+      "visualContactXZ": [
+        -19.0,
+        128.0
+      ],
+      "widthStuds": 28
+    }
+  ],
+  "fitStatus": "NotRun",
+  "floors": [
+    {
+      "cframe": [
+        573,
+        -1.9500000476837158,
+        -838,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Arctic[1]/Part:Floor_R1_C4[1]",
+      "path": "Workspace.MapBlockout.Arctic.Floor_R1_C4",
+      "regionId": "REGION_ARCTIC",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": 413.0,
+      "x1": 733.0,
+      "y": -1.9500000476837158,
+      "z0": -958.0,
+      "z1": -718.0
+    },
+    {
+      "cframe": [
+        893,
+        -1.9500000476837158,
+        -838,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Arctic[1]/Part:Floor_R1_C5[1]",
+      "path": "Workspace.MapBlockout.Arctic.Floor_R1_C5",
+      "regionId": "REGION_ARCTIC",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": 733.0,
+      "x1": 1053.0,
+      "y": -1.9500000476837158,
+      "z0": -958.0,
+      "z1": -718.0
+    },
+    {
+      "cframe": [
+        573,
+        -1.9500000476837158,
+        -598,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Arctic[1]/Part:Floor_R2_C4[1]",
+      "path": "Workspace.MapBlockout.Arctic.Floor_R2_C4",
+      "regionId": "REGION_ARCTIC",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": 413.0,
+      "x1": 733.0,
+      "y": -1.9500000476837158,
+      "z0": -718.0,
+      "z1": -478.0
+    },
+    {
+      "cframe": [
+        -931,
+        -1.9500000476837158,
+        -838,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Beach[1]/Part:Floor_R1_C1[1]",
+      "path": "Workspace.MapBlockout.Beach.Floor_R1_C1",
+      "regionId": "REGION_BEACH",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": -1091.0,
+      "x1": -771.0,
+      "y": -1.9500000476837158,
+      "z0": -958.0,
+      "z1": -718.0
+    },
+    {
+      "cframe": [
+        -611,
+        -1.9500000476837158,
+        -838,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Beach[1]/Part:Floor_R1_C2[1]",
+      "path": "Workspace.MapBlockout.Beach.Floor_R1_C2",
+      "regionId": "REGION_BEACH",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": -771.0,
+      "x1": -451.0,
+      "y": -1.9500000476837158,
+      "z0": -958.0,
+      "z1": -718.0
+    },
+    {
+      "cframe": [
+        -931,
+        -1.9500000476837158,
+        -598,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Beach[1]/Part:Floor_R2_C1[1]",
+      "path": "Workspace.MapBlockout.Beach.Floor_R2_C1",
+      "regionId": "REGION_BEACH",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": -1091.0,
+      "x1": -771.0,
+      "y": -1.9500000476837158,
+      "z0": -718.0,
+      "z1": -478.0
+    },
+    {
+      "cframe": [
+        -931,
+        -1.9500000476837158,
+        -46,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Beach[1]/Part:Floor_R3_C1[1]",
+      "path": "Workspace.MapBlockout.Beach.Floor_R3_C1",
+      "regionId": "REGION_BEACH",
+      "size": [
+        320,
+        4,
+        864
+      ],
+      "thickness": 4,
+      "x0": -1091.0,
+      "x1": -771.0,
+      "y": -1.9500000476837158,
+      "z0": -478.0,
+      "z1": 386.0
+    },
+    {
+      "cframe": [
+        -19,
+        -1.9500000476837158,
+        -46,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Camp[1]/Part:Floor_R3_C3[1]",
+      "path": "Workspace.MapBlockout.Camp.Floor_R3_C3",
+      "regionId": "REGION_CAMP",
+      "size": [
+        864,
+        4,
+        864
+      ],
+      "thickness": 4,
+      "x0": -451.0,
+      "x1": 413.0,
+      "y": -1.9500000476837158,
+      "z0": -478.0,
+      "z1": 386.0
+    },
+    {
+      "cframe": [
+        -19,
+        -1.9500000476837158,
+        -838,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Forest[1]/Part:Floor_R1_C3[1]",
+      "path": "Workspace.MapBlockout.Forest.Floor_R1_C3",
+      "regionId": "REGION_FOREST",
+      "size": [
+        864,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": -451.0,
+      "x1": 413.0,
+      "y": -1.9500000476837158,
+      "z0": -958.0,
+      "z1": -718.0
+    },
+    {
+      "cframe": [
+        -611,
+        -1.9500000476837158,
+        -598,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Forest[1]/Part:Floor_R2_C2[1]",
+      "path": "Workspace.MapBlockout.Forest.Floor_R2_C2",
+      "regionId": "REGION_FOREST",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": -771.0,
+      "x1": -451.0,
+      "y": -1.9500000476837158,
+      "z0": -718.0,
+      "z1": -478.0
+    },
+    {
+      "cframe": [
+        -19,
+        -1.9500000476837158,
+        -598,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Forest[1]/Part:Floor_R2_C3[1]",
+      "path": "Workspace.MapBlockout.Forest.Floor_R2_C3",
+      "regionId": "REGION_FOREST",
+      "size": [
+        864,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": -451.0,
+      "x1": 413.0,
+      "y": -1.9500000476837158,
+      "z0": -718.0,
+      "z1": -478.0
+    },
+    {
+      "cframe": [
+        -611,
+        -1.9500000476837158,
+        -46,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Forest[1]/Part:Floor_R3_C2[1]",
+      "path": "Workspace.MapBlockout.Forest.Floor_R3_C2",
+      "regionId": "REGION_FOREST",
+      "size": [
+        320,
+        4,
+        864
+      ],
+      "thickness": 4,
+      "x0": -771.0,
+      "x1": -451.0,
+      "y": -1.9500000476837158,
+      "z0": -478.0,
+      "z1": 386.0
+    },
+    {
+      "cframe": [
+        573,
+        -1.9500000476837158,
+        506,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Glitch Zone[1]/Part:Floor_R4_C4[1]",
+      "path": "Workspace.MapBlockout.Glitch Zone.Floor_R4_C4",
+      "regionId": "REGION_GLITCH",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": 413.0,
+      "x1": 733.0,
+      "y": -1.9500000476837158,
+      "z0": 386.0,
+      "z1": 626.0
+    },
+    {
+      "cframe": [
+        893,
+        -1.9500000476837158,
+        506,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Glitch Zone[1]/Part:Floor_R4_C5[1]",
+      "path": "Workspace.MapBlockout.Glitch Zone.Floor_R4_C5",
+      "regionId": "REGION_GLITCH",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": 733.0,
+      "x1": 1053.0,
+      "y": -1.9500000476837158,
+      "z0": 386.0,
+      "z1": 626.0
+    },
+    {
+      "cframe": [
+        573,
+        -1.9500000476837158,
+        746,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Glitch Zone[1]/Part:Floor_R5_C4[1]",
+      "path": "Workspace.MapBlockout.Glitch Zone.Floor_R5_C4",
+      "regionId": "REGION_GLITCH",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": 413.0,
+      "x1": 733.0,
+      "y": -1.9500000476837158,
+      "z0": 626.0,
+      "z1": 866.0
+    },
+    {
+      "cframe": [
+        893,
+        -1.9500000476837158,
+        746,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Glitch Zone[1]/Part:Floor_R5_C5[1]",
+      "path": "Workspace.MapBlockout.Glitch Zone.Floor_R5_C5",
+      "regionId": "REGION_GLITCH",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": 733.0,
+      "x1": 1053.0,
+      "y": -1.9500000476837158,
+      "z0": 626.0,
+      "z1": 866.0
+    },
+    {
+      "cframe": [
+        -19,
+        -1.9500000476837158,
+        506,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Jungle[1]/Part:Floor_R4_C3[1]",
+      "path": "Workspace.MapBlockout.Jungle.Floor_R4_C3",
+      "regionId": "REGION_JUNGLE",
+      "size": [
+        864,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": -451.0,
+      "x1": 413.0,
+      "y": -1.9500000476837158,
+      "z0": 386.0,
+      "z1": 626.0
+    },
+    {
+      "cframe": [
+        -611,
+        -1.9500000476837158,
+        746,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Jungle[1]/Part:Floor_R5_C2[1]",
+      "path": "Workspace.MapBlockout.Jungle.Floor_R5_C2",
+      "regionId": "REGION_JUNGLE",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": -771.0,
+      "x1": -451.0,
+      "y": -1.9500000476837158,
+      "z0": 626.0,
+      "z1": 866.0
+    },
+    {
+      "cframe": [
+        -19,
+        -1.9500000476837158,
+        746,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Jungle[1]/Part:Floor_R5_C3[1]",
+      "path": "Workspace.MapBlockout.Jungle.Floor_R5_C3",
+      "regionId": "REGION_JUNGLE",
+      "size": [
+        864,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": -451.0,
+      "x1": 413.0,
+      "y": -1.9500000476837158,
+      "z0": 626.0,
+      "z1": 866.0
+    },
+    {
+      "cframe": [
+        -931,
+        -1.9500000476837158,
+        506,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Swamp[1]/Part:Floor_R4_C1[1]",
+      "path": "Workspace.MapBlockout.Swamp.Floor_R4_C1",
+      "regionId": "REGION_SWAMP",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": -1091.0,
+      "x1": -771.0,
+      "y": -1.9500000476837158,
+      "z0": 386.0,
+      "z1": 626.0
+    },
+    {
+      "cframe": [
+        -611,
+        -1.9500000476837158,
+        506,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Swamp[1]/Part:Floor_R4_C2[1]",
+      "path": "Workspace.MapBlockout.Swamp.Floor_R4_C2",
+      "regionId": "REGION_SWAMP",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": -771.0,
+      "x1": -451.0,
+      "y": -1.9500000476837158,
+      "z0": 386.0,
+      "z1": 626.0
+    },
+    {
+      "cframe": [
+        -931,
+        -1.9500000476837158,
+        746,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Swamp[1]/Part:Floor_R5_C1[1]",
+      "path": "Workspace.MapBlockout.Swamp.Floor_R5_C1",
+      "regionId": "REGION_SWAMP",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": -1091.0,
+      "x1": -771.0,
+      "y": -1.9500000476837158,
+      "z0": 626.0,
+      "z1": 866.0
+    },
+    {
+      "cframe": [
+        893,
+        -1.9500000476837158,
+        -598,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Volcano[1]/Part:Floor_R2_C5[1]",
+      "path": "Workspace.MapBlockout.Volcano.Floor_R2_C5",
+      "regionId": "REGION_VOLCANO",
+      "size": [
+        320,
+        4,
+        240
+      ],
+      "thickness": 4,
+      "x0": 733.0,
+      "x1": 1053.0,
+      "y": -1.9500000476837158,
+      "z0": -718.0,
+      "z1": -478.0
+    },
+    {
+      "cframe": [
+        573,
+        -1.9500000476837158,
+        -46,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Volcano[1]/Part:Floor_R3_C4[1]",
+      "path": "Workspace.MapBlockout.Volcano.Floor_R3_C4",
+      "regionId": "REGION_VOLCANO",
+      "size": [
+        320,
+        4,
+        864
+      ],
+      "thickness": 4,
+      "x0": 413.0,
+      "x1": 733.0,
+      "y": -1.9500000476837158,
+      "z0": -478.0,
+      "z1": 386.0
+    },
+    {
+      "cframe": [
+        893,
+        -1.9500000476837158,
+        -46,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "ground": 0.04999995231628418,
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:Volcano[1]/Part:Floor_R3_C5[1]",
+      "path": "Workspace.MapBlockout.Volcano.Floor_R3_C5",
+      "regionId": "REGION_VOLCANO",
+      "size": [
+        320,
+        4,
+        864
+      ],
+      "thickness": 4,
+      "x0": 733.0,
+      "x1": 1053.0,
+      "y": -1.9500000476837158,
+      "z0": -478.0,
+      "z1": 386.0
+    }
+  ],
+  "gateRouteOwners": [
+    {
+      "addedOutsideOldArea": 0.0,
+      "changedArea": 288.0,
+      "gate": "Beach",
+      "ground": [
+        -771,
+        0.04999995231628418,
+        -598
+      ],
+      "lateralRouteOffset": 0.0,
+      "loadedCartPassage": "Not run",
+      "localApronLateralBounds": [
+        -12,
+        12
+      ],
+      "ordinaryWidth": 28,
+      "routeId": "Main_RegionalLoop",
+      "segment": 0,
+      "taperLength": 8,
+      "throatLength": 64
+    },
+    {
+      "addedOutsideOldArea": 0.0,
+      "changedArea": 288.0,
+      "gate": "Swamp",
+      "ground": [
+        -611,
+        0.04999995231628418,
+        386
+      ],
+      "lateralRouteOffset": 0.0,
+      "loadedCartPassage": "Not run",
+      "localApronLateralBounds": [
+        -12,
+        12
+      ],
+      "ordinaryWidth": 28,
+      "routeId": "Main_Branch_01",
+      "segment": 0,
+      "taperLength": 8,
+      "throatLength": 64
+    },
+    {
+      "addedOutsideOldArea": 0.0,
+      "changedArea": 960.0,
+      "gate": "Jungle",
+      "ground": [
+        -415,
+        0.04999995231628418,
+        386
+      ],
+      "lateralRouteOffset": 0.0,
+      "loadedCartPassage": "Not run",
+      "localApronLateralBounds": [
+        -12,
+        12
+      ],
+      "ordinaryWidth": 36,
+      "routeId": "Camp_Exterior_WS",
+      "segment": 0,
+      "taperLength": 16,
+      "throatLength": 64
+    },
+    {
+      "addedOutsideOldArea": 0.0,
+      "changedArea": 288.0,
+      "gate": "Arctic",
+      "ground": [
+        413,
+        0.04999995231628418,
+        -838
+      ],
+      "lateralRouteOffset": 0.0,
+      "loadedCartPassage": "Not run",
+      "localApronLateralBounds": [
+        -12,
+        12
+      ],
+      "ordinaryWidth": 28,
+      "routeId": "Main_RegionalLoop",
+      "segment": 10,
+      "taperLength": 8,
+      "throatLength": 64
+    },
+    {
+      "addedOutsideOldArea": 0.0,
+      "changedArea": 1120.0,
+      "gate": "Volcano",
+      "ground": [
+        413,
+        0.04999995231628418,
+        -462
+      ],
+      "lateralRouteOffset": -20.0,
+      "loadedCartPassage": "Not run",
+      "localApronLateralBounds": [
+        -38.0,
+        12
+      ],
+      "ordinaryWidth": 36,
+      "routeId": "Camp_Exterior_EN",
+      "segment": 0,
+      "taperLength": 16,
+      "throatLength": 64
+    },
+    {
+      "addedOutsideOldArea": 0.0,
+      "changedArea": 288.0,
+      "gate": "GlitchZone",
+      "ground": [
+        413,
+        0.04999995231628418,
+        506
+      ],
+      "lateralRouteOffset": -0.0,
+      "loadedCartPassage": "Not run",
+      "localApronLateralBounds": [
+        -12,
+        12
+      ],
+      "ordinaryWidth": 28,
+      "routeId": "Main_RegionalLoop",
+      "segment": 6,
+      "taperLength": 8,
+      "throatLength": 64
+    }
+  ],
+  "gates": [
+    {
+      "bindings": {
+        "interactionCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Part:InteractionAnchor[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Beach.InteractionAnchor",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "safeCartCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Part:SafeCartExterior[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Beach.SafeCartExterior",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "safeCharacterCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Part:SafeCharacterExterior[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Beach.SafeCharacterExterior",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thresholdCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Part:Threshold[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Beach.Threshold",
+          "size": [
+            32,
+            26,
+            4
+          ]
+        }
+      },
+      "ground": [
+        -771,
+        0.04999995231628418,
+        -598
+      ],
+      "interactionCFrame": [
+        -761,
+        3.049999952316284,
+        -598,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "name": "Beach",
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "regionPair": [
+        "REGION_BEACH",
+        "REGION_FOREST"
+      ],
+      "safeCartCFrame": [
+        -747,
+        5.800000190734863,
+        -598,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "safeCharacterCFrame": [
+        -747,
+        0.04999995231628418,
+        -598,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "thresholdCFrame": [
+        -771,
+        13.050000190734863,
+        -598,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "bindings": {
+        "interactionCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Part:InteractionAnchor[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Swamp.InteractionAnchor",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "safeCartCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Part:SafeCartExterior[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Swamp.SafeCartExterior",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "safeCharacterCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Part:SafeCharacterExterior[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Swamp.SafeCharacterExterior",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thresholdCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Part:Threshold[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Swamp.Threshold",
+          "size": [
+            32,
+            26,
+            4
+          ]
+        }
+      },
+      "ground": [
+        -611,
+        0.04999995231628418,
+        386
+      ],
+      "interactionCFrame": [
+        -611,
+        3.049999952316284,
+        376,
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "name": "Swamp",
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "regionPair": [
+        "REGION_FOREST",
+        "REGION_SWAMP"
+      ],
+      "safeCartCFrame": [
+        -611,
+        5.800000190734863,
+        362,
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "safeCharacterCFrame": [
+        -611,
+        0.04999995231628418,
+        362,
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "thresholdCFrame": [
+        -611,
+        13.050000190734863,
+        386,
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "bindings": {
+        "interactionCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Part:InteractionAnchor[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Jungle.InteractionAnchor",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "safeCartCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Part:SafeCartExterior[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Jungle.SafeCartExterior",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "safeCharacterCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Part:SafeCharacterExterior[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Jungle.SafeCharacterExterior",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thresholdCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Part:Threshold[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Jungle.Threshold",
+          "size": [
+            32,
+            26,
+            4
+          ]
+        }
+      },
+      "ground": [
+        -415,
+        0.04999995231628418,
+        386
+      ],
+      "interactionCFrame": [
+        -415,
+        3.049999952316284,
+        376,
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "name": "Jungle",
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "regionPair": [
+        "REGION_CAMP",
+        "REGION_JUNGLE"
+      ],
+      "safeCartCFrame": [
+        -415,
+        5.800000190734863,
+        362,
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "safeCharacterCFrame": [
+        -415,
+        0.04999995231628418,
+        362,
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "thresholdCFrame": [
+        -415,
+        13.050000190734863,
+        386,
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "bindings": {
+        "interactionCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Part:InteractionAnchor[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Arctic.InteractionAnchor",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "safeCartCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Part:SafeCartExterior[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Arctic.SafeCartExterior",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "safeCharacterCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Part:SafeCharacterExterior[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Arctic.SafeCharacterExterior",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thresholdCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Part:Threshold[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Arctic.Threshold",
+          "size": [
+            32,
+            26,
+            4
+          ]
+        }
+      },
+      "ground": [
+        413,
+        0.04999995231628418,
+        -838
+      ],
+      "interactionCFrame": [
+        403,
+        3.049999952316284,
+        -838,
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "Arctic",
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "regionPair": [
+        "REGION_ARCTIC",
+        "REGION_FOREST"
+      ],
+      "safeCartCFrame": [
+        389,
+        5.800000190734863,
+        -838,
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "safeCharacterCFrame": [
+        389,
+        0.04999995231628418,
+        -838,
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "thresholdCFrame": [
+        413,
+        13.050000190734863,
+        -838,
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "bindings": {
+        "interactionCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Part:InteractionAnchor[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Volcano.InteractionAnchor",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "safeCartCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Part:SafeCartExterior[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Volcano.SafeCartExterior",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "safeCharacterCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Part:SafeCharacterExterior[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Volcano.SafeCharacterExterior",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thresholdCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Part:Threshold[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.Volcano.Threshold",
+          "size": [
+            32,
+            26,
+            4
+          ]
+        }
+      },
+      "ground": [
+        413,
+        0.04999995231628418,
+        -462
+      ],
+      "interactionCFrame": [
+        403,
+        3.049999952316284,
+        -462,
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "Volcano",
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "regionPair": [
+        "REGION_CAMP",
+        "REGION_VOLCANO"
+      ],
+      "safeCartCFrame": [
+        389,
+        5.800000190734863,
+        -462,
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "safeCharacterCFrame": [
+        389,
+        0.04999995231628418,
+        -462,
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "thresholdCFrame": [
+        413,
+        13.050000190734863,
+        -462,
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "bindings": {
+        "interactionCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Part:InteractionAnchor[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.InteractionAnchor",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "safeCartCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Part:SafeCartExterior[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.SafeCartExterior",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "safeCharacterCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Part:SafeCharacterExterior[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.SafeCharacterExterior",
+          "size": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thresholdCFrame": {
+          "key": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Part:Threshold[1]",
+          "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.Threshold",
+          "size": [
+            32,
+            26,
+            4
+          ]
+        }
+      },
+      "ground": [
+        413,
+        0.04999995231628418,
+        506
+      ],
+      "interactionCFrame": [
+        403,
+        3.049999952316284,
+        506,
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "GlitchZone",
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "regionPair": [
+        "REGION_GLITCH",
+        "REGION_JUNGLE"
+      ],
+      "safeCartCFrame": [
+        389,
+        5.800000190734863,
+        506,
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "safeCharacterCFrame": [
+        389,
+        0.04999995231628418,
+        506,
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "thresholdCFrame": [
+        413,
+        13.050000190734863,
+        506,
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "legacySeparators": [
+    {
+      "axis": "X",
+      "cframe": [
+        733,
+        13.050000190734863,
+        -956,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 413,
+      "fixed": -958,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+      "last": 1053,
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_01",
+      "regionId": "REGION_ARCTIC",
+      "size": [
+        640,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        893,
+        13.050000190734863,
+        -720,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 733,
+      "fixed": -718,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+      "last": 1053,
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_02",
+      "regionId": "REGION_ARCTIC",
+      "size": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        573,
+        13.050000190734863,
+        -480,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 413,
+      "fixed": -478,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_03[1]",
+      "last": 733,
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_03",
+      "regionId": "REGION_ARCTIC",
+      "size": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        415,
+        13.050000190734863,
+        -904,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -958,
+      "fixed": 413,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+      "last": -850,
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_04",
+      "regionId": "REGION_ARCTIC",
+      "size": [
+        4,
+        26,
+        108
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        415,
+        13.050000190734863,
+        -652,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -826,
+      "fixed": 413,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+      "last": -478,
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_05",
+      "regionId": "REGION_ARCTIC",
+      "size": [
+        4,
+        26,
+        348
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        731,
+        13.050000190734863,
+        -598,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -718,
+      "fixed": 733,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_06[1]",
+      "last": -478,
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_06",
+      "regionId": "REGION_ARCTIC",
+      "size": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        1051,
+        13.050000190734863,
+        -838,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -958,
+      "fixed": 1053,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Arctic[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+      "last": -718,
+      "path": "Workspace.MapBlockout.ProgressionGates.Arctic.BoundarySeparators.BoulderWall_07",
+      "regionId": "REGION_ARCTIC",
+      "size": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        -771,
+        13.050000190734863,
+        -956,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -1091,
+      "fixed": -958,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+      "last": -451,
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_01",
+      "regionId": "REGION_BEACH",
+      "size": [
+        640,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        -611,
+        13.050000190734863,
+        -720,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -771,
+      "fixed": -718,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+      "last": -451,
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_02",
+      "regionId": "REGION_BEACH",
+      "size": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        -931,
+        13.050000190734863,
+        384,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -1091,
+      "fixed": 386,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_03[1]",
+      "last": -771,
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_03",
+      "regionId": "REGION_BEACH",
+      "size": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        -1089,
+        13.050000190734863,
+        -286,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -958,
+      "fixed": -1091,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+      "last": 386,
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_04",
+      "regionId": "REGION_BEACH",
+      "size": [
+        4,
+        26,
+        1344
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        -773,
+        13.050000190734863,
+        -664,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -718,
+      "fixed": -771,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+      "last": -610,
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_05",
+      "regionId": "REGION_BEACH",
+      "size": [
+        4,
+        26,
+        108
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        -773,
+        13.050000190734863,
+        -100,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -586,
+      "fixed": -771,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_06[1]",
+      "last": 386,
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_06",
+      "regionId": "REGION_BEACH",
+      "size": [
+        4,
+        26,
+        972
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        -453,
+        13.050000190734863,
+        -838,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -958,
+      "fixed": -451,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Beach[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+      "last": -718,
+      "path": "Workspace.MapBlockout.ProgressionGates.Beach.BoundarySeparators.BoulderWall_07",
+      "regionId": "REGION_BEACH",
+      "size": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        733,
+        13.050000190734863,
+        388,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 413,
+      "fixed": 386,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+      "last": 1053,
+      "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.BoundarySeparators.BoulderWall_01",
+      "regionId": "REGION_GLITCH",
+      "size": [
+        640,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        733,
+        13.050000190734863,
+        864,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 413,
+      "fixed": 866,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+      "last": 1053,
+      "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.BoundarySeparators.BoulderWall_02",
+      "regionId": "REGION_GLITCH",
+      "size": [
+        640,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        415,
+        13.050000190734863,
+        440,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 386,
+      "fixed": 413,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_03[1]",
+      "last": 494,
+      "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.BoundarySeparators.BoulderWall_03",
+      "regionId": "REGION_GLITCH",
+      "size": [
+        4,
+        26,
+        108
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        415,
+        13.050000190734863,
+        692,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 518,
+      "fixed": 413,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+      "last": 866,
+      "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.BoundarySeparators.BoulderWall_04",
+      "regionId": "REGION_GLITCH",
+      "size": [
+        4,
+        26,
+        348
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        1051,
+        13.050000190734863,
+        626,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 386,
+      "fixed": 1053,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:GlitchZone[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+      "last": 866,
+      "path": "Workspace.MapBlockout.ProgressionGates.GlitchZone.BoundarySeparators.BoulderWall_05",
+      "regionId": "REGION_GLITCH",
+      "size": [
+        4,
+        26,
+        480
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        -439,
+        13.050000190734863,
+        388,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -451,
+      "fixed": 386,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+      "last": -427,
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_01",
+      "regionId": "REGION_JUNGLE",
+      "size": [
+        24,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        5,
+        13.050000190734863,
+        388,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -403,
+      "fixed": 386,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+      "last": 413,
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_02",
+      "regionId": "REGION_JUNGLE",
+      "size": [
+        816,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        -611,
+        13.050000190734863,
+        628,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -771,
+      "fixed": 626,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_03[1]",
+      "last": -451,
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_03",
+      "regionId": "REGION_JUNGLE",
+      "size": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        -179,
+        13.050000190734863,
+        864,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -771,
+      "fixed": 866,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+      "last": 413,
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_04",
+      "regionId": "REGION_JUNGLE",
+      "size": [
+        1184,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        -769,
+        13.050000190734863,
+        746,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 626,
+      "fixed": -771,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+      "last": 866,
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_05",
+      "regionId": "REGION_JUNGLE",
+      "size": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        -449,
+        13.050000190734863,
+        506,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 386,
+      "fixed": -451,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_06[1]",
+      "last": 626,
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_06",
+      "regionId": "REGION_JUNGLE",
+      "size": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        411,
+        13.050000190734863,
+        440,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 386,
+      "fixed": 413,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+      "last": 494,
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_07",
+      "regionId": "REGION_JUNGLE",
+      "size": [
+        4,
+        26,
+        108
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        411,
+        13.050000190734863,
+        692,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 518,
+      "fixed": 413,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Jungle[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_08[1]",
+      "last": 866,
+      "path": "Workspace.MapBlockout.ProgressionGates.Jungle.BoundarySeparators.BoulderWall_08",
+      "regionId": "REGION_JUNGLE",
+      "size": [
+        4,
+        26,
+        348
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        -857,
+        13.050000190734863,
+        388,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -1091,
+      "fixed": 386,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+      "last": -623,
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_01",
+      "regionId": "REGION_SWAMP",
+      "size": [
+        468,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        -525,
+        13.050000190734863,
+        388,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -599,
+      "fixed": 386,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+      "last": -451,
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_02",
+      "regionId": "REGION_SWAMP",
+      "size": [
+        148,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        -611,
+        13.050000190734863,
+        624,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -771,
+      "fixed": 626,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_03[1]",
+      "last": -451,
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_03",
+      "regionId": "REGION_SWAMP",
+      "size": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        -931,
+        13.050000190734863,
+        864,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -1091,
+      "fixed": 866,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+      "last": -771,
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_04",
+      "regionId": "REGION_SWAMP",
+      "size": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        -1089,
+        13.050000190734863,
+        626,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 386,
+      "fixed": -1091,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+      "last": 866,
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_05",
+      "regionId": "REGION_SWAMP",
+      "size": [
+        4,
+        26,
+        480
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        -773,
+        13.050000190734863,
+        746,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 626,
+      "fixed": -771,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_06[1]",
+      "last": 866,
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_06",
+      "regionId": "REGION_SWAMP",
+      "size": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        -453,
+        13.050000190734863,
+        506,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 386,
+      "fixed": -451,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Swamp[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+      "last": 626,
+      "path": "Workspace.MapBlockout.ProgressionGates.Swamp.BoundarySeparators.BoulderWall_07",
+      "regionId": "REGION_SWAMP",
+      "size": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        893,
+        13.050000190734863,
+        -716,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 733,
+      "fixed": -718,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_01[1]",
+      "last": 1053,
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_01",
+      "regionId": "REGION_VOLCANO",
+      "size": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        573,
+        13.050000190734863,
+        -476,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 413,
+      "fixed": -478,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_02[1]",
+      "last": 733,
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_02",
+      "regionId": "REGION_VOLCANO",
+      "size": [
+        320,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "X",
+      "cframe": [
+        733,
+        13.050000190734863,
+        384,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": 413,
+      "fixed": 386,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_03[1]",
+      "last": 1053,
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_03",
+      "regionId": "REGION_VOLCANO",
+      "size": [
+        640,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        415,
+        13.050000190734863,
+        -476,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -478,
+      "fixed": 413,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_04[1]",
+      "last": -474,
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_04",
+      "regionId": "REGION_VOLCANO",
+      "size": [
+        4,
+        26,
+        4
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        415,
+        13.050000190734863,
+        -32,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -450,
+      "fixed": 413,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_05[1]",
+      "last": 386,
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_05",
+      "regionId": "REGION_VOLCANO",
+      "size": [
+        4,
+        26,
+        836
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        735,
+        13.050000190734863,
+        -598,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -718,
+      "fixed": 733,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_06[1]",
+      "last": -478,
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_06",
+      "regionId": "REGION_VOLCANO",
+      "size": [
+        4,
+        26,
+        240
+      ]
+    },
+    {
+      "axis": "Z",
+      "cframe": [
+        1051,
+        13.050000190734863,
+        -166,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "first": -718,
+      "fixed": 1053,
+      "flags": {
+        "Anchored": true,
+        "CanCollide": true,
+        "CanQuery": true,
+        "CanTouch": false,
+        "CastShadow": true,
+        "CollisionGroup": "Default"
+      },
+      "id": "game/Workspace:Workspace[1]/Folder:MapBlockout[1]/Folder:ProgressionGates[1]/Model:Volcano[1]/Folder:BoundarySeparators[1]/Part:BoulderWall_07[1]",
+      "last": 386,
+      "path": "Workspace.MapBlockout.ProgressionGates.Volcano.BoundarySeparators.BoulderWall_07",
+      "regionId": "REGION_VOLCANO",
+      "size": [
+        4,
+        26,
+        1104
+      ]
+    }
+  ],
+  "migrationId": "CompactMap_V1",
+  "placeId": 91958083796436,
+  "policy": "Immutable fresh geometry bindings plus independently reconstructed full original route graph; candidate selection/apply requires all measured fit rows and runtime proof.",
+  "routePointsCanonicalSHA256": "7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+  "routes": [
+    {
+      "arcLengthStations": [
+        0.0,
+        34.0
+      ],
+      "destination": "Base_01",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_01_CartSpur",
+      "originalWidth": 24,
+      "points": [
+        [
+          -183.0,
+          0.04999995231628418,
+          -270.0
+        ],
+        [
+          -183.0,
+          0.04999995231628418,
+          -304.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "BaseSpur",
+      "sourceFacing": "South"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        68.0
+      ],
+      "destination": "Base_01",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_01_HouseSpur",
+      "originalWidth": 20,
+      "points": [
+        [
+          -131.0,
+          0.04999995231628418,
+          -270.0
+        ],
+        [
+          -131.0,
+          0.04999995231628418,
+          -338.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "BaseSpur",
+      "sourceFacing": "South"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        34.0
+      ],
+      "destination": "Base_02",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_02_CartSpur",
+      "originalWidth": 24,
+      "points": [
+        [
+          -47.0,
+          0.04999995231628418,
+          -270.0
+        ],
+        [
+          -47.0,
+          0.04999995231628418,
+          -304.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "BaseSpur",
+      "sourceFacing": "South"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        68.0
+      ],
+      "destination": "Base_02",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_02_HouseSpur",
+      "originalWidth": 20,
+      "points": [
+        [
+          5.0,
+          0.04999995231628418,
+          -270.0
+        ],
+        [
+          5.0,
+          0.04999995231628418,
+          -338.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "BaseSpur",
+      "sourceFacing": "South"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        34.0
+      ],
+      "destination": "Base_03",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_03_CartSpur",
+      "originalWidth": 24,
+      "points": [
+        [
+          89.0,
+          0.04999995231628418,
+          -270.0
+        ],
+        [
+          89.0,
+          0.04999995231628418,
+          -304.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "BaseSpur",
+      "sourceFacing": "South"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        68.0
+      ],
+      "destination": "Base_03",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_03_HouseSpur",
+      "originalWidth": 20,
+      "points": [
+        [
+          141.0,
+          0.04999995231628418,
+          -270.0
+        ],
+        [
+          141.0,
+          0.04999995231628418,
+          -338.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "BaseSpur",
+      "sourceFacing": "South"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        34.0
+      ],
+      "destination": "Base_04",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_04_CartSpur",
+      "originalWidth": 24,
+      "points": [
+        [
+          205.0,
+          0.04999995231628418,
+          -210.0
+        ],
+        [
+          239.0,
+          0.04999995231628418,
+          -210.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "BaseSpur",
+      "sourceFacing": "West"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        68.0
+      ],
+      "destination": "Base_04",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_04_HouseSpur",
+      "originalWidth": 20,
+      "points": [
+        [
+          205.0,
+          0.04999995231628418,
+          -158.0
+        ],
+        [
+          273.0,
+          0.04999995231628418,
+          -158.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "BaseSpur",
+      "sourceFacing": "West"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        34.0
+      ],
+      "destination": "Base_05",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_05_CartSpur",
+      "originalWidth": 24,
+      "points": [
+        [
+          205.0,
+          0.04999995231628418,
+          -74.0
+        ],
+        [
+          239.0,
+          0.04999995231628418,
+          -74.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "BaseSpur",
+      "sourceFacing": "West"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        68.0
+      ],
+      "destination": "Base_05",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_05_HouseSpur",
+      "originalWidth": 20,
+      "points": [
+        [
+          205.0,
+          0.04999995231628418,
+          -22.0
+        ],
+        [
+          273.0,
+          0.04999995231628418,
+          -22.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "BaseSpur",
+      "sourceFacing": "West"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        34.0
+      ],
+      "destination": "Base_06",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_06_CartSpur",
+      "originalWidth": 24,
+      "points": [
+        [
+          205.0,
+          0.04999995231628418,
+          62.0
+        ],
+        [
+          239.0,
+          0.04999995231628418,
+          62.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "BaseSpur",
+      "sourceFacing": "West"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        68.0
+      ],
+      "destination": "Base_06",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_06_HouseSpur",
+      "originalWidth": 20,
+      "points": [
+        [
+          205.0,
+          0.04999995231628418,
+          114.0
+        ],
+        [
+          273.0,
+          0.04999995231628418,
+          114.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "BaseSpur",
+      "sourceFacing": "West"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        34.0
+      ],
+      "destination": "Base_07",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_07_CartSpur",
+      "originalWidth": 24,
+      "points": [
+        [
+          145.0,
+          0.04999995231628418,
+          178.0
+        ],
+        [
+          145.0,
+          0.04999995231628418,
+          212.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "BaseSpur",
+      "sourceFacing": "North"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        68.0
+      ],
+      "destination": "Base_07",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_07_HouseSpur",
+      "originalWidth": 20,
+      "points": [
+        [
+          93.0,
+          0.04999995231628418,
+          178.0
+        ],
+        [
+          93.0,
+          0.04999995231628418,
+          246.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "BaseSpur",
+      "sourceFacing": "North"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        34.0
+      ],
+      "destination": "Base_08",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_08_CartSpur",
+      "originalWidth": 24,
+      "points": [
+        [
+          9.0,
+          0.04999995231628418,
+          178.0
+        ],
+        [
+          9.0,
+          0.04999995231628418,
+          212.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "BaseSpur",
+      "sourceFacing": "North"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        68.0
+      ],
+      "destination": "Base_08",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_08_HouseSpur",
+      "originalWidth": 20,
+      "points": [
+        [
+          -43.0,
+          0.04999995231628418,
+          178.0
+        ],
+        [
+          -43.0,
+          0.04999995231628418,
+          246.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "BaseSpur",
+      "sourceFacing": "North"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        34.0
+      ],
+      "destination": "Base_09",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_09_CartSpur",
+      "originalWidth": 24,
+      "points": [
+        [
+          -127.0,
+          0.04999995231628418,
+          178.0
+        ],
+        [
+          -127.0,
+          0.04999995231628418,
+          212.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "BaseSpur",
+      "sourceFacing": "North"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        68.0
+      ],
+      "destination": "Base_09",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_09_HouseSpur",
+      "originalWidth": 20,
+      "points": [
+        [
+          -179.0,
+          0.04999995231628418,
+          178.0
+        ],
+        [
+          -179.0,
+          0.04999995231628418,
+          246.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "BaseSpur",
+      "sourceFacing": "North"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        34.0
+      ],
+      "destination": "Base_10",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_10_CartSpur",
+      "originalWidth": 24,
+      "points": [
+        [
+          -243.0,
+          0.04999995231628418,
+          118.0
+        ],
+        [
+          -277.0,
+          0.04999995231628418,
+          118.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "BaseSpur",
+      "sourceFacing": "East"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        68.0
+      ],
+      "destination": "Base_10",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_10_HouseSpur",
+      "originalWidth": 20,
+      "points": [
+        [
+          -243.0,
+          0.04999995231628418,
+          66.0
+        ],
+        [
+          -311.0,
+          0.04999995231628418,
+          66.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "BaseSpur",
+      "sourceFacing": "East"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        34.0
+      ],
+      "destination": "Base_11",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_11_CartSpur",
+      "originalWidth": 24,
+      "points": [
+        [
+          -243.0,
+          0.04999995231628418,
+          -18.0
+        ],
+        [
+          -277.0,
+          0.04999995231628418,
+          -18.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "BaseSpur",
+      "sourceFacing": "East"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        68.0
+      ],
+      "destination": "Base_11",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_11_HouseSpur",
+      "originalWidth": 20,
+      "points": [
+        [
+          -243.0,
+          0.04999995231628418,
+          -70.0
+        ],
+        [
+          -311.0,
+          0.04999995231628418,
+          -70.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "BaseSpur",
+      "sourceFacing": "East"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        34.0
+      ],
+      "destination": "Base_12",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_12_CartSpur",
+      "originalWidth": 24,
+      "points": [
+        [
+          -243.0,
+          0.04999995231628418,
+          -154.0
+        ],
+        [
+          -277.0,
+          0.04999995231628418,
+          -154.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "BaseSpur",
+      "sourceFacing": "East"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        68.0
+      ],
+      "destination": "Base_12",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Base_12_HouseSpur",
+      "originalWidth": 20,
+      "points": [
+        [
+          -243.0,
+          0.04999995231628418,
+          -206.0
+        ],
+        [
+          -311.0,
+          0.04999995231628418,
+          -206.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "BaseSpur",
+      "sourceFacing": "East"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        11.313708498984761,
+        22.627416997969522,
+        33.941125496954285,
+        45.254833995939045,
+        56.568542494923804,
+        67.88225099390857,
+        79.19595949289334,
+        90.5096679918781,
+        101.82337649086287,
+        113.13708498984764,
+        124.4507934888324,
+        135.76450198781717,
+        147.07821048680194,
+        158.3919189857867,
+        169.70562748477147,
+        181.01933598375624,
+        192.333044482741,
+        203.64675298172577,
+        214.96046148071053,
+        226.2741699796953,
+        237.58787847868007,
+        248.90158697766483,
+        260.2152954766496,
+        271.52900397563434,
+        282.8427124746191,
+        288.49956672411145
+      ],
+      "diagonalMaximumCrossWidth": 47.31370849898476,
+      "diagonalMinimumCrossWidth": 36,
+      "endpointSquares": true,
+      "footprintType": "stairSquares",
+      "id": "Camp_Diagonal_EN",
+      "newStationBoxWidth": 33.45584412271571,
+      "newTerminalBoxWidth": 36,
+      "originalStationBoxWidth": 56,
+      "originalTerminalBoxWidth": 64,
+      "originalWidth": 64,
+      "points": [
+        [
+          173.0,
+          0.04999995231628418,
+          -238.0
+        ],
+        [
+          181.0,
+          0.04999995231628418,
+          -246.0
+        ],
+        [
+          189.0,
+          0.04999995231628418,
+          -254.0
+        ],
+        [
+          197.0,
+          0.04999995231628418,
+          -262.0
+        ],
+        [
+          205.0,
+          0.04999995231628418,
+          -270.0
+        ],
+        [
+          213.0,
+          0.04999995231628418,
+          -278.0
+        ],
+        [
+          221.0,
+          0.04999995231628418,
+          -286.0
+        ],
+        [
+          229.0,
+          0.04999995231628418,
+          -294.0
+        ],
+        [
+          237.0,
+          0.04999995231628418,
+          -302.0
+        ],
+        [
+          245.0,
+          0.04999995231628418,
+          -310.0
+        ],
+        [
+          253.0,
+          0.04999995231628418,
+          -318.0
+        ],
+        [
+          261.0,
+          0.04999995231628418,
+          -326.0
+        ],
+        [
+          269.0,
+          0.04999995231628418,
+          -334.0
+        ],
+        [
+          277.0,
+          0.04999995231628418,
+          -342.0
+        ],
+        [
+          285.0,
+          0.04999995231628418,
+          -350.0
+        ],
+        [
+          293.0,
+          0.04999995231628418,
+          -358.0
+        ],
+        [
+          301.0,
+          0.04999995231628418,
+          -366.0
+        ],
+        [
+          309.0,
+          0.04999995231628418,
+          -374.0
+        ],
+        [
+          317.0,
+          0.04999995231628418,
+          -382.0
+        ],
+        [
+          325.0,
+          0.04999995231628418,
+          -390.0
+        ],
+        [
+          333.0,
+          0.04999995231628418,
+          -398.0
+        ],
+        [
+          341.0,
+          0.04999995231628418,
+          -406.0
+        ],
+        [
+          349.0,
+          0.04999995231628418,
+          -414.0
+        ],
+        [
+          357.0,
+          0.04999995231628418,
+          -422.0
+        ],
+        [
+          365.0,
+          0.04999995231628418,
+          -430.0
+        ],
+        [
+          373.0,
+          0.04999995231628418,
+          -438.0
+        ],
+        [
+          377.0,
+          0.04999995231628418,
+          -442.0
+        ]
+      ],
+      "requiredWidth": 36,
+      "role": "CampDiagonal",
+      "stationCadence": 8
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        11.313708498984761,
+        22.627416997969522,
+        33.941125496954285,
+        45.254833995939045,
+        56.568542494923804,
+        67.88225099390857,
+        79.19595949289334,
+        90.5096679918781,
+        101.82337649086287,
+        113.13708498984764,
+        124.4507934888324,
+        135.76450198781717,
+        147.07821048680194,
+        158.3919189857867,
+        169.70562748477147,
+        181.01933598375624,
+        192.333044482741,
+        203.64675298172577,
+        214.96046148071053,
+        226.2741699796953,
+        237.58787847868007,
+        248.90158697766483,
+        260.2152954766496,
+        271.52900397563434,
+        282.8427124746191,
+        288.49956672411145
+      ],
+      "diagonalMaximumCrossWidth": 47.31370849898476,
+      "diagonalMinimumCrossWidth": 36,
+      "endpointSquares": true,
+      "footprintType": "stairSquares",
+      "id": "Camp_Diagonal_ES",
+      "newStationBoxWidth": 33.45584412271571,
+      "newTerminalBoxWidth": 36,
+      "originalStationBoxWidth": 56,
+      "originalTerminalBoxWidth": 64,
+      "originalWidth": 64,
+      "points": [
+        [
+          173.0,
+          0.04999995231628418,
+          146.0
+        ],
+        [
+          181.0,
+          0.04999995231628418,
+          154.0
+        ],
+        [
+          189.0,
+          0.04999995231628418,
+          162.0
+        ],
+        [
+          197.0,
+          0.04999995231628418,
+          170.0
+        ],
+        [
+          205.0,
+          0.04999995231628418,
+          178.0
+        ],
+        [
+          213.0,
+          0.04999995231628418,
+          186.0
+        ],
+        [
+          221.0,
+          0.04999995231628418,
+          194.0
+        ],
+        [
+          229.0,
+          0.04999995231628418,
+          202.0
+        ],
+        [
+          237.0,
+          0.04999995231628418,
+          210.0
+        ],
+        [
+          245.0,
+          0.04999995231628418,
+          218.0
+        ],
+        [
+          253.0,
+          0.04999995231628418,
+          226.0
+        ],
+        [
+          261.0,
+          0.04999995231628418,
+          234.0
+        ],
+        [
+          269.0,
+          0.04999995231628418,
+          242.0
+        ],
+        [
+          277.0,
+          0.04999995231628418,
+          250.0
+        ],
+        [
+          285.0,
+          0.04999995231628418,
+          258.0
+        ],
+        [
+          293.0,
+          0.04999995231628418,
+          266.0
+        ],
+        [
+          301.0,
+          0.04999995231628418,
+          274.0
+        ],
+        [
+          309.0,
+          0.04999995231628418,
+          282.0
+        ],
+        [
+          317.0,
+          0.04999995231628418,
+          290.0
+        ],
+        [
+          325.0,
+          0.04999995231628418,
+          298.0
+        ],
+        [
+          333.0,
+          0.04999995231628418,
+          306.0
+        ],
+        [
+          341.0,
+          0.04999995231628418,
+          314.0
+        ],
+        [
+          349.0,
+          0.04999995231628418,
+          322.0
+        ],
+        [
+          357.0,
+          0.04999995231628418,
+          330.0
+        ],
+        [
+          365.0,
+          0.04999995231628418,
+          338.0
+        ],
+        [
+          373.0,
+          0.04999995231628418,
+          346.0
+        ],
+        [
+          377.0,
+          0.04999995231628418,
+          350.0
+        ]
+      ],
+      "requiredWidth": 36,
+      "role": "CampDiagonal",
+      "stationCadence": 8
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        11.313708498984761,
+        22.627416997969522,
+        33.941125496954285,
+        45.254833995939045,
+        56.568542494923804,
+        67.88225099390857,
+        79.19595949289334,
+        90.5096679918781,
+        101.82337649086287,
+        113.13708498984764,
+        124.4507934888324,
+        135.76450198781717,
+        147.07821048680194,
+        158.3919189857867,
+        169.70562748477147,
+        181.01933598375624,
+        192.333044482741,
+        203.64675298172577,
+        214.96046148071053,
+        226.2741699796953,
+        237.58787847868007,
+        248.90158697766483,
+        260.2152954766496,
+        271.52900397563434,
+        282.8427124746191,
+        288.49956672411145
+      ],
+      "diagonalMaximumCrossWidth": 47.31370849898476,
+      "diagonalMinimumCrossWidth": 36,
+      "endpointSquares": true,
+      "footprintType": "stairSquares",
+      "id": "Camp_Diagonal_WN",
+      "newStationBoxWidth": 33.45584412271571,
+      "newTerminalBoxWidth": 36,
+      "originalStationBoxWidth": 56,
+      "originalTerminalBoxWidth": 64,
+      "originalWidth": 64,
+      "points": [
+        [
+          -211.0,
+          0.04999995231628418,
+          -238.0
+        ],
+        [
+          -219.0,
+          0.04999995231628418,
+          -246.0
+        ],
+        [
+          -227.0,
+          0.04999995231628418,
+          -254.0
+        ],
+        [
+          -235.0,
+          0.04999995231628418,
+          -262.0
+        ],
+        [
+          -243.0,
+          0.04999995231628418,
+          -270.0
+        ],
+        [
+          -251.0,
+          0.04999995231628418,
+          -278.0
+        ],
+        [
+          -259.0,
+          0.04999995231628418,
+          -286.0
+        ],
+        [
+          -267.0,
+          0.04999995231628418,
+          -294.0
+        ],
+        [
+          -275.0,
+          0.04999995231628418,
+          -302.0
+        ],
+        [
+          -283.0,
+          0.04999995231628418,
+          -310.0
+        ],
+        [
+          -291.0,
+          0.04999995231628418,
+          -318.0
+        ],
+        [
+          -299.0,
+          0.04999995231628418,
+          -326.0
+        ],
+        [
+          -307.0,
+          0.04999995231628418,
+          -334.0
+        ],
+        [
+          -315.0,
+          0.04999995231628418,
+          -342.0
+        ],
+        [
+          -323.0,
+          0.04999995231628418,
+          -350.0
+        ],
+        [
+          -331.0,
+          0.04999995231628418,
+          -358.0
+        ],
+        [
+          -339.0,
+          0.04999995231628418,
+          -366.0
+        ],
+        [
+          -347.0,
+          0.04999995231628418,
+          -374.0
+        ],
+        [
+          -355.0,
+          0.04999995231628418,
+          -382.0
+        ],
+        [
+          -363.0,
+          0.04999995231628418,
+          -390.0
+        ],
+        [
+          -371.0,
+          0.04999995231628418,
+          -398.0
+        ],
+        [
+          -379.0,
+          0.04999995231628418,
+          -406.0
+        ],
+        [
+          -387.0,
+          0.04999995231628418,
+          -414.0
+        ],
+        [
+          -395.0,
+          0.04999995231628418,
+          -422.0
+        ],
+        [
+          -403.0,
+          0.04999995231628418,
+          -430.0
+        ],
+        [
+          -411.0,
+          0.04999995231628418,
+          -438.0
+        ],
+        [
+          -415.0,
+          0.04999995231628418,
+          -442.0
+        ]
+      ],
+      "requiredWidth": 36,
+      "role": "CampDiagonal",
+      "stationCadence": 8
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        11.313708498984761,
+        22.627416997969522,
+        33.941125496954285,
+        45.254833995939045,
+        56.568542494923804,
+        67.88225099390857,
+        79.19595949289334,
+        90.5096679918781,
+        101.82337649086287,
+        113.13708498984764,
+        124.4507934888324,
+        135.76450198781717,
+        147.07821048680194,
+        158.3919189857867,
+        169.70562748477147,
+        181.01933598375624,
+        192.333044482741,
+        203.64675298172577,
+        214.96046148071053,
+        226.2741699796953,
+        237.58787847868007,
+        248.90158697766483,
+        260.2152954766496,
+        271.52900397563434,
+        282.8427124746191,
+        288.49956672411145
+      ],
+      "diagonalMaximumCrossWidth": 47.31370849898476,
+      "diagonalMinimumCrossWidth": 36,
+      "endpointSquares": true,
+      "footprintType": "stairSquares",
+      "id": "Camp_Diagonal_WS",
+      "newStationBoxWidth": 33.45584412271571,
+      "newTerminalBoxWidth": 36,
+      "originalStationBoxWidth": 56,
+      "originalTerminalBoxWidth": 64,
+      "originalWidth": 64,
+      "points": [
+        [
+          -211.0,
+          0.04999995231628418,
+          146.0
+        ],
+        [
+          -219.0,
+          0.04999995231628418,
+          154.0
+        ],
+        [
+          -227.0,
+          0.04999995231628418,
+          162.0
+        ],
+        [
+          -235.0,
+          0.04999995231628418,
+          170.0
+        ],
+        [
+          -243.0,
+          0.04999995231628418,
+          178.0
+        ],
+        [
+          -251.0,
+          0.04999995231628418,
+          186.0
+        ],
+        [
+          -259.0,
+          0.04999995231628418,
+          194.0
+        ],
+        [
+          -267.0,
+          0.04999995231628418,
+          202.0
+        ],
+        [
+          -275.0,
+          0.04999995231628418,
+          210.0
+        ],
+        [
+          -283.0,
+          0.04999995231628418,
+          218.0
+        ],
+        [
+          -291.0,
+          0.04999995231628418,
+          226.0
+        ],
+        [
+          -299.0,
+          0.04999995231628418,
+          234.0
+        ],
+        [
+          -307.0,
+          0.04999995231628418,
+          242.0
+        ],
+        [
+          -315.0,
+          0.04999995231628418,
+          250.0
+        ],
+        [
+          -323.0,
+          0.04999995231628418,
+          258.0
+        ],
+        [
+          -331.0,
+          0.04999995231628418,
+          266.0
+        ],
+        [
+          -339.0,
+          0.04999995231628418,
+          274.0
+        ],
+        [
+          -347.0,
+          0.04999995231628418,
+          282.0
+        ],
+        [
+          -355.0,
+          0.04999995231628418,
+          290.0
+        ],
+        [
+          -363.0,
+          0.04999995231628418,
+          298.0
+        ],
+        [
+          -371.0,
+          0.04999995231628418,
+          306.0
+        ],
+        [
+          -379.0,
+          0.04999995231628418,
+          314.0
+        ],
+        [
+          -387.0,
+          0.04999995231628418,
+          322.0
+        ],
+        [
+          -395.0,
+          0.04999995231628418,
+          330.0
+        ],
+        [
+          -403.0,
+          0.04999995231628418,
+          338.0
+        ],
+        [
+          -411.0,
+          0.04999995231628418,
+          346.0
+        ],
+        [
+          -415.0,
+          0.04999995231628418,
+          350.0
+        ]
+      ],
+      "requiredWidth": 36,
+      "role": "CampDiagonal",
+      "stationCadence": 8
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        516.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Camp_Exterior_EN",
+      "originalWidth": 64,
+      "points": [
+        [
+          377.0,
+          0.04999995231628418,
+          -442.0
+        ],
+        [
+          893.0,
+          0.04999995231628418,
+          -442.0
+        ]
+      ],
+      "requiredWidth": 36,
+      "role": "CampExteriorSpoke"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        356.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Camp_Exterior_ES",
+      "originalWidth": 64,
+      "points": [
+        [
+          377.0,
+          0.04999995231628418,
+          350.0
+        ],
+        [
+          733.0,
+          0.04999995231628418,
+          350.0
+        ]
+      ],
+      "requiredWidth": 36,
+      "role": "CampExteriorSpoke"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        196.0,
+        352.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Camp_Exterior_WN",
+      "originalWidth": 64,
+      "points": [
+        [
+          -415.0,
+          0.04999995231628418,
+          -442.0
+        ],
+        [
+          -611.0,
+          0.04999995231628418,
+          -442.0
+        ],
+        [
+          -611.0,
+          0.04999995231628418,
+          -598.0
+        ]
+      ],
+      "requiredWidth": 36,
+      "role": "CampExteriorSpoke"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        156.0,
+        552.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Camp_Exterior_WS",
+      "originalWidth": 64,
+      "points": [
+        [
+          -415.0,
+          0.04999995231628418,
+          350.0
+        ],
+        [
+          -415.0,
+          0.04999995231628418,
+          506.0
+        ],
+        [
+          -19.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 36,
+      "role": "CampExteriorSpoke"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        384.0,
+        768.0,
+        1152.0,
+        1536.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Camp_Loop",
+      "originalWidth": 64,
+      "points": [
+        [
+          -211.0,
+          0.04999995231628418,
+          -238.0
+        ],
+        [
+          173.0,
+          0.04999995231628418,
+          -238.0
+        ],
+        [
+          173.0,
+          0.04999995231628418,
+          146.0
+        ],
+        [
+          -211.0,
+          0.04999995231628418,
+          146.0
+        ],
+        [
+          -211.0,
+          0.04999995231628418,
+          -238.0
+        ]
+      ],
+      "requiredWidth": 36,
+      "role": "CampLoop"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        320.0
+      ],
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Camp_ServiceSpine",
+      "originalWidth": 40,
+      "points": [
+        [
+          -19.0,
+          0.04999995231628418,
+          -206.0
+        ],
+        [
+          -19.0,
+          0.04999995231628418,
+          114.0
+        ]
+      ],
+      "requiredWidth": 28,
+      "role": "ServiceSpine"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_01",
+      "originalWidth": 72,
+      "points": [
+        [
+          -611.0,
+          0.04999995231628418,
+          -598.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_02",
+      "originalWidth": 72,
+      "points": [
+        [
+          -931.0,
+          0.04999995231628418,
+          -598.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_03",
+      "originalWidth": 72,
+      "points": [
+        [
+          -931.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_04",
+      "originalWidth": 72,
+      "points": [
+        [
+          -611.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_05",
+      "originalWidth": 72,
+      "points": [
+        [
+          -611.0,
+          0.04999995231628418,
+          746.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_06",
+      "originalWidth": 72,
+      "points": [
+        [
+          -19.0,
+          0.04999995231628418,
+          746.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_07",
+      "originalWidth": 72,
+      "points": [
+        [
+          -19.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_08",
+      "originalWidth": 72,
+      "points": [
+        [
+          733.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_09",
+      "originalWidth": 72,
+      "points": [
+        [
+          733.0,
+          0.04999995231628418,
+          -46.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_10",
+      "originalWidth": 72,
+      "points": [
+        [
+          893.0,
+          0.04999995231628418,
+          -46.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_11",
+      "originalWidth": 72,
+      "points": [
+        [
+          893.0,
+          0.04999995231628418,
+          -838.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_12",
+      "originalWidth": 72,
+      "points": [
+        [
+          -19.0,
+          0.04999995231628418,
+          -838.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Junction_13",
+      "originalWidth": 72,
+      "points": [
+        [
+          -19.0,
+          0.04999995231628418,
+          -598.0
+        ]
+      ],
+      "requiredWidth": 44,
+      "role": "Junction"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        1104.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Main_Branch_01",
+      "originalWidth": 48,
+      "points": [
+        [
+          -611.0,
+          0.04999995231628418,
+          -598.0
+        ],
+        [
+          -611.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 28,
+      "role": "Main"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        240.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Main_Branch_02",
+      "originalWidth": 48,
+      "points": [
+        [
+          573.0,
+          0.04999995231628418,
+          -838.0
+        ],
+        [
+          573.0,
+          0.04999995231628418,
+          -598.0
+        ]
+      ],
+      "requiredWidth": 28,
+      "role": "Main"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        176.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Main_Branch_03",
+      "originalWidth": 48,
+      "points": [
+        [
+          733.0,
+          0.04999995231628418,
+          506.0
+        ],
+        [
+          909.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 28,
+      "role": "Main"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        232.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Main_Branch_04",
+      "originalWidth": 48,
+      "points": [
+        [
+          733.0,
+          0.04999995231628418,
+          506.0
+        ],
+        [
+          733.0,
+          0.04999995231628418,
+          738.0
+        ]
+      ],
+      "requiredWidth": 28,
+      "role": "Main"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        320.0,
+        1424.0,
+        1744.0,
+        1984.0,
+        2576.0,
+        2816.0,
+        3568.0,
+        4120.0,
+        4280.0,
+        5072.0,
+        5984.0,
+        6224.0,
+        6816.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Main_RegionalLoop",
+      "originalWidth": 48,
+      "points": [
+        [
+          -611.0,
+          0.04999995231628418,
+          -598.0
+        ],
+        [
+          -931.0,
+          0.04999995231628418,
+          -598.0
+        ],
+        [
+          -931.0,
+          0.04999995231628418,
+          506.0
+        ],
+        [
+          -611.0,
+          0.04999995231628418,
+          506.0
+        ],
+        [
+          -611.0,
+          0.04999995231628418,
+          746.0
+        ],
+        [
+          -19.0,
+          0.04999995231628418,
+          746.0
+        ],
+        [
+          -19.0,
+          0.04999995231628418,
+          506.0
+        ],
+        [
+          733.0,
+          0.04999995231628418,
+          506.0
+        ],
+        [
+          733.0,
+          0.04999995231628418,
+          -46.0
+        ],
+        [
+          893.0,
+          0.04999995231628418,
+          -46.0
+        ],
+        [
+          893.0,
+          0.04999995231628418,
+          -838.0
+        ],
+        [
+          -19.0,
+          0.04999995231628418,
+          -838.0
+        ],
+        [
+          -19.0,
+          0.04999995231628418,
+          -598.0
+        ],
+        [
+          -611.0,
+          0.04999995231628418,
+          -598.0
+        ]
+      ],
+      "requiredWidth": 28,
+      "role": "Main"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Arctic_01",
+      "originalWidth": 120,
+      "points": [
+        [
+          541.0,
+          0.04999995231628418,
+          -838.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Arctic_02",
+      "originalWidth": 120,
+      "points": [
+        [
+          893.0,
+          0.04999995231628418,
+          -838.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Arctic_03",
+      "originalWidth": 120,
+      "points": [
+        [
+          573.0,
+          0.04999995231628418,
+          -598.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Beach_01",
+      "originalWidth": 120,
+      "points": [
+        [
+          -931.0,
+          0.04999995231628418,
+          -302.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Beach_02",
+      "originalWidth": 120,
+      "points": [
+        [
+          -931.0,
+          0.04999995231628418,
+          98.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Forest_01",
+      "originalWidth": 120,
+      "points": [
+        [
+          -611.0,
+          0.04999995231628418,
+          114.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Forest_02",
+      "originalWidth": 120,
+      "points": [
+        [
+          -179.0,
+          0.04999995231628418,
+          -598.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Forest_03",
+      "originalWidth": 120,
+      "points": [
+        [
+          141.0,
+          0.04999995231628418,
+          -838.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_GlitchZone_01",
+      "originalWidth": 120,
+      "points": [
+        [
+          541.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_GlitchZone_02",
+      "originalWidth": 120,
+      "points": [
+        [
+          909.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_GlitchZone_03",
+      "originalWidth": 120,
+      "points": [
+        [
+          733.0,
+          0.04999995231628418,
+          738.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Jungle_01",
+      "originalWidth": 120,
+      "points": [
+        [
+          -611.0,
+          0.04999995231628418,
+          746.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Jungle_02",
+      "originalWidth": 120,
+      "points": [
+        [
+          -19.0,
+          0.04999995231628418,
+          746.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Jungle_03",
+      "originalWidth": 120,
+      "points": [
+        [
+          -19.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Swamp_01",
+      "originalWidth": 120,
+      "points": [
+        [
+          -931.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Swamp_02",
+      "originalWidth": 120,
+      "points": [
+        [
+          -611.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Volcano_01",
+      "originalWidth": 120,
+      "points": [
+        [
+          893.0,
+          0.04999995231628418,
+          -366.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Volcano_02",
+      "originalWidth": 120,
+      "points": [
+        [
+          733.0,
+          0.04999995231628418,
+          -46.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "square",
+      "id": "Pad_Volcano_03",
+      "originalWidth": 120,
+      "points": [
+        [
+          733.0,
+          0.04999995231628418,
+          242.0
+        ]
+      ],
+      "requiredWidth": 64,
+      "role": "DecorativePad"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        96.0,
+        496.0,
+        592.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Secondary_01",
+      "originalWidth": 32,
+      "points": [
+        [
+          -931.0,
+          0.04999995231628418,
+          -302.0
+        ],
+        [
+          -1027.0,
+          0.04999995231628418,
+          -302.0
+        ],
+        [
+          -1027.0,
+          0.04999995231628418,
+          98.0
+        ],
+        [
+          -931.0,
+          0.04999995231628418,
+          98.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "Secondary"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        240.0,
+        560.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Secondary_02",
+      "originalWidth": 32,
+      "points": [
+        [
+          -179.0,
+          0.04999995231628418,
+          -598.0
+        ],
+        [
+          -179.0,
+          0.04999995231628418,
+          -838.0
+        ],
+        [
+          141.0,
+          0.04999995231628418,
+          -838.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "Secondary"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        96.0,
+        652.0,
+        748.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Secondary_03",
+      "originalWidth": 32,
+      "points": [
+        [
+          -611.0,
+          0.04999995231628418,
+          -442.0
+        ],
+        [
+          -707.0,
+          0.04999995231628418,
+          -442.0
+        ],
+        [
+          -707.0,
+          0.04999995231628418,
+          114.0
+        ],
+        [
+          -611.0,
+          0.04999995231628418,
+          114.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "Secondary"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        240.0,
+        336.0,
+        480.0,
+        704.0,
+        800.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Secondary_04",
+      "originalWidth": 32,
+      "points": [
+        [
+          -931.0,
+          0.04999995231628418,
+          506.0
+        ],
+        [
+          -931.0,
+          0.04999995231628418,
+          746.0
+        ],
+        [
+          -835.0,
+          0.04999995231628418,
+          746.0
+        ],
+        [
+          -835.0,
+          0.04999995231628418,
+          602.0
+        ],
+        [
+          -611.0,
+          0.04999995231628418,
+          602.0
+        ],
+        [
+          -611.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "Secondary"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        256.0,
+        496.0,
+        832.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Secondary_05",
+      "originalWidth": 32,
+      "points": [
+        [
+          -611.0,
+          0.04999995231628418,
+          746.0
+        ],
+        [
+          -355.0,
+          0.04999995231628418,
+          746.0
+        ],
+        [
+          -355.0,
+          0.04999995231628418,
+          506.0
+        ],
+        [
+          -19.0,
+          0.04999995231628418,
+          506.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "Secondary"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        96.0,
+        336.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Secondary_06",
+      "originalWidth": 32,
+      "points": [
+        [
+          573.0,
+          0.04999995231628418,
+          -598.0
+        ],
+        [
+          669.0,
+          0.04999995231628418,
+          -598.0
+        ],
+        [
+          669.0,
+          0.04999995231628418,
+          -838.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "Secondary"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        96.0,
+        704.0,
+        960.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Secondary_07",
+      "originalWidth": 32,
+      "points": [
+        [
+          893.0,
+          0.04999995231628418,
+          -366.0
+        ],
+        [
+          989.0,
+          0.04999995231628418,
+          -366.0
+        ],
+        [
+          989.0,
+          0.04999995231628418,
+          242.0
+        ],
+        [
+          733.0,
+          0.04999995231628418,
+          242.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "Secondary"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        232.0,
+        408.0
+      ],
+      "endpointSquares": true,
+      "footprintType": "polyline",
+      "id": "Secondary_08",
+      "originalWidth": 32,
+      "points": [
+        [
+          909.0,
+          0.04999995231628418,
+          506.0
+        ],
+        [
+          909.0,
+          0.04999995231628418,
+          738.0
+        ],
+        [
+          733.0,
+          0.04999995231628418,
+          738.0
+        ]
+      ],
+      "requiredWidth": 24,
+      "role": "Secondary"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        76.0
+      ],
+      "destination": "AnnouncementStall",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Service_AnnouncementStall",
+      "originalWidth": 20,
+      "points": [
+        [
+          -19.0,
+          0.04999995231628418,
+          -146.0
+        ],
+        [
+          57.0,
+          0.04999995231628418,
+          -146.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "ServiceSpur",
+      "sourceFacing": "West"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        76.0
+      ],
+      "destination": "BrainrotTrainStall",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Service_BrainrotTrainStall",
+      "originalWidth": 20,
+      "points": [
+        [
+          -95.0,
+          0.04999995231628418,
+          -46.0
+        ],
+        [
+          -19.0,
+          0.04999995231628418,
+          -46.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "ServiceSpur",
+      "sourceFacing": "East"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        72.0
+      ],
+      "destination": "BuyCartStall",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Service_BuyCartStall",
+      "originalWidth": 20,
+      "points": [
+        [
+          -91.0,
+          0.04999995231628418,
+          54.0
+        ],
+        [
+          -19.0,
+          0.04999995231628418,
+          54.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "ServiceSpur",
+      "sourceFacing": "East"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        76.0
+      ],
+      "destination": "KitStall",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Service_KitStall",
+      "originalWidth": 20,
+      "points": [
+        [
+          -19.0,
+          0.04999995231628418,
+          54.0
+        ],
+        [
+          57.0,
+          0.04999995231628418,
+          54.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "ServiceSpur",
+      "sourceFacing": "West"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        76.0
+      ],
+      "destination": "SellStall",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Service_SellStall",
+      "originalWidth": 20,
+      "points": [
+        [
+          -95.0,
+          0.04999995231628418,
+          -146.0
+        ],
+        [
+          -19.0,
+          0.04999995231628418,
+          -146.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "ServiceSpur",
+      "sourceFacing": "East"
+    },
+    {
+      "arcLengthStations": [
+        0.0,
+        76.0
+      ],
+      "destination": "WeaponHarpoonStall",
+      "endpointSquares": false,
+      "footprintType": "polyline",
+      "id": "Service_WeaponHarpoonStall",
+      "originalWidth": 20,
+      "points": [
+        [
+          -19.0,
+          0.04999995231628418,
+          -46.0
+        ],
+        [
+          57.0,
+          0.04999995231628418,
+          -46.0
+        ]
+      ],
+      "requiredWidth": 20,
+      "role": "ServiceSpur",
+      "sourceFacing": "West"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceBundleSHA256": "b6c37961e3f9cfbbdb1d894299228068f5be2a8441f812b728426fd5046494b8",
+  "sourceEvidence": {
+    "installedRouteManifestSHA256": "6acbd8310db6c395269f798d4be2c3ae4fc9b92dd6c558fbaa72a6bbe0fd01d7",
+    "routeGateAnchorsSHA256": "4934fc35e931507c58411242bc6b284e185f72aac74f05147de94f62ea5a5a4f",
+    "routeSnapshotSHA256": "6a0109d28a5418807cdc0be23ac5c61450048c81fcee0f287f1fa33d730e9696",
+    "routeSource": "docs/map-art/OriginalMapBuilder.reference.lua",
+    "routeSourceSHA256": "7b3dcc6682ec783d1b52239be4490de871ac0c59440b3f7f60c86792fd0bee6c",
+    "sourceLiveSymmetricDifferenceArea": 0.0
+  },
+  "sourceLayoutVersion": 3,
+  "universeId": 10548905405
+}

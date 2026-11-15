@@ -1,0 +1,752 @@
+{
+  "baselineManagedContentSHA256": "3fb9d9e8a543cb80a034cf3fb96fbd118136a003ba829b14a13b2c3720894310",
+  "candidate": {
+    "b": 0.85,
+    "h": 248,
+    "origin": [
+      -19,
+      0.04999995231628418,
+      -46
+    ],
+    "outer": 0.75,
+    "r": 188,
+    "t": 89.6
+  },
+  "routeGeometryHash": "696d1821c5ebc3a595f9437366c1c777f31d6ea5f2b0f303fd8a2a895a32dbb0",
+  "sites": [
+    {
+      "cartLandingCentreLateralDifference": 8.23389473001525,
+      "cartSpur": {
+        "localControlPoints": [
+          [
+            15.566106922423403,
+            0.0,
+            -59.79572175020887
+          ],
+          [
+            15.566105269984751,
+            0.0,
+            -40.89402683495466
+          ]
+        ],
+        "mappedSpurLocalX": 15.566105269984751,
+        "ordinaryLandingLocalX": 23.8,
+        "routeId": "Base_01_CartSpur",
+        "sourceSemanticFrozen": true,
+        "width": 24
+      },
+      "frozenLoopCentreLocalZ": -77.5855536195153,
+      "frozenLoopWidth": 36,
+      "houseSpur": {
+        "localControlPoints": [
+          [
+            -15.811759478374212,
+            0.0,
+            -59.79572449334908
+          ],
+          [
+            -15.811762783251515,
+            0.0,
+            -21.992334662840594
+          ]
+        ],
+        "mappedSpurLocalX": -15.811762783251515,
+        "ordinaryLandingLocalX": -20.4,
+        "routeId": "Base_01_HouseSpur",
+        "sourceSemanticFrozen": true,
+        "width": 20
+      },
+      "id": "Base_01",
+      "loadedApproachStatus": "Turning/physics NotRun; body20x36 and native45-case cargos must be checked, no straight on-road claim from pad fit",
+      "nearestLoopEdgeLocalZ": -59.585553619515295,
+      "straight20WideCartCentreToleranceOn24Lane": 2,
+      "structuralTargetCFrame": [
+        -108.6,
+        0.04999995231628418,
+        -244.3177570093458,
+        -1,
+        0,
+        -8.742277657347586e-08,
+        0,
+        1,
+        0,
+        8.742277657347586e-08,
+        0,
+        -1
+      ]
+    },
+    {
+      "cartLandingCentreLateralDifference": 5.352937601401102,
+      "cartSpur": {
+        "localControlPoints": [
+          [
+            18.44706405103755,
+            0.0,
+            -59.795721498347596
+          ],
+          [
+            18.4470623985989,
+            0.0,
+            -40.894026583093385
+          ]
+        ],
+        "mappedSpurLocalX": 18.4470623985989,
+        "ordinaryLandingLocalX": 23.8,
+        "routeId": "Base_02_CartSpur",
+        "sourceSemanticFrozen": true,
+        "width": 24
+      },
+      "frozenLoopCentreLocalZ": -77.5855536195153,
+      "frozenLoopWidth": 36,
+      "houseSpur": {
+        "localControlPoints": [
+          [
+            -15.811759478374208,
+            0.0,
+            -59.79572449334908
+          ],
+          [
+            -15.811762783251512,
+            0.0,
+            -21.992334662840594
+          ]
+        ],
+        "mappedSpurLocalX": -15.811762783251512,
+        "ordinaryLandingLocalX": -20.4,
+        "routeId": "Base_02_HouseSpur",
+        "sourceSemanticFrozen": true,
+        "width": 20
+      },
+      "id": "Base_02",
+      "loadedApproachStatus": "Turning/physics NotRun; body20x36 and native45-case cargos must be checked, no straight on-road claim from pad fit",
+      "nearestLoopEdgeLocalZ": -59.585553619515295,
+      "straight20WideCartCentreToleranceOn24Lane": 2,
+      "structuralTargetCFrame": [
+        -19.0,
+        0.04999995231628418,
+        -244.3177570093458,
+        -1,
+        0,
+        -8.742277657347586e-08,
+        0,
+        1,
+        0,
+        8.742277657347586e-08,
+        0,
+        -1
+      ]
+    },
+    {
+      "cartLandingCentreLateralDifference": 5.352937601401095,
+      "cartSpur": {
+        "localControlPoints": [
+          [
+            18.447064051037557,
+            0.0,
+            -59.795721498347596
+          ],
+          [
+            18.447062398598906,
+            0.0,
+            -40.894026583093385
+          ]
+        ],
+        "mappedSpurLocalX": 18.447062398598906,
+        "ordinaryLandingLocalX": 23.8,
+        "routeId": "Base_03_CartSpur",
+        "sourceSemanticFrozen": true,
+        "width": 24
+      },
+      "frozenLoopCentreLocalZ": -77.5855536195153,
+      "frozenLoopWidth": 36,
+      "houseSpur": {
+        "localControlPoints": [
+          [
+            -13.3423676538478,
+            0.0,
+            -59.79572427746798
+          ],
+          [
+            -13.342370958725104,
+            0.0,
+            -21.992334446959504
+          ]
+        ],
+        "mappedSpurLocalX": -13.342370958725104,
+        "ordinaryLandingLocalX": -20.4,
+        "routeId": "Base_03_HouseSpur",
+        "sourceSemanticFrozen": true,
+        "width": 20
+      },
+      "id": "Base_03",
+      "loadedApproachStatus": "Turning/physics NotRun; body20x36 and native45-case cargos must be checked, no straight on-road claim from pad fit",
+      "nearestLoopEdgeLocalZ": -59.585553619515295,
+      "straight20WideCartCentreToleranceOn24Lane": 2,
+      "structuralTargetCFrame": [
+        70.6,
+        0.04999995231628418,
+        -244.3177570093458,
+        -1,
+        0,
+        -8.742277657347586e-08,
+        0,
+        1,
+        0,
+        8.742277657347586e-08,
+        0,
+        -1
+      ]
+    },
+    {
+      "cartLandingCentreLateralDifference": 8.233896517549995,
+      "cartSpur": {
+        "localControlPoints": [
+          [
+            15.566104308669331,
+            0.0,
+            -59.795722430624785
+          ],
+          [
+            15.566103482450005,
+            0.0,
+            -40.894027515370574
+          ]
+        ],
+        "mappedSpurLocalX": 15.566103482450005,
+        "ordinaryLandingLocalX": 23.8,
+        "routeId": "Base_04_CartSpur",
+        "sourceSemanticFrozen": true,
+        "width": 24
+      },
+      "frozenLoopCentreLocalZ": -77.5855536195153,
+      "frozenLoopWidth": 36,
+      "houseSpur": {
+        "localControlPoints": [
+          [
+            -15.811762092128284,
+            0.0,
+            -59.795723802194885
+          ],
+          [
+            -15.811763744566933,
+            0.0,
+            -21.99233397168641
+          ]
+        ],
+        "mappedSpurLocalX": -15.811763744566933,
+        "ordinaryLandingLocalX": -20.4,
+        "routeId": "Base_04_HouseSpur",
+        "sourceSemanticFrozen": true,
+        "width": 20
+      },
+      "id": "Base_04",
+      "loadedApproachStatus": "Turning/physics NotRun; body20x36 and native45-case cargos must be checked, no straight on-road claim from pad fit",
+      "nearestLoopEdgeLocalZ": -59.585553619515295,
+      "straight20WideCartCentreToleranceOn24Lane": 2,
+      "structuralTargetCFrame": [
+        179.3177570093458,
+        0.04999995231628418,
+        -135.6,
+        -4.371138828673793e-08,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        -4.371138828673793e-08
+      ]
+    },
+    {
+      "cartLandingCentreLateralDifference": 5.352939388935852,
+      "cartSpur": {
+        "localControlPoints": [
+          [
+            18.447061437283473,
+            0.0,
+            -59.79572230469415
+          ],
+          [
+            18.44706061106415,
+            0.0,
+            -40.89402738943994
+          ]
+        ],
+        "mappedSpurLocalX": 18.44706061106415,
+        "ordinaryLandingLocalX": 23.8,
+        "routeId": "Base_05_CartSpur",
+        "sourceSemanticFrozen": true,
+        "width": 24
+      },
+      "frozenLoopCentreLocalZ": -77.5855536195153,
+      "frozenLoopWidth": 36,
+      "houseSpur": {
+        "localControlPoints": [
+          [
+            -15.81176209212828,
+            0.0,
+            -59.795723802194885
+          ],
+          [
+            -15.81176374456693,
+            0.0,
+            -21.99233397168641
+          ]
+        ],
+        "mappedSpurLocalX": -15.81176374456693,
+        "ordinaryLandingLocalX": -20.4,
+        "routeId": "Base_05_HouseSpur",
+        "sourceSemanticFrozen": true,
+        "width": 20
+      },
+      "id": "Base_05",
+      "loadedApproachStatus": "Turning/physics NotRun; body20x36 and native45-case cargos must be checked, no straight on-road claim from pad fit",
+      "nearestLoopEdgeLocalZ": -59.585553619515295,
+      "straight20WideCartCentreToleranceOn24Lane": 2,
+      "structuralTargetCFrame": [
+        179.3177570093458,
+        0.04999995231628418,
+        -46.0,
+        -4.371138828673793e-08,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        -4.371138828673793e-08
+      ]
+    },
+    {
+      "cartLandingCentreLateralDifference": 5.352939388935837,
+      "cartSpur": {
+        "localControlPoints": [
+          [
+            18.447061437283487,
+            0.0,
+            -59.79572230469415
+          ],
+          [
+            18.447060611064163,
+            0.0,
+            -40.89402738943994
+          ]
+        ],
+        "mappedSpurLocalX": 18.447060611064163,
+        "ordinaryLandingLocalX": 23.8,
+        "routeId": "Base_06_CartSpur",
+        "sourceSemanticFrozen": true,
+        "width": 24
+      },
+      "frozenLoopCentreLocalZ": -77.5855536195153,
+      "frozenLoopWidth": 36,
+      "houseSpur": {
+        "localControlPoints": [
+          [
+            -13.342370267601872,
+            0.0,
+            -59.79572369425434
+          ],
+          [
+            -13.342371920040522,
+            0.0,
+            -21.992333863745863
+          ]
+        ],
+        "mappedSpurLocalX": -13.342371920040522,
+        "ordinaryLandingLocalX": -20.4,
+        "routeId": "Base_06_HouseSpur",
+        "sourceSemanticFrozen": true,
+        "width": 20
+      },
+      "id": "Base_06",
+      "loadedApproachStatus": "Turning/physics NotRun; body20x36 and native45-case cargos must be checked, no straight on-road claim from pad fit",
+      "nearestLoopEdgeLocalZ": -59.585553619515295,
+      "straight20WideCartCentreToleranceOn24Lane": 2,
+      "structuralTargetCFrame": [
+        179.3177570093458,
+        0.04999995231628418,
+        43.599999999999994,
+        -4.371138828673793e-08,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        -4.371138828673793e-08
+      ]
+    },
+    {
+      "cartLandingCentreLateralDifference": 8.23389830508474,
+      "cartSpur": {
+        "localControlPoints": [
+          [
+            15.566101694915261,
+            0.0,
+            -59.7957231110407
+          ],
+          [
+            15.566101694915261,
+            0.0,
+            -40.89402819578649
+          ]
+        ],
+        "mappedSpurLocalX": 15.566101694915261,
+        "ordinaryLandingLocalX": 23.8,
+        "routeId": "Base_07_CartSpur",
+        "sourceSemanticFrozen": true,
+        "width": 24
+      },
+      "frozenLoopCentreLocalZ": -77.5855536195153,
+      "frozenLoopWidth": 36,
+      "houseSpur": {
+        "localControlPoints": [
+          [
+            -15.811764705882354,
+            0.0,
+            -59.7957231110407
+          ],
+          [
+            -15.811764705882354,
+            0.0,
+            -21.992333280532222
+          ]
+        ],
+        "mappedSpurLocalX": -15.811764705882354,
+        "ordinaryLandingLocalX": -20.4,
+        "routeId": "Base_07_HouseSpur",
+        "sourceSemanticFrozen": true,
+        "width": 20
+      },
+      "id": "Base_07",
+      "loadedApproachStatus": "Turning/physics NotRun; body20x36 and native45-case cargos must be checked, no straight on-road claim from pad fit",
+      "nearestLoopEdgeLocalZ": -59.585553619515295,
+      "straight20WideCartCentreToleranceOn24Lane": 2,
+      "structuralTargetCFrame": [
+        70.6,
+        0.04999995231628418,
+        152.3177570093458,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "cartLandingCentreLateralDifference": 5.3529411764705905,
+      "cartSpur": {
+        "localControlPoints": [
+          [
+            18.44705882352941,
+            0.0,
+            -59.7957231110407
+          ],
+          [
+            18.44705882352941,
+            0.0,
+            -40.89402819578649
+          ]
+        ],
+        "mappedSpurLocalX": 18.44705882352941,
+        "ordinaryLandingLocalX": 23.8,
+        "routeId": "Base_08_CartSpur",
+        "sourceSemanticFrozen": true,
+        "width": 24
+      },
+      "frozenLoopCentreLocalZ": -77.5855536195153,
+      "frozenLoopWidth": 36,
+      "houseSpur": {
+        "localControlPoints": [
+          [
+            -15.811764705882354,
+            0.0,
+            -59.7957231110407
+          ],
+          [
+            -15.811764705882354,
+            0.0,
+            -21.992333280532222
+          ]
+        ],
+        "mappedSpurLocalX": -15.811764705882354,
+        "ordinaryLandingLocalX": -20.4,
+        "routeId": "Base_08_HouseSpur",
+        "sourceSemanticFrozen": true,
+        "width": 20
+      },
+      "id": "Base_08",
+      "loadedApproachStatus": "Turning/physics NotRun; body20x36 and native45-case cargos must be checked, no straight on-road claim from pad fit",
+      "nearestLoopEdgeLocalZ": -59.585553619515295,
+      "straight20WideCartCentreToleranceOn24Lane": 2,
+      "structuralTargetCFrame": [
+        -19.0,
+        0.04999995231628418,
+        152.3177570093458,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "cartLandingCentreLateralDifference": 5.352941176470583,
+      "cartSpur": {
+        "localControlPoints": [
+          [
+            18.447058823529417,
+            0.0,
+            -59.7957231110407
+          ],
+          [
+            18.447058823529417,
+            0.0,
+            -40.89402819578649
+          ]
+        ],
+        "mappedSpurLocalX": 18.447058823529417,
+        "ordinaryLandingLocalX": 23.8,
+        "routeId": "Base_09_CartSpur",
+        "sourceSemanticFrozen": true,
+        "width": 24
+      },
+      "frozenLoopCentreLocalZ": -77.5855536195153,
+      "frozenLoopWidth": 36,
+      "houseSpur": {
+        "localControlPoints": [
+          [
+            -13.342372881355942,
+            0.0,
+            -59.7957231110407
+          ],
+          [
+            -13.342372881355942,
+            0.0,
+            -21.992333280532222
+          ]
+        ],
+        "mappedSpurLocalX": -13.342372881355942,
+        "ordinaryLandingLocalX": -20.4,
+        "routeId": "Base_09_HouseSpur",
+        "sourceSemanticFrozen": true,
+        "width": 20
+      },
+      "id": "Base_09",
+      "loadedApproachStatus": "Turning/physics NotRun; body20x36 and native45-case cargos must be checked, no straight on-road claim from pad fit",
+      "nearestLoopEdgeLocalZ": -59.585553619515295,
+      "straight20WideCartCentreToleranceOn24Lane": 2,
+      "structuralTargetCFrame": [
+        -108.6,
+        0.04999995231628418,
+        152.3177570093458,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "cartLandingCentreLateralDifference": 8.233900092619484,
+      "cartSpur": {
+        "localControlPoints": [
+          [
+            15.566099081161191,
+            0.0,
+            -59.795723791456616
+          ],
+          [
+            15.566099907380517,
+            0.0,
+            -40.894028876202405
+          ]
+        ],
+        "mappedSpurLocalX": 15.566099907380517,
+        "ordinaryLandingLocalX": 23.8,
+        "routeId": "Base_10_CartSpur",
+        "sourceSemanticFrozen": true,
+        "width": 24
+      },
+      "frozenLoopCentreLocalZ": -77.5855536195153,
+      "frozenLoopWidth": 36,
+      "houseSpur": {
+        "localControlPoints": [
+          [
+            -15.811767319636424,
+            0.0,
+            -59.795722419886516
+          ],
+          [
+            -15.811765667197774,
+            0.0,
+            -21.992332589378034
+          ]
+        ],
+        "mappedSpurLocalX": -15.811765667197774,
+        "ordinaryLandingLocalX": -20.4,
+        "routeId": "Base_10_HouseSpur",
+        "sourceSemanticFrozen": true,
+        "width": 20
+      },
+      "id": "Base_10",
+      "loadedApproachStatus": "Turning/physics NotRun; body20x36 and native45-case cargos must be checked, no straight on-road claim from pad fit",
+      "nearestLoopEdgeLocalZ": -59.585553619515295,
+      "straight20WideCartCentreToleranceOn24Lane": 2,
+      "structuralTargetCFrame": [
+        -217.3177570093458,
+        0.04999995231628418,
+        43.599999999999994,
+        -4.371138828673793e-08,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -4.371138828673793e-08
+      ]
+    },
+    {
+      "cartLandingCentreLateralDifference": 5.3529429640053365,
+      "cartSpur": {
+        "localControlPoints": [
+          [
+            18.44705620977534,
+            0.0,
+            -59.79572391738725
+          ],
+          [
+            18.447057035994664,
+            0.0,
+            -40.89402900213304
+          ]
+        ],
+        "mappedSpurLocalX": 18.447057035994664,
+        "ordinaryLandingLocalX": 23.8,
+        "routeId": "Base_11_CartSpur",
+        "sourceSemanticFrozen": true,
+        "width": 24
+      },
+      "frozenLoopCentreLocalZ": -77.5855536195153,
+      "frozenLoopWidth": 36,
+      "houseSpur": {
+        "localControlPoints": [
+          [
+            -15.811767319636424,
+            0.0,
+            -59.795722419886516
+          ],
+          [
+            -15.811765667197774,
+            0.0,
+            -21.992332589378034
+          ]
+        ],
+        "mappedSpurLocalX": -15.811765667197774,
+        "ordinaryLandingLocalX": -20.4,
+        "routeId": "Base_11_HouseSpur",
+        "sourceSemanticFrozen": true,
+        "width": 20
+      },
+      "id": "Base_11",
+      "loadedApproachStatus": "Turning/physics NotRun; body20x36 and native45-case cargos must be checked, no straight on-road claim from pad fit",
+      "nearestLoopEdgeLocalZ": -59.585553619515295,
+      "straight20WideCartCentreToleranceOn24Lane": 2,
+      "structuralTargetCFrame": [
+        -217.3177570093458,
+        0.04999995231628418,
+        -46.0,
+        -4.371138828673793e-08,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -4.371138828673793e-08
+      ]
+    },
+    {
+      "cartLandingCentreLateralDifference": 5.352942964005329,
+      "cartSpur": {
+        "localControlPoints": [
+          [
+            18.447056209775347,
+            0.0,
+            -59.79572391738725
+          ],
+          [
+            18.44705703599467,
+            0.0,
+            -40.89402900213304
+          ]
+        ],
+        "mappedSpurLocalX": 18.44705703599467,
+        "ordinaryLandingLocalX": 23.8,
+        "routeId": "Base_12_CartSpur",
+        "sourceSemanticFrozen": true,
+        "width": 24
+      },
+      "frozenLoopCentreLocalZ": -77.5855536195153,
+      "frozenLoopWidth": 36,
+      "houseSpur": {
+        "localControlPoints": [
+          [
+            -13.342375495110012,
+            0.0,
+            -59.79572252782706
+          ],
+          [
+            -13.342373842671362,
+            0.0,
+            -21.99233269731858
+          ]
+        ],
+        "mappedSpurLocalX": -13.342373842671362,
+        "ordinaryLandingLocalX": -20.4,
+        "routeId": "Base_12_HouseSpur",
+        "sourceSemanticFrozen": true,
+        "width": 20
+      },
+      "id": "Base_12",
+      "loadedApproachStatus": "Turning/physics NotRun; body20x36 and native45-case cargos must be checked, no straight on-road claim from pad fit",
+      "nearestLoopEdgeLocalZ": -59.585553619515295,
+      "straight20WideCartCentreToleranceOn24Lane": 2,
+      "structuralTargetCFrame": [
+        -217.3177570093458,
+        0.04999995231628418,
+        -135.6,
+        -4.371138828673793e-08,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -4.371138828673793e-08
+      ]
+    }
+  ],
+  "status": "Frozen source route contacts; not native loaded driving proof",
+  "worldMutations": 0
+}

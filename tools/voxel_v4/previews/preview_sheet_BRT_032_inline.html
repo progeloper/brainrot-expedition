@@ -1,0 +1,407 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;width:1800px;height:1040px;font-family:"Arial Black",Arial,sans-serif;overflow:hidden;position:relative;background:#1a1440}
+.hero{position:absolute;left:0;top:0;width:980px;height:1040px;overflow:hidden;background:radial-gradient(circle at 50% 48%,#fff6a8 0%,#7ff0ff 30%,#3aa0ff 62%,#6a3dff 100%)}
+.rays{position:absolute;left:-310px;top:-280px;width:1600px;height:1600px;opacity:.28;background:repeating-conic-gradient(from 0deg at 50% 50%,#ffffff 0deg 9deg,transparent 9deg 22deg)}
+.stage{position:absolute;left:0;top:0;width:980px;height:1040px}
+.stage canvas{position:absolute;left:-10px;top:95px;width:1000px;height:1000px}
+.g{filter:blur(12px) brightness(2.2);mix-blend-mode:screen}
+.shadow{position:absolute;left:130px;top:860px;width:720px;height:110px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(30,10,80,.45),rgba(30,10,80,0) 70%)}
+.tag{position:absolute;left:0;width:980px;top:26px;text-align:center;line-height:1.05;z-index:5}
+.n{font-size:58px;color:#fff}.r{font-size:36px;color:#46a7ff}.c{font-size:42px;color:#52ff6a}
+.conf{position:absolute;width:16px;height:16px;border-radius:2px}
+.speed{position:absolute;height:9px;border-radius:5px;background:#fff;opacity:.85}
+.grid{position:absolute;left:1000px;top:20px;width:780px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{position:relative;height:490px;border-radius:24px;overflow:hidden;box-shadow:0 6px 0 rgba(0,0,0,.35)}
+.card canvas{position:absolute;left:-14px;top:80px;width:270px;height:270px}
+.card .lbl{position:absolute;top:14px;left:0;right:0;text-align:center;font-size:30px}
+.card .mult{position:absolute;top:58px;left:50%;transform:translateX(-50%);font-size:20px;color:#fff;padding:3px 14px;border-radius:14px;border:3px solid #fff}
+.card .inc{position:absolute;bottom:62px;left:0;right:0;text-align:center;font-size:28px;color:#52ff6a}
+.card .fx{position:absolute;bottom:14px;left:10px;right:10px;text-align:center;font-family:Arial;font-weight:800;font-size:15px;color:#fff;line-height:1.2}
+.sp{position:absolute}
+.legend{background:linear-gradient(160deg,#ff3d9e,#14c79f);padding:20px;box-sizing:border-box}
+.legend h3{margin:0 0 10px;font-size:26px;color:#fff}
+.legend p{margin:0 0 8px;font-family:Arial;font-weight:800;font-size:16px;color:#fff;line-height:1.3}
+</style></head><body><!-- design sanity render only; not a Studio capture -->
+<div class="hero"><div class="rays"></div>
+<div class="speed" style="left:30px;top:520px;width:170px"></div><div class="speed" style="left:10px;top:580px;width:120px"></div><div class="speed" style="left:50px;top:640px;width:200px"></div><div class="speed" style="left:20px;top:700px;width:140px"></div>
+<div id="conf"></div>
+<div class="shadow"></div>
+<div class="stage"><canvas id="h" width="2000" height="2000"></canvas><canvas id="hg" class="g" width="700" height="700"></canvas></div>
+<div class="tag"><div class="o n">La Vaca Saturno Saturnita</div><div class="o r" style="color:#FFC21A">LEGENDARY</div><div class="o c">$150/s</div></div>
+</div>
+<div class="grid" id="grid"></div>
+<script>
+// Voxel V4 design kit for new species (same conventions as the approved reference
+// builds: design units, y up, nose/front = +x, z = left/right). Exports helpers and
+// the anime-eye construction from the owner spec (section 2.4), measured against the
+// approved BRT_019 eye so the proportions match exactly.
+function createKit() {
+	const R = 1, E = 4;
+	const parts = [];
+	let SLOT = 'Part';
+	const S = (n) => { SLOT = n; };
+	function B(x0, x1, y0, y1, z0, z1, role, flags = 0, col = null) {
+		if (z0 > z1) [z0, z1] = [z1, z0];
+		if (x0 > x1) [x0, x1] = [x1, x0];
+		parts.push({ slot: SLOT, min: [x0, y0, z0], max: [x1, y1, z1], role, flags, col });
+	}
+	function MZ(x0, x1, y0, y1, z0, z1, role, flags, col) {
+		B(x0, x1, y0, y1, z0, z1, role, flags, col);
+		B(x0, x1, y0, y1, -z1, -z0, role, flags, col);
+	}
+	const IRIS = {
+		Amber: ['#7a2a10', '#ff6a1a', '#ffcf45'], Ocean: ['#0b2e6b', '#1e8bff', '#7fe8ff'],
+		Candy: ['#6b0f45', '#ff3da8', '#ffb3e0'], Lime: ['#1f4a0b', '#45d11e', '#c8ff6a'],
+		Violet: ['#2e0f6b', '#8a4dff', '#d8b8ff'], Ruby: ['#5a0a14', '#f0283c', '#ff9aa5'],
+	};
+	// Front-facing anime eye on a panel whose face is at x = faceX (eye looks along +x).
+	// u runs along z; `out` (+1/-1) is the outer side, which plays the role of the
+	// side eye's "rear" (wing flick, big catchlight, blush). L/H are the eye panel.
+	function frontEye({ faceX, zc, top, L, H, out, iris, lash = true, blush = true }) {
+		const [dark, mid, bright] = IRIS[iris];
+		const u = (a, b) => { const p = zc + out * a, q = zc + out * b; return [Math.min(p, q), Math.max(p, q)]; };
+		const coreW = 0.48 * L, coreH = 0.67 * H, wideW = 0.58 * L, inset = 0.06 * H;
+		const y0 = top - coreH, y1 = top;
+		const d = (a, b) => [faceX + a, faceX + b];
+		S('EyeWhite');
+		B(...d(0, 0.04), y0, y1, ...u(-coreW / 2, coreW / 2), 'P', 0, '#ffffff');
+		B(...d(0, 0.04), y0 + inset, y1 - inset, ...u(-wideW / 2, wideW / 2), 'P', 0, '#ffffff');
+		// iris: 68% of white width x 84% of white height, bands bottom->top 27/33/40
+		const iw = 0.68 * wideW, ih = 0.84 * coreH, ib = y0 + 0.042 * coreH;
+		S('Iris');
+		B(...d(0.04, 0.07), ib + 0.60 * ih, ib + ih, ...u(-iw / 2, iw / 2), 'P', 0, dark);
+		B(...d(0.04, 0.07), ib + 0.27 * ih, ib + 0.60 * ih, ...u(-iw / 2, iw / 2), 'P', 0, mid);
+		B(...d(0.04, 0.07), ib, ib + 0.27 * ih, ...u(-iw / 2, iw / 2), 'P', 0, bright);
+		// pupil 49% x 47% of iris, centred, top 0.30 (scaled from the 2.45-unit head) below iris top
+		const pw = 0.49 * iw, ph = 0.47 * ih, pTop = ib + ih - 0.30 * (H / 2.45);
+		S('Pupil');
+		B(...d(0.07, 0.1), pTop - ph, pTop, ...u(-pw / 2, pw / 2), 'P', 0, '#1a0b06');
+		S('Catchlight');
+		// big 38% x 28%, upper-outer overlapping the pupil corner
+		const bw = 0.38 * iw, bh = 0.28 * ih, bTop = pTop + 0.16 * (H / 2.45);
+		B(...d(0.1, 0.12), bTop - bh, bTop, ...u(iw / 2 - 0.1 * (L / 2.4) - bw, iw / 2 - 0.1 * (L / 2.4)), 'P', E, '#ffffff');
+		// small 19% x 13%, lower-inner
+		const sw = 0.19 * iw, sh = 0.13 * ih, sBottom = ib + 0.13 * ih;
+		B(...d(0.1, 0.12), sBottom, sBottom + sh, ...u(-iw / 2 + 0.11 * (L / 2.4), -iw / 2 + 0.11 * (L / 2.4) + sw), 'P', E, '#ffffff');
+		// sparkle 8% x 6%, upper-inner of the pupil
+		const kw = 0.08 * iw, kh = 0.06 * ih, kTop = pTop - 0.14 * (H / 2.45);
+		B(...d(0.1, 0.12), kTop - kh, kTop, ...u(-pw / 2 - 0.02, -pw / 2 - 0.02 + kw), 'P', E, '#ffffff');
+		// upper lash 0.10H, overhanging both ends; wing flick up at the outer end; inner end droops
+		const lashBottom = y1 - 0.08 * (H / 2.45), lashTop = lashBottom + 0.10 * H;
+		if (lash) {
+			S('Lash');
+			B(...d(0, 0.14), lashBottom, lashTop, ...u(-wideW / 2 - 0.06, wideW / 2 + 0.08), 'P', 0, '#000000');
+			B(...d(0, 0.14), lashTop - 0.11 * H, lashTop + 0.08 * H, ...u(wideW / 2 - 0.05, wideW / 2 + 0.12 * L + 0.03), 'P', 0, '#000000');
+			B(...d(0, 0.14), lashBottom - 0.07 * H, lashBottom, ...u(-wideW / 2 - 0.1, -wideW / 2 + 0.1), 'P', 0, '#000000');
+		}
+		if (blush) {
+			// blush 0.29L x 0.10H under the outer half
+			S('Blush');
+			B(...d(0, 0.04), y0 - 0.10 * H - 0.04, y0 - 0.04, ...u(0, 0.29 * L), 'P', E, '#ff6fa3');
+		}
+		// geometry for callers that build their own lids/brows
+		return { lashTop: lashTop + 0.08 * H, bottom: y0 - 0.10 * H - 0.04, whiteTop: y1, whiteBottom: y0, pupilTop: pTop, inner: zc - out * wideW / 2, outer: zc + out * wideW / 2 };
+	}
+	return { parts, S, B, MZ, frontEye, R, E };
+}
+function skinFor(parts, PALETTES) {
+	return (name) => {
+		const p = PALETTES[name];
+		return parts.map((b) => ({ min: b.min, max: b.max, flags: b.flags | (b.role !== 'P' ? 2 : 0), col: b.role === 'P' ? b.col : p[b.role] }));
+	};
+}
+const GLOBAL_PALETTES = {
+	shiny: { upper: '#FF87B7', lower: '#FFF4CD', stripe: '#FFFFFF', trim: '#FFE3EE', skin: '#FFE0EC', skin2: '#FFB6D3', feather: '#FF5FA0', feather2: '#FFFFFF', foot: '#FF9CC6', prop: '#FFF4CD', accent: '#FF87B7', mode: 5 },
+	golden: { upper: '#D99510', lower: '#FFD447', stripe: '#FFF0A3', trim: '#FFE27A', skin: '#FFD447', skin2: '#E5A520', feather: '#8C4A08', feather2: '#FFF0A3', foot: '#D99510', prop: '#FFD447', accent: '#FFF0A3', mode: 1 },
+	glitched: { upper: '#FF49E1', lower: '#2B0F52', stripe: '#3EFFF0', trim: '#5A1F9A', skin: '#FF8AF0', skin2: '#3EFFF0', feather: '#2B0F52', feather2: '#FF49E1', foot: '#3EFFF0', prop: '#FF49E1', accent: '#3EFFF0', mode: 4 },
+	radioactive: { upper: '#DCFF2B', lower: '#182018', stripe: '#DCFF2B', trim: '#2A3A20', skin: '#C9FF5A', skin2: '#9FE01A', feather: '#182018', feather2: '#DCFF2B', foot: '#DCFF2B', prop: '#182018', accent: '#DCFF2B', mode: 2 },
+	astral: { upper: '#6D74FF', lower: '#2A1F6E', stripe: '#EDE0FF', trim: '#3B2F8F', skin: '#C4B6FF', skin2: '#8F80FF', feather: '#140D38', feather2: '#EDE0FF', foot: '#6D74FF', prop: '#6D74FF', accent: '#EDE0FF', mode: 3 },
+};
+if (typeof module !== 'undefined') module.exports = { createKit, skinFor, GLOBAL_PALETTES };
+
+</script><script>
+// BRT_032 La Vaca Saturno Saturnita — Voxel V4 build (CP-C, Legendary, revision 2).
+// References (viewed only): the Steal a Brainrot in-game model (stealabrainrot.noob.wiki, "La Vacca Saturno
+// Saturnita": "a large cow fused with the planet Saturn, complete with human-like feet with five toes on each") and
+// the project recipe / AGENTS.md (two human-like legs, two oversized bare feet, ten toes, cow muzzle, horns, ears):
+// - a round, banded Saturn planet as the body, with one wide flat ring around the equator
+// - a little white cow head with dark patches and horns peeking out of the planet's top-front
+// - two short human legs ending in two huge bare feet with five toes each
+// The V4 take (super dopamine + hallmarks + Legendary jackpot flair from the first revision):
+// - a candy-banded planet (amber gold, sky cyan, hot pink) over a cream lower half; the ring is a wide glowing cyan
+//   band (the V4 waterline) with a gold outer rim, a little glowing moon and a glowing star riding on it
+// - a bigger white cow head with big front anime eyes (amber), lash, Neon blush, a dark cow patch around one eye, a pink muzzle with a
+//   wide grin and a tongue, ivory horns with gold tips, pink-lined ears, dark-violet patches
+// - the gag: two huge bare feet with ten toes and glowing hot-pink pedicured toenails; a gold cowbell with a
+//   glowing gem (bling)
+// - passive FX: cosmic stardust around the ring, gold glints off the cowbell, and a soft moon glow
+// Revision 2 (owner): "more dopamine", "not all brainrots need to be blue", "closer to SAB model". The cyan is gone:
+//   warm candy bands closer to the in-game cream / tan planet (tangerine caramel, butter yellow, pink over cream)
+//   with a glowing gold band; a glowing hot-pink ring with glowing gold segments and a gold rim (a jackpot ring);
+//   more glowing stars; a glowing pearl moon; a jeweled gold nose ring; pink cowbell gem; gold and pink stardust.
+// Rig-ready (owner rule): the legs are a matching pair with hip / ankle collars; the feet are flat and point ahead.
+// Studs on body panels only. Design units, y up, front = +x.
+const K = typeof module !== 'undefined' ? require('../kit.js') : { createKit, skinFor, GLOBAL_PALETTES };
+const kit = K.createKit();
+const { S, B, MZ, frontEye } = kit;
+const R = 1, E = 4;
+const parts = kit.parts;
+const DARK = '#1D2133';
+const GOLD = '#FFC21A';
+const IVORY = '#FFF6DE';
+const MAW = '#6E0E2C';
+
+// --- the banded Saturn planet: candy bands on top (the equator band is the Body), cream lower half
+const CCY = 2.3, PR = 1.35;
+const rP = (y) => Math.sqrt(Math.max(0.03, PR * PR - (y - CCY) ** 2));
+function layer(y0, y1, r, role, flags = R) {
+	B(-r, r, y0, y1, -0.7 * r, 0.7 * r, role, flags);
+	B(-0.66 * r, 0.66 * r, y0, y1, -r, r, role, flags);
+}
+S('Body');
+B(-PR, PR, 2.3, 2.75, -0.7 * PR, 0.7 * PR, 'upper', R);
+S('Planet');
+B(-0.66 * PR, 0.66 * PR, 2.3, 2.75, -PR, PR, 'upper', R);
+S('PlanetBand');
+for (const [y0, y1, role] of [[2.75, 2.95, 'feather'], [2.95, 3.15, 'upper'], [3.15, 3.32, 'feather2'], [3.32, 3.47, 'upper'], [3.47, 3.58, 'feather'], [3.58, 3.65, 'feather2']]) layer(y0, y1, rP((y0 + y1) / 2), role);
+S('GoldBand');                                                  // glowing gold band on the planet
+{
+	const r = rP(2.965) + 0.02;
+	B(-r, r, 2.94, 2.99, -0.7 * r, 0.7 * r, 'P', E, '#FFD21A');
+	B(-0.66 * r, 0.66 * r, 2.94, 2.99, -r, r, 'P', E, '#FFD21A');
+}
+S('PlanetBelly');
+for (const [y0, y1] of [[1.95, 2.3], [1.6, 1.95], [1.3, 1.6], [1.08, 1.3], [0.95, 1.08]]) layer(y0, y1, rP((y0 + y1) / 2), 'lower');
+
+// --- the wide glowing ring around the equator (the V4 waterline), with a gold outer rim
+const RI = 1.52, RO = 2.2, RA = 0.91;
+S('Ring');
+MZ(-RA, RA, 2.24, 2.32, RI, RO, 'stripe', E);
+B(RI, RO, 2.24, 2.32, -RA, RA, 'stripe', E);
+B(-RO, -RI, 2.24, 2.32, -RA, RA, 'stripe', E);
+for (const [sx, sz] of [[1, 1], [1, -1], [-1, 1], [-1, -1]]) {
+	const xs = sx > 0 ? [1.05, 1.6] : [-1.6, -1.05], zs = sz > 0 ? [1.05, 1.6] : [-1.6, -1.05];
+	B(...xs, 2.24, 2.32, ...zs, 'P', E, '#FFD21A');
+}
+S('RingRim');
+B(RO, RO + 0.1, 2.25, 2.31, -RA, RA, 'P', 0, GOLD);
+B(-RO - 0.1, -RO, 2.25, 2.31, -RA, RA, 'P', 0, GOLD);
+MZ(-RA, RA, 2.25, 2.31, RO, RO + 0.1, 'P', 0, GOLD);
+S('Moon');                                                      // a little glowing moon and a star on the ring
+B(-1.62, -1.26, 2.32, 2.68, -1.62, -1.26, 'P', E, '#FFF2B8');
+S('Star');
+B(1.3, 1.46, 2.32, 2.48, 1.3, 1.46, 'P', E, '#FFE14D');
+B(1.86, 1.98, 2.32, 2.44, -0.5, -0.38, 'P', E, '#FF6FD8');
+B(-0.5, -0.38, 2.32, 2.44, 1.86, 1.98, 'P', E, '#FFE14D');
+
+// --- the white cow head peeking out of the planet's top-front
+S('Head');
+B(0.5, 1.35, 3, 4.05, -0.5, 0.5, 'skin', R);
+S('Patch');                                                     // dark-violet cow patches
+B(0.57, 1.01, 4.05, 4.08, -0.36, 0.08, 'prop');
+B(0.5, 0.9, 3.5, 4.05, 0.5, 0.53, 'prop');
+S('Muzzle');
+B(1.35, 1.65, 3, 3.4, -0.44, 0.44, 'skin2', R);
+S('Nostril');
+MZ(1.65, 1.67, 3.26, 3.34, 0.14, 0.28, 'P', 0, MAW);
+S('NoseRing');                                                  // jeweled gold nose ring (bling gag)
+B(1.65, 1.71, 3.06, 3.12, -0.14, 0.14, 'P', 0, '#FFC21A');
+MZ(1.65, 1.71, 2.94, 3.12, 0.12, 0.18, 'P', 0, '#FFC21A');
+B(1.71, 1.75, 2.9, 2.98, -0.05, 0.05, 'P', E, '#FF2DD1');
+S('Mouth');                                                     // wide V4 grin with a tongue
+B(1.65, 1.67, 3.06, 3.18, -0.3, 0.3, 'P', 0, MAW);
+MZ(1.65, 1.67, 3.18, 3.23, 0.28, 0.36, 'P', 0, MAW);
+B(1.65, 1.68, 3.06, 3.11, -0.16, 0.16, 'P', 0, '#FF4F7A');
+for (const s of [1, -1]) {
+	const z = (a, b) => [Math.min(a * s, b * s), Math.max(a * s, b * s)];
+	S('Horn');                                                  // ivory horns with gold tips
+	B(0.75, 0.93, 4.05, 4.25, ...z(0.28, 0.44), 'P', 0, IVORY);
+	B(0.75, 0.93, 4.25, 4.41, ...z(0.36, 0.5), 'P', 0, IVORY);
+	B(0.77, 0.91, 4.41, 4.53, ...z(0.4, 0.5), 'P', 0, GOLD);
+	S('Ear');
+	B(0.65, 0.93, 3.6, 3.76, ...z(0.5, 0.84), 'skin', R);
+	S('InnerEar');
+	B(0.93, 0.95, 3.63, 3.73, ...z(0.54, 0.8), 'skin2');
+}
+// big front anime eyes (amber) above the muzzle, a dark cow patch around the left eye
+S('EyePatch');
+B(1.35, 1.37, 3.46, 4.05, -0.5, -0.04, 'prop');
+const FX = 1.37;
+for (const out of [1, -1]) frontEye({ faceX: FX, zc: 0.25 * out, top: 3.98, L: 0.62, H: 0.66, out, iris: 'Amber', lash: true, blush: true });
+S('CowbellStrap');                                              // the gold cowbell with a glowing gem (bling)
+B(1.2, 1.5, 2.92, 3.0, -0.3, 0.3, 'P', 0, '#FF2D55');
+S('Cowbell');
+B(1.36, 1.64, 2.6, 2.92, -0.16, 0.16, 'P', 0, GOLD);
+B(1.4, 1.6, 2.54, 2.6, -0.2, 0.2, 'P', 0, GOLD);
+S('CowbellGem');
+B(1.64, 1.68, 2.68, 2.82, -0.07, 0.07, 'P', E, '#FF2DD1');
+
+// --- tufted cow tail at the back
+S('Tail');
+B(-1.66, -1.28, 1.75, 1.83, -0.04, 0.04, 'skin');
+B(-1.82, -1.64, 1.57, 1.85, -0.09, 0.09, 'prop');
+
+// --- two short human legs (matching pair) ending in huge bare feet with ten toes and glowing pedicured nails
+for (const s of [1, -1]) {
+	const zc = 0.45 * s;
+	S('HipCollar');
+	B(-0.2, 0.2, 0.96, 1.04, zc - 0.2, zc + 0.2, 'P', 0, DARK);
+	S('Leg');
+	B(-0.18, 0.18, 0.48, 0.98, zc - 0.18, zc + 0.18, 'foot', R);
+	S('AnkleCollar');
+	B(-0.19, 0.19, 0.42, 0.5, zc - 0.19, zc + 0.19, 'P', 0, DARK);
+	S('Foot');
+	B(-0.42, 0.9, 0, 0.44, zc - 0.36, zc + 0.36, 'foot', R);
+	// toes: big toe on the inner side (toward the centre), then smaller toes outward
+	const inner = zc - 0.36 * s;
+	const toes = [[0, 0.18, 0.26, 0.3], [0.21, 0.33, 0.21, 0.23], [0.36, 0.47, 0.18, 0.21], [0.5, 0.6, 0.15, 0.19], [0.63, 0.72, 0.12, 0.16]];
+	for (const [a, b, len, h] of toes) {
+		const za = inner + a * s, zb = inner + b * s;
+		const z0 = Math.min(za, zb), z1 = Math.max(za, zb);
+		S('Toe');
+		B(0.9, 0.9 + len, 0, h, z0, z1, 'foot');
+		S('ToeNail');
+		B(0.9 + len - 0.09, 0.9 + len + 0.01, h, h + 0.03, z0 + 0.015, z1 - 0.015, 'accent', E);
+	}
+}
+
+// Super-dopamine V4 palette (docs/creatures/V4/BRT_032_reference.md); mutations use the global palettes.
+const PALETTES = Object.assign(
+	{ normal: { upper: '#FF8A1F', feather: '#FFD23F', feather2: '#FF4FA3', lower: '#FFF1D6', stripe: '#FF3DCB', skin: '#FFFFFF', skin2: '#FF9EC4', prop: '#3A2D5C', foot: '#FFB48A', trim: '#FFFFFF', accent: '#FF2DD1', mode: 0 } },
+	K.GLOBAL_PALETTES,
+);
+const skin = K.skinFor(parts, PALETTES);
+// passive FX (Legendary flair): cosmic stardust around the ring, gold glints off the cowbell, a soft moon glow
+const passiveFx = [
+	{ name: 'Stardust', texture: 'sparkle', anchor: [0, 2.3, 0], rate: 8, lifetime: [1.0, 1.8], size: [0.24, 0.05], transparency: [0, 1], colors: ['#FFE14D', '#FF3DCB'], lightEmission: 1, speed: [0.4, 0.9], spread: 180, rise: 0.15 },
+	{ name: 'CowbellGlint', texture: 'sparkle', anchor: [1.66, 2.75, 0], rate: 3, lifetime: [0.5, 0.9], size: [0.18, 0.04], transparency: [0, 1], colors: ['#FFFFFF', '#FFE14D'], lightEmission: 1, speed: [0.1, 0.3], spread: 120, rise: 0 },
+	{ name: 'MoonGlow', texture: 'smoke', anchor: [-1.44, 2.5, -1.44], rate: 2, lifetime: [1.2, 2.0], size: [0.2, 0.6], transparency: [0.5, 1], colors: ['#FFF2B8', '#FFD6F0'], lightEmission: 0.6, speed: [0.05, 0.15], spread: 180, rise: 0.05 },
+];
+if (typeof module !== 'undefined') module.exports = { parts, PALETTES, skin, passiveFx };
+
+</script><script>
+function hex(h){h=h.replace('#','');return [0,2,4].map(i=>parseInt(h.substr(i,2),16)/255);}
+function norm(v){const l=Math.hypot(...v);return v.map(x=>x/l);}
+function sub(a,b){return a.map((x,i)=>x-b[i]);}
+function cross(a,b){return [a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];}
+function dot(a,b){return a[0]*b[0]+a[1]*b[1]+a[2]*b[2];}
+function lookAt(eye,t,up){const f=norm(sub(t,eye)),s=norm(cross(f,up)),u=cross(s,f);
+ return [s[0],u[0],-f[0],0, s[1],u[1],-f[1],0, s[2],u[2],-f[2],0, -dot(s,eye),-dot(u,eye),dot(f,eye),1];}
+function persp(fov,a,n,f){const t=1/Math.tan(fov/2);return [t/a,0,0,0, 0,t,0,0, 0,0,(f+n)/(n-f),-1, 0,0,2*f*n/(n-f),0];}
+function mul(a,b){const o=new Array(16).fill(0);for(let i=0;i<4;i++)for(let j=0;j<4;j++)for(let k=0;k<4;k++)o[j*4+i]+=a[k*4+i]*b[j*4+k];return o;}
+
+function buildMesh(boxes){
+  const d=[];
+  for(const b of boxes){
+    const [x0,y0,z0]=b.min,[x1,y1,z1]=b.max,c=hex(b.col),fl=b.flags;
+    const faces=[
+      [[1,0,0],[[x1,y0,z1],[x1,y0,z0],[x1,y1,z0],[x1,y1,z1]],z1-z0,y1-y0],
+      [[-1,0,0],[[x0,y0,z0],[x0,y0,z1],[x0,y1,z1],[x0,y1,z0]],z1-z0,y1-y0],
+      [[0,1,0],[[x0,y1,z1],[x1,y1,z1],[x1,y1,z0],[x0,y1,z0]],x1-x0,z1-z0],
+      [[0,-1,0],[[x0,y0,z0],[x1,y0,z0],[x1,y0,z1],[x0,y0,z1]],x1-x0,z1-z0],
+      [[0,0,1],[[x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1]],x1-x0,y1-y0],
+      [[0,0,-1],[[x1,y0,z0],[x0,y0,z0],[x0,y1,z0],[x1,y1,z0]],x1-x0,y1-y0]];
+    for(const [n,q,w,h] of faces){
+      const uv=[[0,0],[w,0],[w,h],[0,h]];
+      for(const i of [0,1,2,0,2,3]) d.push(...q[i],...n,...c,fl,...uv[i],w,h);
+    }
+  }
+  return new Float32Array(d);
+}
+
+const VS=`#version 300 es
+in vec3 p;in vec3 n;in vec3 c;in float fl;in vec2 fe;in vec2 fs;
+uniform mat4 mvp;
+out vec3 vp;out vec3 vn;out vec3 vc;flat out float vf;out vec2 vfe;flat out vec2 vfs;
+void main(){vp=p;vn=n;vc=c;vf=fl;vfe=fe;vfs=fs;gl_Position=mvp*vec4(p,1.);}`;
+const FS=`#version 300 es
+precision highp float;
+in vec3 vp;in vec3 vn;in vec3 vc;flat in float vf;in vec2 vfe;flat in vec2 vfs;
+uniform vec3 eye;uniform int mode;uniform int glow;out vec4 o;
+float h21(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+vec3 lin(vec3 c){return pow(c,vec3(2.2));}
+void main(){
+  int f=int(vf+.5);bool relief=(f&1)!=0;bool mutable=(f&2)!=0;bool emis=(f&4)!=0;
+  vec3 N=normalize(vn);vec3 U,V;vec2 uv;
+  vec3 a=abs(N);
+  if(a.x>.5){U=vec3(0,0,1);V=vec3(0,1,0);uv=vp.zy;}else if(a.y>.5){U=vec3(1,0,0);V=vec3(0,0,1);uv=vp.xz;}else{U=vec3(1,0,0);V=vec3(0,1,0);uv=vp.xy;}
+  float tile=.5;vec2 tid=floor(uv/tile+.001);vec2 g=fract(uv/tile+.001);
+  vec3 base=lin(vc);float spec=.22;float sp=40.;vec3 em=vec3(0);
+  if(relief){vec2 q=g-.5;float dd=max(abs(q.x),abs(q.y));
+    if(dd<.24){ if(dd>.17){vec3 pn=abs(q.x)>abs(q.y)?sign(q.x)*U:sign(q.y)*V;N=normalize(N+pn*.9);} else base*=1.06; }
+    else base*=.94;}
+  if(mutable&&mode!=0){
+    float hh=h21(tid+floor(vp.z*2.)*3.1);
+    if(mode==1){base*=(.82+.32*hh);spec=1.1;sp=55.;}
+    else if(mode==2){base*=(.85+.25*hh);em=base*.22;}
+    else if(mode==3){base*=(.85+.2*hh);float s=h21(tid+7.);if(relief&&s>.8&&length(g-.5)<.16)em=vec3(1.,.95,1.)*1.6;spec=.5;}
+    else if(mode==4){if(relief&&hh<.42)base=lin(vec3(.24,1.,.94));else if(relief&&hh>.93)base=vec3(1.);em=base*.12;}
+    else if(mode==5){spec=.9;sp=30.;float s=h21(tid+3.);if(relief&&s>.88&&length(g-.5)<.12)em=vec3(1.,.9,.95)*1.3;}
+  }
+  // crisp edge darkening
+  vec2 ed=min(vfe,vfs-vfe);float e=min(ed.x,ed.y);
+  float edge=mix(.72,1.,smoothstep(0.,.06,e));
+  vec3 L1=normalize(vec3(.75,1.25,-.95)),L2=normalize(vec3(-.7,.45,-1.)),Vd=normalize(eye-vp);
+  float d1=max(dot(N,L1),0.),d2=max(dot(N,L2),0.);
+  float hemi=.5+.5*N.y;
+  vec3 amb=mix(lin(vec3(.62,.55,.6)),lin(vec3(.86,.92,1.)),hemi)*.30;
+  vec3 col=base*(amb+vec3(1.,.97,.92)*d1*1.15+lin(vec3(.75,.85,1.))*d2*.35);
+  float s1=pow(max(dot(N,normalize(L1+Vd)),0.),sp)*spec;col+=vec3(s1)*(mode==1&&mutable?lin(vec3(1.,.85,.4)):vec3(1.));
+  float rim=pow(1.-max(dot(N,Vd),0.),3.);col+=rim*(mode==3&&mutable?vec3(.6,.55,1.):vec3(.25,.3,.4))*.35;
+  col*=mix(.78,1.,clamp(vp.y/1.6,0.,1.));
+  col*=edge;
+  if(emis)col=base*1.25+base*.25;
+  col+=em;
+  if(glow==1){vec3 gcol=emis?base*1.4:em;o=vec4(pow(clamp(gcol,0.,1.),vec3(1./2.2)),1.);return;}
+  col=col/(col+vec3(.85))*1.55;
+  o=vec4(pow(clamp(col,0.,1.),vec3(1./2.2)),1.);
+}`;
+function render(canvas,boxes,opts){
+  const gl=canvas.getContext('webgl2',{antialias:true,alpha:true,premultipliedAlpha:false});
+  function sh(t,s){const x=gl.createShader(t);gl.shaderSource(x,s);gl.compileShader(x);if(!gl.getShaderParameter(x,gl.COMPILE_STATUS))throw gl.getShaderInfoLog(x);return x;}
+  const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,VS));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,FS));gl.linkProgram(pr);gl.useProgram(pr);
+  const data=buildMesh(boxes);const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,data,gl.STATIC_DRAW);
+  const st=14*4;let off=0;
+  for(const [nm,sz] of [['p',3],['n',3],['c',3],['fl',1],['fe',2],['fs',2]]){const l=gl.getAttribLocation(pr,nm);gl.enableVertexAttribArray(l);gl.vertexAttribPointer(l,sz,gl.FLOAT,false,st,off);off+=sz*4;}
+  // pad: we pushed 14 floats; fix stride below
+  const eye=opts.eye,tgt=opts.target;
+  const m=mul(persp(opts.fov,canvas.width/canvas.height,.1,100),lookAt(eye,tgt,[0,1,0]));
+  gl.uniformMatrix4fv(gl.getUniformLocation(pr,'mvp'),false,m);
+  gl.uniform3fv(gl.getUniformLocation(pr,'eye'),eye);gl.uniform1i(gl.getUniformLocation(pr,'mode'),opts.mode||0);gl.uniform1i(gl.getUniformLocation(pr,'glow'),opts.glow?1:0);
+  gl.viewport(0,0,canvas.width,canvas.height);gl.clearColor(0,0,0,opts.glow?1:0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.enable(gl.DEPTH_TEST);
+  gl.drawArrays(gl.TRIANGLES,0,data.length/14);
+}
+
+</script>
+<script>
+function ring(r,c='#111'){let a=[];for(let i=0;i<16;i++){a.push((r*Math.cos(i*Math.PI/8)).toFixed(1)+'px '+(r*Math.sin(i*Math.PI/8)).toFixed(1)+'px 0 '+c);}return a.join(',');}
+document.querySelectorAll('.o').forEach(e=>e.style.textShadow=ring(5));
+const conf=document.getElementById('conf');const cc=['#ff3d9e','#14c79f','#ffd447','#2ee9ff','#b86cff','#fff'];
+for(let i=0;i<46;i++){const d=document.createElement('div');d.className='conf';let x=Math.random()*940,y=170+Math.random()*820;if(x>200&&x<820&&y>300&&y<900){i--;continue;}d.style.left=x+'px';d.style.top=y+'px';d.style.background=cc[i%cc.length];d.style.transform='rotate('+(Math.random()*90)+'deg)';const s=10+Math.random()*12;d.style.width=d.style.height=s+'px';conf.appendChild(d);}
+function star(x,y,s,c){return `<svg class="sp" style="left:${x}px;top:${y}px;width:${s}px;height:${s}px" viewBox="-20 -20 40 40"><path d="M0,-20 L5,-5 L20,0 L5,5 L0,20 L-5,5 L-20,0 L-5,-5Z" fill="${c}"/></svg>`;}
+const M=[
+ {k:'shiny',name:'SHINY',mult:'×1.5',inc:'$225/s',col:'#ff87b7',bg:'radial-gradient(circle at 50% 45%,#fff4cd 0%,#ffc2dc 45%,#ff87b7 100%)',glow:'drop-shadow(0 0 14px #fff4cd)',fx:'Rose + pearl body, white stripe glow, pink star twinkles',spark:['#fff','#ff87b7']},
+ {k:'golden',name:'GOLDEN',mult:'×2.5',inc:'$375/s',col:'#ffd447',bg:'radial-gradient(circle at 50% 45%,#fff0a3 0%,#ffbf2e 45%,#8c4a08 100%)',glow:'drop-shadow(0 0 16px #ffd447)',fx:'Metallic gold ramp, hot specular glints, gold sparkle burst',spark:['#fff0a3','#fff']},
+ {k:'glitched',name:'GLITCHED',mult:'×4',inc:'$600/s',col:'#ff49e1',bg:'repeating-linear-gradient(0deg,rgba(255,255,255,.06) 0 3px,transparent 3px 7px),radial-gradient(circle at 50% 45%,#5a1f9a 0%,#2b0f52 60%,#120526 100%)',glow:'drop-shadow(5px 0 0 #3efff0) drop-shadow(-5px 0 0 #ff49e1)',fx:'Magenta/cyan tile scramble, RGB-split jitter, pixel bits',spark:'px'},
+ {k:'radioactive',name:'RADIOACTIVE',mult:'×7',inc:'$1,050/s',col:'#dcff2b',bg:'radial-gradient(circle at 50% 50%,#6bff2b 0%,#2a5a10 42%,#101810 100%)',glow:'drop-shadow(0 0 18px #dcff2b)',fx:'Lime body on charcoal, pulsing glow, rising bubbles',spark:'bub'},
+ {k:'astral',name:'ASTRAL',mult:'×15',inc:'$2,250/s',col:'#b9a6ff',bg:'radial-gradient(circle at 50% 45%,#6d74ff 0%,#2a1f6e 45%,#07051a 100%)',glow:'drop-shadow(0 0 16px #ede0ff) drop-shadow(0 0 30px #6d74ff)',fx:'Indigo + pearl, star-speckled tiles, halo ring',spark:'stars'}];
+const grid=document.getElementById('grid');let html='';
+for(const m of M){
+ let sp='';
+ if(Array.isArray(m.spark)){for(let i=0;i<9;i++)sp+=star(10+Math.random()*220,90+Math.random()*250,14+Math.random()*22,m.spark[i%2]);}
+ else if(m.spark==='px'){for(let i=0;i<16;i++)sp+=`<div class="sp" style="left:${Math.random()*235}px;top:${90+Math.random()*260}px;width:${6+Math.random()*14}px;height:${4+Math.random()*8}px;background:${i%2?'#3efff0':'#ff49e1'}"></div>`;}
+ else if(m.spark==='bub'){for(let i=0;i<12;i++){const s=8+Math.random()*16;sp+=`<div class="sp" style="left:${Math.random()*235}px;top:${90+Math.random()*260}px;width:${s}px;height:${s}px;border-radius:50%;border:3px solid #dcff2b;box-shadow:0 0 8px #dcff2b"></div>`;}}
+ else {for(let i=0;i<40;i++){const s=2+Math.random()*3;sp+=`<div class="sp" style="left:${Math.random()*250}px;top:${Math.random()*480}px;width:${s}px;height:${s}px;border-radius:50%;background:#fff"></div>`;}sp+=`<div class="sp" style="left:30px;top:150px;width:190px;height:70px;border-radius:50%;border:4px solid #ede0ff;box-shadow:0 0 18px #ede0ff;transform:rotate(-12deg)"></div>`;}
+ html+=`<div class="card" style="background:${m.bg}">${sp}<canvas id="c_${m.k}" width="540" height="540" style="filter:${m.glow}"></canvas><canvas id="g_${m.k}" class="g" width="200" height="200" style="left:-14px;top:80px;width:270px;height:270px;position:absolute"></canvas>
+ <div class="lbl o" style="color:${m.col}">${m.name}</div><div class="mult" style="background:${m.col};color:#111;border-color:#111">${m.mult}</div><div class="inc o">${m.inc}</div><div class="fx">${m.fx}</div></div>`;
+}
+html+=`<div class="card legend"><h3>Reference → V4</h3><p><b>The meme:</b> a cow fused with the planet Saturn, on two huge bare human feet with five toes each (Steal a Brainrot model)</p><p><b>Revision 2:</b> no blue, closer to the in-game cream / tan planet: warm candy bands (tangerine caramel, butter yellow, pink) over cream with a glowing gold band · glowing hot-pink jackpot ring with glowing gold segments, gold rim, glowing stars and a pearl moon · white cow head with amber eyes, cow patch, jeweled gold nose ring, gold-tipped horns · gold cowbell with a pink gem · huge bare feet with glowing pink pedicured nails · gold and pink stardust</p></div>`;
+grid.innerHTML=html;
+document.querySelectorAll('.o').forEach(e=>e.style.textShadow=ring(e.classList.contains('n')?5:4));
+try{
+const cam={eye:[12,6.4,-7.8],target:[0.1,2.1,0],fov:0.6};
+const bx=skin('normal');render(document.getElementById('h'),bx,Object.assign({mode:0},cam));render(document.getElementById('hg'),bx,Object.assign({mode:0,glow:1},cam));
+const cam2={eye:[12,6.4,-7.8],target:[0.1,2.1,0],fov:0.6};
+for(const m of M){const b=skin(m.k),md=PALETTES[m.k].mode;render(document.getElementById('c_'+m.k),b,Object.assign({mode:md},cam2));render(document.getElementById('g_'+m.k),b,Object.assign({mode:md,glow:1},cam2));}
+document.title='ok';}catch(e){document.title='ERR '+e;}
+</script></body></html>

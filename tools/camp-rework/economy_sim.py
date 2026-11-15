@@ -9,6 +9,8 @@ All game data below is transcribed from src/shared/Config (see DATA section). Ru
 
     python3 -I tools/camp-rework/economy_sim.py            # prints the report
     python3 -I tools/camp-rework/economy_sim.py --write    # also writes economy_sim_results.md
+    python3 -I tools/camp-rework/economy_sim.py --core-loop-v2 [--write] [--runs=N]
+        # Core Loop V2 economy guard (coreloop_v2_sim.py); --write saves docs/coreloop/2026-11/economy/
 
 Standard library only. Deterministic (fixed seeds).
 """
@@ -573,6 +575,13 @@ def main():
 
 
 if __name__ == "__main__":
+    if "--core-loop-v2" in sys.argv:
+        # Core Loop V2 economy guard (C4): separate helper beside this file. `-I` drops the script
+        # directory from sys.path, so add it explicitly. The default run below is untouched.
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import coreloop_v2_sim
+        coreloop_v2_sim.main(sys.argv[1:])
+        sys.exit(0)
     report, _ = main()
     if "--write" in sys.argv:
         path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "economy_sim_results.md")

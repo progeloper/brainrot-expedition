@@ -433,6 +433,38 @@ local function weaponsSlots(m)
 	end
 	order("Rack")
 	order("Wall")
+	-- Playtest Fixes B1 (13 Nov): one frame per slot, same rule as tools/playtest_fixes/
+	-- NormaliseStallSlots.edit.luau (Look = customer's left, Up = rack up, wall slots lean 12 deg back,
+	-- SlotLength = usable rail). Legacy* attributes keep the old frame for the flag-off display path.
+	local shared = game:GetService("ReplicatedStorage"):FindFirstChild("Shared")
+	local poseModule = shared and shared:FindFirstChild("Utility") and shared.Utility:FindFirstChild("StallDisplayPose")
+	if poseModule then
+		local Pose = require(poseModule)
+		local Poses = require(shared.Config.PlaytestFixes).StallPoses
+		local customer = m:GetPivot().LookVector
+		for _, s in slots:GetChildren() do
+			local kind = s:GetAttribute("CampSlot")
+			if kind == "Rack" or kind == "Wall" then
+				s:SetAttribute("LegacySlotCFrame", s.CFrame)
+				s:SetAttribute("LegacySlotLength", s:GetAttribute("SlotLength"))
+				local row = Poses.RackRows[s.Name]
+				local position = if row then Vector3.new(s.Position.X, m:GetPivot().Y + row, s.Position.Z) else s.Position
+				local along = Poses.WallSlots[s.Name]
+				if along then
+					local left = Vector3.new(customer.X, 0, customer.Z).Unit:Cross(Vector3.yAxis)
+					local centre = m:GetPivot().Position + left * along
+					position = Vector3.new(
+						if math.abs(left.X) > 0.5 then centre.X else s.Position.X,
+						s.Position.Y,
+						if math.abs(left.Z) > 0.5 then centre.Z else s.Position.Z
+					)
+				end
+				s.CFrame = Pose.SlotFrame(position, customer, if kind == "Wall" then Poses.WallLeanDegrees else 0)
+				s:SetAttribute("SlotLength", Poses.RailLength[kind])
+				s:SetAttribute("PlaytestFixesSlot", true)
+			end
+		end
+	end
 	-- Medal pedestals for the Won specials (bronze / silver / gold), inside the stall front corner.
 	-- Boxes only, no text. Greyed until earned (client).
 	local counter = centroid(named(m, { "CounterTop" }))

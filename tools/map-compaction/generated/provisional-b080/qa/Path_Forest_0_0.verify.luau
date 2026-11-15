@@ -1,0 +1,192 @@
+-- Read-only native asset QA. Call returned Verify(importRoot, {GroupId=optionalName}).
+-- Vertex/face IDs may be reordered or welded; match oriented triangle corner
+-- geometry+UV tuples, preserving exact authored source UV values and per-corner UV seams.
+-- Creates only detached temporary EditableMeshes and always destroys them.
+local HttpService=game:GetService("HttpService")
+local AssetService=game:GetService("AssetService")
+local RunService=game:GetService("RunService")
+local EXPECTED=HttpService:JSONDecode([====[[{"id":"Path_Forest_0_0","localBounds":[[-120.0,0.0,-94.56271362304688],[120.0,0.0,94.56271362304688]],"pathRGB":[179,119,69],"pivot":[-371.0,0.07999995164573193,-295.43728799999997],"region":"Forest","size":[240.0,0,189.125424],"triangles":[[[-88.0,0.0,-84.56271362304688,0.13333334028720856,0.9471250176429749],[-120.0,0.0,-84.56271362304688,0.0,0.9471250176429749],[-120.0,0.0,-60.562713623046875,0.0,0.8202251195907593]],[[-88.0,0.0,-60.562713623046875,0.13333334028720856,0.8202251195907593],[-88.0,0.0,-84.56271362304688,0.13333334028720856,0.9471250176429749],[-120.0,0.0,-60.562713623046875,0.0,0.8202251195907593]],[[-88.0,0.0,-84.56271362304688,0.13333334028720856,0.9471250176429749],[-88.0,0.0,-60.562713623046875,0.13333334028720856,0.8202251195907593],[-72.0,0.0,-86.56271362304688,0.20000000298023224,0.9577000141143799]],[[-72.0,0.0,27.306446075439453,0.20000000298023224,0.3556172549724579],[-84.0,0.0,27.306446075439453,0.15000000596046448,0.3556172549724579],[-84.0,0.0,39.30644607543945,0.15000000596046448,0.2921673059463501]],[[-72.0,0.0,-58.562713623046875,0.20000000298023224,0.8096501231193542],[-72.0,0.0,-86.56271362304688,0.20000000298023224,0.9577000141143799],[-88.0,0.0,-60.562713623046875,0.13333334028720856,0.8202251195907593]],[[-60.0,0.0,51.30644607543945,0.25,0.22871734201908112],[-84.0,0.0,39.30644607543945,0.15000000596046448,0.2921673059463501],[-84.0,0.0,51.30644607543945,0.15000000596046448,0.22871734201908112]],[[-84.0,0.0,61.437286376953125,0.15000000596046448,0.1751505583524704],[-60.0,0.0,61.437286376953125,0.25,0.1751505583524704],[-84.0,0.0,51.30644607543945,0.15000000596046448,0.22871734201908112]],[[-84.0,0.0,73.43728637695312,0.15000000596046448,0.11170060187578201],[-60.0,0.0,73.43728637695312,0.25,0.11170060187578201],[-84.0,0.0,61.437286376953125,0.15000000596046448,0.1751505583524704]],[[-84.0,0.0,85.43728637695312,0.15000000596046448,0.04825064539909363],[-60.0,0.0,85.43728637695312,0.25,0.04825064539909363],[-84.0,0.0,73.43728637695312,0.15000000596046448,0.11170060187578201]],[[-84.0,0.0,85.43728637695312,0.15000000596046448,0.04825064539909363],[-84.0,0.0,94.56271362304688,0.15000000596046448,0.0],[-60.0,0.0,94.56271362304688,0.25,0.0]],[[-60.0,0.0,51.30644607543945,0.25,0.22871734201908112],[-72.0,0.0,27.306446075439453,0.20000000298023224,0.3556172549724579],[-84.0,0.0,39.30644607543945,0.15000000596046448,0.2921673059463501]],[[-84.0,0.0,51.30644607543945,0.15000000596046448,0.22871734201908112],[-60.0,0.0,61.437286376953125,0.25,0.1751505583524704],[-60.0,0.0,51.30644607543945,0.25,0.22871734201908112]],[[-60.0,0.0,61.437286376953125,0.25,0.1751505583524704],[-84.0,0.0,61.437286376953125,0.15000000596046448,0.1751505583524704],[-60.0,0.0,73.43728637695312,0.25,0.11170060187578201]],[[-60.0,0.0,73.43728637695312,0.25,0.11170060187578201],[-84.0,0.0,73.43728637695312,0.15000000596046448,0.11170060187578201],[-60.0,0.0,85.43728637695312,0.25,0.04825064539909363]],[[-60.0,0.0,85.43728637695312,0.25,0.04825064539909363],[-84.0,0.0,85.43728637695312,0.15000000596046448,0.04825064539909363],[-60.0,0.0,94.56271362304688,0.25,0.0]],[[-72.0,0.0,27.306446075439453,0.20000000298023224,0.3556172549724579],[-60.0,0.0,51.30644607543945,0.25,0.22871734201908112],[-60.0,0.0,27.306446075439453,0.25,0.3556172549724579]],[[-72.0,0.0,-86.56271362304688,0.20000000298023224,0.9577000141143799],[-72.0,0.0,-58.562713623046875,0.20000000298023224,0.8096501231193542],[-22.0,0.0,-86.56271362304688,0.40833333134651184,0.9577000141143799]],[[-60.0,0.0,27.306446075439453,0.25,0.3556172549724579],[-60.0,0.0,51.30644607543945,0.25,0.22871734201908112],[-18.0,0.0,27.306446075439453,0.42500001192092896,0.3556172549724579]],[[-22.0,0.0,-58.562713623046875,0.40833333134651184,0.8096501231193542],[-22.0,0.0,-86.56271362304688,0.40833333134651184,0.9577000141143799],[-72.0,0.0,-58.562713623046875,0.20000000298023224,0.8096501231193542]],[[-18.0,0.0,27.306446075439453,0.42500001192092896,0.3556172549724579],[-60.0,0.0,51.30644607543945,0.25,0.22871734201908112],[-18.0,0.0,51.30644607543945,0.42500001192092896,0.22871734201908112]],[[-22.0,0.0,-58.562713623046875,0.40833333134651184,0.8096501231193542],[-22.0,0.0,-50.562713623046875,0.40833333134651184,0.7673501372337341],[-18.0,0.0,-50.562713623046875,0.42500001192092896,0.7673501372337341]],[[-18.0,0.0,51.30644607543945,0.42500001192092896,0.22871734201908112],[-18.0,0.0,57.30644607543945,0.42500001192092896,0.19699236750602722],[-14.0,0.0,57.30644607543945,0.4416666626930237,0.19699236750602722]],[[22.0,0.0,-86.56271362304688,0.5916666388511658,0.9577000141143799],[-22.0,0.0,-94.56271362304688,0.40833333134651184,1.0],[-22.0,0.0,-86.56271362304688,0.40833333134651184,0.9577000141143799]],[[-22.0,0.0,-86.56271362304688,0.40833333134651184,0.9577000141143799],[-22.0,0.0,-58.562713623046875,0.40833333134651184,0.8096501231193542],[22.0,0.0,-86.56271362304688,0.5916666388511658,0.9577000141143799]],[[-18.0,0.0,-50.562713623046875,0.42500001192092896,0.7673501372337341],[18.0,0.0,-50.562713623046875,0.574999988079071,0.7673501372337341],[-22.0,0.0,-58.562713623046875,0.40833333134651184,0.8096501231193542]],[[14.0,0.0,57.30644607543945,0.5583333373069763,0.19699236750602722],[-18.0,0.0,27.306446075439453,0.42500001192092896,0.3556172549724579],[-18.0,0.0,51.30644607543945,0.42500001192092896,0.22871734201908112]],[[-18.0,0.0,-0.5627120137214661,0.42500001192092896,0.502975344657898],[18.0,0.0,-0.5627120137214661,0.574999988079071,0.502975344657898],[-18.0,0.0,-50.562713623046875,0.42500001192092896,0.7673501372337341]],[[18.0,0.0,11.437288284301758,0.574999988079071,0.43952539563179016],[-18.0,0.0,-0.5627120137214661,0.42500001192092896,0.502975344657898],[-18.0,0.0,11.437288284301758,0.42500001192092896,0.43952539563179016]],[[-18.0,0.0,11.437288284301758,0.42500001192092896,0.43952539563179016],[-18.0,0.0,17.437288284301758,0.42500001192092896,0.4078004062175751],[18.0,0.0,11.437288284301758,0.574999988079071,0.43952539563179016]],[[18.0,0.0,17.437288284301758,0.574999988079071,0.4078004062175751],[-18.0,0.0,17.437288284301758,0.42500001192092896,0.4078004062175751],[-18.0,0.0,21.306446075439453,0.42500001192092896,0.387342244386673]],[[18.0,0.0,21.306446075439453,0.574999988079071,0.387342244386673],[-18.0,0.0,21.306446075439453,0.42500001192092896,0.387342244386673],[-18.0,0.0,27.306446075439453,0.42500001192092896,0.3556172549724579]],[[-14.0,0.0,57.30644607543945,0.4416666626930237,0.19699236750602722],[14.0,0.0,57.30644607543945,0.5583333373069763,0.19699236750602722],[-18.0,0.0,51.30644607543945,0.42500001192092896,0.22871734201908112]],[[-14.0,0.0,59.437286376953125,0.4416666626930237,0.18572555482387543],[14.0,0.0,59.437286376953125,0.5583333373069763,0.18572555482387543],[-14.0,0.0,57.30644607543945,0.4416666626930237,0.19699236750602722]],[[-14.0,0.0,73.43728637695312,0.4416666626930237,0.11170060187578201],[14.0,0.0,73.43728637695312,0.5583333373069763,0.11170060187578201],[-14.0,0.0,59.437286376953125,0.4416666626930237,0.18572555482387543]],[[-14.0,0.0,87.43728637695312,0.4416666626930237,0.0376756526529789],[14.0,0.0,87.43728637695312,0.5583333373069763,0.0376756526529789],[-14.0,0.0,73.43728637695312,0.4416666626930237,0.11170060187578201]],[[-14.0,0.0,87.43728637695312,0.4416666626930237,0.0376756526529789],[-14.0,0.0,94.56271362304688,0.4416666626930237,0.0],[14.0,0.0,94.56271362304688,0.5583333373069763,0.0]],[[-18.0,0.0,27.306446075439453,0.42500001192092896,0.3556172549724579],[14.0,0.0,57.30644607543945,0.5583333373069763,0.19699236750602722],[18.0,0.0,21.306446075439453,0.574999988079071,0.387342244386673]],[[14.0,0.0,57.30644607543945,0.5583333373069763,0.19699236750602722],[-14.0,0.0,57.30644607543945,0.4416666626930237,0.19699236750602722],[14.0,0.0,59.437286376953125,0.5583333373069763,0.18572555482387543]],[[14.0,0.0,59.437286376953125,0.5583333373069763,0.18572555482387543],[-14.0,0.0,59.437286376953125,0.4416666626930237,0.18572555482387543],[14.0,0.0,73.43728637695312,0.5583333373069763,0.11170060187578201]],[[14.0,0.0,73.43728637695312,0.5583333373069763,0.11170060187578201],[-14.0,0.0,73.43728637695312,0.4416666626930237,0.11170060187578201],[14.0,0.0,87.43728637695312,0.5583333373069763,0.0376756526529789]],[[14.0,0.0,87.43728637695312,0.5583333373069763,0.0376756526529789],[-14.0,0.0,87.43728637695312,0.4416666626930237,0.0376756526529789],[14.0,0.0,94.56271362304688,0.5583333373069763,0.0]],[[18.0,0.0,-50.562713623046875,0.574999988079071,0.7673501372337341],[22.0,0.0,-58.562713623046875,0.5916666388511658,0.8096501231193542],[-22.0,0.0,-58.562713623046875,0.40833333134651184,0.8096501231193542]],[[18.0,0.0,-50.562713623046875,0.574999988079071,0.7673501372337341],[-18.0,0.0,-50.562713623046875,0.42500001192092896,0.7673501372337341],[18.0,0.0,-0.5627120137214661,0.574999988079071,0.502975344657898]],[[18.0,0.0,-0.5627120137214661,0.574999988079071,0.502975344657898],[-18.0,0.0,-0.5627120137214661,0.42500001192092896,0.502975344657898],[18.0,0.0,11.437288284301758,0.574999988079071,0.43952539563179016]],[[-18.0,0.0,17.437288284301758,0.42500001192092896,0.4078004062175751],[18.0,0.0,17.437288284301758,0.574999988079071,0.4078004062175751],[18.0,0.0,11.437288284301758,0.574999988079071,0.43952539563179016]],[[-18.0,0.0,21.306446075439453,0.42500001192092896,0.387342244386673],[18.0,0.0,21.306446075439453,0.574999988079071,0.387342244386673],[18.0,0.0,17.437288284301758,0.574999988079071,0.4078004062175751]],[[22.0,0.0,-86.56271362304688,0.5916666388511658,0.9577000141143799],[22.0,0.0,-94.56271362304688,0.5916666388511658,1.0],[-22.0,0.0,-94.56271362304688,0.40833333134651184,1.0]],[[22.0,0.0,-58.562713623046875,0.5916666388511658,0.8096501231193542],[22.0,0.0,-86.56271362304688,0.5916666388511658,0.9577000141143799],[-22.0,0.0,-58.562713623046875,0.40833333134651184,0.8096501231193542]],[[18.0,0.0,57.30644607543945,0.574999988079071,0.19699236750602722],[18.0,0.0,21.306446075439453,0.574999988079071,0.387342244386673],[14.0,0.0,57.30644607543945,0.5583333373069763,0.19699236750602722]],[[18.0,0.0,-50.562713623046875,0.574999988079071,0.7673501372337341],[22.0,0.0,-50.562713623046875,0.5916666388511658,0.7673501372337341],[22.0,0.0,-58.562713623046875,0.5916666388511658,0.8096501231193542]],[[18.0,0.0,21.306446075439453,0.574999988079071,0.387342244386673],[18.0,0.0,57.30644607543945,0.574999988079071,0.19699236750602722],[102.0,0.0,21.306446075439453,0.925000011920929,0.387342244386673]],[[22.0,0.0,-86.56271362304688,0.5916666388511658,0.9577000141143799],[22.0,0.0,-58.562713623046875,0.5916666388511658,0.8096501231193542],[106.0,0.0,-86.56271362304688,0.9416666626930237,0.9577000141143799]],[[102.0,0.0,57.30644607543945,0.925000011920929,0.19699236750602722],[102.0,0.0,21.306446075439453,0.925000011920929,0.387342244386673],[18.0,0.0,57.30644607543945,0.574999988079071,0.19699236750602722]],[[106.0,0.0,-58.562713623046875,0.9416666626930237,0.8096501231193542],[106.0,0.0,-86.56271362304688,0.9416666626930237,0.9577000141143799],[22.0,0.0,-58.562713623046875,0.5916666388511658,0.8096501231193542]],[[102.0,0.0,21.306446075439453,0.925000011920929,0.387342244386673],[102.0,0.0,57.30644607543945,0.925000011920929,0.19699236750602722],[114.0,0.0,21.306446075439453,0.9750000238418579,0.387342244386673]],[[106.0,0.0,-86.56271362304688,0.9416666626930237,0.9577000141143799],[106.0,0.0,-58.562713623046875,0.9416666626930237,0.8096501231193542],[118.0,0.0,-86.56271362304688,0.9916666746139526,0.9577000141143799]],[[114.0,0.0,57.30644607543945,0.9750000238418579,0.19699236750602722],[114.0,0.0,21.306446075439453,0.9750000238418579,0.387342244386673],[102.0,0.0,57.30644607543945,0.925000011920929,0.19699236750602722]],[[118.0,0.0,-58.562713623046875,0.9916666746139526,0.8096501231193542],[118.0,0.0,-86.56271362304688,0.9916666746139526,0.9577000141143799],[106.0,0.0,-58.562713623046875,0.9416666626930237,0.8096501231193542]],[[114.0,0.0,21.306446075439453,0.9750000238418579,0.387342244386673],[114.0,0.0,57.30644607543945,0.9750000238418579,0.19699236750602722],[120.0,0.0,21.306446075439453,1.0,0.387342244386673]],[[114.0,0.0,57.30644607543945,0.9750000238418579,0.19699236750602722],[120.0,0.0,57.30644607543945,1.0,0.19699236750602722],[120.0,0.0,21.306446075439453,1.0,0.387342244386673]],[[118.0,0.0,-86.56271362304688,0.9916666746139526,0.9577000141143799],[118.0,0.0,-58.562713623046875,0.9916666746139526,0.8096501231193542],[120.0,0.0,-86.56271362304688,1.0,0.9577000141143799]],[[118.0,0.0,-58.562713623046875,0.9916666746139526,0.8096501231193542],[120.0,0.0,-58.562713623046875,1.0,0.8096501231193542],[120.0,0.0,-86.56271362304688,1.0,0.9577000141143799]]]}]]====])
+local POSITION_TOLERANCE=.01
+local UV_TOLERANCE=1e-5
+local NORMAL_TOLERANCE=1e-5
+local function planarBoundingThickness(value)
+    return type(value)=="number" and value==value and value>0 and value<=.05001
+        and (math.abs(value-.001)<=1e-5 or math.abs(value-.05)<=1e-5)
+end
+local function v3(row) return Vector3.new(row[1],row[2],row[3]) end
+local function identityRotation(cf)
+    local _,_,_,xx,xy,xz,yx,yy,yz,zx,zy,zz=cf:GetComponents()
+    return math.max(math.abs(xx-1),math.abs(yy-1),math.abs(zz-1),math.abs(xy),math.abs(xz),
+                    math.abs(yx),math.abs(yz),math.abs(zx),math.abs(zy))<=1e-5
+end
+local function bucket(x,z) return tostring(math.floor(x))..","..tostring(math.floor(z)) end
+local function compareCorners(actual,expected,shift)
+    local maxPosition,maxUV=0,0
+    for i=1,3 do
+        local e=expected[(i+shift-1)%3+1]
+        local a=actual[i]
+        local pe=(a.position-v3(e)).Magnitude
+        local ue=(a.uv-Vector2.new(e[4],e[5])).Magnitude
+        if pe>POSITION_TOLERANCE or ue>UV_TOLERANCE then return false,pe,ue end
+        maxPosition=math.max(maxPosition,pe);maxUV=math.max(maxUV,ue)
+    end
+    return true,maxPosition,maxUV
+end
+local function readOne(part,row)
+    local mesh=nil
+    local report={id=row.id,meshId=tostring(part.MeshId),expectedTriangles=#row.triangles,passed=false,
+                  expectedWorldPivot=row.pivot,actualPartCFrame={part.CFrame:GetComponents()},
+                  actualPartSize={part.Size.X,part.Size.Y,part.Size.Z},actualParent=part.Parent:GetFullName(),
+                  geometryCornersMatched=0,sourceUVValuesPassed=false,upwardNormalsPassed=false,upwardWindingPassed=false,
+                  temporaryEditableMeshesDestroyed=0,worldMutations=0,worldPlacementValidated=false,textureMapsValidated=false,failures={}}
+    local ok,result=xpcall(function()
+        assert(tostring(part.MeshId):match("^rbxassetid://[1-9]%d*$"),"Native mesh has no real numeric MeshId")
+        report.identityPartRotation=identityRotation(part.CFrame)
+        assert(report.identityPartRotation,"Native part rotation differs from calibrated identity frame")
+        assert(math.abs(part.Size.X-row.size[1])<=.01 and math.abs(part.Size.Z-row.size[3])<=.01,
+               "Native part XZ size differs from exact final bounds")
+        assert(planarBoundingThickness(part.Size.Y),"Native planar bounding thickness must be finite and positive near .001 or .05")
+        mesh=AssetService:CreateEditableMeshAsync(Content.fromUri(tostring(part.MeshId)),{FixedSize=true})
+        assert(mesh,"Temporary native EditableMesh allocation unavailable")
+        local vertexIds,faceIds=mesh:GetVertices(),mesh:GetFaces()
+        report.actualVertices=#vertexIds;report.actualTriangles=#faceIds
+        assert(#faceIds==#row.triangles,"Native/source triangle count differs")
+        local low=Vector3.new(math.huge,math.huge,math.huge)
+        local high=Vector3.new(-math.huge,-math.huge,-math.huge)
+        for _,id in ipairs(vertexIds) do
+            local p=mesh:GetPosition(id)
+            low=Vector3.new(math.min(low.X,p.X),math.min(low.Y,p.Y),math.min(low.Z,p.Z))
+            high=Vector3.new(math.max(high.X,p.X),math.max(high.Y,p.Y),math.max(high.Z,p.Z))
+        end
+        report.actualMeshBoundsLocal={{low.X,low.Y,low.Z},{high.X,high.Y,high.Z}}
+        report.actualEditableSize={mesh:GetSize().X,mesh:GetSize().Y,mesh:GetSize().Z}
+        local boundsError=math.max((low-v3(row.localBounds[1])).Magnitude,(high-v3(row.localBounds[2])).Magnitude)
+        report.maximumBoundsError=boundsError
+        assert(boundsError<=POSITION_TOLERANCE,"Native local bounds/plane are not canonical")
+        report.intendedWorldBounds={{low.X+row.pivot[1],low.Y+row.pivot[2],low.Z+row.pivot[3]},
+                                    {high.X+row.pivot[1],high.Y+row.pivot[2],high.Z+row.pivot[3]}}
+        local bins={}
+        for i,triangle in ipairs(row.triangles) do
+            local x,z=0,0
+            for _,e in ipairs(triangle) do x+=e[1]/3;z+=e[3]/3 end
+            local key=bucket(x,z);bins[key]=bins[key] or {};table.insert(bins[key],i)
+        end
+        local matched={};local maxPosition,maxUV,maxNormal=0,0,0
+        local uvLow,uvHigh=Vector2.new(math.huge,math.huge),Vector2.new(-math.huge,-math.huge)
+        local referencedVertices={}
+        local probe={}
+        for _,faceId in ipairs(faceIds) do
+            local vs,us,ns=mesh:GetFaceVertices(faceId),mesh:GetFaceUVs(faceId),mesh:GetFaceNormals(faceId)
+            assert(#vs==3 and #us==3 and #ns==3,"Native face lacks3 positions/UVs/normals")
+            local actual={};local cx,cz=0,0
+            for corner=1,3 do
+                local p,uv,n=mesh:GetPosition(vs[corner]),mesh:GetUV(us[corner]),mesh:GetNormal(ns[corner])
+                assert(uv and n,"Native corner UV/normal value is missing")
+                local ne=(n-Vector3.new(0,1,0)).Magnitude
+                if ne>NORMAL_TOLERANCE then report.firstBadNormal={nativeFaceId=faceId,corner=corner,normal={n.X,n.Y,n.Z},error=ne} end
+                assert(ne<=NORMAL_TOLERANCE,"Native corner normal is not authored+Y")
+                maxNormal=math.max(maxNormal,ne)
+                assert(uv.X>=-UV_TOLERANCE and uv.Y>=-UV_TOLERANCE and uv.X<=1+UV_TOLERANCE and uv.Y<=1+UV_TOLERANCE,
+                       "Native UV is outside0..1")
+                uvLow=Vector2.new(math.min(uvLow.X,uv.X),math.min(uvLow.Y,uv.Y))
+                uvHigh=Vector2.new(math.max(uvHigh.X,uv.X),math.max(uvHigh.Y,uv.Y))
+                actual[corner]={position=p,uv=uv,normal=n};cx+=p.X/3;cz+=p.Z/3
+                referencedVertices[vs[corner]]=true
+            end
+            assert((actual[2].position-actual[1].position):Cross(actual[3].position-actual[1].position).Y>0,
+                   "Native road triangle is downward or degenerate")
+            local found=nil;local errorPosition,errorUV=math.huge,math.huge
+            for dx=-1,1 do for dz=-1,1 do
+                for _,i in ipairs(bins[bucket(cx+dx,cz+dz)] or {}) do
+                    if not matched[i] then
+                        for shift=0,2 do
+                            local pass,pe,ue=compareCorners(actual,row.triangles[i],shift)
+                            if pass then found=i;errorPosition=pe;errorUV=ue;break end
+                        end
+                    end
+                    if found then break end
+                end
+                if found then break end
+            end if found then break end end
+            if not found then
+                local best={positionError=math.huge}
+                for i,triangle in ipairs(row.triangles) do for shift=0,2 do
+                    local pe,ue,flippedV=0,0,0
+                    for corner=1,3 do
+                        local e=triangle[(corner+shift-1)%3+1];local a=actual[corner]
+                        pe=math.max(pe,(a.position-v3(e)).Magnitude)
+                        ue=math.max(ue,(a.uv-Vector2.new(e[4],e[5])).Magnitude)
+                        flippedV=math.max(flippedV,(a.uv-Vector2.new(e[4],1-e[5])).Magnitude)
+                    end
+                    if pe<best.positionError then best={sourceTriangleIndex=i,shift=shift,positionError=pe,UVError=ue,UVVFlippedError=flippedV,
+                        sourceCorners=triangle,alreadyMatched=matched[i]==true} end
+                end end
+                local values={}
+                for _,a in ipairs(actual) do table.insert(values,{a.position.X,a.position.Y,a.position.Z,a.uv.X,a.uv.Y}) end
+                report.firstMismatchFace={nativeFaceId=faceId,nativeCorners=values,nearestSourceGeometry=best}
+            end
+            assert(found,"No unused source triangle matches native face geometry+source UV at face "..tostring(faceId))
+            matched[found]=true
+            maxPosition=math.max(maxPosition,errorPosition);maxUV=math.max(maxUV,errorUV)
+            report.geometryCornersMatched+=3
+            if #probe==0 then
+                for _,a in ipairs(actual) do table.insert(probe,{canonicalWorldXYZ={a.position.X+row.pivot[1],a.position.Y+row.pivot[2],a.position.Z+row.pivot[3]},UV={a.uv.X,a.uv.Y}}) end
+            end
+        end
+        for i in ipairs(row.triangles) do assert(matched[i],"Expected source triangle is absent") end
+        for _,id in ipairs(vertexIds) do assert(referencedVertices[id],"Native mesh contains unreferenced vertex") end
+        report.maximumPositionError=maxPosition;report.maximumUVError=maxUV;report.maximumNormalError=maxNormal
+        report.actualUVRange={{uvLow.X,uvLow.Y},{uvHigh.X,uvHigh.Y}}
+        report.nativeTriangleCornerProbe=probe
+        report.geometryCornersComplete=true;report.sourceUVValuesPassed=true;report.upwardNormalsPassed=true
+        report.upwardWindingPassed=true;report.passed=true
+        return report
+    end,debug.traceback)
+    if mesh then mesh:Destroy();report.temporaryEditableMeshesDestroyed=1 end
+    if not ok then table.insert(report.failures,tostring(result));report.passed=false end
+    return report
+end
+local function Verify(importRoot,options)
+    options=options or {}
+    assert(game.PlaceId==91958083796436 and not RunService:IsRunning(),"Native road QA is authorized in DEV Edit only")
+    assert(typeof(importRoot)=="Instance","Supply ServerStorage.CompactMap_ImportedRoads after native import is complete")
+    assert(importRoot.Name=="CompactMap_ImportedRoads" and importRoot:IsDescendantOf(game:GetService("ServerStorage")),
+           "Read actual native import under ServerStorage.CompactMap_ImportedRoads only")
+    local found={};local all=importRoot:GetDescendants()
+    if importRoot:IsA("MeshPart") then table.insert(all,importRoot) end
+    for _,item in ipairs(all) do if item:IsA("MeshPart") then
+        found[item.Name]=found[item.Name] or {};table.insert(found[item.Name],item)
+    end end
+    local report={status="Passed",groups={},failures={},worldMutations=0,temporaryEditableMeshesDestroyed=0,
+        canonicalSourceSHA256="a9520966d90b9955285786839991af17486cc53e09012e98589d64a6fd6670c3",studioImportSHA256="352ec7d09d9884a4ecc8c98fbe10006d4bbd770c2d6104ffa0a5eb3f254a87b1",
+        sourceRoutePointSHA256="7c0411ac82bd863df409dcf71ebc49f6649564dcb30aa2a6a9e6e59408dd20a5",
+        routeGeometryHash="8b52d62328fdba429c4124e911b2a59e95550f3682ec37c95c8db782a08dd484",
+        positionToleranceStuds=POSITION_TOLERANCE,UVTolerance=UV_TOLERANCE,normalTolerance=NORMAL_TOLERANCE,
+        normalization="Native compensated mesh local coordinates compare directly to canonical Roblox GLB float32 corners; no UV flip allowed",
+        expectedImportRoot=importRoot:GetFullName(),completeBatch=options.GroupId==nil,
+        worldPlacementValidated=false,textureMapsValidated=false}
+    local names={}
+    for _,row in ipairs(EXPECTED) do
+        names[row.id]=true
+        if not options.GroupId or options.GroupId==row.id then
+            local matches=found[row.id]
+            if not matches or #matches~=1 then
+                table.insert(report.failures,"Expected exactly1 native group "..row.id);report.status="Failed"
+            else
+                local r=readOne(matches[1],row);table.insert(report.groups,r)
+                report.temporaryEditableMeshesDestroyed+=r.temporaryEditableMeshesDestroyed
+                if not r.passed then table.insert(report.failures,row.id);report.status="Failed" end
+            end
+        end
+    end
+    if options.GroupId then assert(names[options.GroupId],"Unknown expected native group") end
+    if not options.GroupId then
+        for name in pairs(found) do if not names[name] then table.insert(report.failures,"Unexpected native MeshPart "..name);report.status="Failed" end end
+        if #report.groups~=27 then report.status="Failed";table.insert(report.failures,"Expected27 complete native mesh groups") end
+    end
+    report.checkedGroups=#report.groups
+    report.checkedTriangleCorners=0
+    for _,row in ipairs(report.groups) do report.checkedTriangleCorners+=row.geometryCornersMatched end
+    return report
+end
+return Verify

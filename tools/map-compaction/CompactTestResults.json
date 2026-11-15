@@ -1,0 +1,150 @@
+{
+  "actualStudioTests": "NotRun",
+  "baselineManagedContentSHA256": "3fb9d9e8a543cb80a034cf3fb96fbd118136a003ba829b14a13b2c3720894310",
+  "cases": [
+    {
+      "name": "Preferred literal candidate knots",
+      "passed": true
+    },
+    {
+      "name": "All ladder rows are monotone, odd and invertible",
+      "passed": true
+    },
+    {
+      "name": "Final twelve-stud protected band remains full size",
+      "passed": true
+    },
+    {
+      "name": "Invalid/nonfinite factors reject",
+      "passed": true
+    },
+    {
+      "name": "XYZ roundtrip preserves exact Y",
+      "passed": true
+    },
+    {
+      "name": "Rigid rotated frame changes position only",
+      "passed": true
+    },
+    {
+      "name": "Long diagonal includes every crossed X/Z band plane",
+      "passed": true
+    },
+    {
+      "name": "Camp floor edges preserve height/thickness",
+      "passed": true
+    },
+    {
+      "name": "Same-region union cancels internal/duplicate floor seams",
+      "passed": true
+    },
+    {
+      "name": "Unequal opposite spans split neighbor pairs; corners do not create runs",
+      "passed": true
+    },
+    {
+      "name": "Concave actual union differs from AABB",
+      "passed": true
+    },
+    {
+      "name": "Distinct small intended gaps stay distinct",
+      "passed": true
+    },
+    {
+      "name": "Overlapping different-region interiors reject",
+      "passed": true
+    },
+    {
+      "name": "Whole wall thickness catches a protected prism missing the seam centre",
+      "passed": true
+    },
+    {
+      "name": "Overlapping apertures subtract once without leaking a gap",
+      "passed": true
+    },
+    {
+      "name": "Global junction lower-ID owner resolves three-region volume once",
+      "passed": true
+    },
+    {
+      "name": "Junction extension cannot encroach an approved opening",
+      "passed": true
+    },
+    {
+      "name": "Chunk lengths start lexically, meet exactly and preserve foundation",
+      "passed": true
+    },
+    {
+      "name": "Fresh complete capture binds 25 floors,85 routes,6 gates,27 native roads",
+      "passed": true
+    },
+    {
+      "name": "All eighteen shared runs match independent literal Appendix endpoints",
+      "passed": true
+    },
+    {
+      "name": "Independent literal region areas and full floor envelope",
+      "passed": true
+    },
+    {
+      "name": "Eight-stud interior grid keeps all logical region owners",
+      "passed": true
+    },
+    {
+      "name": "All41 original separators classify; outer containment preserved separately",
+      "passed": true
+    },
+    {
+      "name": "Five closed alternate crossings retain physical restriction",
+      "passed": true
+    },
+    {
+      "name": "Exactly six paid owners and one40stud CampForest free exit",
+      "passed": true
+    },
+    {
+      "name": "Route IDs/control vertices/widths and26 contact caps preserved",
+      "passed": true
+    },
+    {
+      "name": "Complete465 convex route primitives remain one surface component",
+      "passed": true
+    },
+    {
+      "name": "Disconnected numeric corridors report two components",
+      "passed": true
+    },
+    {
+      "name": "Seam-parallel route is a fit conflict rather than thousands of crossings",
+      "passed": true
+    },
+    {
+      "name": "Gate return and prompt local offsets remain physical24/10stud distances",
+      "passed": true
+    },
+    {
+      "name": "Volcano uses actualz−462; gate and road offset both transform",
+      "passed": true
+    },
+    {
+      "name": "Independent SAT: no final6thick wall volume intersects any aperture",
+      "passed": true
+    },
+    {
+      "name": "Independent SAT: no duplicate wall collider volume at junctions",
+      "passed": true
+    },
+    {
+      "name": "Independent interval probes: all non-aperture boundary points covered",
+      "passed": true
+    },
+    {
+      "name": "Candidate count is54 but apply/fit remains unassessed",
+      "passed": true
+    }
+  ],
+  "failed": 0,
+  "inputPreserved": true,
+  "passed": 35,
+  "runtime": "Official Lune 0.10.5 / local Luau"
+}

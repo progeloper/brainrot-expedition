@@ -1,0 +1,465 @@
+{
+  "status": "Frozen selected.85 authored package; actual native import proof pending",
+  "files": [
+    {
+      "path": "tools/map-compaction/CompactNativeGeometry.py",
+      "sha256": "28b5b6ac651e7580804dcbd715d8b80056f743f679b6e4c11a363f264ca87dc1",
+      "bytes": 8174
+    },
+    {
+      "path": "tools/map-compaction/CompactBuildNativeAssets.py",
+      "sha256": "ec4f035cfb7f0d1b3474d79cdbfe47e4ef2cb83979ae4031cde890d7fed9d2a0",
+      "bytes": 8343
+    },
+    {
+      "path": "tools/map-compaction/CompactNativeGeometryTests.py",
+      "sha256": "359b95f9129e21f30a82d794c74e73e0ff5db0b4b28d0ef9dda7bcad5a0183d2",
+      "bytes": 3455
+    },
+    {
+      "path": "tools/map-compaction/CompactBuildRoadMeshes.py",
+      "sha256": "a0a9e31df2bb722aa1f2d7456429ad0c1a6f58e199c3784fe17f29211cbadd81",
+      "bytes": 17407
+    },
+    {
+      "path": "tools/map-compaction/CompactBuildRoadNativeHelpers.py",
+      "sha256": "52b352aba899574f3a89207d454dbf8d62167fc6ed9442d4b388c5004a913fb6",
+      "bytes": 4760
+    },
+    {
+      "path": "tools/map-compaction/CompactPrepareRoads.template.luau",
+      "sha256": "6eb4dc2316f4715c5a92998f18fcc8cd0f788855c16d3e7ac785c6cd85ea6307",
+      "bytes": 11814
+    },
+    {
+      "path": "tools/map-compaction/CompactCheckSiteGeometry.py",
+      "sha256": "01966cd0f6a1d52eda0cc95fd33f6a005844deff0405de906969ed28c2cf795a",
+      "bytes": 11384
+    },
+    {
+      "path": "tools/map-compaction/CompactReviewArtSolidContacts.py",
+      "sha256": "e6053dc53b08af434a063139824244cb5e3df8bf9d66e94cd4e96ed9e8fa47df",
+      "bytes": 4418
+    },
+    {
+      "path": "tools/map-compaction/CompactCheckFinalBoundary.py",
+      "sha256": "e5216f8710eab0c668f3e30aba70886d85397304d58dfc1fd6255b97ff3cb4e4",
+      "bytes": 1796
+    },
+    {
+      "path": "tools/map-compaction/CompactNativeRoadReadiness.md",
+      "sha256": "4a77b8fa590650cd3e70c9338f19573ff98b02db6d2aa3f6426ed41b385c5a02",
+      "bytes": 7093
+    },
+    {
+      "path": "tools/map-compaction/CompactDraft_b085.json",
+      "sha256": "9d935792cae5095c4e32a5f93794c6e291c85aaba11c0ee5b9778189a4b72a20",
+      "bytes": 670273
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactArtWallIntersections.json",
+      "sha256": "6d1183604e1c32db65d668e32b4a06365bfa2c8bb3b08b10c4e26d52da1113ae",
+      "bytes": 598070
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactAssetExpectedGeometry.json",
+      "sha256": "ca3484c0926736e26857b3570e5a6ae703d5acf5f982bb64966fec54148d2207",
+      "bytes": 1726663
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactAssetsBinaryVerification.json",
+      "sha256": "05c93fcd0a21ca8a71a1966f6d9a50b289567a67b0f32f49535f272035f0a14a",
+      "bytes": 26853
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactAssetsCanonical.glb",
+      "sha256": "078a93ed83234709bec5799997d7ee41a8dd28cb39bc5fdd8ef18992d3353005",
+      "bytes": 321268
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactAssetsStudioImport.glb",
+      "sha256": "bdd81be39782c1649694deecaf3264e5e82db25d9bb7ed7f783f05c1ab6fbd4e",
+      "bytes": 321280
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactBaseApproachGeometry.json",
+      "sha256": "f143f3f39ef28d321a03bafe11bc506213613d6b113bef343921602263a3c5ce",
+      "bytes": 19860
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactFinalBoundarySourceQA.json",
+      "sha256": "7c72321bcf601f926d4b2b37bf1f449836ce50b2f2fca10d9a3c34f0f7d693bb",
+      "bytes": 557
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactGateProjectionGeometry.json",
+      "sha256": "fe532ce3cd534a67f1fb5b9914b959acd309fc9f9a6b3bdec917ac033ab19cd2",
+      "bytes": 5383
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactNativeAssetManifest.json",
+      "sha256": "8e8bbb5c82ffdb6832161c17df1a5a91e68f9b43fa2244b6b38e75ce83229661",
+      "bytes": 21027
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactNativeRoadReadiness.json",
+      "sha256": "d54fb5487ee6f1bb9d06721484156327dd2a852c8dfd889c0151147489d9a500",
+      "bytes": 1375
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactPrepareImportedRoads.luau",
+      "sha256": "d899aec8cb1d87a3511fb9ab9fbd8e3900e70a4cb5a3fd2ee013487842c34077",
+      "bytes": 18614
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactRoadExpectedGeometry.json",
+      "sha256": "e831c66215b56df42ed3ab37ad5c0d6961f943c1f087e2c8f2e2a5959f1f587e",
+      "bytes": 473544
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactRoadsCanonical.glb",
+      "sha256": "73c1deb0ee7abe3b758ed67ea68f57f4e4dcc42137de3e692939040961c24bdf",
+      "bytes": 143100
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactRoadsCanonical.obj",
+      "sha256": "ba326beeafdcb46115c1c2d61977c505a4e95ee1c3952e3d01baac0074df2fa1",
+      "bytes": 318084
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactRoadsStudioImport.glb",
+      "sha256": "f087fa80965767510d69c0980542c92e429414d66d3b61bdc9c1b8c3d07ff873",
+      "bytes": 143092
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactRouteClearance.json",
+      "sha256": "bc737ed7951485dc67a6891655c0304ffe93be419cd4cfe38c9e2604f9c80dd7",
+      "bytes": 329280
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactRouteMeshManifest.json",
+      "sha256": "b2030523c17599555f31114fcdbecaa093750ade88526ef846b9330cc40e7fe4",
+      "bytes": 126945
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactSeparatorMigration.json",
+      "sha256": "2b729b75106b9cd9b6502cbb931c9243fec310ad44f0cbf58d4f6f4ad9882901",
+      "bytes": 47262
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactSourcePackingTests.json",
+      "sha256": "f56476d5f93ca002a5592909713009cb448a45eef569faa8ec8c596dd191175a",
+      "bytes": 3724
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactVerifyNativeAssets.luau",
+      "sha256": "5abf242db22ba985e7364ca8a5c30f13e2cd64314a2fa8c2792f6d0d2b454603",
+      "bytes": 850805
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactVerifyNativeRoadGeometry.luau",
+      "sha256": "0d7c2e7963624f8a66e54425ed703836ff1888f44cffc0c31f1b9252df42e56b",
+      "bytes": 236340
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/CompactVolcanoWallSolidContact.json",
+      "sha256": "0869f6289120d77c6dece463ddbbe4ebfa64d1fdfe397b8f02575287087f780e",
+      "bytes": 24800
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/CompactShowhouseShell_A_Accent.verify.luau",
+      "sha256": "b9baa02f896a7f0c46b8cc3032a8f61b9ae3ba511a9b57f2c259ede139d4c15b",
+      "bytes": 89772
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/CompactShowhouseShell_A_Primary.verify.luau",
+      "sha256": "e22ad0c174e4574e550b4a23408c7c7fdf4ffd09a261c6bc12e6c867fe3c77ca",
+      "bytes": 324776
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/CompactShowhouseShell_A_Support.verify.luau",
+      "sha256": "55fcf8c2b9bf7173cbaccb72151038bf2ed5a57f497590619aee57d07c89cd96",
+      "bytes": 199857
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/CompactWallCube_Unit.verify.luau",
+      "sha256": "72b80f8ea9652f3369f217eefa954f3ca42956dc6cba26e37f6f1ab2f9a2632f",
+      "bytes": 15599
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Arctic_2_0.verify.luau",
+      "sha256": "7336921e7cf86909a399d1701805d4ea81d4567781f3d9fea4065356ba9368c2",
+      "bytes": 20943
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Arctic_3_0.verify.luau",
+      "sha256": "fdba742c152b1daa048aafad01c63ed31a92d17e9511b5b6d5c138953e1e8b0b",
+      "bytes": 16140
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Beach_0_0.verify.luau",
+      "sha256": "a1fd19c8ea313a1f3b6de556b4b733649c847ade86f732107d5b1c8f9e47d9dd",
+      "bytes": 22770
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Beach_0_1.verify.luau",
+      "sha256": "da3677fc7735fb9f8b626e88a2cf412a1bb0175cb8ef5f8276b3f9d55deb521a",
+      "bytes": 25710
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Beach_0_2.verify.luau",
+      "sha256": "15847091ada3ea3b572afd751bef7a0c57d66711aed53f0efbeb13e9a6657375",
+      "bytes": 15871
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Camp_1_0.verify.luau",
+      "sha256": "3ca97ee70c43c7390f567f8da133a050e655e6fed38d3d121df40a7a70c341b9",
+      "bytes": 27893
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Camp_1_1.verify.luau",
+      "sha256": "3b5b0b0ca02081794425505bdc1d8e9c39473065c3df492696d3ea2a74670b9b",
+      "bytes": 71599
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Camp_1_2.verify.luau",
+      "sha256": "c1b1ab9d026dc13af4a00a7535980faf46d0ca68abfc7cf3036da77211dd02bd",
+      "bytes": 17630
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Camp_2_0.verify.luau",
+      "sha256": "87980ade3611cf3e530925f24b0607845e9459ea34b303bcb3766dbc6dd05b50",
+      "bytes": 24100
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Camp_2_1.verify.luau",
+      "sha256": "ed5f703748053aa7955abffb36c2dc187a0af7a023e0c6a4618b53fd554481d2",
+      "bytes": 38632
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Camp_2_2.verify.luau",
+      "sha256": "b459bda4899e7f9cbe9172c8e4e7e99ac56261aa305cdb0f3f8e2a4cbba6855d",
+      "bytes": 17785
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Forest_0_0.verify.luau",
+      "sha256": "e8c364c96d294147f5417f85ad3117fdb1eb271312907a46b553870dbed4f568",
+      "bytes": 28921
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Forest_0_1.verify.luau",
+      "sha256": "5e9f999ffaf002d4d4639ae5684f5101e1275522c1b154a27d80f6b892146303",
+      "bytes": 24293
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Forest_0_2.verify.luau",
+      "sha256": "5d6199aebebf3a3074368b4aa2290d1e81a4120703015bb0206d69890a85c046",
+      "bytes": 15298
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Forest_1_0.verify.luau",
+      "sha256": "44971fb9fe4e95f1e040c746d73122ab5ea5136d81c14296fbd73e3e64bc4160",
+      "bytes": 28674
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Forest_2_0.verify.luau",
+      "sha256": "2072da77a475e1fdbc5223d4c8aafd00298b311b577e42de656da90587857af5",
+      "bytes": 17197
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_GlitchZone_2_2.verify.luau",
+      "sha256": "f95e36061ae6d2d5d4c993ef3c8082a2d44b0e04f31bc88c7638d707bca5a16a",
+      "bytes": 22890
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_GlitchZone_3_2.verify.luau",
+      "sha256": "21bac6cc83cd9a91d0ca098e144050678d263aec13eb9fb18f365ee426d74a24",
+      "bytes": 17213
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Jungle_0_2.verify.luau",
+      "sha256": "37d0404dca058c5e3ec2ab0488f96f0743dd44ddf0e64060ea75933158c684a7",
+      "bytes": 16974
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Jungle_1_2.verify.luau",
+      "sha256": "990813835b56a905057bbdf2b77b18b4aa6077fa0604c2ae365e7aa46d422460",
+      "bytes": 31221
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Jungle_2_2.verify.luau",
+      "sha256": "6c8c21424f49fc55d4e8e486a09ddbf1de31db33fa547198f593179c0e1c349a",
+      "bytes": 16404
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Swamp_0_2.verify.luau",
+      "sha256": "7caa9124a92a03a56d6ac07ff05f25eac3aa11b81927632bf2039ae4bffec4ce",
+      "bytes": 25189
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Volcano_2_0.verify.luau",
+      "sha256": "f350560934259e23337cc2fac5c50eb1791c2cd15b7f82a06928628b3947d244",
+      "bytes": 15580
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Volcano_2_1.verify.luau",
+      "sha256": "5b930e4e5b15d71c2064ad61f2d9341805d322de991cf9e4103277797857e4f9",
+      "bytes": 22557
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Volcano_2_2.verify.luau",
+      "sha256": "1d4712b80e227a9acfc8e105313618db633dd9e1e7f9c9c631563940c76a7a7d",
+      "bytes": 16444
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Volcano_3_0.verify.luau",
+      "sha256": "96a4e194b57ac4fa9d4ad2b7c62421881f61ad772fc7a2d3d8193ae0b9b30e72",
+      "bytes": 21379
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/qa/Path_Volcano_3_1.verify.luau",
+      "sha256": "d6ebbee18ee534dd15c9b1c4a0ad4f9b644fca5e373f656effb241d5a9b1b70a",
+      "bytes": 23384
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Arctic_2_0.verify.luau",
+      "sha256": "031615eebb757aa1e91ca7da208ef6b02cfcfc88567b85421ccc41bf249b9b99",
+      "bytes": 18273
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Arctic_3_0.verify.luau",
+      "sha256": "9c245b04b4aae4d1fa556bd6b659cb8050c68cf8c98922682f7c667715ab953e",
+      "bytes": 14298
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Beach_0_0.verify.luau",
+      "sha256": "26be06514e49c097f2257145456e5c2b681dbf5a47ea3bbbf277b2507bed80b2",
+      "bytes": 19985
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Beach_0_1.verify.luau",
+      "sha256": "b4449e6f6821b9b66c887dc75ce54125b89252d42c1b63dfb1ffd7bc37bc8c64",
+      "bytes": 22421
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Beach_0_2.verify.luau",
+      "sha256": "49677469289d76d4bd31f007827263be1cd2ac6000f2ccb5f482880dccc4f43c",
+      "bytes": 14102
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Camp_1_0.verify.luau",
+      "sha256": "2811313eef5158d8469fbed410607ceed0ef18b37ec631029137b2be84b150fb",
+      "bytes": 24643
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Camp_1_1.verify.luau",
+      "sha256": "d3744a6a6dc258715029644a44d447e75f88370f1ba19269a966931328fe71aa",
+      "bytes": 62794
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Camp_1_2.verify.luau",
+      "sha256": "bf8cf32f4f51765a10ab97c8ed9dc29eb848f586d5a062e5d980a57466161572",
+      "bytes": 15717
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Camp_2_0.verify.luau",
+      "sha256": "f02743ce03ce07701cce25b3d45a87e08f0926d398c8a47e634f27c4591a1832",
+      "bytes": 21350
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Camp_2_1.verify.luau",
+      "sha256": "0ba01544e50092c9eb99861b356e70d867a1170410eafb64354c82b04ccd2985",
+      "bytes": 34003
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Camp_2_2.verify.luau",
+      "sha256": "5afca365f4c2af22985e515bd1e70b6e6d4502b3d8d62ce735cda151c7838a6f",
+      "bytes": 15799
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Forest_0_0.verify.luau",
+      "sha256": "190956f245a161096425f1700b48e235c10d5a943a920e37299d311aebda5314",
+      "bytes": 25200
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Forest_0_1.verify.luau",
+      "sha256": "88df09c83b74341bdc26c69803ed5b153ac51e67ddc5f8f9dbf917d3b8a5a3c9",
+      "bytes": 21256
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Forest_0_2.verify.luau",
+      "sha256": "8482c97fa370aa7ea65669ce78067cb8982b8ba4a572550076decc1a1e310531",
+      "bytes": 13672
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Forest_1_0.verify.luau",
+      "sha256": "1d0dd983ef460532ecae086c59cabfdc4ba99889be103d0746995b43489230ee",
+      "bytes": 25061
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Forest_2_0.verify.luau",
+      "sha256": "fed33e7e335279e1db9a2ec94f60bdd5ca63cf03b5d444fa462bc848c96b8597",
+      "bytes": 15203
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_GlitchZone_2_2.verify.luau",
+      "sha256": "702d3b818c6228f61da8691625f4c43583d6beb2e2ca29470e9aacc7a5299fbc",
+      "bytes": 19861
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_GlitchZone_3_2.verify.luau",
+      "sha256": "36276bc625a7e1f7c9a17a840ee0e9509576a2a4be5e7464e0d9b00a7aa89837",
+      "bytes": 15156
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Jungle_0_2.verify.luau",
+      "sha256": "ce32d75cdfc73622e6bd2e5ffb3addc95d69727289d3d304dd7d197fec5be6d5",
+      "bytes": 14988
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Jungle_1_2.verify.luau",
+      "sha256": "412b02e5bf278a7b3f27058ef9050e26442c584092bbff049b94a20c40c07af4",
+      "bytes": 27248
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Jungle_2_2.verify.luau",
+      "sha256": "393615c3628ee4d36eec45db1e025f004c965ca76886e5e301a8849d3a4b5edf",
+      "bytes": 14554
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Swamp_0_2.verify.luau",
+      "sha256": "e04ba95f159cfe0d461162da12218f5f92c793f71800795a13ae31c27cb11bad",
+      "bytes": 21763
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Volcano_2_0.verify.luau",
+      "sha256": "9e399ddd7fccf5112b69960a69842790bd7c99521c82ba8e2be573c77c51b2a1",
+      "bytes": 13881
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Volcano_2_1.verify.luau",
+      "sha256": "475d5eb5ec49701dbefca579b5e536ff8454737f9a0f56d5792681c6a6de4c74",
+      "bytes": 19808
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Volcano_2_2.verify.luau",
+      "sha256": "98cede288c7944f8d7259bcd862219a5dd837d20d2b1b4ef5da1fa913243663c",
+      "bytes": 14603
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Volcano_3_0.verify.luau",
+      "sha256": "ad5e58d39bb1cc5fb2dd93935a6115a002ab63354ef04d4ccd1a93cbf8c614ad",
+      "bytes": 18774
+    },
+    {
+      "path": "tools/map-compaction/generated/selected-b085/road-qa/Path_Volcano_3_1.verify.luau",
+      "sha256": "4d37052d0296a4d0e7f3c925a47c7017c301ab6b7abd6e17a918b831a4969ecd",
+      "bytes": 20463
+    }
+  ],
+  "nativeImportSHA256": "bdd81be39782c1649694deecaf3264e5e82db25d9bb7ed7f783f05c1ab6fbd4e",
+  "sourceBoundaryFullThicknessAndVolumeChecks": "CompactFinalBoundarySourceQA.json",
+  "sourceNativeTriangles": 2659,
+  "sourceNativeCorners": 7977,
+  "worldMutations": 0
+}

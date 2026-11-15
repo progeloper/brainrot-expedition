@@ -1,0 +1,21 @@
+-- Local pure Lune tests. No native Studio or gameplay pass inferred.
+local fs=require('@lune/fs');local serde=require('@lune/serde');local process=require('@lune/process');local luau=require('@lune/luau')
+local root=process.args[1]or'.';local module=luau.load(fs.readFile(root..'/tools/map-compaction/CompactBaseLayout.luau'))()
+local native=serde.decode('json',fs.readFile(root..'/docs/map-compaction/RuntimeBaseFitResultSummary.json'));local cargo=serde.decode('json',fs.readFile(root..'/docs/map-compaction/CompactBaseLayoutNativeCargo.json'))
+local measured={normalPad=native.maxima.centredFullSupportTransversePad.value,tangentPad=native.maxima.centredFullSupportTangentialPad.value,centredCartWidth=cargo.centredCartPadRequired.width,centredCartDepth=cargo.centredCartPadRequired.depth}
+local cases={}
+local function add(name,fn)table.insert(cases,{name=name,run=fn})end
+local function near(a,b)assert(math.abs(a-b)<1e-8,tostring(a)..' ~= '..tostring(b))end
+add('Candidate ladder reflects road/front correction',function()assert(not module.Candidate(.75,measured).analyticalRectangleContainmentPassed);assert(not module.Candidate(.8,measured).analyticalRectangleContainmentPassed);assert(module.Candidate(.85,measured).analyticalRectangleContainmentPassed)end)
+add('Same six by two identity and stable order',function()local g=module.Candidate(.85,measured).geometry;for i,s in g.slots do assert(s.Index==i);assert(s.Side==(if i<=6 then -1 else 1));near(s.X,g.formationCenterX+s.Side*g.rowOffsetX);near(s.Z,g.zCenters[(i-1)%6+1])end;assert(#g.slots==12)end)
+add('Whole plaque intrusion counted',function()local g=module.Candidate(.85,measured).geometry;near(2*g.rowOffsetX-g.padNormalStuds-5.6,6.02)end)
+add('Every final pad retains native one-stud support margins',function()local g=module.Candidate(.85,measured).geometry;assert(g.padNormalStuds>=measured.normalPad and g.padTangentialStuds>=measured.tangentPad)end)
+add('Cart asymmetry uses centered minimum depth',function()local c=module.Candidate(.85,measured);assert(c.cartSupport.depth==36);near(c.cartSupport.width,27.2)end)
+add('Functional ramps remain rigid original dimensions',function()local a=module.Candidate(.85,measured).functionalApproachCorrection;assert(a.houseRamp.width==20 and a.cartRamp.width==24 and a.houseRamp.depth==12 and a.cartRamp.depth==12)end)
+add('Source generator and pure Luau candidate agree',function()local all=serde.decode('json',fs.readFile(root..'/docs/map-compaction/CompactBaseLayoutCandidates.json'));for _,expected in all.candidates do local actual=module.Candidate(expected.b,measured);local ag,eg=actual.geometry,expected.geometry;near(ag.formationCenterX,eg.formationCenterX);near(ag.formationCenterZ,eg.formationCenterZ);near(ag.support.width,eg.support.width);near(ag.support.depth,eg.support.depth);near(ag.support.centreZ,eg.support.centreZ);assert(actual.analyticalRectangleContainmentPassed==expected.analyticalRectangleContainmentPassed)end end)
+add('No native/runtime acceptance manufactured',function()local c=module.Candidate(.85,measured);assert(c.runtimeValidated==false and c.fullAcceptancePassed==false)end)
+add('Inputs remain unchanged',function()local encoded=serde.encode('json',measured);module.Candidate(.85,measured);assert(serde.encode('json',measured)==encoded)end)
+add('Invalid factors and unsupported bounds reject',function()assert(not pcall(function()module.Candidate(0/0,measured)end));assert(not pcall(function()module.Candidate(.74,measured)end));assert(not pcall(function()module.Candidate(.85,{normalPad=1,tangentPad=0,centredCartWidth=1,centredCartDepth=1})end))end)
+local result={schemaVersion=1,scope='Pure final-local candidate generation against actual saved native measurements',passed=0,failed=0,actualStudioExecution=false,cases={}}
+for _,c in cases do local ok,err=pcall(c.run);table.insert(result.cases,{name=c.name,passed=ok,error=if ok then nil else tostring(err)});if ok then result.passed+=1 else result.failed+=1;print(err)end end
+fs.writeFile(root..'/docs/map-compaction/CompactBaseLayoutLuauTests.json',serde.encode('json',result,true));print(result.passed..' passed, '..result.failed..' failed');assert(result.failed==0,'Pure layout regressions failed')

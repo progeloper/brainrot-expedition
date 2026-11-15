@@ -1,0 +1,36 @@
+{
+  "status": "Prepared; actual native invocation NotRun",
+  "migrationId": "CompactMap_V1",
+  "candidate": {
+    "b": 0.85,
+    "h": 248,
+    "origin": [
+      -19,
+      0.04999995231628418,
+      -46
+    ],
+    "outer": 0.75,
+    "r": 188,
+    "t": 89.6
+  },
+  "sourceSHA256": "73c1deb0ee7abe3b758ed67ea68f57f4e4dcc42137de3e692939040961c24bdf",
+  "studioImportSHA256": "bdd81be39782c1649694deecaf3264e5e82db25d9bb7ed7f783f05c1ab6fbd4e",
+  "routeGeometryHash": "696d1821c5ebc3a595f9437366c1c777f31d6ea5f2b0f303fd8a2a895a32dbb0",
+  "groups": 27,
+  "triangles": 1047,
+  "corners": 3141,
+  "verifier": "CompactVerifyNativeRoadGeometry.luau",
+  "preparer": "CompactPrepareImportedRoads.luau",
+  "expectedNativeImportRoot": "ServerStorage.CompactMap_ImportedRoads",
+  "preparedTemplateRoot": "ServerStorage.CompactMapRoadTemplates",
+  "actualStudioMutationByAuthoring": 0,
+  "requiredProof": [
+    "Real native MeshIds",
+    "Exact triangle count and every oriented corner/UV/+Y normal",
+    "No unreferenced vertices; native axes/local bounds and XZ sizes",
+    "Every expected group, no extras; canonical/import/geometry hashes",
+    "Native planar bounding clamp.001/.05; prepared Size.Y=.05 rendered plane remains canonicaltopY"
+  ],
+  "worldPlacementValidatedByAssetQA": false,
+  "materialStyle": "Saved Glacier/Bingus studs.25; no static TextureID or SurfaceAppearance"
+}
