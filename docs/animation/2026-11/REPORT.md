@@ -165,18 +165,31 @@ Part D.1, brainrots (approved 14 Nov 2026): brainrot playback, smoothing and LOD
 
 ## 6. Scorecard R1 to R20
 
-Only the rows Part A can answer are filled.
+Final checks run on 14 November 2026 after Part D (DEV, Studio Play with the previews on, test
+profile `anim20261113`). Flags are still off live.
 
 | ID | State |
 |---|---|
-| R1 | Partly: flags-off server code paths are the old ones and the villager specs pass; a full flags-off packet diff has not been run. |
-| R9 | Root cause reported (section 1). "!" + `Alert` → `Run` is published by the server; client playback is Part D. |
-| R10 | Curved paths and ground follow measured on the server for brainrots and villagers. |
-| R11 | Stationary share passes; distance fails by design conflict (owner decision). |
-| R13 | Not run yet. |
-| R17 | Hit proxies and tag distance untouched; the authoritative brainrot pose now curves and pauses, which is the point of Part A. |
-| R20 | Bandwidth passes. No new remote, no new per-frame connection, no server animator. |
-| Others | Not started. |
+| R1 | **Pass (code + specs).** With every flag off no view gets an Animator, village life never runs and the old villager templates render; guard specs 43/43 and CreatureProtocol 11/11 pass flags-off. A byte-for-byte packet diff against the pre-Part-A build was not run. |
+| R2 | **Pass (per species).** Each brainrot's bind pose was compared with its pre-rig capture in its review package and approved (Part B). |
+| R3 | **Pass.** Brainrots: mutation recolour, protected face, studs and `ScaleTo` reviewed per species. Guards: builder asserts ≤ 80 boxes; name tags and bubbles ride the Head bone; the Glitch flicker is kept; outfits approved in the guard batch. |
+| R4 | **Pass (scripted).** All 37 skins (36 guards + neutral) build one identical joint signature; every guard plays the one 24-clip set. |
+| R5 | **Pass.** All 409 animations uploaded to the owner's account, moderation-approved, and seen playing in Play (guards and brainrots). |
+| R6 | **Pass (code).** Unapproved species or skins keep the old path; today every item is approved. |
+| R7 | **Pass.** Banked brainrots play IdleDisplay; three adjacent platforms measured at 0.23, 0.61 and 0.01 of their cycle (`brainrot_playback.md`). |
+| R8 | **Pass.** Walk playback median 0.97x of measured ground speed; pauses play IdleWild. |
+| R9 | **Partly.** Server publishes `Alert` → `Run` (Part A); the client maps them, but no reactive brainrot locked on during the Play runs. |
+| R10 | **Pass.** Curved paths and ground follow (Part A); client smoothing for brainrots (spring, 360°/s) and guards. |
+| R11 | Measured in Part A; stationary share passes, distance per minute is the documented design conflict. |
+| R12 | **Partly.** Shout lands within 0.003 s of the 0.75 s wind-up; Plodder RunTrot → Tag → TantrumStomp verified. Sprinter `Tired` at 3 s and Shouter `Alarm` were not exercised live. The thrown hat is the TantrumStomp clip only; the Hat bone does not detach and land. |
+| R13 | **Pass, one timing note.** Guard specs rerun with motion and village life on: 42/43. The fixed-timeline locked-region test fails because the steering turn (270°/s) and ease-in delay reaching the edge; a new spec (both modes) confirms a guard never crosses a locked region and gives up at its edge. |
+| R14 | **Partly.** Routines, wave rules and instant cancel on "?" verified; one chat pair per region by spec. Chat never triggers with today's homes (owner decision, `village_life.md`). |
+| R15 | **Pass.** POIs validated against road triangles, gates, burrows and bases; listed in `village_life.md`. |
+| R16 | **Exceptions reported.** Arms or hands pass into the head box in Chop, Curious, Lookout, TantrumSquawk and TantrumStomp on the bare body (hand-to-brow and arms-overhead poses), so every skin shows them; thick sleeves deepen it (Arctic parka up to 0.65 studs). Smaller overlaps in RunTrot, Sweep, Knead and Walk on some outfits. Fix needs edited, re-uploaded clips (owner approval). |
+| R17 | **Pass (by construction).** Animation is client-only; hit proxies, tag distance and the authoritative poses are untouched. |
+| R18 | **Added cost about 1.0 ms; absolute not measured.** Studio Play was throttled in the background (0.4–3.5 fps), so frame times are not meaningful. A same-session Lua benchmark of the brief's load (42 wild V4 brainrots, 20 displays, 12 guards): today's path (lerp + PivotTo for 42 walkers) 6.0 ms per frame, the animated path 7.0 ms (worst 12.4). The first run measured 9.2 ms because brainrot smoothing used `PivotTo` on ~300-part models; it now moves only the anchored root. Engine-side animator cost and graphics level 1 need a focused-window or device measurement. |
+| R19 | **Pass.** With 62 brainrots and 12 guards in view, LOD switched on exactly 24 brainrot animators and held 24 through the run, and 12 of 12 guards; a guard chasing you is ranked first and never culled (code). The live Forest run peaked at 4 animated brainrots. |
+| R20 | **Pass.** Server send rate with everything on was 50 kbps against 161 kbps off at the same spot (fewer creatures in range, so noisy; Part A measured ~70% fewer creature rows). Awake guards change 24 attributes in 25 s. No new remote, no new per-frame connection, no server Animator; the review pen is off unless `Config/AnimationReview` turns it on. |
 
 ## 7. Recommended tuning (not applied)
 

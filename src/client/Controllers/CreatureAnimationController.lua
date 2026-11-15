@@ -339,7 +339,15 @@ function Anim.Smooth(entry: any, dt: number): boolean
 			rotation = CFrame.Angles(0, math.sign(angle) * maxTurn, 0) * current.Rotation
 		end
 	end
-	model:PivotTo(CFrame.new(position) * rotation)
+	-- Move only the anchored root: every other part hangs off it by a weld or Motor6D, so this
+	-- costs one part per frame instead of PivotTo's hundreds on a V4 model.
+	local pivot = CFrame.new(position) * rotation
+	local root = model.PrimaryPart
+	if root and root.Anchored then
+		root.CFrame = pivot * root.PivotOffset:Inverse()
+	else
+		model:PivotTo(pivot)
+	end
 	return true
 end
 

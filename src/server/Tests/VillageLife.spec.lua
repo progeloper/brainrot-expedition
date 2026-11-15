@@ -148,8 +148,10 @@ return function()
 				pina.state = "Idle"
 				pina.position = Vector3.new(-330, 0, -40)
 				VillageLife.Step(pina, 0.1, context(140, { pina }))
-				expect(pina.position.X).to.equal(-330)
-				expect(pina.position.Z).to.equal(-40)
+				-- No resume teleport: it starts walking to its next spot from home.
+				local moved = (pina.position - Vector3.new(-330, 0, -40)).Magnitude
+				expect(moved < 1).to.equal(true)
+				expect(pina.life.phase).to.equal("Walk")
 			end
 		)
 
