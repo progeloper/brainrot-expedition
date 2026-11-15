@@ -95,7 +95,7 @@ Captures are in [`camp_rework_20261112/`](camp_rework_20261112/).
 1. Create the Robux IDs: Rift Blaster game pass (499 R$) and 2× Training pass (price placeholder 199 R$ — confirm).
 2. Flip `CampReworkV1Enabled`, `TrainingV1Enabled`, `RebirthUiV2Enabled` (and `WeaponTiersV2Enabled`) live when ready.
 3. Choose the layout (winner or alternatives #2/#3); decide whether to raise the landmark or move the kiosk so every base can see it.
-4. **Save the Studio place.** The new stalls, landmark move and path removal live in the place file (`MapBlockout` is Rojo-mapped
+4. **(Update, 12 Nov later: this happened. A Rojo reconnect restored the old camp; it was put back from `CampReworkWorld.rbxm` and `default.project.json` no longer maps `MapBlockout`. See `docs/menus_v2/REPORT.md` section 0.12.)** **Save the Studio place.** The new stalls, landmark move and path removal live in the place file (`MapBlockout` is Rojo-mapped
    from an older `.rbxm`, so a Rojo re-sync could restore removed instances). A full export of the new camp art is in
    `assets/native/camp_rework_20261112/CampReworkWorld.rbxm`; weapons/displays/props `.rbxm` are mapped in `default.project.json`
    (`.rbxm` files are git-ignored, as before).
